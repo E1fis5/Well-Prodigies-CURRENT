@@ -1,0 +1,1 @@
+fontScore = font_add_sprite_ext(spr_mainfont,"!#$&'()+-./0123456789:;<=>?ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]_'abcdefghijklmnopqrstuvwxyz{|}",true,1)
