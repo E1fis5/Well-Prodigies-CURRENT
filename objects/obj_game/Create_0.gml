@@ -12,3 +12,6 @@ global.exitShop = false
 global.rift_taken = false
 global.cd_complete = false
 global.lap2_active = false
+global.vcr_active = false
+global.vcr_blue = false
+global.vcr_black = false

@@ -285,4 +285,7 @@ if (global.lap2_active = true) and (sprite_index = spr_player_escape_left)
 	sprite_index = spr_player_lap2_left;
 }
 
-
+if (!instance_exists(obj_vcr)) and (global.vcr_active = true)
+{
+	instance_create_depth(x,y,-9999,obj_vcr)
+}
