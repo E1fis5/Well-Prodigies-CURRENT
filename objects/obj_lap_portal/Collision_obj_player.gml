@@ -20,6 +20,6 @@ instance_destroy();
 
 score += 1600
 
-global.lap2 = true
+global.lap2_active = true
 
 global.sanity += 55

@@ -216,3 +216,5 @@ if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood)
 }
 }
 
+
+

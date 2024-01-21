@@ -98,13 +98,20 @@ if grv = -1 and input_check("down") = true
 
 if place_meeting(x, y, obj_lap_portal) {
     with (obj_L2_block) {
-        instance_destroy(); // Delete all instances of obj_to_delete
+        instance_destroy(); //
     }
 }
 
 if global.isActive = true and sprite_index = spr_playernew
 {
 	sprite_index = spr_player_escapeidle
+	image_xscale  = 1
+    image_yscale = 1
+}
+
+if global.isActive = true and sprite_index = spr_player_left
+{
+	sprite_index = spr_player_escape_left
 	image_xscale  = 1
     image_yscale = 1
 }
@@ -266,6 +273,16 @@ if (global.sanity > 80)
 if (place_meeting(x,y,obj_slide))
 {
 	walksp = 8.5
+}
+// lap 2 anims
+if (global.lap2_active = true) and (sprite_index = spr_player_escapeidle)
+{
+	sprite_index = spr_player_lap2;
+}
+
+if (global.lap2_active = true) and (sprite_index = spr_player_escape_left)
+{
+	sprite_index = spr_player_lap2_left;
 }
 
 
