@@ -8,7 +8,6 @@ global.gamePaused = false
 
 global.collactive = false
 global.walksp_boost_active = false
-global.exitShop = false
 global.rift_taken = false
 global.cd_complete = false
 global.lap2_active = false

@@ -114,6 +114,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"rift","folderPath":"folders/Sprites/rift.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"sanity_blockers","folderPath":"folders/Sprites/sanity_blockers.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"shop","folderPath":"folders/Sprites/shop.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"gem_counter","folderPath":"folders/Sprites/shop/gem_counter.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"tilesets","folderPath":"folders/Sprites/tilesets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"cd","folderPath":"folders/Tile Sets/cd.yy",},
@@ -123,7 +124,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"misc","folderPath":"folders/Tile Sets/misc.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"rift","folderPath":"folders/Tile Sets/rift.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Tile Sets/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"gem_counter","folderPath":"folders/Sprites/shop/gem_counter.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Atlas Earth Ad (4K remaster upload).mp4","CopyToMask":3035426170322551022,"filePath":"datafiles",},

@@ -7,6 +7,5 @@ if !instance_exists(obj_transition)
 }
 
 
-global.exitShop = true
 
 

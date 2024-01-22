@@ -100,6 +100,7 @@
     {"name":"rift","order":186,"path":"folders/Sprites/rift.yy",},
     {"name":"sanity_blockers","order":169,"path":"folders/Sprites/sanity_blockers.yy",},
     {"name":"shop","order":184,"path":"folders/Sprites/shop.yy",},
+    {"name":"gem_counter","order":13,"path":"folders/Sprites/shop/gem_counter.yy",},
     {"name":"tilesets","order":190,"path":"folders/Sprites/tilesets.yy",},
     {"name":"Tile Sets","order":11,"path":"folders/Tile Sets.yy",},
     {"name":"cd","order":21,"path":"folders/Tile Sets/cd.yy",},
@@ -109,7 +110,6 @@
     {"name":"misc","order":22,"path":"folders/Tile Sets/misc.yy",},
     {"name":"rift","order":20,"path":"folders/Tile Sets/rift.yy",},
     {"name":"Timelines","order":5,"path":"folders/Tile Sets/Timelines.yy",},
-    {"name":"gem_counter","order":13,"path":"folders/Sprites/shop/gem_counter.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_escape_collision","order":16,"path":"objects/obj_escape_collision/obj_escape_collision.yy",},
