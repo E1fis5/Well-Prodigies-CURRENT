@@ -43,7 +43,7 @@ if input_check("run") = true && input_check("down")
 // Shop boost
 if input_check("run") = true and global.walksp_boost_active = true
 {
-    walksp = 6.4 // 6.6
+    walksp =9.9// 6.4
 }
 
 if input_check("run") = false and input_check("down") = false and global.walksp_boost_active = true

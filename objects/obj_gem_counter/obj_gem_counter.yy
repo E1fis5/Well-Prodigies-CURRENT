@@ -28,7 +28,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_gems_0",
+    "path": "sprites/spr_gems_0/spr_gems_0.yy",
+  },
   "spriteMaskId": {
     "name": "spr_gems_hud",
     "path": "sprites/spr_gems_hud/spr_gems_hud.yy",

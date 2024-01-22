@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bonus_scr_shop",
-    "path": "sprites/spr_bonus_scr_shop/spr_bonus_scr_shop.yy",
+    "name": "spr_bonusscore",
+    "path": "sprites/spr_bonusscore/spr_bonusscore.yy",
   },
   "spriteMaskId": null,
   "visible": true,

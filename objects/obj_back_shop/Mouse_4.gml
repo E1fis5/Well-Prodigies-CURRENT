@@ -6,7 +6,6 @@ if !instance_exists(obj_transition)
       inst.target_rm = target_rm;
 }
 
-	  instance_create_depth(x,y,-9555,obj_camera)
 
 global.exitShop = true
 
