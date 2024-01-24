@@ -145,7 +145,7 @@ y += vsp;
 
 //Current Status
 onground = place_meeting (x,y+2, obj_collision_wall);
-onwall = place_meeting (x+1,y, obj_climbablecollision) - place_meeting (x-1,y,obj_climbablecollision);
+onwall = place_meeting (x+1,y, obj_climbablecollision) - place_meeting (x-1,y,obj_climbablecollision)
 if (onground) jumpbuffer = 6;
 //Preventing crawling in air
 if (onground)

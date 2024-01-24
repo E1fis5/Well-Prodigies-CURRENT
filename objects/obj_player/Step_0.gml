@@ -4,11 +4,9 @@ var _keyLeft = keyboard_check(vk_left) or keyboard_check(ord("A"))
 var _spriteLeft = keyboard_check(vk_left) or keyboard_check(ord("A"))
 var _spriteRight = keyboard_check(vk_right) or keyboard_check(ord("D"))
 var _keyDown = keyboard_check(vk_down) or keyboard_check(ord("S"))
-var global._keyShift = keyboard_check(vk_shift)
 var _keySanitylow = keyboard_check_pressed(vk_alt)
 var _Left = keyboard_check_pressed (vk_left);
 var _Attack = keyboard_check_pressed(ord("X"))
-var global._keyUp = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W"))
 var prevX = x;
 var prevY = y;
 
@@ -43,7 +41,7 @@ if input_check("run") = true && input_check("down")
 // Shop boost
 if input_check("run") = true and global.walksp_boost_active = true
 {
-    walksp =9.9// 6.4
+    walksp = 6.4 // 6.4
 }
 
 if input_check("run") = false and input_check("down") = false and global.walksp_boost_active = true

@@ -22,6 +22,7 @@ if (global.timer <= 0) {
 if (global.isActive = true)
 {
 	instance_destroy(obj_escape_collision)
+	instance_destroy(obj_escape_collision_climb)
 }
 image_index += animation_speed; // Adjust the animation speed
 image_index = image_index mod frame_count; // Wrap around the frame index

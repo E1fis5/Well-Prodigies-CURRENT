@@ -1,3 +1,7 @@
+if (global.gem_counter = 0)
+{
+	sprite_index = spr_gems_0
+}
 
 if (global.gem_counter = 1)
 {

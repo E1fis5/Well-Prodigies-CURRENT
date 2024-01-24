@@ -1,17 +1,18 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_shop_bg",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-  ],
+  "name": "obj_escape_collision_climb",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "shop",
-    "path": "folders/Objects/shop.yy",
+    "name": "level_stuff",
+    "path": "folders/Objects/level_stuff.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_escape_collision",
+    "path": "objects/obj_escape_collision/obj_escape_collision.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -28,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_shopconcept",
-    "path": "sprites/spr_shopconcept/spr_shopconcept.yy",
+    "name": "spr_sanityblocker2",
+    "path": "sprites/spr_sanityblocker2/spr_sanityblocker2.yy",
   },
   "spriteMaskId": null,
   "visible": true,
