@@ -1044,6 +1044,7 @@
     {"id":{"name":"Wellhubbackground","path":"sprites/Wellhubbackground/Wellhubbackground.yy",},},
     {"id":{"name":"spr_cave_ahead_sign","path":"sprites/spr_cave_ahead_sign/spr_cave_ahead_sign.yy",},},
     {"id":{"name":"input_verb_group_active","path":"scripts/input_verb_group_active/input_verb_group_active.yy",},},
+    {"id":{"name":"spr_player_fall","path":"sprites/spr_player_fall/spr_player_fall.yy",},},
     {"id":{"name":"input_verb_group_is_active","path":"scripts/input_verb_group_is_active/input_verb_group_is_active.yy",},},
     {"id":{"name":"spr_fade","path":"sprites/spr_fade/spr_fade.yy",},},
     {"id":{"name":"__input_string_contains","path":"scripts/__input_string_contains/__input_string_contains.yy",},},

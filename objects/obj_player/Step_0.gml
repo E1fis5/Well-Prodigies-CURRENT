@@ -138,13 +138,9 @@ if sprite_index = spr_playernew and (room == r_GT1)
 }
 
 //Fast fall
-if (input_check("down") = true) and (grv = -1 = false) and (input_check("jump") = true) and (!place_meeting(x,y,obj_ladder_wood))
-{
-	grv = 5
-	walksp = 2.5
-	sprite_index = spr_player_downp
-	vsp = 10
-}
+
+state_FastFall();
+
 
 if (sprite_index = spr_player_downp) and (place_meeting(x,y,obj_collision_wall))
 {
@@ -209,6 +205,7 @@ if (can_dash) and (input_check_pressed("dash"))
 	sprite_index = spr_player_dash
 	dash_distance = 125
     dash_time = 15
+	global.fallspr_deactivate = true
 	{
 		if (player_left = true)
 		{
@@ -287,3 +284,18 @@ if (!instance_exists(obj_vcr)) and (global.vcr_active = true)
 {
 	instance_create_depth(x,y,-9999,obj_vcr)
 }
+
+//Fall anim
+
+if (global.fallspr_deactivate = false) and (onground = false) and (!place_meeting(x,y,obj_bomb_launcher))
+{
+	sprite_index = spr_player_fall
+	global.fallspr_deactivate = false
+}
+
+if (onground = true) 
+{
+	global.fallspr_deactivate = true
+}
+
+                 

@@ -920,6 +920,7 @@
     {"name":"Wellhubbackground","order":6,"path":"sprites/Wellhubbackground/Wellhubbackground.yy",},
     {"name":"spr_cave_ahead_sign","order":135,"path":"sprites/spr_cave_ahead_sign/spr_cave_ahead_sign.yy",},
     {"name":"input_verb_group_active","order":3,"path":"scripts/input_verb_group_active/input_verb_group_active.yy",},
+    {"name":"spr_player_fall","order":29,"path":"sprites/spr_player_fall/spr_player_fall.yy",},
     {"name":"input_verb_group_is_active","order":5,"path":"scripts/input_verb_group_is_active/input_verb_group_is_active.yy",},
     {"name":"spr_fade","order":72,"path":"sprites/spr_fade/spr_fade.yy",},
     {"name":"__input_string_contains","order":23,"path":"scripts/__input_string_contains/__input_string_contains.yy",},

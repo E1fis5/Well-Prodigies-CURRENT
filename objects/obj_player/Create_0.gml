@@ -29,7 +29,8 @@ if (global.targetX != -1)
 player_left = false
 inAir = false
 canCrawl = 0
-
+global.pFall_spr = false
+global.fallspr_deactivate = false
 // Sanity and hunger
 
 
@@ -38,6 +39,7 @@ contact_sprite = spr_lap2_graph
 global.isActive = false;
 jumpmax = 2
 jumps_active = 0
+onground = false
 //Dash
 can_dash = false
 dash_distance = 125
@@ -79,6 +81,7 @@ if (canJump-- > 0) and (input_check_pressed("jump"))
 	audio_play_sound(snd_pJump,4,false);
 	jump_allowed = true;
 	canCrawl = 1
+	global.fallspr_deactivate = true
 } 
 
 
@@ -108,6 +111,8 @@ if (jump_allowed = true) and (input_check_pressed("jump")) and (onground = false
 	audio_play_sound(snd_pJump,4,false);
 	jump_allowed = false;
 	canCrawl = 1
+	global.fallspr_deactivate = true
+	
 with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 {
 	sprite_index = other.sprite_index;
@@ -214,6 +219,19 @@ if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood)
 	can_dash = false
 	stateCrawl = state_crawl
 }
+}
+
+state_FastFall = function()
+{
+	if (input_check("down") = true) and (grv = -1 = false) and (input_check("jump") = true) and (!place_meeting(x,y,obj_ladder_wood))
+{
+	grv = 5
+	walksp = 4.8
+	sprite_index = spr_player_downp
+	vsp = 10
+	global.fallspr_deactivate = true
+	FastFall = true
+}           
 }
 
 
