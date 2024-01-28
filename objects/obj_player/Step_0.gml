@@ -19,7 +19,7 @@ state_crawl();
 //Run
 if  input_check("run") = true
 {
-    walksp = 6
+    walksp = 6.2
 
 }
 
@@ -41,7 +41,7 @@ if input_check("run") = true && input_check("down")
 // Shop boost
 if input_check("run") = true and global.walksp_boost_active = true
 {
-    walksp = 6.4 // 6.4
+    walksp = 6.5// 6.4
 }
 
 if input_check("run") = false and input_check("down") = false and global.walksp_boost_active = true
@@ -51,7 +51,7 @@ if input_check("run") = false and input_check("down") = false and global.walksp_
 
 if input_check("run") = true && input_check("down") and (global.walksp_boost_active)
 {
-	walksp = 6.4
+	walksp = 6.5
 }
 
 
@@ -64,8 +64,13 @@ if (place_meeting(x,y,obj_bomb_launcher))
 	sprite_index = spr_player_bomb
 	image_xscale = 1
 	image_yscale = 1
+	bombActive = true
 }
 
+if (bombActive = true) and (onground = true)
+{
+	bombActive = false
+}
 if (place_meeting(x,y,obj_bomb_launcher))
 {
 	grv = -1
@@ -287,15 +292,44 @@ if (!instance_exists(obj_vcr)) and (global.vcr_active = true)
 
 //Fall anim
 
-if (global.fallspr_deactivate = false) and (onground = false) and (!place_meeting(x,y,obj_bomb_launcher))
-{
-	sprite_index = spr_player_fall
-	global.fallspr_deactivate = false
-}
 
 if (onground = true) 
 {
 	global.fallspr_deactivate = true
 }
 
-                 
+if (onground = false) and !bombActive
+{
+	global.fallspr_deactivate = false
+}
+
+
+if (input_check("run")) and (input_check("left"))
+{
+	global.fallspr_deactivate = true
+}
+
+if (input_check("run")) and (input_check("right"))
+{
+	global.fallspr_deactivate = true
+}
+
+if (global.fallspr_deactivate = false)
+{
+	sprite_index = spr_player_fall
+}
+
+if (global.fallspr_deactivate = false) and (input_check("left"))
+{
+	sprite_index = spr_player_fall
+}
+
+if (global.fallspr_deactivate = false) and (input_check("right"))
+{
+	sprite_index = spr_player_fall
+}
+
+if (input_check_pressed("dash")) and (can_dash) and (global.fallspr_deactivate = false)
+{
+	global.fallspr_deactivate = true
+}

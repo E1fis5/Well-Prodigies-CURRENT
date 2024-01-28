@@ -12,7 +12,10 @@
     "name": "shop",
     "path": "folders/Objects/shop.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_menubutton_parent",
+    "path": "objects/obj_menubutton_parent/obj_menubutton_parent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

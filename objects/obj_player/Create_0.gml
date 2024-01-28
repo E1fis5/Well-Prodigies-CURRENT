@@ -44,7 +44,7 @@ onground = false
 can_dash = false
 dash_distance = 125
 dash_time = 15
-
+bombActive = false
 //States
 state_normal = function()
 {
@@ -82,7 +82,7 @@ if (canJump-- > 0) and (input_check_pressed("jump"))
 	jump_allowed = true;
 	canCrawl = 1
 	global.fallspr_deactivate = true
-} 
+}
 
 
 
@@ -111,8 +111,7 @@ if (jump_allowed = true) and (input_check_pressed("jump")) and (onground = false
 	audio_play_sound(snd_pJump,4,false);
 	jump_allowed = false;
 	canCrawl = 1
-	global.fallspr_deactivate = true
-	
+
 with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 {
 	sprite_index = other.sprite_index;
@@ -187,6 +186,7 @@ if player_left = false && input_check("right") = false
 	image_xscale = 1
 	image_yscale = 1
 	player_left = false
+	global.fallspr_deactivate = true
 }
 
 
@@ -234,5 +234,6 @@ state_FastFall = function()
 }           
 }
 
+depth = 400
 
 
