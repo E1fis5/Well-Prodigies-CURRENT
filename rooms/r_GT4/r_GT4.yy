@@ -143,6 +143,7 @@
     {"name":"inst_7F867786","path":"rooms/r_GT4/r_GT4.yy",},
     {"name":"inst_168F4B78","path":"rooms/r_GT4/r_GT4.yy",},
     {"name":"inst_A649110","path":"rooms/r_GT4/r_GT4.yy",},
+    {"name":"inst_543106F7","path":"rooms/r_GT4/r_GT4.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -434,6 +435,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7F867786","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_stonedestroyable","path":"objects/obj_stonedestroyable/obj_stonedestroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3104.0,"y":289.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_168F4B78","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_zombie1","path":"objects/obj_zombie1/obj_zombie1.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2224.0,"y":1312.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A649110","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_zombie1","path":"objects/obj_zombie1/obj_zombie1.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":2112.0,"y":1248.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_543106F7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_snowlvl_player_freeze","path":"objects/obj_snowlvl_player_freeze/obj_snowlvl_player_freeze.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":704.0,"y":240.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_1","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4F4F70A2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deep_snow3","path":"objects/obj_deep_snow3/obj_deep_snow3.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":732.0,"y":432.0,},

@@ -31,6 +31,9 @@ inAir = false
 canCrawl = 0
 global.pFall_spr = false
 global.fallspr_deactivate = false
+global.grv_0 = false
+global.dashspr = false
+global.dashspr_left = false
 // Sanity and hunger
 
 
@@ -82,6 +85,7 @@ if (canJump-- > 0) and (input_check_pressed("jump"))
 	jump_allowed = true;
 	canCrawl = 1
 	global.fallspr_deactivate = true
+	global.grv_0 = false
 }
 
 
@@ -93,15 +97,41 @@ if (input_check("run") = true) and (sprite_index = spr_playerwalk = true) or (sp
 	grv = 0.065
 }
 
+if (input_check("run") = true) and (sprite_index = spr_playerwalkleft = true) and (input_check("jump") = true) and (grv = -1 = false)
+{
+	grv = 0.065
+}
+
 if (input_check("run") = false) and (input_check("jump") = true) and (grv = -1 = false)
 {
 	grv = 0.07
 }
-
+//Sprite Gravity
 if sprite_index = spr_playernew
 {
 	grv = 0.07
 }
+
+if sprite_index = spr_player_left
+{
+	grv = 0.07
+}
+
+if sprite_index = spr_playerwalkleft
+{
+	grv = 0.07
+}
+
+if sprite_index = spr_playerwalk
+{
+	grv = 0.07
+}
+
+if (sprite_index = spr_player_fall)
+{
+	grv = 0.07
+}
+
 
 //Double Jump
 if (jump_allowed = true) and (input_check_pressed("jump")) and (onground = false)
@@ -233,6 +263,7 @@ state_FastFall = function()
 	FastFall = true
 }           
 }
+
 
 depth = 400
 

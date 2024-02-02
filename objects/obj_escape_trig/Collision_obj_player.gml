@@ -1,6 +1,6 @@
 if (!global.isActive) {
     global.isActive = true;
-    global.timer = 185
+    global.timer = 170
 }
 
 if (!audio_played) and (global.sanity >=30) {
@@ -25,9 +25,9 @@ if (!audio_played) and global.sanity <= 30 {
 
 if (global.gamemode_easy = true)
 {
-    global.timer = 215
+    global.timer = 205
 }
 if (global.gamemode_hard = true)
 {
-    global.timer = 150
+    global.timer = 130
 }

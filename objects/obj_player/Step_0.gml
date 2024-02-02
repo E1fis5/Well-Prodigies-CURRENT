@@ -19,39 +19,44 @@ state_crawl();
 //Run
 if  input_check("run") = true
 {
-    walksp = 6.2
+    walksp = 6.5
 
 }
 
 if input_check("run") = false and input_check("down") = false
 {
-	walksp = 4.8
+	walksp = 5.2
 }
 
 if input_check("run") = false && input_check("down")
 {
-	walksp = 4.3
+	walksp = 5
 }
 
 if input_check("run") = true && input_check("down")
 {
-	walksp = 6
+	walksp = 6.5
 }
 
 // Shop boost
 if input_check("run") = true and global.walksp_boost_active = true
 {
-    walksp = 6.5// 6.4
+    walksp = 6.75// 6.4
 }
 
 if input_check("run") = false and input_check("down") = false and global.walksp_boost_active = true
 {
-	walksp = 5.28 //5.28
+	walksp = 5.5 //5.28
 }
 
 if input_check("run") = true && input_check("down") and (global.walksp_boost_active)
 {
-	walksp = 6.5
+	walksp = 6.75
+}
+
+if input_check("run") = false && input_check("down") and (global.walksp_boost_active)
+{
+	walksp = 5.2
 }
 
 
@@ -156,10 +161,9 @@ if (sprite_index = spr_player_downp) and (place_meeting(x,y,obj_collision_wall))
 if (place_meeting(x,y,obj_ladder_wood) and (input_check("up") = true))
 {
 	grv = -2
-	walksp = 1.5
 }
 
-if (place_meeting(x,y,obj_ladder_wood) and (input_check("up") = false)) 
+if (place_meeting(x,y,obj_ladder_wood) and (input_check("up") = false))
 {
 	grv = 0.07
 }
@@ -208,16 +212,19 @@ if (can_dash) and (input_check_pressed("dash"))
 	dash_energy = dash_distance;
 	stateNormal = Dashstate
 	sprite_index = spr_player_dash
-	dash_distance = 125
+	dash_distance = 135
     dash_time = 15
-	global.fallspr_deactivate = true
+	grv = 0
 	{
 		if (player_left = true)
 		{
 			sprite_index = spr_player_dash_left
+			
 		}
 }
-}
+} 
+
+
 
 Dashstate = function()
 //Movement
@@ -262,8 +269,14 @@ y += vsp;
    if (dash_energy <= 0)
    {
 	   stateNormal = state_normal
+	   canJump = 10
 }
 }
+
+
+
+
+
 //Sanity values
 if (global.sanity > 80)
 {
@@ -291,8 +304,6 @@ if (!instance_exists(obj_vcr)) and (global.vcr_active = true)
 }
 
 //Fall anim
-
-
 if (onground = true) 
 {
 	global.fallspr_deactivate = true
@@ -333,3 +344,20 @@ if (input_check_pressed("dash")) and (can_dash) and (global.fallspr_deactivate =
 {
 	global.fallspr_deactivate = true
 }
+
+if (global.grv_0 = true)
+{
+	grv = 0
+}
+//Snow idle
+if (global.snowlvl_freeze = true) and (sprite_index = spr_playernew)
+{
+	sprite_index = spr_player_freeze
+}
+
+if (global.snowlvl_freeze = true) and (sprite_index = spr_player_escapeidle)
+{
+	sprite_index = spr_player_escapeidle
+}
+
+

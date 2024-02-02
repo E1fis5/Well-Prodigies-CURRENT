@@ -3,3 +3,5 @@ if (draw_sprite_on_contact) {
 }
 
 
+draw_text(20,20,grv)
+

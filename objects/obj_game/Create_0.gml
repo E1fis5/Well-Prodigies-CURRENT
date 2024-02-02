@@ -15,4 +15,5 @@ global.vcr_active = false
 global.vcr_blue = false
 global.vcr_black = false
 global.hud_destroy = false
+global.snowlvl_freeze = false
 
