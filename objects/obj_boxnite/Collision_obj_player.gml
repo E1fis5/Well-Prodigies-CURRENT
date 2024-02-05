@@ -1,7 +1,7 @@
-score += 999999999999999999999999999999999
+score += 1
 
 instance_destroy();
 
-audio_play_sound(snd_player_hurt,5,false)
+audio_play_sound(snd_boxnite_scream,10,false)
 
-audio_play_sound(snd_vl_1,4,false)
+instance_create_depth(x,y,-10000,obj_boxnite_jumpscare)

@@ -23,3 +23,5 @@ score += 1600
 global.lap2_active = true
 
 global.sanity += 55
+
+instance_create_depth(890,985,-9999,obj_lap2_alert);

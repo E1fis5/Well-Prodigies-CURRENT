@@ -361,3 +361,11 @@ if (global.snowlvl_freeze = true) and (sprite_index = spr_player_escapeidle)
 }
 
 
+//Boxnite jumpscare
+if (instance_exists(obj_boxnite_jumpscare))
+{
+	walksp = 0
+    can_dash = false
+	canJump = 0
+	grv = 0
+}
