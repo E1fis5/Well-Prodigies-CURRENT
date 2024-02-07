@@ -25,7 +25,7 @@ if (!audio_played) and global.sanity <= 30 {
 
 if (global.gamemode_easy = true)
 {
-    global.timer = 205
+    global.timer = 200
 }
 if (global.gamemode_hard = true)
 {

@@ -9,3 +9,4 @@ if (global.gamemode_hard = true)
 {
 	global.health -= 1
 }
+

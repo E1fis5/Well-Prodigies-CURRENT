@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "level_stuff",
-    "path": "folders/Objects/level_stuff.yy",
+    "name": "tp",
+    "path": "folders/Objects/level_stuff/tp.yy",
   },
   "parentObjectId": {
     "name": "obj_targetExit",

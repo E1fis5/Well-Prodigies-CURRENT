@@ -25,3 +25,5 @@ global.lap2_active = true
 global.sanity += 55
 
 instance_create_depth(890,985,-9999,obj_lap2_alert);
+
+instance_create_depth(500,1,-9999,obj_lap2_into);

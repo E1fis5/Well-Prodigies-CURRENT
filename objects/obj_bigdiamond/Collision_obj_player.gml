@@ -14,3 +14,5 @@ if (global.sanity >= 100)
 {
 	global.sanity -= 10
 }
+
+global.beverage_amount += 20
