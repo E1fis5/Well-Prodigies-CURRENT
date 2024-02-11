@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "escapes",
-    "path": "folders/Objects/escapes.yy",
+    "name": "escape_slash_rift",
+    "path": "folders/Objects/escape_slash_rift.yy",
   },
   "parentObjectId": null,
   "persistent": true,

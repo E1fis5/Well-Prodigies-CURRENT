@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "songs",
+    "path": "folders/Objects/songs.yy",
   },
   "parentObjectId": {
     "name": "obj_mb_song1",

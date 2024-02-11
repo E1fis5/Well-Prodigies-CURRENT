@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "mainmenu_buttons",
-    "path": "folders/Objects/mainmenu_buttons.yy",
+    "name": "songs",
+    "path": "folders/Objects/songs.yy",
   },
   "parentObjectId": {
     "name": "obj_cavedwellings_music",

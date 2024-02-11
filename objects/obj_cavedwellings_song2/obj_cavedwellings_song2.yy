@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "cave_dwellings_stuff",
-    "path": "folders/Objects/cave_dwellings_stuff.yy",
+    "name": "songs",
+    "path": "folders/Objects/songs.yy",
   },
   "parentObjectId": {
     "name": "obj_cavedwellings_music",

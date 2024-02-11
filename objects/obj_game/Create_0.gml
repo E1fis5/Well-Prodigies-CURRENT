@@ -16,3 +16,7 @@ global.vcr_blue = false
 global.vcr_black = false
 global.hud_destroy = false
 global.snowlvl_freeze = false
+global.escape_transition_end = false
+global.switch_purple = false
+global.switch_teal = false
+global.switch_red = false

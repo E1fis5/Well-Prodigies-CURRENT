@@ -31,3 +31,8 @@ if (global.gamemode_hard = true)
 {
     global.timer = 130
 }
+
+if (!global.escape_transition_end) and (!instance_exists(obj_escape_transition))
+{
+	instance_create_depth(0,0,-11000,obj_escape_transition)
+}

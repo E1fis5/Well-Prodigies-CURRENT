@@ -45,17 +45,21 @@ if input_check("run") = true && input_check("down")
 
 if (place_meeting(x,y,obj_bomb_launcher))
 {
-	grv = -1
 	sprite_index = spr_player_bomb
 	image_xscale = 1
 	image_yscale = 1
 	bombActive = true
+	can_dash = true
 }
 
 if (bombActive = true) and (onground = true)
 {
 	bombActive = false
 }
+
+
+
+
 if (place_meeting(x,y,obj_bomb_launcher))
 {
 	grv = -1

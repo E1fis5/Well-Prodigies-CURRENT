@@ -20,4 +20,3 @@ if (global.sanity <= 50)
 	score -= 75
 }
 
-global.beverage_amount += 10

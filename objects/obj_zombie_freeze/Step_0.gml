@@ -15,5 +15,4 @@ audio_play_sound(snd_player_hurt,5,false)
 
 
 global.health -= 1
-global.beverage_amount += 5
 }

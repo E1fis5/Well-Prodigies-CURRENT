@@ -1,3 +1,3 @@
-target_x = 320
-target_y = 288
-target_rm = r_GT_escape3
+target_x = 128
+target_y = 448
+target_rm = r_ch
