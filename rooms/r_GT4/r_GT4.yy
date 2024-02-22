@@ -489,7 +489,7 @@
   ],
   "parent": {
     "name": "glacial_tundra",
-    "path": "folders/Rooms/glacial_tundra.yy",
+    "path": "folders/Rooms/CHAPTER_1/glacial_tundra.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

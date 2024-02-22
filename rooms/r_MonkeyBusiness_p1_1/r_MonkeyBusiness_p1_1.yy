@@ -175,7 +175,7 @@
   ],
   "parent": {
     "name": "path1",
-    "path": "folders/Rooms/monkey_buisness/path1.yy",
+    "path": "folders/Rooms/CHAPTER_1/monkey_buisness/path1.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

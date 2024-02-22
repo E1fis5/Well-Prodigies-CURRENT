@@ -212,7 +212,7 @@
   ],
   "parent": {
     "name": "Escapes",
-    "path": "folders/Rooms/cave_dwellings/Escapes.yy",
+    "path": "folders/Rooms/CHAPTER_1/cave_dwellings/Escapes.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

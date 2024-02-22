@@ -426,7 +426,7 @@
   ],
   "parent": {
     "name": "escapes",
-    "path": "folders/Rooms/glacial_tundra/escapes.yy",
+    "path": "folders/Rooms/CHAPTER_1/glacial_tundra/escapes.yy",
   },
   "parentRoom": {
     "name": "r_parent",

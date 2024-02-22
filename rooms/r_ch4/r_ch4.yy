@@ -180,7 +180,7 @@
   ],
   "parent": {
     "name": "cave_hOrROrs",
-    "path": "folders/Rooms/cave_hOrROrs.yy",
+    "path": "folders/Rooms/CHAPTER_1/cave_hOrROrs.yy",
   },
   "parentRoom": {
     "name": "r_ch3",

@@ -251,7 +251,7 @@
   ],
   "parent": {
     "name": "cave_dwellings",
-    "path": "folders/Rooms/cave_dwellings.yy",
+    "path": "folders/Rooms/CHAPTER_1/cave_dwellings.yy",
   },
   "parentRoom": null,
   "physicsSettings": {
