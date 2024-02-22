@@ -27,3 +27,12 @@ global.sanity += 55
 instance_create_depth(890,985,-9999,obj_lap2_alert);
 
 instance_create_depth(500,1,-9999,obj_lap2_into);
+
+instance_destroy(obj_escape_overlay);
+
+if (global.escapeoverlay_trigger = true)
+{
+	instance_create_depth(-999,-999,-3995,obj_escape_overlay_lap2)
+}
+
+time_source_start(lap2_drain)

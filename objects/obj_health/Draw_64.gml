@@ -37,6 +37,6 @@ if (global.health <= 0) and (global.gamemode_hard = true)
 
 
 
-
+depth = -9999
 
 

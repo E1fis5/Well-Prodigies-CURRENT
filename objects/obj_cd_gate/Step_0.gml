@@ -4,4 +4,6 @@ if place_meeting(x,y,obj_player) and input_check("up") = true and !instance_exis
       inst.target_x = target_x;
 	  inst.target_y = target_y;
       inst.target_rm = target_rm;
+	  global.sanity = 100
+	  global.scoreHider = false
 }

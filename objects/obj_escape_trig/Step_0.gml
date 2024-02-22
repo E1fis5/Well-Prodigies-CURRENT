@@ -16,7 +16,7 @@ else {
 
 if (global.timer <= 0) {
     
-  score -= 5
+  time_source_start(timer_drain)
 }
 
 if (global.isActive = true)
@@ -33,10 +33,10 @@ if (sound_timer <= 0) and global.isActive = true {
     sound_timer = room_speed * waitTime; // Reset the timer
 }
 
-if (global.timer <= 0) and score == 0
+if (global.timer <= 0) and score <= 0
 {
-	game_restart()
-	global.counter += 1
+	game_restart();
+	time_source_stop(timer_drain);
 }
 
 // Destroy self if in lobby

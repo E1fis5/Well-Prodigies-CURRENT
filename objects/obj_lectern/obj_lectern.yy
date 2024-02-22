@@ -3,13 +3,14 @@
   "resourceVersion": "1.0",
   "name": "obj_lectern",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "game_core",
-    "path": "folders/Objects/game_core.yy",
+    "name": "group1",
+    "path": "folders/Objects/group1.yy",
   },
   "parentObjectId": null,
   "persistent": false,

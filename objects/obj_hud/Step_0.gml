@@ -22,9 +22,5 @@ if (!is_timer_over) {
         }
     }
 }
-// Destroy self if in lobby
-if (room == rWellhub2)
-{
-	instance_destroy();
-}
+
 

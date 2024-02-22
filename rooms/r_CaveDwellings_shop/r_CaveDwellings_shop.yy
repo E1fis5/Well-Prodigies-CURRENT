@@ -15,6 +15,7 @@
     {"name":"inst_5D50CEDC","path":"rooms/r_CaveDwellings_shop/r_CaveDwellings_shop.yy",},
     {"name":"inst_16B31C4C","path":"rooms/r_CaveDwellings_shop/r_CaveDwellings_shop.yy",},
     {"name":"inst_7E67AB45","path":"rooms/r_CaveDwellings_shop/r_CaveDwellings_shop.yy",},
+    {"name":"inst_4DBF961B","path":"rooms/r_CaveDwellings_shop/r_CaveDwellings_shop.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -26,6 +27,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5D50CEDC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collision_wall","path":"objects/obj_collision_wall/obj_collision_wall.yy",},"properties":[],"rotation":0.0,"scaleX":3.5,"scaleY":3.0,"x":1168.0,"y":1908.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_16B31C4C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_health_destroy","path":"objects/obj_health_destroy/obj_health_destroy.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1201.0,"y":477.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7E67AB45","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1056.0,"y":352.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4DBF961B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_scorehider_switch","path":"objects/obj_scorehider_switch/obj_scorehider_switch.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1280.0,"y":320.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_1","depth":-400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_11A36693","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_bonus_sc_buyable","path":"objects/obj_bonus_sc_buyable/obj_bonus_sc_buyable.yy",},"properties":[],"rotation":0.0,"scaleX":5.0,"scaleY":5.0,"x":503.0,"y":1005.0,},

@@ -34,6 +34,7 @@ global.fallspr_deactivate = false
 global.grv_0 = false
 global.dashspr = false
 global.dashspr_left = false
+global.fallsp = 0
 // Sanity and hunger
 
 
@@ -73,7 +74,7 @@ if (onwall != 0) && (vsp > 0)
 	vsp_max_final = vsp_max_wall
 }
 vsp += grv_final;
-vsp = vsp + grv;
+vsp = vsp + grv
 vsp = clamp(vsp, -vsp_max_final, vsp_max_final);
 
 //Deciding to jump or not
@@ -165,9 +166,9 @@ x += hsp;
 if (place_meeting(x, y + vsp, obj_collision_wall))
 {
 	if (vsp > 0) 
-{	canJump = 10;
+	canJump = 10;
 	can_dash = true;
-}
+
 	while (abs(vsp) > 0.1)
 	{
 		vsp *= 0.5;
@@ -263,7 +264,6 @@ state_FastFall = function()
 	FastFall = true
 }           
 }
-
 
 depth = 400
 

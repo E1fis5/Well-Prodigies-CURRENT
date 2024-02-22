@@ -1,10 +1,10 @@
-if instance_exists(obj_player)
+if instance_exists(obj_player) and (global.scoreHider = false)
 {
 		    draw_sprite_ext(spr_scorehud,0,1350,0,1,1,0,c_white,1)
 }
 
 
-if sprite_exists(spr_scorehud)
+if sprite_exists(spr_scorehud) and (global.scoreHider = false)
 {
 	
 	draw_set_font(global.font_main)

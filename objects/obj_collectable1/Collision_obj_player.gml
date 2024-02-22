@@ -17,3 +17,5 @@ if (global.sanity >= 100)
 {
 	global.sanity -= 0.4
 }
+
+instance_create_depth(-999,-999,-9990,obj_diamond_notif)

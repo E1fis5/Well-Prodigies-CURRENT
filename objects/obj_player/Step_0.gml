@@ -49,7 +49,6 @@ if (place_meeting(x,y,obj_bomb_launcher))
 	image_xscale = 1
 	image_yscale = 1
 	bombActive = true
-	can_dash = true
 }
 
 if (bombActive = true) and (onground = true)
@@ -125,11 +124,8 @@ if (room == rWellhub2) && sprite_index = spr_player_escapeidle
 	sprite_index = spr_playernew
 }
 
-//GT idle
-if sprite_index = spr_playernew and (room == r_GT1)
-{
-	sprite_index = spr_player_freeze
-}
+
+//Falling speed
 
 //Fast fall
 
@@ -203,6 +199,7 @@ if (can_dash) and (input_check_pressed("dash"))
 		if (player_left = true)
 		{
 			sprite_index = spr_player_dash_left
+			global.fallspr_deactivate = true
 			
 		}
 }
@@ -233,6 +230,7 @@ with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 		if (!place_meeting(x + hsp, y, obj_collision_wall)) x += hsp;
 	}
 	hsp = 0;
+	sprite_index = spr_player_fall
 }
 
 x += hsp;
@@ -287,7 +285,7 @@ if (global.lap2_active = true) and (sprite_index = spr_player_escape_left)
 
 if (!instance_exists(obj_vcr)) and (global.vcr_active = true)
 {
-	instance_create_depth(x,y,-9999,obj_vcr)
+	instance_create_depth(x,y,-13999,obj_vcr)
 }
 
 //Fall anim
@@ -296,7 +294,7 @@ if (onground = true)
 	global.fallspr_deactivate = true
 }
 
-if (onground = false) and !bombActive
+if (onground = false) and stateNormal = state_normal
 {
 	global.fallspr_deactivate = false
 }
@@ -357,3 +355,9 @@ if (instance_exists(obj_boxnite_jumpscare))
 	grv = 0
 }
 
+if (global.scorebook_active = true)
+{
+	walksp = 0
+	can_dash = false
+	canJump = 0
+}

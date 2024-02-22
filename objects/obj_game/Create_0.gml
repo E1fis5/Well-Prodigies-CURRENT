@@ -20,3 +20,7 @@ global.escape_transition_end = false
 global.switch_purple = false
 global.switch_teal = false
 global.switch_red = false
+global.scoreHider = false
+global.tutorial_blocker = true
+global.escapeoverlay_trigger = true
+global.scorebook_active = false

@@ -1,3 +1,3 @@
-target_x = 512
-target_y = 1280
-target_rm = rWellhub2
+target_x = 1312
+target_y = 1376
+target_rm = r_rank_screen

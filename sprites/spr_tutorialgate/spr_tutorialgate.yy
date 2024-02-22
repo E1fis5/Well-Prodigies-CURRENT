@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"26f7ddfe-6bed-4317-8749-e2cb6a126b12",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b799cf8c-b0f0-42da-aac6-7f19749b0d04",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 360,
+  "height": 320,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cfe79656-4cc6-4987-bd4c-f260793dbe6a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8c24e6c8-7dd7-4979-a5b2-83ab6515358f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -54,13 +54,13 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"26f7ddfe-6bed-4317-8749-e2cb6a126b12","path":"sprites/spr_tutorialgate/spr_tutorialgate.yy",},},},"Disabled":false,"id":"fdf64f2e-e794-48fa-bf94-be40c03e45a2","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b799cf8c-b0f0-42da-aac6-7f19749b0d04","path":"sprites/spr_tutorialgate/spr_tutorialgate.yy",},},},"Disabled":false,"id":"d5fbccf7-1983-4321-ba6c-712bbc0b33ee","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 180,
-    "yorigin": 180,
+    "xorigin": 160,
+    "yorigin": 160,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 360,
+  "width": 320,
 }

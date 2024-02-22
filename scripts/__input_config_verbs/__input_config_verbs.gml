@@ -22,11 +22,12 @@ function __input_config_verbs()
             jump:  [input_binding_key(vk_space), input_binding_key("Z")],
 			
             accept:  input_binding_key(vk_space),
-            cancel:  input_binding_key(vk_backspace),
+            cancel:  input_binding_key(vk_escape),
             action:  input_binding_key(vk_enter),
             run:     input_binding_key(vk_shift),
 			dash:    [input_binding_key("C"), input_binding_key("F")],
-			
+			W:  input_binding_key("W"),
+			P:  input_binding_key("P"),
             
             //No aiming verbs since we use the mouse for that (see below for aiming verb examples)
             shoot: input_binding_mouse_button(mb_left),
