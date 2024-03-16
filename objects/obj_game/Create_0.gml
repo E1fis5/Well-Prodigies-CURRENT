@@ -1,3 +1,4 @@
+
 global.targetRoom = -1;
 global.targetX = -1;
 global.targetY = -1;
@@ -8,7 +9,7 @@ global.gamePaused = false
 
 global.collactive = false
 global.walksp_boost_active = false
-global.rift_taken = false
+global.rift_taken = true
 global.cd_complete = false
 global.lap2_active = false
 global.vcr_active = false
@@ -24,3 +25,7 @@ global.scoreHider = false
 global.tutorial_blocker = true
 global.escapeoverlay_trigger = true
 global.scorebook_active = false
+global.shopitem_bought = false
+global.waterlvl_true = false
+//Time sources
+

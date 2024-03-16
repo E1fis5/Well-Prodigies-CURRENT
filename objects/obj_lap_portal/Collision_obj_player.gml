@@ -14,7 +14,7 @@ if (!audio_once_played) {
 }
 
 
-global.timer += 55
+global.timer += time_amount
 
 instance_destroy();
 

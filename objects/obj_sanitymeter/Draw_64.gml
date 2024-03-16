@@ -33,8 +33,14 @@ if (global.sanity <= 50)
 
 if (global.sanity <= 40) 
 {
-	draw_sprite(spr_sanitymeternew,6,8,64)
+	draw_sprite(spr_sanitymeternew,6,8,64)	
 }
+
+if (global.sanity <= 40) and (!instance_exists(obj_sanity_notif))
+{
+	instance_create_depth(-999,-999,-9997,obj_sanity_notif)
+}
+
 
 if (global.sanity <= 30) 
 {
@@ -49,5 +55,5 @@ if (global.sanity <= 20)
 }
 
 
-depth = -9999
+depth = -10000
 

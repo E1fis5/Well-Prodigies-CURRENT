@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_macro",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Player_scripts",
-    "path": "folders/Scripts/Player_scripts.yy",
+  "$GMScript":"",
+  "%Name":"scr_macro",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_macro",
+  "parent":{
+    "name":"Player_scripts",
+    "path":"folders/Scripts/Player_scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,9 +1,5 @@
-if place_meeting(x,y,obj_player) and input_check("up") = true and !instance_exists(obj_transition)
+if place_meeting(x,y,obj_player) and input_check("up") = true and (!instance_exists(obj_cd_well_intro))
 {
-  var inst = instance_create_depth(0, 0, -9999, obj_transition);
-      inst.target_x = target_x;
-	  inst.target_y = target_y;
-      inst.target_rm = target_rm;
-	  global.sanity = 100
-	  global.scoreHider = false
+    instance_create_depth(-999,-999,-8000,obj_cd_well_intro)
 }
+

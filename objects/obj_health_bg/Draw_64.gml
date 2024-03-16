@@ -11,5 +11,5 @@ if (global.hud_destroy = true)
 
 if (global.hud_destroy = false) and (!instance_exists(obj_health_bg))
 {
-	instance_create_depth(x,y,-8888,obj_health_bg);
+	instance_create_depth(x,y,-8887,obj_health_bg);
 }

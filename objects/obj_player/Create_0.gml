@@ -35,6 +35,9 @@ global.grv_0 = false
 global.dashspr = false
 global.dashspr_left = false
 global.fallsp = 0
+global.fall_effect_trigger = false
+global.bombactive = false
+global.idlespr_active = false
 // Sanity and hunger
 
 
@@ -49,6 +52,7 @@ can_dash = false
 dash_distance = 125
 dash_time = 15
 bombActive = false
+global.fall_effect_destroy = false
 //States
 state_normal = function()
 {
@@ -133,6 +137,15 @@ if (sprite_index = spr_player_fall)
 	grv = 0.07
 }
 
+if (sprite_index = spr_player_bomb)
+{
+	grv = -1
+}
+
+if (sprite_index = spr_player_bomb_escape)
+{
+	grv = -1
+}
 
 //Double Jump
 if (jump_allowed = true) and (input_check_pressed("jump")) and (onground = false)
@@ -141,6 +154,7 @@ if (jump_allowed = true) and (input_check_pressed("jump")) and (onground = false
 	canJump = 0;
 	audio_play_sound(snd_pJump,4,false);
 	jump_allowed = false;
+	can_dash = true
 	canCrawl = 1
 
 with (instance_create_depth(x,y,depth+1,obj_trail_effect))
@@ -179,7 +193,7 @@ if (place_meeting(x, y + vsp, obj_collision_wall))
 y += vsp;
 
 //Current Status
-onground = place_meeting (x,y+2, obj_collision_wall);
+onground = place_meeting (x,y+10, obj_collision_wall);
 onwall = place_meeting (x+1,y, obj_climbablecollision) - place_meeting (x-1,y,obj_climbablecollision)
 if (onground) jumpbuffer = 6;
 //Preventing crawling in air
@@ -191,6 +205,11 @@ if (onground)
 if (!onground)
 {
 	canCrawl = 1
+}
+
+if (onwall = true)
+{
+	can_dash = true
 }
 
 
@@ -228,7 +247,7 @@ if player_left = false && input_check("right") = false
 	image_yscale = 1
 }
 
-  if input_check("right") = false && input_check("left") = false && player_left = false
+  if input_check("right") = false && input_check("left") = false && player_left = false 
 {
 	sprite_index = spr_playernew
 	image_xscale = 1
@@ -268,3 +287,9 @@ state_FastFall = function()
 depth = 400
 
 
+//Extended Idle
+var time_source_sprite_switch = function()
+{
+	global.idlespr_active = true
+}
+time_source_ext_idle = time_source_create(time_source_game,8,time_source_units_seconds,time_source_sprite_switch,[],-1)

@@ -93,19 +93,37 @@ if place_meeting(x, y, obj_lap_portal) {
     }
 }
 
-if global.isActive = true and sprite_index = spr_playernew
+
+// Lap anims
+if global.isActive = true and sprite_index = spr_player_left and (!global.sanity <= 40)
+{
+	sprite_index = spr_player_escape_left
+	image_xscale  = 1
+    image_yscale = 1
+}
+
+if global.isActive = true and (sprite_index = spr_playernew) and (!global.sanity <= 40)
 {
 	sprite_index = spr_player_escapeidle
 	image_xscale  = 1
     image_yscale = 1
 }
 
-if global.isActive = true and sprite_index = spr_player_left
+if global.isActive = true and sprite_index = spr_player_escape_left and (global.sanity <= 40)
 {
-	sprite_index = spr_player_escape_left
+	sprite_index = spr_player_insane_escape_idle_left
 	image_xscale  = 1
     image_yscale = 1
 }
+
+if global.isActive = true and (sprite_index = spr_player_escapeidle) and (global.sanity <= 40)
+{
+	sprite_index = spr_player_insane_escape_idle
+	image_xscale  = 1
+    image_yscale = 1
+}
+
+
 
 if sprite_index = spr_player_bomb or grv = -1
 {
@@ -195,6 +213,7 @@ if (can_dash) and (input_check_pressed("dash"))
 	dash_distance = 135
     dash_time = 15
 	grv = 0
+	audio_play_sound(snd_dash_p,8,false)
 	{
 		if (player_left = true)
 		{
@@ -256,16 +275,21 @@ y += vsp;
 }
 
 
-if (global.walksp_boost_active)
+if (global.walksp_boost_active) and (global.bombactive = false)
 {
 	walksp += 0.40
 }
 
 
 //Sanity values
-if (global.sanity > 80)
+if (global.sanity > 80) and (bombActive = false)
 {
 	walksp += 0.25
+}
+
+if (global.sanity <= 30)and (bombActive = false)
+{
+	walksp += 0.45
 }
 
 if (place_meeting(x,y,obj_slide))
@@ -360,4 +384,49 @@ if (global.scorebook_active = true)
 	walksp = 0
 	can_dash = false
 	canJump = 0
+}
+
+//Enemy projectiles
+if (place_meeting(x,y,obj_enemy_sight)) and (instance_exists(obj_zombie_projectile))
+{
+	time_source_start(global.projectile_timer);
+}
+
+if (!place_meeting(x,y,obj_enemy_sight)) and (instance_exists(obj_zombie_projectile))
+{
+	time_source_stop(global.projectile_timer);
+}
+
+if (place_meeting(x,y,obj_enemy_projectile))
+{
+	global.health -= 1
+	score -= 150
+	audio_play_sound(snd_player_hurt,8,false)
+}      
+
+//Intro physics
+if (instance_exists(obj_cd_well_intro))
+{
+	walksp = 0
+	canCrawl = false
+	canJump = 0
+	can_dash = false
+	sprite_index = spr_player1
+}
+// water
+if (place_meeting(x,y,obj_water))
+{
+	grv = 0.05
+	dash_distance = 165
+    dash_time = 16
+}
+
+if (sprite_index = spr_player_bomb) or (sprite_index = spr_player_bomb_escape)
+{
+	grv = -1
+} 
+
+if (global.bombactive = true)
+{
+	global.fallspr_deactivate = true
 }

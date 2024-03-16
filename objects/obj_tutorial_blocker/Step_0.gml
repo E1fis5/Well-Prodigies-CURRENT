@@ -11,5 +11,5 @@ if (input_check_pressed("up") = true) and (input_check_pressed("down")= true) an
 	global.tutorial_blocker = false
 }
 
-
+depth = 200
 

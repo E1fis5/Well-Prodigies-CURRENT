@@ -1,6 +1,6 @@
+global.bombactive = true
 
-
-
+global.fallspr_deactivate = true
 
 if (!audio_played)
 {
