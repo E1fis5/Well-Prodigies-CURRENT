@@ -12,9 +12,4 @@ if !instance_exists(obj_transition)
 	audio_stop_sound(snd_lap2)
 	audio_stop_sound(snd_clock_tick)
 	global.isActive = false
-	instance_destroy(obj_lap2_alert);
-	instance_destroy(obj_health);
-	instance_destroy(obj_health_bg);
-	instance_destroy(obj_sanitymeter)
-	instance_destroy(obj_sanity_bg)
 	global.tutorial_blocker = false;

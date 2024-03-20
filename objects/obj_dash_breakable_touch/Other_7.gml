@@ -1,0 +1,1 @@
+sprite_index = spr_dash_touch2

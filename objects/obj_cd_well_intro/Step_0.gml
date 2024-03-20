@@ -6,7 +6,6 @@ if (input_check_pressed("accept"))
       inst.target_rm = r_CaveDwellings1
 	  global.sanity = 100
 	  global.scoreHider = false
-	  instance_destroy();
 }
 
 if (input_check_pressed("cancel"))

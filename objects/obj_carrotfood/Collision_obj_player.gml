@@ -27,3 +27,5 @@ if (global.gamemode_hard = true) and (global.health >= 6)
 {
 	global.health -= 0.2
 }
+
+global.collectable_destroy = true

@@ -205,7 +205,7 @@ if (can_dash) and (input_check_pressed("dash"))
 {
 	can_dash = false;
 	canJump = 0;
-	dash_direction = point_direction(0,0,input_check("right")- input_check("left"),input_check("down"))
+	dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")))
 	dash_sp = dash_distance/dash_time;
 	dash_energy = dash_distance;
 	stateNormal = Dashstate
@@ -214,6 +214,7 @@ if (can_dash) and (input_check_pressed("dash"))
     dash_time = 15
 	grv = 0
 	audio_play_sound(snd_dash_p,8,false)
+	global.dash_active = true
 	{
 		if (player_left = true)
 		{
@@ -224,7 +225,10 @@ if (can_dash) and (input_check_pressed("dash"))
 }
 } 
 
-
+if (sprite_index = spr_player_fall) and (player_left = true)
+{
+	sprite_index = spr_player_fall_left
+}
 
 Dashstate = function()
 //Movement
@@ -271,6 +275,7 @@ y += vsp;
    {
 	   stateNormal = state_normal
 	   canJump = 10
+	   global.dash_active = false
 }
 }
 
@@ -290,6 +295,8 @@ if (global.sanity > 80) and (bombActive = false)
 if (global.sanity <= 30)and (bombActive = false)
 {
 	walksp += 0.45
+	dash_distance += 30
+    dash_time  += 4
 }
 
 if (place_meeting(x,y,obj_slide))
@@ -341,7 +348,7 @@ if (global.fallspr_deactivate = false)
 
 if (global.fallspr_deactivate = false) and (input_check("left"))
 {
-	sprite_index = spr_player_fall
+	sprite_index = spr_player_fall_left
 }
 
 if (global.fallspr_deactivate = false) and (input_check("right"))
@@ -363,6 +370,8 @@ if (global.snowlvl_freeze = true) and (sprite_index = spr_playernew)
 {
 	sprite_index = spr_player_freeze
 }
+
+
 
 if (global.snowlvl_freeze = true) and (sprite_index = spr_player_escapeidle)
 {
@@ -430,3 +439,4 @@ if (global.bombactive = true)
 {
 	global.fallspr_deactivate = true
 }
+

@@ -38,6 +38,7 @@ global.fallsp = 0
 global.fall_effect_trigger = false
 global.bombactive = false
 global.idlespr_active = false
+global.dash_active = false
 // Sanity and hunger
 
 

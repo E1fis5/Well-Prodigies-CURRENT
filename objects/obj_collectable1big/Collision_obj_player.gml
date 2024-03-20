@@ -17,3 +17,5 @@ if (global.sanity <= 50)
 {
 	score -= 30
 }
+
+global.collectable_destroy = true

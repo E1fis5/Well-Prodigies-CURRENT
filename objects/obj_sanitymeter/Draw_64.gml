@@ -51,7 +51,9 @@ if (global.sanity <= 20)
 {
 	draw_sprite(spr_sanitymeternew,8,8,64)
 	global.sanity = 20
-	time_source_stop(sanityTimerNormal)
+	time_source_pause(sanityTimerNormal)
+	time_source_pause(sanityTimerHard)
+	time_source_pause(sanityTimerSimple)
 }
 
 

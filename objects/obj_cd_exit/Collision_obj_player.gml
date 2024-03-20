@@ -12,4 +12,4 @@ if !instance_exists(obj_transition)
 	audio_stop_sound(snd_lap2)
 	global.isActive = false
 	global.cd_complete = true
-	instance_destroy(obj_lap2_alert);
+	instance_destroy(obj_escape_timer)

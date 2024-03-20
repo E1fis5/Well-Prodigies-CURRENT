@@ -323,8 +323,8 @@
   ],
   "name":"r_ch7",
   "parent":{
-    "name":"cave_hOrROrs",
-    "path":"folders/Rooms/CHAPTER_1/cave_hOrROrs.yy",
+    "name":"cave_horrors",
+    "path":"folders/Rooms/CHAPTER_1/cave_horrors.yy",
   },
   "parentRoom":{
     "name":"r_ch6",

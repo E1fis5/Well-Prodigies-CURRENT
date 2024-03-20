@@ -81,6 +81,7 @@
     {"name":"inst_503EBC07","path":"rooms/r_CaveDwellings_Escape2/r_CaveDwellings_Escape2.yy",},
     {"name":"inst_663EE82D","path":"rooms/r_CaveDwellings_Escape2/r_CaveDwellings_Escape2.yy",},
     {"name":"inst_3D999B77","path":"rooms/r_CaveDwellings_Escape2/r_CaveDwellings_Escape2.yy",},
+    {"name":"inst_FFD186C","path":"rooms/r_CaveDwellings_Escape2/r_CaveDwellings_Escape2.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -279,6 +280,7 @@
         {"$GMRInstance":"","%Name":"inst_503EBC07","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_503EBC07","objectId":{"name":"obj_teleporter_stage2","path":"objects/obj_teleporter_stage2/obj_teleporter_stage2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.7,"scaleY":1.7,"x":2560.0,"y":1474.0,},
         {"$GMRInstance":"","%Name":"inst_663EE82D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_663EE82D","objectId":{"name":"obj_teleporter_broken","path":"objects/obj_teleporter_broken/obj_teleporter_broken.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2990.0,"y":536.0,},
         {"$GMRInstance":"","%Name":"inst_3D999B77","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3D999B77","objectId":{"name":"obj_teleporter_stage2","path":"objects/obj_teleporter_stage2/obj_teleporter_stage2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.7,"scaleY":1.7,"x":1653.0,"y":290.99997,},
+        {"$GMRInstance":"","%Name":"inst_FFD186C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_FFD186C","objectId":{"name":"obj_escapesign_1","path":"objects/obj_escapesign_1/obj_escapesign_1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1376.0,"y":1376.0,},
       ],"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_1","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":100,"SerialiseWidth":244,"TileCompressedData":[
           -11957,-2147483648,-9,0,-235,-2147483648,-10,0,-233,-2147483648,-14,0,-44,-2147483648,-2,0,-184,-2147483648,

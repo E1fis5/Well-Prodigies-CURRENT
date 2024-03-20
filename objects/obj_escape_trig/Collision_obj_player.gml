@@ -41,3 +41,5 @@ if (!instance_exists(obj_escape_timer))
 {
 	instance_create_depth(-999,-999,-9999,obj_escape_timer)
 }
+
+

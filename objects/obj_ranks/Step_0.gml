@@ -39,5 +39,8 @@ if (score >= 0)
 	  sprite_index = spr_ranks_P
    }
 
-
+if (room == rWellhub2 or r_CaveDwellings_shop or r_rank_screen)
+{
+	image_alpha = 0
+}
 
