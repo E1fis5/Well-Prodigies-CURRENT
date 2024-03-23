@@ -7,3 +7,4 @@ if place_meeting(x,y,obj_player) and input_check("up") and !instance_exists(obj_
 	  global.exitShop = false
 }
 
+depth = 401

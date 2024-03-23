@@ -6,6 +6,9 @@ if (input_check_pressed("accept"))
       inst.target_rm = r_CaveDwellings1
 	  global.sanity = 100
 	  global.scoreHider = false
+	  global.escape_transition_end = false
+	  audio_stop_sound(snd_wellhub)
+	  global.gem_counter = 0
 }
 
 if (input_check_pressed("cancel"))

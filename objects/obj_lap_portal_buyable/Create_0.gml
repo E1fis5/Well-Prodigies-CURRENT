@@ -1,1 +1,0 @@
-global.lap_wizard_trigger = false

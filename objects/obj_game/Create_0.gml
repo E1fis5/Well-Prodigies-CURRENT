@@ -27,5 +27,6 @@ global.escapeoverlay_trigger = true
 global.scorebook_active = false
 global.shopitem_bought = false
 global.waterlvl_true = false
+global.lap_wizard_trigger = false
 //Time sources
 

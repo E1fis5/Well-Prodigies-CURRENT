@@ -5,3 +5,5 @@ if place_meeting(x,y,obj_player) and input_check("up") and !instance_exists(obj_
 	  inst.target_y = target_y;
       inst.target_rm = target_rm;
 }
+
+depth = 401

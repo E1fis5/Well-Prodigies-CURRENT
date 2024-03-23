@@ -14,13 +14,14 @@ if (global.hud_destroy = false) and (!instance_exists(obj_health))
 	instance_create_depth(x,y,-8888,obj_health);
 }
 
-if (room == rWellhub2 or r_CaveDwellings_shop or r_rank_screen)
+if (instance_exists(obj_hide_hud))
 {
-	image_alpha = 0
+    visible = false
 }
-
-
-
+else
+{
+	visible = true
+}
 
 
 

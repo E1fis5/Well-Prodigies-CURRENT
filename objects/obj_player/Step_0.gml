@@ -285,6 +285,12 @@ if (global.walksp_boost_active) and (global.bombactive = false)
 	walksp += 0.40
 }
 
+if (sprite_index = spr_player_bomb or spr_player_bomb_escape)
+{
+	global.fallspr_deactivate = true
+}
+
+
 
 //Sanity values
 if (global.sanity > 80) and (bombActive = false)
@@ -295,8 +301,8 @@ if (global.sanity > 80) and (bombActive = false)
 if (global.sanity <= 30)and (bombActive = false)
 {
 	walksp += 0.45
-	dash_distance += 30
-    dash_time  += 4
+	dash_distance = 175
+    dash_time = 17
 }
 
 if (place_meeting(x,y,obj_slide))

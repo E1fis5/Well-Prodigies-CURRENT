@@ -1,11 +1,10 @@
-if (!instance_exists(obj_sanitymeter))
-{
-	time_source_stop(sanityTimerHard)
-	time_source_stop(sanityTimerNormal)
-	time_source_stop(sanityTimerSimple)
-}
 
-if (room == rWellhub2 or r_CaveDwellings_shop or r_rank_screen)
+
+if (instance_exists(obj_hide_hud))
 {
-	image_alpha = 0
+    visible = false
+}
+else
+{
+	visible = true
 }

@@ -3,9 +3,11 @@ if (global.sanity > 40)
 	instance_destroy();
 }
 
-
-if (room == rWellhub2 or r_CaveDwellings_shop)
+if (room = r_CaveDwellings_shop)
 {
-	image_alpha = 0
+    visible = false
 }
-
+if (!room = r_CaveDwellings_shop) and (!room = rWellhub2) and (!room = r_rank_screen)
+{
+    visible = true
+}

@@ -6,10 +6,18 @@ if !instance_exists(obj_transition)
       inst.target_rm = target_rm;
 }
 
-	score = 0
-	global.timer = 0
+
 	audio_stop_sound(snd_escape)
 	audio_stop_sound(snd_lap2)
 	audio_stop_sound(snd_clock_tick)
 	global.isActive = false
 	global.tutorial_blocker = false;
+	instance_destroy(obj_escape_timer)
+	instance_destroy(obj_escape_overlay)
+	instance_destroy(obj_escape_overlay_lap2)
+	audio_stop_sound(snd_tutorial_song)
+	instance_destroy(obj_health)
+	instance_destroy(obj_health_bg)
+	instance_destroy(obj_score)
+
+

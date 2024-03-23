@@ -7,6 +7,8 @@ if (input_check_pressed("accept"))
 	  global.sanity = 100
 	  global.scoreHider = false
 	  instance_destroy();
+	  audio_stop_sound(snd_wellhub)
+	  global.gem_counter = 0
 }
 
 if (input_check_pressed("cancel"))
