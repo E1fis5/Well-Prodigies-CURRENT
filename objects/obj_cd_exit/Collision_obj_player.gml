@@ -18,5 +18,8 @@ if !instance_exists(obj_transition)
 	instance_destroy(obj_health)
 	instance_destroy(obj_health_bg)
 	instance_destroy(obj_score)
+		audio_stop_sound(snd_clock_tick)
+		instance_destroy(obj_lap2_alert)
+		time_source_stop(global.timer_drain)
 	
 	

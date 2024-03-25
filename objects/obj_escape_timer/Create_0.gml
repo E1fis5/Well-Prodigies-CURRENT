@@ -11,5 +11,5 @@ var score_drain = function()
 	score -= 550
 }
 
-timer_drain = time_source_create(time_source_game,1,time_source_units_seconds,score_drain,[],-1);
+global.timer_drain = time_source_create(time_source_game,1,time_source_units_seconds,score_drain,[],-1);
 

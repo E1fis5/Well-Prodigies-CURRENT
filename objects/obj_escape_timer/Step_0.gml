@@ -5,12 +5,12 @@ if (global.timer < 30)
 
 if (global.timer <= 0) {
     
-  time_source_start(timer_drain)
+  time_source_start(global.timer_drain)
 }
 
 if (global.timer >= 0) {
     
-  time_source_pause(timer_drain)
+  time_source_pause(global.timer_drain)
 }
 
 if (global.isActive = true)
@@ -27,7 +27,7 @@ if (sound_timer <= 0) and global.isActive = true {
 if (global.timer <= 0) and score <= 0
 {
 	game_restart();
-	time_source_stop(timer_drain);
+	time_source_stop(global.timer_drain);
 }
 
 // Destroy self if in lobby

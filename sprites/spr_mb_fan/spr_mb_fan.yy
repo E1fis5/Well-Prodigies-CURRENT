@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"level_objects",
-    "path":"folders/Sprites/levels/level_objects.yy",
+    "name":"monkey_business",
+    "path":"folders/Sprites/levels/monkey_business.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

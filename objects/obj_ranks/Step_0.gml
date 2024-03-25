@@ -29,12 +29,12 @@ if (score >= 0)
 	   sprite_index = spr_ranks_S
    }
 
-         if (score >= 22250)
+         if (score >= 21000)
    {
 	  sprite_index = spr_ranks_W
    }
    
-            if (score >= 22250) and (global.rift_taken = true) and (global.gem_counter >= 5) and (global.shopitem_bought = false) and (global.gamemode_hard = true)
+            if (score >= 21000) and (global.rift_taken = true) and (global.gem_counter >= 5) and (global.shopitem_bought = false) and (global.gamemode_hard = true)
    {
 	  sprite_index = spr_ranks_P
    }
