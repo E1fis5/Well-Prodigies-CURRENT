@@ -1,4 +1,4 @@
-global.sanity = 100
+global.sanity = 65
 var sanity_drain = function()
 {
 	global.sanity -= 10

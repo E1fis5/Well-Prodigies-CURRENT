@@ -4,7 +4,7 @@ if (input_check_pressed("accept"))
       inst.target_x = 128
 	  inst.target_y = 448
       inst.target_rm = r_ch
-	  global.sanity = 100
+	  global.sanity = 0
 	  global.scoreHider = false
 	  instance_destroy();
 	  audio_stop_sound(snd_wellhub)

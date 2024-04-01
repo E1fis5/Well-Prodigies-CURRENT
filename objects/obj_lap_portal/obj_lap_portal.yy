@@ -11,8 +11,8 @@
   "name":"obj_lap_portal",
   "overriddenProperties":[],
   "parent":{
-    "name":"game_core",
-    "path":"folders/Objects/game_core.yy",
+    "name":"lapping",
+    "path":"folders/Objects/lapping.yy",
   },
   "parentObjectId":{
     "name":"obj_targetExit",

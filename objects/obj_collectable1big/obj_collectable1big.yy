@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_collectable1big",
-    "path":"sprites/spr_collectable1big/spr_collectable1big.yy",
+    "name":"spr_collectable1_medium",
+    "path":"sprites/spr_collectable1_medium/spr_collectable1_medium.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -4,7 +4,7 @@ if (input_check_pressed("accept"))
       inst.target_x = 980
 	  inst.target_y = 980
       inst.target_rm = r_CaveDwellings1
-	  global.sanity = 100
+	  global.sanity = 65
 	  global.scoreHider = false
 	  global.escape_transition_end = false
 	  audio_stop_sound(snd_wellhub)

@@ -18,7 +18,7 @@ global.timer += time_amount
 
 instance_destroy();
 
-score += 1600
+score += 2500
 
 global.lap2_active = true
 
@@ -36,3 +36,13 @@ if (global.escapeoverlay_trigger = true)
 }
 
 time_source_start(lap2_drain)
+
+if (!instance_exists(obj_Lwiz_mini))
+{
+	instance_create_depth(-999,-999,399,obj_Lwiz_mini);
+}
+
+if (!instance_exists(obj_lap_boost_sign))
+{
+	instance_create_depth(-999,-999,401,obj_lap_boost_sign);
+}

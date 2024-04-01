@@ -1,6 +1,6 @@
 if (!global.isActive) {
     global.isActive = true;
-    global.timer = 260
+    global.timer = 250
 }
 
 if (!audio_played) and (global.sanity >=30) {
@@ -25,11 +25,11 @@ if (!audio_played) and global.sanity <= 40 {
 
 if (global.gamemode_easy = true)
 {
-    global.timer = 280
+    global.timer = 270
 }
 if (global.gamemode_hard = true)
 {
-    global.timer = 220
+    global.timer = 210
 }
 
 if (!global.escape_transition_end) and (!instance_exists(obj_escape_transition))

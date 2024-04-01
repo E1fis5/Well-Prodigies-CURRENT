@@ -1,0 +1,43 @@
+{
+  "$GMObject":"",
+  "%Name":"obj_char_switcher",
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"obj_char_switcher",
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_menubutton_parent","path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",},"propertyId":{"name":"button_text","path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Char = Jack",},
+  ],
+  "parent":{
+    "name":"mainmenu_buttons",
+    "path":"folders/Objects/mainmenu_buttons.yy",
+  },
+  "parentObjectId":{
+    "name":"obj_menubutton_parent",
+    "path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",
+  },
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":{
+    "name":"spr_menu_button",
+    "path":"sprites/spr_menu_button/spr_menu_button.yy",
+  },
+  "spriteMaskId":null,
+  "visible":true,
+}

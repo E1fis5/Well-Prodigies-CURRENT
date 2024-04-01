@@ -9,8 +9,8 @@
   "name":"obj_lap2_into",
   "overriddenProperties":[],
   "parent":{
-    "name":"escape_slash_rift",
-    "path":"folders/Objects/escape_slash_rift.yy",
+    "name":"lapping",
+    "path":"folders/Objects/lapping.yy",
   },
   "parentObjectId":null,
   "persistent":true,

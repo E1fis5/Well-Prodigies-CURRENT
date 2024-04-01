@@ -1,3 +1,3 @@
-target_x = 2048
-target_y = 896
+target_x = 1920
+target_y = 992
 target_rm = r_MonkeyBusiness2

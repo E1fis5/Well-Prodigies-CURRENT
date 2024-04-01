@@ -39,6 +39,8 @@ global.fall_effect_trigger = false
 global.bombactive = false
 global.idlespr_active = false
 global.dash_active = false
+global.totalkills = 0
+global.jestraught_dash_walksp_add = 0
 // Sanity and hunger
 
 
@@ -125,15 +127,15 @@ if sprite_index = spr_player_left
 
 if sprite_index = spr_playerwalkleft
 {
-	grv = 0.07
+	grv = 0.065
 }
 
 if sprite_index = spr_playerwalk
 {
-	grv = 0.07
+	grv = 0.065
 }
 
-if (sprite_index = spr_player_fall)
+if (sprite_index = spr_player_fall) 
 {
 	grv = 0.07
 }
