@@ -1,0 +1,1 @@
+global.keycard_blocker_destroy = false

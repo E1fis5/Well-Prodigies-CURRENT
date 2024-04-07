@@ -294,7 +294,7 @@
   "name":"r_MonkeyBusiness_p1_1",
   "parent":{
     "name":"path1",
-    "path":"folders/Rooms/CHAPTER_1/monkey_buisness/path2/path1.yy",
+    "path":"folders/Rooms/CHAPTER_1/monkey_buisness/path1.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

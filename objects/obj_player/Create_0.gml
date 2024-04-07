@@ -41,6 +41,9 @@ global.idlespr_active = false
 global.dash_active = false
 global.totalkills = 0
 global.jestraught_dash_walksp_add = 0
+global.dJump_active = false
+global.dJump_idle = false
+global.particle_start = false
 // Sanity and hunger
 
 
@@ -70,6 +73,7 @@ if (onwall != 0) && (!onground) && (input_check("jump"))
 	hsp = -onwall * hsp_wjump;
 	vsp = vsp_wjump;
 	audio_play_sound(snd_stone1,5,false)
+		can_dash = true;
 }
 
 //Vertical Movement
@@ -94,6 +98,7 @@ if (canJump-- > 0) and (input_check_pressed("jump"))
 	canCrawl = 1
 	global.fallspr_deactivate = true
 	global.grv_0 = false
+	global.particle_start = false
 }
 
 
@@ -114,41 +119,7 @@ if (input_check("run") = false) and (input_check("jump") = true) and (grv = -1 =
 {
 	grv = 0.07
 }
-//Sprite Gravity
-if sprite_index = spr_playernew
-{
-	grv = 0.07
-}
 
-if sprite_index = spr_player_left
-{
-	grv = 0.07
-}
-
-if sprite_index = spr_playerwalkleft
-{
-	grv = 0.065
-}
-
-if sprite_index = spr_playerwalk
-{
-	grv = 0.065
-}
-
-if (sprite_index = spr_player_fall) 
-{
-	grv = 0.07
-}
-
-if (sprite_index = spr_player_bomb)
-{
-	grv = -1
-}
-
-if (sprite_index = spr_player_bomb_escape)
-{
-	grv = -1
-}
 
 //Double Jump
 if (jump_allowed = true) and (input_check_pressed("jump")) and (onground = false)
@@ -159,6 +130,11 @@ if (jump_allowed = true) and (input_check_pressed("jump")) and (onground = false
 	jump_allowed = false;
 	can_dash = true
 	canCrawl = 1
+	global.dJump_active = true
+	global.particle_start = false
+
+
+
 
 with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 {
@@ -179,6 +155,7 @@ if (place_meeting(x + hsp, y, obj_collision_wall))
 }
 
 x += hsp;
+
 
 if (place_meeting(x, y + vsp, obj_collision_wall))
 {
@@ -209,12 +186,6 @@ if (!onground)
 {
 	canCrawl = 1
 }
-
-if (onwall = true)
-{
-	can_dash = true
-}
-
 
 //Change direction in animation
 if input_check("left")
@@ -284,6 +255,7 @@ state_FastFall = function()
 	vsp = 10
 	global.fallspr_deactivate = true
 	FastFall = true
+	global.dJump_active = false
 }           
 }
 
