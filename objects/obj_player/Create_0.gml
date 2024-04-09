@@ -9,6 +9,7 @@ vspDJump = -9
 vsp_wjump = -5;
 vsp_max_wall = 4;
 canJump = 0
+global.dJump_idle = false
 runsp = 5.5;
 airTime = 0;
 onwall = 0;
@@ -41,12 +42,8 @@ global.idlespr_active = false
 global.dash_active = false
 global.totalkills = 0
 global.jestraught_dash_walksp_add = 0
-global.dJump_active = false
-global.dJump_idle = false
 global.particle_start = false
 // Sanity and hunger
-
-
 draw_sprite_on_contact = false;
 contact_sprite = spr_lap2_graph
 global.isActive = false;
@@ -59,6 +56,8 @@ dash_distance = 125
 dash_time = 15
 bombActive = false
 global.fall_effect_destroy = false
+global.dJump_active = false
+global.gravity_force = 0;
 //States
 state_normal = function()
 {

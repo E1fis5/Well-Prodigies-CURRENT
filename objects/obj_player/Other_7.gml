@@ -1,6 +1,4 @@
-//Ext anim
-if (sprite_index = spr_player_idle_extended_1)
+if (sprite_index = spr_player_gem_collect) and (global.dJump_active = true) and (onground = false)
 {
-	sprite_index = spr_player_extended_idle_2
+	global.dJump_idle = true
 }
-

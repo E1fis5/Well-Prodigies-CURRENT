@@ -10,6 +10,7 @@ var _Attack = keyboard_check_pressed(ord("X"))
 var prevX = x;
 var prevY = y;
 
+
 //Normal State
 stateNormal();
 
@@ -593,14 +594,25 @@ if (global.totalkills >= 1) and (!instance_exists(obj_kills_meter))
 	instance_create_depth(-999,-999,-10001,obj_kills_meter)
 }
 // Djump sprite
-if (global.dJump_active = true) and (onground = false)
+if (global.dJump_active = true) and (onground = false) and (!global.dJump_idle = true)
 {
 	sprite_index = spr_player_gem_collect;
 	if (player_left = true)
 	{
 		sprite_index = spr_gem_collect_left;
+	
+	if (global.dJump_idle = true)
+	{
+		sprite_index = spr_player_gem_collect_idle
+		if (player_left = true)
+		{
+			sprite_index = spr_gem_collect_idle_left
+		}
+	}
 	}
 }
+
+
 
 if onground = true
 {
