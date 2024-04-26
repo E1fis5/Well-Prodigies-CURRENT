@@ -1,4 +1,4 @@
-global.hypothermia_amount = 150
+global.hypothermia_amount = 100
 var freeze_drain = function()
 {
 	global.hypothermia_amount -= 10

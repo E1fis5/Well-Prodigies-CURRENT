@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":0.470204,
   "name":"snd_pJump",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_pJump.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.69,
 }
