@@ -1,5 +1,5 @@
 {
-  "FolderOrderSettings": [
+  "FolderOrderSettings":[
     {"name":"Extensions","order":96,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":92,"path":"folders/Fonts.yy",},
     {"name":"group1","order":98,"path":"folders/group1.yy",},
@@ -150,7 +150,7 @@
     {"name":"rift","order":20,"path":"folders/Tile Sets/rift.yy",},
     {"name":"Timelines","order":5,"path":"folders/Tile Sets/Timelines.yy",},
   ],
-  "ResourceOrderSettings": [
+  "ResourceOrderSettings":[
     {"name":"ft_menu_new","order":2,"path":"fonts/ft_menu_new/ft_menu_new.yy",},
     {"name":"ft_score","order":1,"path":"fonts/ft_score/ft_score.yy",},
     {"name":"n_milestones","order":1,"path":"notes/n_milestones/n_milestones.yy",},
