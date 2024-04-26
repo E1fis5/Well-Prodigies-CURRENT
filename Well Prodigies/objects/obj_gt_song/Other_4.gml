@@ -1,0 +1,3 @@
+audio_play_sound(snd_gt_music,8,true)
+
+instance_destroy();
