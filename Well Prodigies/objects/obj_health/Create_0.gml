@@ -1,5 +1,0 @@
-global.health = 6
-
-
-
-
