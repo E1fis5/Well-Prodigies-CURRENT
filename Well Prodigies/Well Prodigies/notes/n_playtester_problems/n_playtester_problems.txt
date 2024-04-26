@@ -1,3 +1,0 @@
-- Stairs
-- Camera Lock
-- 

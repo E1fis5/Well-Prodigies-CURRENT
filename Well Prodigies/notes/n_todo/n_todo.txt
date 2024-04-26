@@ -1,7 +1,0 @@
-- Code wall climb (finsished)
-- Code ground pound
-- Code Crouch (finished)
-- Code attack
-- Make attack and wallclimb sprite
-- Make rift room (finished)
-- Make rift tiles
