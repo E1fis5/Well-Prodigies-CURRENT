@@ -1,0 +1,1 @@
+global.collectable_destroy = false

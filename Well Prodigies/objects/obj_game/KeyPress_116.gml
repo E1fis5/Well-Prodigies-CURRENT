@@ -1,0 +1,1 @@
+global.isActive = true

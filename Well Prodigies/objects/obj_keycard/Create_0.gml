@@ -1,0 +1,1 @@
+global.keycard_collected = false
