@@ -1,0 +1,1 @@
+draw_text(30,335,global.totalkills)

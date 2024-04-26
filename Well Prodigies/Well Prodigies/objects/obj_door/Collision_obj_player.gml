@@ -1,0 +1,1 @@
+draw_sprite(spr_door_notif,1,x,y)
