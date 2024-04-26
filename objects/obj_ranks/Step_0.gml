@@ -47,3 +47,10 @@ else
 {
 	visible = true
 }
+
+depth = -9998;
+
+if (!instance_exists(obj_rank_cover)) 
+{
+	instance_create_depth(-999,-999,-9999,obj_rank_cover);
+}

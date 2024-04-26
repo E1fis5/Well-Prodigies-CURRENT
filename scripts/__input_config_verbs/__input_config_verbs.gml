@@ -28,6 +28,7 @@ function __input_config_verbs()
 			dash:    [input_binding_key("C"), input_binding_key("F")],
 			W:  input_binding_key("W"),
 			P:  input_binding_key("P"),
+			attack: input_binding_key("X"),
             
             //No aiming verbs since we use the mouse for that (see below for aiming verb examples)
             shoot: input_binding_mouse_button(mb_left),

@@ -37,6 +37,7 @@ if (global.escapeoverlay_trigger = true)
 
 time_source_start(lap2_drain)
 
+
 if (!instance_exists(obj_Lwiz_mini))
 {
 	instance_create_depth(-999,-999,399,obj_Lwiz_mini);

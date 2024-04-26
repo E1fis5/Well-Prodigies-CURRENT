@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"effects",
-    "path":"folders/Objects/collectables/effects.yy",
+    "path":"folders/Objects/effects.yy",
   },
   "parentObjectId":null,
   "persistent":true,

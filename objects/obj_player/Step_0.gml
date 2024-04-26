@@ -20,9 +20,10 @@ state_crawl();
 if (global.jestraught_player = true)
 {
 	state_crawl = false
-	Dashstate = Dashstate_jestraught
 	state_FastFall = false
 }
+
+
 //Run
 if  input_check("run") = true
 {
@@ -187,6 +188,11 @@ if sprite_index = spr_player_bomb or grv = -1
 	can_dash = true
 	dash_distance = 260
 	dash_time = 19
+	if (input_check("dash"))
+	{
+		 instance_create_depth(x,y,399,obj_bomb_explosion);
+		 audio_play_sound(snd_bomb_explosion,5,false);
+	}
 }
 
 if global.isActive = true and sprite_index = spr_player_bomb
@@ -208,7 +214,7 @@ if (room == rWellhub2) && sprite_index = spr_player_escapeidle
 state_FastFall();
 
 
-if (sprite_index = spr_player_downp) and (place_meeting(x,y,obj_collision_wall))
+if (sprite_index = spr_player_downp) and (onground = true)
 {
 	sprite_index = spr_playernew
 }
@@ -268,20 +274,24 @@ if (can_dash) and (input_check_pressed("dash"))
 	dash_energy = dash_distance;
 	stateNormal = Dashstate
 	sprite_index = spr_player_dash
-	dash_distance = 135
-    dash_time = 16
+	dash_distance = 140
+    dash_time = 15
 	grv = 0
 	global.dJump_active = false
 	audio_play_sound(snd_dash_p,8,false)
 	global.dash_active = true
 	global.particle_start = false
-	instance_destroy(obj_speed_particle_fast)
+	
 	{
 		if (player_left = true)
 		{
 			sprite_index = spr_player_dash_left
 			global.fallspr_deactivate = true
 			global.dash_active = true
+		}
+		if (global.jestraught_player = true)
+		{
+			sprite_index = spr_jestraught_dash;
 		}
 }
 } 
@@ -329,17 +339,18 @@ if (place_meeting(x, y + vsp, obj_collision_wall))
 	}
     vsp = 0;
 }
-y += vsp;
-}
+y += vsp;           
 //Dash end
    dash_energy -= dash_sp
    if (dash_energy <= 0)
    {
 	   stateNormal = state_normal
 	   canJump = 10
-	   global.dash_active = false
+	   global.dash_active = false;
    }
 }
+}
+
 //Dash breakable
 
 
@@ -360,7 +371,7 @@ if (sprite_index = spr_player_bomb or spr_player_bomb_escape)
 if (global.sanity >= 70) and (bombActive = false)
 {
 	walksp += 0.45
-	dash_distance = 155
+	dash_distance = 160
     dash_time = 17
 	
 }
@@ -368,7 +379,7 @@ if (global.sanity >= 70) and (bombActive = false)
 if (global.sanity <= 30)and (bombActive = false)
 {
 	walksp += 0.35
-	dash_distance = 145
+	dash_distance = 150
     dash_time = 16
 }
 
@@ -426,11 +437,13 @@ if sprite_index = spr_playerwalk
 if (sprite_index = spr_player_fall) 
 {
 	grv = 0.07
+	walksp = 5.65
 }
 
 if (sprite_index = spr_player_fall_left)
 {
 	grv = 0.07
+	walksp = 5.65
 }
 
 if (sprite_index = spr_player_bomb)
@@ -614,6 +627,7 @@ if (global.dJump_active = true) and (onground = false) and (!global.dJump_idle =
 
 
 
+
 if onground = true
 {
     global.dJump_active = false
@@ -625,4 +639,20 @@ if (onwall = true)
 	global.dJump_active = false
 }
 
-//Speed Particle
+//Game over
+if (global.timer <= 0) and score <= 0 and (instance_exists(obj_escape_timer))
+{
+   game_restart()
+}
+
+//Power Crawl
+if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
+{
+	walksp = 9.3;
+	time_source_start(timer_power_crawl);
+}
+else
+	{
+		time_source_pause(timer_power_crawl);
+	}
+

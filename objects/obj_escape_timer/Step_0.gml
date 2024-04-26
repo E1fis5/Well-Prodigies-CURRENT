@@ -3,15 +3,16 @@ if (global.timer < 30)
 	sprite_index = spr_timer_broken
 }
 
-if (global.timer <= 0) {
-    
-  time_source_start(global.timer_drain)
+if (global.timer = 0) and (global.isActive = true)
+{
+   time_source_start(global.timer_drain);
+}
+else
+{
+	time_source_stop(global.timer_drain);
 }
 
-if (global.timer >= 0) {
-    
-  time_source_pause(global.timer_drain)
-}
+
 
 if (global.isActive = true)
 {
@@ -24,11 +25,6 @@ if (sound_timer <= 0) and global.isActive = true {
     sound_timer = room_speed * waitTime; // Reset the timer
 }
 
-if (global.timer <= 0) and score <= 0
-{
-	game_restart();
-	time_source_stop(global.timer_drain);
-}
 
 // Destroy self if in lobby
 if (room == rWellhub2)

@@ -10,9 +10,11 @@ vsp_wjump = -5;
 vsp_max_wall = 4;
 canJump = 0
 global.dJump_idle = false
+global.health = 0;
 runsp = 5.5;
 airTime = 0;
 onwall = 0;
+global.dash_jump_active = false;
 jumpbuffer = 0;
 walljumpdelay = 0;
 walljumpdelay_max = 17;
@@ -58,6 +60,33 @@ bombActive = false
 global.fall_effect_destroy = false
 global.dJump_active = false
 global.gravity_force = 0;
+global.timer = 0
+global.dash_jump_active = false;
+global.gamemode_hard = true;
+global.gamemode_easy = false;
+global.gamemode_normal = false;
+//Achevivemnets
+global.ach_emeralds = false;
+global.ach_Sec_cd = false;
+//GT values
+global.torch_active = false
+
+//Power crawl
+var power_crawl_damage = function()
+{
+	score -= 75
+	audio_play_sound(snd_player_hurt,6,false);
+	if (global.gamemode_hard = true)
+	{
+		global.health -= 0.5;
+	}
+}
+//Power crawl timer
+timer_power_crawl = time_source_create(time_source_game,2,time_source_units_seconds,power_crawl_damage,[],-1);
+
+
+
+
 //States
 state_normal = function()
 {

@@ -23,3 +23,7 @@ if !instance_exists(obj_transition)
 		time_source_stop(global.timer_drain)
 	
 	
+if (global.ach_emeralds = false) and (global.gem_counter = 5)
+{
+	global.ach_emeralds = true;
+}

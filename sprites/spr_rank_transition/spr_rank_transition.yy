@@ -56,7 +56,7 @@
   "origin":0,
   "parent":{
     "name":"rank_screen",
-    "path":"folders/Sprites/rank_screen.yy",
+    "path":"folders/Sprites/menu/rank_screen.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

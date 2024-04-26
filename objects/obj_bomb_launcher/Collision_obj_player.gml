@@ -8,6 +8,7 @@ if (!audio_played)
    audio_played = true;
    audio_stop_sound(snd_goober_Run);
    audio_played_mutiple = true
+    instance_create_depth(x,y,399,obj_bomb_explosion);
 }
 
 	

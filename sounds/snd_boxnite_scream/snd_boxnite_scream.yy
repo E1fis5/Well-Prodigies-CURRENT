@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_boxnite_scream.mp3",
   "type":0,
-  "volume":0.39,
+  "volume":0.29,
 }
