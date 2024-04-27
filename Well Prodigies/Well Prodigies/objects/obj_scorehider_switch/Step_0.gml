@@ -1,5 +1,0 @@
-global.scoreHider = true;
-
-
-
-

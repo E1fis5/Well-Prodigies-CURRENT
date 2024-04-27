@@ -1,6 +1,0 @@
-global.exitShop = false
-
-
-
-
-

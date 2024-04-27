@@ -1,1 +1,0 @@
-audio_pause_sound(snd_menu_festive)

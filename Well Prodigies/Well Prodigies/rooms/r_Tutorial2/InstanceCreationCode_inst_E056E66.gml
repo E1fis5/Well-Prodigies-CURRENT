@@ -1,3 +1,0 @@
-target_x = 160
-target_y = 608
-target_rm = r_Tutorial3
