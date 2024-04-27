@@ -1,1 +1,1 @@
-draw_sprite(sprite_index,image_index,120,120)
+draw_sprite(sprite_index,image_index,40,360)
