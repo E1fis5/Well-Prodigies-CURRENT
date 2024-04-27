@@ -101,6 +101,7 @@
     {"name":"inst_623479DD","path":"rooms/rWellhub2/rWellhub2.yy",},
     {"name":"inst_3967CA69","path":"rooms/rWellhub2/rWellhub2.yy",},
     {"name":"inst_67C28CF6","path":"rooms/rWellhub2/rWellhub2.yy",},
+    {"name":"inst_16DCEAF3","path":"rooms/rWellhub2/rWellhub2.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -811,6 +812,7 @@
         {"$GMRInstance":"","%Name":"inst_20BE7043","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_20BE7043","objectId":{"name":"obj_gt_gate","path":"objects/obj_gt_gate/obj_gt_gate.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.5,"scaleY":1.5,"x":1120.0,"y":1312.0,},
         {"$GMRInstance":"","%Name":"inst_17BE17A8","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_17BE17A8","objectId":{"name":"obj_targetExit","path":"objects/obj_targetExit/obj_targetExit.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.5,"scaleY":1.0,"x":1024.0,"y":2048.0,},
         {"$GMRInstance":"","%Name":"inst_3967CA69","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3967CA69","objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1856.0,"y":832.0,},
+        {"$GMRInstance":"","%Name":"inst_16DCEAF3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_16DCEAF3","objectId":{"name":"obj_gt_gate","path":"objects/obj_gt_gate/obj_gt_gate.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.5,"scaleY":1.5,"x":992.0,"y":704.0,},
       ],"layers":[],"name":"Player_and_misc","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_3","depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":132,"SerialiseWidth":263,"TileCompressedData":[
           -1863,-2147483648,16,2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,-247,-2147483648,16,6,7,6,7,6,7,6,7,6,7,6,7,6,7,

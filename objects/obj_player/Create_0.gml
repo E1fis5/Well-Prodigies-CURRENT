@@ -45,6 +45,7 @@ global.dash_active = false
 global.totalkills = 0
 global.jestraught_dash_walksp_add = 0
 global.particle_start = false
+global.durabilty = 0
 // Sanity and hunger
 draw_sprite_on_contact = false;
 contact_sprite = spr_lap2_graph

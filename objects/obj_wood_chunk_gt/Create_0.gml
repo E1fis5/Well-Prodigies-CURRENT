@@ -1,0 +1,1 @@
+global.wood_sparked = false
