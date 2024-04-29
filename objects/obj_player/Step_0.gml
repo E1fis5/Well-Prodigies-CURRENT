@@ -49,8 +49,8 @@ if input_check("run") = true && input_check("down")
 //Mini wizard
 if (instance_exists(obj_Lwiz_mini))
 {
-	walksp += 0.6
-		dash_distance = 185
+	walksp += 0.75
+		dash_distance = 195
     dash_time = 18
 }
 	
@@ -434,7 +434,7 @@ if sprite_index = spr_playerwalk
 	grv = 0.065
 }
 
-if (sprite_index = spr_player_fall) 
+if (sprite_index = spr_player_fall)
 {
 	grv = 0.07
 	walksp = 5.65
