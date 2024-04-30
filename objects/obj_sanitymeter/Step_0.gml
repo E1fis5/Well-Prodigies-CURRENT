@@ -8,3 +8,8 @@ else
 {
 	visible = true
 }
+
+if (global.sanity > 100)
+{
+	global.sanity = 100;
+}

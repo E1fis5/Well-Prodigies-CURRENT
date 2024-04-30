@@ -223,6 +223,7 @@ if (sprite_index = spr_player_downp) and (onground = true)
 if (place_meeting(x,y,obj_ladder_wood) and (input_check("up") = true))
 {
 	grv = -2
+	sprite_index = spr_player1
 }
 
 if (place_meeting(x,y,obj_ladder_wood) and (input_check("up") = false))
@@ -460,8 +461,6 @@ if (sprite_index = spr_player_gem_collect)
 {
 	grv = 0.07
 }
-
-
  
 
 
