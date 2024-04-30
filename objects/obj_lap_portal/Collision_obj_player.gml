@@ -18,7 +18,7 @@ global.timer += time_amount
 
 instance_destroy();
 
-score += 2500
+score += score_add;
 
 global.lap2_active = true
 
