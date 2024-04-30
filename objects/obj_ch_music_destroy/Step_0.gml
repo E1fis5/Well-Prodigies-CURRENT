@@ -1,4 +1,4 @@
-audio_stop_sound(snd_music_ch1)
+audio_pause_sound(snd_music_ch1)
 
 
 
