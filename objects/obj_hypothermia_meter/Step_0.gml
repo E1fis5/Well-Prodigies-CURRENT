@@ -6,12 +6,13 @@ if (global.torch_active = true)
 {
     time_source_start(timesource_freeze);
 	time_source_stop(timesource_freeze_no_torch);
-	if (global.torch_active = false)
-	{
+}
+else
+{
 		time_source_start(timesource_freeze_no_torch);
 		time_source_stop(timesource_freeze);
-	}
 }
+
 
 if (global.hypothermia_amount = 300)
 {
