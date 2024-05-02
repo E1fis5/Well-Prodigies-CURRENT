@@ -17,5 +17,5 @@ if (global.gamemode_easy = true)
 
 if (global.gamemode_hard = true)
 {
-	global.timer_rift = 80
+	global.timer_rift = 45
 }

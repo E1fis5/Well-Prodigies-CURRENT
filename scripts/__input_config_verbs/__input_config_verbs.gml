@@ -49,7 +49,7 @@ function __input_config_verbs()
             special: input_binding_gamepad_button(gp_face4),
 			run:     [input_binding_gamepad_button(gp_shoulderr), input_binding_gamepad_button(gp_shoulderrb)],
 			dash:     [input_binding_gamepad_button(gp_shoulderlb), input_binding_gamepad_button(gp_shoulderl)],
-            
+            attack: input_binding_gamepad_button(gp_face4),
             aim_up:    input_binding_gamepad_axis(gp_axisrv, true),
             aim_down:  input_binding_gamepad_axis(gp_axisrv, false),
             aim_left:  input_binding_gamepad_axis(gp_axisrh, true),

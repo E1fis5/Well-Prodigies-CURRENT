@@ -104,6 +104,7 @@
     {"name":"inst_6F21B9A4","path":"rooms/r_GT_escape3/r_GT_escape3.yy",},
     {"name":"inst_2D0AC817","path":"rooms/r_GT_escape3/r_GT_escape3.yy",},
     {"name":"inst_33D70A2C","path":"rooms/r_GT_escape3/r_GT_escape3.yy",},
+    {"name":"inst_70FEEF25","path":"rooms/r_GT_escape3/r_GT_escape3.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -1368,6 +1369,7 @@
         {"$GMRInstance":"","%Name":"inst_368068AC","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_368068AC","objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":256.0,"y":224.0,},
         {"$GMRInstance":"","%Name":"inst_7456790F","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7456790F","objectId":{"name":"obj_targetExit","path":"objects/obj_targetExit/obj_targetExit.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":3.0,"x":3936.0,"y":1632.0,},
         {"$GMRInstance":"","%Name":"inst_BC57FAC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_BC57FAC","objectId":{"name":"obj_zombie1","path":"objects/obj_zombie1/obj_zombie1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1536.0,"y":1856.0,},
+        {"$GMRInstance":"","%Name":"inst_70FEEF25","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_70FEEF25","objectId":{"name":"obj_wood_chunk_gt","path":"objects/obj_wood_chunk_gt/obj_wood_chunk_gt.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2883.0,"y":1455.0,},
       ],"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":7.0,"animationSpeedType":0,"colour":4284900966,"depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_tundra_bg","path":"sprites/spr_tundra_bg/spr_tundra_bg.yy",},"stretch":true,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

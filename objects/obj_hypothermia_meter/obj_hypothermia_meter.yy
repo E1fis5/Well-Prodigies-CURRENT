@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_oxygen_meter",
-    "path":"sprites/spr_oxygen_meter/spr_oxygen_meter.yy",
+    "name":"spr_gt_temp_bar1",
+    "path":"sprites/spr_gt_temp_bar1/spr_gt_temp_bar1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

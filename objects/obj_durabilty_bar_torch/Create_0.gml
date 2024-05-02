@@ -1,1 +1,1 @@
-global.durabilty = 22
+global.durabilty = 20
