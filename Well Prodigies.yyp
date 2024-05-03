@@ -262,7 +262,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"Well Prodigies",
   "resources":[
@@ -504,6 +504,7 @@
     {"id":{"name":"obj_teleporter_active","path":"objects/obj_teleporter_active/obj_teleporter_active.yy",},},
     {"id":{"name":"obj_teleporter_broken","path":"objects/obj_teleporter_broken/obj_teleporter_broken.yy",},},
     {"id":{"name":"obj_teleporter_stage2","path":"objects/obj_teleporter_stage2/obj_teleporter_stage2.yy",},},
+    {"id":{"name":"obj_temp_freeze2","path":"objects/obj_temp_freeze2/obj_temp_freeze2.yy",},},
     {"id":{"name":"obj_text_normalmode","path":"objects/obj_text_normalmode/obj_text_normalmode.yy",},},
     {"id":{"name":"obj_timespace_portal","path":"objects/obj_timespace_portal/obj_timespace_portal.yy",},},
     {"id":{"name":"obj_timeup_box","path":"objects/obj_timeup_box/obj_timeup_box.yy",},},
@@ -528,7 +529,6 @@
     {"id":{"name":"obj_zombie1","path":"objects/obj_zombie1/obj_zombie1.yy",},},
     {"id":{"name":"obj_zombie2_big","path":"objects/obj_zombie2_big/obj_zombie2_big.yy",},},
     {"id":{"name":"Object220","path":"objects/Object220/Object220.yy",},},
-    {"id":{"name":"obj_temp_freeze2","path":"objects/obj_temp_freeze2/obj_temp_freeze2.yy",},},
     {"id":{"name":"playtest_text","path":"objects/playtest_text/playtest_text.yy",},},
     {"id":{"name":"r_at1","path":"rooms/r_at1/r_at1.yy",},},
     {"id":{"name":"r_CaveDwellings_Checkpoint","path":"rooms/r_CaveDwellings_Checkpoint/r_CaveDwellings_Checkpoint.yy",},},

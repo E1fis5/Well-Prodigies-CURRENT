@@ -10,8 +10,8 @@
   "managed":true,
   "name":"obj_tutorial_select",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_menubutton_parent","path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",},"propertyId":{"name":"button_text","path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Tutorial",},
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_mb_play_button","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},"propertyId":{"name":"button_text1","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Tutorial",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_menubutton_parent","path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",},"propertyId":{"name":"button_text","path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Tutorial",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_mb_play_button","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},"propertyId":{"name":"button_text1","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Tutorial",},
   ],
   "parent":{
     "name":"Objects",

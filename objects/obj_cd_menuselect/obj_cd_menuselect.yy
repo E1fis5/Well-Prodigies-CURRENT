@@ -10,7 +10,7 @@
   "managed":true,
   "name":"obj_cd_menuselect",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_mb_play_button","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},"propertyId":{"name":"button_text1","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Cave Dwellings",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_mb_play_button","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},"propertyId":{"name":"button_text1","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Cave Dwellings",},
   ],
   "parent":{
     "name":"cave_dwellings_stuff",
