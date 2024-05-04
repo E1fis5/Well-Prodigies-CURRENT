@@ -415,8 +415,8 @@
   ],
   "name":"r_GT_escape5",
   "parent":{
-    "name":"escapes",
-    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/escapes.yy",
+    "name":"cabin",
+    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/cabin.yy",
   },
   "parentRoom":{
     "name":"r_parent",

@@ -1,1 +1,1 @@
-draw_text(x,y,walksp)
+draw_text(x,y,fps_real);

@@ -1,3 +1,3 @@
-target_x = 480
-target_y = 3968
-target_rm = r_GT_escape5
+target_x = 192
+target_y = 928
+target_rm = r_GT_cabin

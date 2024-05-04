@@ -24,3 +24,16 @@ if (instance_exists(obj_temp_freeze2)) and (global.torch_active = true)
 	time_source_start(timesource_freeze2);
 	time_source_stop(timesource_freeze);
 }
+
+if (global.hypothermia_amount = 0)
+{
+        time_source_start(timesource_freeze_penalty);
+		time_source_pause(timesource_freeze2);
+		time_source_pause(timesource_freeze);
+		time_source_pause(timesource_freeze_no_torch);
+		image_index = 30;
+}
+else
+{
+	time_source_pause(timesource_freeze_penalty);
+}

@@ -71,7 +71,7 @@ global.ach_emeralds = false;
 global.ach_Sec_cd = false;
 //GT values
 global.torch_active = false
-
+global.hypothermia_amount = 0
 //Power crawl
 var power_crawl_damage = function()
 {
