@@ -3,9 +3,10 @@
   "%Name":"ts_gt_cabin",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":0,
-    "SerialiseWidth":0,
-    "TileSerialiseData":[],
+    "SerialiseHeight":24,
+    "SerialiseWidth":11,
+    "TileCompressedData":[-165,0,-99,454,],
+    "TileDataFormat":1,
   },
   "name":"ts_gt_cabin",
   "out_columns":32,

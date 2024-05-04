@@ -12,7 +12,7 @@ var freeze_penalty = function()
 	image_index = 30;
 }
 
-timesource_freeze = time_source_create(time_source_game,0.1,time_source_units_seconds,freeze_drain,[],-1)
+timesource_freeze = time_source_create(time_source_game,5.5,time_source_units_seconds,freeze_drain,[],-1)
 timesource_freeze_no_torch = time_source_create(time_source_game,25,time_source_units_seconds,freeze_drain,[],-1)
 timesource_freeze2 = time_source_create(time_source_game,3.5,time_source_units_seconds,freeze_drain,[],-1)
 timesource_freeze_penalty = time_source_create(time_source_game,2,time_source_units_seconds,freeze_penalty,[],-1)

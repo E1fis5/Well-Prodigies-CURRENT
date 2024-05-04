@@ -1159,6 +1159,7 @@
     {"id":{"name":"spr_goldcollectablebig","path":"sprites/spr_goldcollectablebig/spr_goldcollectablebig.yy",},},
     {"id":{"name":"spr_gorilla","path":"sprites/spr_gorilla/spr_gorilla.yy",},},
     {"id":{"name":"spr_gt_cabin_outside","path":"sprites/spr_gt_cabin_outside/spr_gt_cabin_outside.yy",},},
+    {"id":{"name":"spr_gt_cabin_roof_busted","path":"sprites/spr_gt_cabin_roof_busted/spr_gt_cabin_roof_busted.yy",},},
     {"id":{"name":"spr_gt_gate","path":"sprites/spr_gt_gate/spr_gt_gate.yy",},},
     {"id":{"name":"spr_gt_temp_bar1","path":"sprites/spr_gt_temp_bar1/spr_gt_temp_bar1.yy",},},
     {"id":{"name":"spr_gt_torch_hud","path":"sprites/spr_gt_torch_hud/spr_gt_torch_hud.yy",},},
