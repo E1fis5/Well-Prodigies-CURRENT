@@ -1,4 +1,4 @@
 if (global.isActive = false)
 {
-	time_source_stop(lap2_drain);
+	time_source_stop(global.lap2_drain);
 }

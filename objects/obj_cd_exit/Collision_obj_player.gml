@@ -21,6 +21,7 @@ if !instance_exists(obj_transition)
 		audio_stop_sound(snd_clock_tick)
 		instance_destroy(obj_lap2_alert)
 		time_source_stop(global.timer_drain)
+    time_source_stop(global.lap2_drain);
 	
 	
 if (global.ach_emeralds = false) and (global.gem_counter = 5)
