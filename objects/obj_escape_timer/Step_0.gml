@@ -37,3 +37,11 @@ if (global.isActive && global.timer > 0) {
    sound_timer -= 1
 }
 
+if (instance_exists(obj_hide_hud))
+{
+    visible = false
+}
+else
+{
+	visible = true
+}
