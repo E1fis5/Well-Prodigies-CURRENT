@@ -98,6 +98,7 @@
     {"name":"inst_37425FB3","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
     {"name":"inst_647A56E9","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
     {"name":"inst_4F79F161","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
+    {"name":"inst_25C4D3B7","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -489,6 +490,7 @@
         {"$GMRInstance":"","%Name":"inst_1EBC90FB","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1EBC90FB","objectId":{"name":"obj_targetExit","path":"objects/obj_targetExit/obj_targetExit.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":3.140625,"x":0.0,"y":1207.0,},
         {"$GMRInstance":"","%Name":"inst_3F28541B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3F28541B","objectId":{"name":"obj_health_bg","path":"objects/obj_health_bg/obj_health_bg.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4512.0,"y":1056.0,},
         {"$GMRInstance":"","%Name":"inst_5CD76A01","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5CD76A01","objectId":{"name":"obj_health","path":"objects/obj_health/obj_health.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4608.0,"y":1024.0,},
+        {"$GMRInstance":"","%Name":"inst_25C4D3B7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_25C4D3B7","objectId":{"name":"obj_ranks","path":"objects/obj_ranks/obj_ranks.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4448.0,"y":1184.0,},
       ],"layers":[],"name":"Player_and_misc","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_1570A082","animationSpeed":1.0,"colour":4291611852,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_1570A082","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":3.5,"scaleY":3.5,"spriteId":{"name":"spr_mb_sign1_out","path":"sprites/spr_mb_sign1_out/spr_mb_sign1_out.yy",},"x":608.0,"y":1248.0,},
