@@ -1,3 +1,4 @@
-target_x = -999
-target_y = -999
+target_x = 1168
+target_y = 1908
 target_rm = r_GT_shop
+
