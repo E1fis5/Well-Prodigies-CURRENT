@@ -1360,6 +1360,7 @@
     {"id":{"name":"spr_tilesetbasicnew2","path":"sprites/spr_tilesetbasicnew2/spr_tilesetbasicnew2.yy",},},
     {"id":{"name":"spr_tilesetcd","path":"sprites/spr_tilesetcd/spr_tilesetcd.yy",},},
     {"id":{"name":"spr_timer_broken","path":"sprites/spr_timer_broken/spr_timer_broken.yy",},},
+    {"id":{"name":"spr_timer_intro","path":"sprites/spr_timer_intro/spr_timer_intro.yy",},},
     {"id":{"name":"spr_timer_orange","path":"sprites/spr_timer_orange/spr_timer_orange.yy",},},
     {"id":{"name":"spr_timer","path":"sprites/spr_timer/spr_timer.yy",},},
     {"id":{"name":"spr_timerift_new","path":"sprites/spr_timerift_new/spr_timerift_new.yy",},},

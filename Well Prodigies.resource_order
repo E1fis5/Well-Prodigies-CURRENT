@@ -1120,6 +1120,7 @@
     {"name":"spr_tilesetbasicnew2","order":2,"path":"sprites/spr_tilesetbasicnew2/spr_tilesetbasicnew2.yy",},
     {"name":"spr_tilesetcd","order":1,"path":"sprites/spr_tilesetcd/spr_tilesetcd.yy",},
     {"name":"spr_timer_broken","order":5,"path":"sprites/spr_timer_broken/spr_timer_broken.yy",},
+    {"name":"spr_timer_intro","order":4,"path":"sprites/spr_timer_intro/spr_timer_intro.yy",},
     {"name":"spr_timer_orange","order":13,"path":"sprites/spr_timer_orange/spr_timer_orange.yy",},
     {"name":"spr_timer","order":6,"path":"sprites/spr_timer/spr_timer.yy",},
     {"name":"spr_timerift_new","order":1,"path":"sprites/spr_timerift_new/spr_timerift_new.yy",},
