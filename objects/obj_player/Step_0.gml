@@ -353,7 +353,10 @@ y += vsp;
 }
 
 //Dash breakable
-
+if (sprite_index = spr_player_dash) and (place_meeting(x,y,obj_dash_breakable))
+{
+	instance_destroy(obj_dash_breakable);
+}
 
 //Walksp boost
 if (global.walksp_boost_active = true) 
