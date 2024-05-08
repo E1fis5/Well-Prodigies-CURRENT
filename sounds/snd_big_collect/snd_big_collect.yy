@@ -13,7 +13,7 @@
   "name":"snd_big_collect",
   "parent":{
     "name":"collectables",
-    "path":"folders/Sounds/collectables.yy",
+    "path":"folders/Sprites/Sounds/collectables.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

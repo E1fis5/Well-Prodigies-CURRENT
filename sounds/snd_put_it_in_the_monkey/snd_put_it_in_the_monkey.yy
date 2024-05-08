@@ -13,7 +13,7 @@
   "name":"snd_put_it_in_the_monkey",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "path":"folders/Sprites/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

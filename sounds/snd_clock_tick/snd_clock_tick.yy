@@ -13,7 +13,7 @@
   "name":"snd_clock_tick",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "path":"folders/Sprites/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

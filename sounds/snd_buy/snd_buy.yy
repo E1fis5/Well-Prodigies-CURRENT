@@ -13,7 +13,7 @@
   "name":"snd_buy",
   "parent":{
     "name":"shop",
-    "path":"folders/Sounds/shop.yy",
+    "path":"folders/Sprites/Sounds/shop.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
