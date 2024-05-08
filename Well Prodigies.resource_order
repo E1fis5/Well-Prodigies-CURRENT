@@ -417,6 +417,7 @@
     {"name":"r_ch6","order":6,"path":"rooms/r_ch6/r_ch6.yy",},
     {"name":"r_ch7","order":7,"path":"rooms/r_ch7/r_ch7.yy",},
     {"name":"r_ch8","order":8,"path":"rooms/r_ch8/r_ch8.yy",},
+    {"name":"r_ch9","order":9,"path":"rooms/r_ch9/r_ch9.yy",},
     {"name":"r_Difficulty_select","order":5,"path":"rooms/r_Difficulty_select/r_Difficulty_select.yy",},
     {"name":"r_game_over","order":5,"path":"rooms/r_game_over/r_game_over.yy",},
     {"name":"r_GT_escape2","order":4,"path":"rooms/r_GT_escape2/r_GT_escape2.yy",},
