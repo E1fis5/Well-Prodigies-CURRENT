@@ -35,8 +35,8 @@
   ],
   "name":"r_playtest_start",
   "parent":{
-    "name":"misc_rooms",
-    "path":"folders/Rooms/misc_rooms.yy",
+    "name":"CHAPTER_1",
+    "path":"folders/Rooms/CHAPTER_1.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

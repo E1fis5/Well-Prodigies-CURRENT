@@ -1,8 +1,8 @@
 if (input_check_pressed("accept"))
 {
 	  var inst = instance_create_depth(0, 0, -9999, obj_transition);
-      inst.target_x = 980
-	  inst.target_y = 980
+      inst.target_x = 96
+	  inst.target_y = 992
       inst.target_rm = r_CaveDwellings1
 	  global.sanity = 65
 	  global.scoreHider = false

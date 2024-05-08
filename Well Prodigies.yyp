@@ -549,6 +549,7 @@
     {"id":{"name":"r_CaveDwellings2_cave","path":"rooms/r_CaveDwellings2_cave/r_CaveDwellings2_cave.yy",},},
     {"id":{"name":"r_CaveDwellings2","path":"rooms/r_CaveDwellings2/r_CaveDwellings2.yy",},},
     {"id":{"name":"r_CaveDwellings3_cave","path":"rooms/r_CaveDwellings3_cave/r_CaveDwellings3_cave.yy",},},
+    {"id":{"name":"r_CaveDwellings3","path":"rooms/r_CaveDwellings3/r_CaveDwellings3.yy",},},
     {"id":{"name":"r_CaveDwellings4_cave","path":"rooms/r_CaveDwellings4_cave/r_CaveDwellings4_cave.yy",},},
     {"id":{"name":"r_CaveDwellings5_cave","path":"rooms/r_CaveDwellings5_cave/r_CaveDwellings5_cave.yy",},},
     {"id":{"name":"r_CaveDwellings6","path":"rooms/r_CaveDwellings6/r_CaveDwellings6.yy",},},
@@ -1538,6 +1539,7 @@
     {"roomId":{"name":"r_MonkeyBusiness6","path":"rooms/r_MonkeyBusiness6/r_MonkeyBusiness6.yy",},},
     {"roomId":{"name":"r_MonkeyBusiness_meeting_point","path":"rooms/r_MonkeyBusiness_meeting_point/r_MonkeyBusiness_meeting_point.yy",},},
     {"roomId":{"name":"r_GT_shop","path":"rooms/r_GT_shop/r_GT_shop.yy",},},
+    {"roomId":{"name":"r_CaveDwellings3","path":"rooms/r_CaveDwellings3/r_CaveDwellings3.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

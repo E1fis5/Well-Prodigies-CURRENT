@@ -3,9 +3,14 @@
   "%Name":"ts_cd_outside_new",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":0,
-    "SerialiseWidth":0,
-    "TileSerialiseData":[],
+    "SerialiseHeight":1185,
+    "SerialiseWidth":1251,
+    "TileCompressedData":[
+      -13,299,-1238,0,-13,299,-1238,0,-13,299,-1238,0,-13,299,-1238,0,-13,299,-1238,0,-13,299,-1238,0,-13,
+      299,-1238,0,-13,299,-1238,0,-13,299,-1238,0,-13,299,-1238,0,-13,299,-1238,0,-13,299,-1238,0,-13,299,
+      -1467410,0,
+    ],
+    "TileDataFormat":1,
   },
   "name":"ts_cd_outside_new",
   "out_columns":20,
