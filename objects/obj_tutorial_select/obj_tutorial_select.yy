@@ -10,7 +10,10 @@
   "managed":true,
   "name":"obj_tutorial_select",
   "overriddenProperties":[
+<<<<<<< Updated upstream
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_menubutton_parent","path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",},"propertyId":{"name":"button_text","path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Tutorial",},
+=======
+>>>>>>> Stashed changes
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_mb_play_button","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},"propertyId":{"name":"button_text1","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Tutorial",},
   ],
   "parent":{
