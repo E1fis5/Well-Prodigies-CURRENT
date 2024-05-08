@@ -564,6 +564,7 @@
     {"id":{"name":"r_ch6","path":"rooms/r_ch6/r_ch6.yy",},},
     {"id":{"name":"r_ch7","path":"rooms/r_ch7/r_ch7.yy",},},
     {"id":{"name":"r_ch8","path":"rooms/r_ch8/r_ch8.yy",},},
+    {"id":{"name":"r_ch9","path":"rooms/r_ch9/r_ch9.yy",},},
     {"id":{"name":"r_Difficulty_select","path":"rooms/r_Difficulty_select/r_Difficulty_select.yy",},},
     {"id":{"name":"r_game_over","path":"rooms/r_game_over/r_game_over.yy",},},
     {"id":{"name":"r_GT_cabin","path":"rooms/r_GT_cabin/r_GT_cabin.yy",},},
@@ -1538,6 +1539,7 @@
     {"roomId":{"name":"r_MonkeyBusiness6","path":"rooms/r_MonkeyBusiness6/r_MonkeyBusiness6.yy",},},
     {"roomId":{"name":"r_MonkeyBusiness_meeting_point","path":"rooms/r_MonkeyBusiness_meeting_point/r_MonkeyBusiness_meeting_point.yy",},},
     {"roomId":{"name":"r_GT_shop","path":"rooms/r_GT_shop/r_GT_shop.yy",},},
+    {"roomId":{"name":"r_ch9","path":"rooms/r_ch9/r_ch9.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
