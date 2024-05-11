@@ -52,6 +52,8 @@ if (instance_exists(obj_Lwiz_mini))
 	walksp += 0.75
 		dash_distance = 195
     dash_time = 18
+	image_blend = c_orange;
+	image_alpha = 0.8
 }
 	
 
@@ -282,6 +284,10 @@ if (can_dash) and (input_check_pressed("dash"))
 	audio_play_sound(snd_dash_p,8,false)
 	global.dash_active = true
 	global.particle_start = false
+	if (!instance_exists(obj_dash_effect))
+	{
+		instance_create_depth(x,y,399,obj_dash_effect);
+	}
 	
 	{
 		if (player_left = true)
@@ -361,7 +367,7 @@ if (sprite_index = spr_player_dash) and (place_meeting(x,y,obj_dash_breakable))
 //Walksp boost
 if (global.walksp_boost_active = true) 
 {
-	walksp += 0.40
+	walksp += 0.60
 }
 
 if (sprite_index = spr_player_bomb or spr_player_bomb_escape)
@@ -652,9 +658,18 @@ if (input_check("run")) and (input_check("down")) and (input_check("attack")) an
 {
 	walksp = 9.3;
 	time_source_start(timer_power_crawl);
+	if (!instance_exists(obj_blood_effect))
+	{
+		instance_create_depth(x,y,399,obj_blood_effect);
+	}
+if (!input_check("down"))
+{
+	instance_destroy(obj_blood_effect);
+}
 }
 else
 	{
 		time_source_pause(timer_power_crawl);
+		instance_destroy(obj_blood_effect);
 	}
 

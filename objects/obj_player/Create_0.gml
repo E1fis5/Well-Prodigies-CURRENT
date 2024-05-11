@@ -128,6 +128,7 @@ if (canJump-- > 0) and (input_check_pressed("jump"))
 	global.fallspr_deactivate = true
 	global.grv_0 = false
 	global.particle_start = false
+	instance_create_depth(x + 8,y + 25,401,obj_fall_effect_cloud1);
 }
 
 
@@ -161,6 +162,7 @@ if (jump_allowed = true) and (input_check_pressed("jump")) and (onground = false
 	canCrawl = 1
 	global.dJump_active = true
 	global.particle_start = false
+	instance_create_depth(x + 8,y + 25,401,obj_fall_effect_cloud1);
 
 
 
