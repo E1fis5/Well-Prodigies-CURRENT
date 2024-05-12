@@ -52,8 +52,6 @@ if (instance_exists(obj_Lwiz_mini))
 	walksp += 0.75
 		dash_distance = 195
     dash_time = 18
-	image_blend = c_orange;
-	image_alpha = 0.8
 }
 	
 
@@ -288,7 +286,6 @@ if (can_dash) and (input_check_pressed("dash"))
 	{
 		instance_create_depth(x,y,399,obj_dash_effect);
 	}
-	
 	{
 		if (player_left = true)
 		{
@@ -354,6 +351,10 @@ y += vsp;
 	   stateNormal = state_normal
 	   canJump = 10
 	   global.dash_active = false;
+	   if (global.jestraught_player = true)
+	{
+		walksp += 0.1;
+	}
    }
 }
 }
@@ -488,6 +489,10 @@ if (input_check("run")) and (input_check("right"))
 if (global.fallspr_deactivate = false) and (global.dJump_active = false)
 {
 	sprite_index = spr_player_fall
+	if (global.jestraught_player = true)
+	{
+		sprite_index = spr_jestraught_fall;
+	}
 }
 
 if (global.fallspr_deactivate = false) and (player_left = true) and (global.dJump_active = false)
@@ -564,7 +569,11 @@ if (instance_exists(obj_cd_well_intro))
 	canCrawl = false
 	canJump = 0
 	can_dash = false
-	sprite_index = spr_player1
+	sprite_index = spr_player_backwards
+	if (player_left = true)
+	{
+		sprite_index = spr_player_backwards_left
+	}
 }
 // water
 if (place_meeting(x,y,obj_water))

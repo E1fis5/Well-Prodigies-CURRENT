@@ -103,6 +103,10 @@ if (onwall != 0) && (!onground) && (input_check("jump"))
 	vsp = vsp_wjump;
 	audio_play_sound(snd_stone1,5,false)
 		can_dash = true;
+		instance_create_depth(x,y,401,obj_wallclimb_effect);
+		if (player_left = true)
+		{
+}            instance_create_depth(x,y,401,obj_wallclimb_effect_left);
 }
 
 //Vertical Movement

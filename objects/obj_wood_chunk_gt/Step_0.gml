@@ -5,3 +5,5 @@ if (global.torch_active = true) and (place_meeting(x,y,obj_player)) and (input_c
 	global.wood_sparked = true
 	score += 150
 }
+
+depth = 401;
