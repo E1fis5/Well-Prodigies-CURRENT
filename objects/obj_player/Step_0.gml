@@ -184,7 +184,7 @@ if global.isActive = true and (sprite_index = spr_player_escapeidle) and (global
 
 if sprite_index = spr_player_bomb or grv = -1
 {
-	walksp = 0
+	walksp = 1.5
 	can_dash = true
 	dash_distance = 260
 	dash_time = 19

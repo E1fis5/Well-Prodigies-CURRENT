@@ -22,6 +22,8 @@ if !instance_exists(obj_transition)
 		instance_destroy(obj_lap2_alert)
 		    time_source_stop(global.lap2_drain);
 		time_source_stop(global.timer_drain)
+			global.walksp_boost_active = false;
+				global.shopitem_bought = false;
 	
 	
 	global.ach_Sec_cd = true;

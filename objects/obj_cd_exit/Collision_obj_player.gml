@@ -22,6 +22,8 @@ if !instance_exists(obj_transition)
 		instance_destroy(obj_lap2_alert)
 		time_source_stop(global.timer_drain)
     time_source_stop(global.lap2_drain);
+	global.walksp_boost_active = false;
+		global.shopitem_bought = false;
 	
 	
 if (global.ach_emeralds = false) and (global.gem_counter = 5)
