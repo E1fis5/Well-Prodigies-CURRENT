@@ -1,4 +1,7 @@
-global.tutorial_blocker = false
+if (global.debug_active = true)
+{
+	global.tutorial_blocker = false
+}
 
 
 

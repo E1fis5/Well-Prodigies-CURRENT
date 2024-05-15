@@ -29,5 +29,6 @@ global.shopitem_bought = false
 global.waterlvl_true = false
 global.lap_wizard_trigger = false
 global.jestraught_player = false
+global.debug_active = false;
 //Time sources
 

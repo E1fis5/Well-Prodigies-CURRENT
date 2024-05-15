@@ -72,6 +72,10 @@ global.ach_Sec_cd = false;
 //GT values
 global.torch_active = false
 global.hypothermia_amount = 0
+//Debug
+global.debug_active = false;
+global.collisions_enabled = true;
+global.noclip = false;
 //Power crawl
 var power_crawl_damage = function()
 {
@@ -179,7 +183,7 @@ with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 }
 }
 //Collision
-if (place_meeting(x + hsp, y, obj_collision_wall))
+if (place_meeting(x + hsp, y, obj_collision_wall)) and (global.collisions_enabled = true)
 {
 	while (abs(hsp) > 0.1)
 	{
@@ -192,7 +196,7 @@ if (place_meeting(x + hsp, y, obj_collision_wall))
 x += hsp;
 
 
-if (place_meeting(x, y + vsp, obj_collision_wall))
+if (place_meeting(x, y + vsp, obj_collision_wall)) and (global.collisions_enabled = true)
 {
 	if (vsp > 0) 
 	canJump = 10;

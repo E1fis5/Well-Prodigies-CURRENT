@@ -236,21 +236,33 @@ if (place_meeting(x,y,obj_deep_snow1))
 {
 	grv = 5
 	walksp = 4.2
-	sprite_index = spr_player1
+	sprite_index = spr_player_snow_idle
+	if (player_left = true)
+	{
+		sprite_index = spr_player_snow_idle_left;
+	}
 }
 
 if (place_meeting(x,y,obj_deep_snow2))
 {
 	grv = 5
 	walksp = 4.2
-	sprite_index = spr_player1
+	sprite_index = spr_player_snow_idle
+		if (player_left = true)
+	{
+		sprite_index = spr_player_snow_idle_left;
+	}
 }
 
 if (place_meeting(x,y,obj_deep_snow3))
 {
 	grv = 5
 	walksp = 4.2
-	sprite_index = spr_player1
+	sprite_index = spr_player_snow_idle
+		if (player_left = true)
+	{
+		sprite_index = spr_player_snow_idle_left;
+	}
 }
 
 //MB fan
@@ -682,3 +694,20 @@ else
 		instance_destroy(obj_blood_effect);
 	}
 
+//Noclip
+if (global.debug_active = true) and (global.noclip = true)
+{
+    if (input_check("jump"))
+	{
+		global.noclip = false;
+		global.collisions_enabled = true;
+	}
+	if (input_check("up"))
+	{
+		grv = -999;
+	}
+	if (input_check("down"))
+	{
+		grv = 999;
+	}
+}

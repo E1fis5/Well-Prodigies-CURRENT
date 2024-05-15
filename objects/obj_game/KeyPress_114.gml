@@ -1,1 +1,4 @@
-room_goto_next()
+if (global.debug_active = true)
+{
+	room_goto_next();
+}
