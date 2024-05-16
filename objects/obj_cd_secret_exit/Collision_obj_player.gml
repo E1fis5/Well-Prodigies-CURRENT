@@ -24,7 +24,7 @@ if !instance_exists(obj_transition)
 		time_source_stop(global.timer_drain)
 			global.walksp_boost_active = false;
 				global.shopitem_bought = false;
-	
+	global.escape_touch = false;
 	
 	global.ach_Sec_cd = true;
 	

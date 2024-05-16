@@ -1,0 +1,1 @@
+time_source_start(global.time_source_tpcooldown);

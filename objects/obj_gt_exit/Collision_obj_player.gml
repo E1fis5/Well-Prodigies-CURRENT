@@ -29,4 +29,4 @@ if !instance_exists(obj_transition)
 		global.torch_active = false;
 		global.wood_sparked = false;
 		global.hypothermia_amount = 300;
-	
+	global.escape_touch = false;

@@ -1,4 +1,5 @@
-if (!global.isActive) {
+if (!global.isActive)
+{
     global.isActive = true;
     global.timer = 250
 }
@@ -40,3 +41,4 @@ if (!instance_exists(obj_escape_timer))
 {
 	instance_create_depth(-999,-999,-9999,obj_escape_timer)
 }
+

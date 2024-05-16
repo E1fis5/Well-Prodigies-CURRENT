@@ -73,9 +73,10 @@ global.ach_Sec_cd = false;
 global.torch_active = false
 global.hypothermia_amount = 0
 //Debug
-global.debug_active = true;
+global.debug_active = false;
 global.collisions_enabled = true;
 global.noclip = false;
+global.escape_touch = false
 //Power crawl
 var power_crawl_damage = function()
 {

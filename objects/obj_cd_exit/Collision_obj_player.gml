@@ -24,6 +24,7 @@ if !instance_exists(obj_transition)
     time_source_stop(global.lap2_drain);
 	global.walksp_boost_active = false;
 		global.shopitem_bought = false;
+		global.escape_touch = false;
 	
 	
 if (global.ach_emeralds = false) and (global.gem_counter = 5)

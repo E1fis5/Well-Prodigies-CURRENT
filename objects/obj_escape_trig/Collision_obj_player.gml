@@ -1,4 +1,5 @@
-if (!global.isActive) {
+if (!global.isActive)
+{
     global.isActive = true;
     global.timer = 160
 }
