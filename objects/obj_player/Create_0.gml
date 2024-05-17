@@ -1,9 +1,29 @@
+var time_source_run_add = function()
+{
+	walksp += 0.2;
+}
+global.speed_add = false;
+
+ global.time_source_moment = time_source_create(time_source_game,2,time_source_units_seconds,time_source_run_add,[],1);
+
+
+
+
+
+
+
+
+
+
+
+
 hsp = 0;
 hsp_wjump = 4;
 vsp = 10;
 grv = 0.07
 grv_wall = 0.16;
 walksp =4;
+global.walksp_run_max = 8
 vspJump = -6
 vspDJump = -9
 vsp_wjump = -5;
@@ -73,7 +93,7 @@ global.ach_Sec_cd = false;
 global.torch_active = false
 global.hypothermia_amount = 0
 //Debug
-global.debug_active = false;
+global.debug_active = true;
 global.collisions_enabled = true;
 global.noclip = false;
 global.escape_touch = false

@@ -17,6 +17,9 @@ stateNormal();
 //Crawl
 state_crawl();
 
+
+
+
 if (global.jestraught_player = true)
 {
 	state_crawl = false
@@ -25,10 +28,19 @@ if (global.jestraught_player = true)
 
 
 //Run
-if  input_check("run") = true
+if  input_check("run") = true 
+ {
+   walksp = 7.3
+ }
+
+if input_check("run") = false and input_check("down") = false
 {
-    walksp = 6.95
-	global.particle_start = true
+	walksp = 5.65
+}
+
+if input_check("run") = true and input_check("down") = true
+{
+	walksp = 7.3
 }
 
 if input_check("run") = false and input_check("down") = false
@@ -36,20 +48,13 @@ if input_check("run") = false and input_check("down") = false
 	walksp = 5.65
 }
 
-if input_check("run") = false && input_check("down")
-{
-	walksp = 5.45
-}
 
-if input_check("run") = true && input_check("down")
-{
-	walksp = 6.95
-}
 
 //Mini wizard
 if (instance_exists(obj_Lwiz_mini))
 {
 	walksp += 0.75
+	global.walksp_run_max += 0.75;
 		dash_distance = 195
     dash_time = 18
 }
@@ -380,7 +385,8 @@ if (sprite_index = spr_player_dash) and (place_meeting(x,y,obj_dash_breakable))
 //Walksp boost
 if (global.walksp_boost_active = true) 
 {
-	walksp += 0.60
+	walksp += 0.60;
+	global.walksp_run_max += 0.60;
 }
 
 if (sprite_index = spr_player_bomb or spr_player_bomb_escape)
@@ -394,14 +400,15 @@ if (sprite_index = spr_player_bomb or spr_player_bomb_escape)
 if (global.sanity >= 70) and (bombActive = false)
 {
 	walksp += 0.45
+	global.walksp_run_max += 0.45
 	dash_distance = 160
     dash_time = 17
-	
 }
 
 if (global.sanity <= 30)and (bombActive = false)
 {
 	walksp += 0.35
+	global.walksp_run_max += 0.35
 	dash_distance = 150
     dash_time = 16
 }
