@@ -13,7 +13,7 @@
   "name":"snd_put_it_in_the_monkey",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Sprites/Sounds.yy",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_put_it_in_the_monkey.mp3",
   "type":0,
-  "volume":0.73,
+  "volume":0.57,
 }

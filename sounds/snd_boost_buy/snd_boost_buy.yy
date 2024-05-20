@@ -13,7 +13,7 @@
   "name":"snd_boost_buy",
   "parent":{
     "name":"shop",
-    "path":"folders/Sprites/Sounds/shop.yy",
+    "path":"folders/Sounds/shop.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_boost_buy.mp3",
   "type":0,
-  "volume":0.47,
+  "volume":0.3,
 }

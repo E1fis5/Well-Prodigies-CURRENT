@@ -2,6 +2,7 @@ var time_source_run_add = function()
 {
 	walksp += 0.2;
 }
+
 global.speed_add = false;
 
  global.time_source_moment = time_source_create(time_source_game,2,time_source_units_seconds,time_source_run_add,[],1);
@@ -30,7 +31,7 @@ vsp_wjump = -5;
 vsp_max_wall = 4;
 canJump = 0
 global.dJump_idle = false
-global.health = 0;
+global.health = 0
 runsp = 5.5;
 airTime = 0;
 onwall = 0;
@@ -93,10 +94,12 @@ global.ach_Sec_cd = false;
 global.torch_active = false
 global.hypothermia_amount = 0
 //Debug
-global.debug_active = true;
+global.debug_active = true
 global.collisions_enabled = true;
 global.noclip = false;
-global.escape_touch = false
+global.escape_touch = false;
+global.hub_currency = 900;
+global.blocker_exists = false;
 //Power crawl
 var power_crawl_damage = function()
 {
@@ -107,11 +110,16 @@ var power_crawl_damage = function()
 		global.health -= 0.5;
 	}
 }
+
+var power_crawl_damage_1_hp = function()
+{
+	score -= 75
+	audio_play_sound(snd_player_hurt,6,false);
+}
+	
 //Power crawl timer
 timer_power_crawl = time_source_create(time_source_game,2,time_source_units_seconds,power_crawl_damage,[],-1);
-
-
-
+timer_power_crawl_1_health = time_source_create(time_source_game,1,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
 
 //States
 state_normal = function()

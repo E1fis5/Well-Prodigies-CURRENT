@@ -9,11 +9,11 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":81.864,
+  "duration":152.496,
   "name":"snd_menu_music",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Sprites/Sounds.yy",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_menu_music.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.44,
 }

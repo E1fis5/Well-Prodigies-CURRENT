@@ -18,8 +18,6 @@
     {"$GMSpriteFrame":"","%Name":"e5da3694-06d8-478f-8c80-4ff61bdfcc57","name":"e5da3694-06d8-478f-8c80-4ff61bdfcc57","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"7e62faf7-1143-4c8b-b13e-225289a3f654","name":"7e62faf7-1143-4c8b-b13e-225289a3f654","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"ef4fd760-9b35-4b9e-bfb1-6cecc0009fea","name":"ef4fd760-9b35-4b9e-bfb1-6cecc0009fea","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"89b3da39-096d-4b77-8fb0-2914bad6ffe5","name":"89b3da39-096d-4b77-8fb0-2914bad6ffe5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"0d3104f9-9de9-4302-baee-40a5a4989cea","name":"0d3104f9-9de9-4302-baee-40a5a4989cea","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -56,7 +54,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":8.0,
+    "length":6.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -93,12 +91,6 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ef4fd760-9b35-4b9e-bfb1-6cecc0009fea","path":"sprites/spr_teleporter_tp_anim1/spr_teleporter_tp_anim1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"c0b883a2-7a92-430d-ba11-40d32c8d476f","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"89b3da39-096d-4b77-8fb0-2914bad6ffe5","path":"sprites/spr_teleporter_tp_anim1/spr_teleporter_tp_anim1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6cee8680-94d6-4b35-b3c5-c4957c06be56","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0d3104f9-9de9-4302-baee-40a5a4989cea","path":"sprites/spr_teleporter_tp_anim1/spr_teleporter_tp_anim1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"93996523-d3c8-456d-8439-45b8b30ce92e","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

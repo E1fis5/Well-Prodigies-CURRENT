@@ -1,6 +1,7 @@
 var lap2_drain_score = function()
 {
-	score -= 11
+	score -= 11;
+	instance_create_depth(-999,-999,-9998,obj_lap_drain_notif);
 }
 
 target_x = 0;

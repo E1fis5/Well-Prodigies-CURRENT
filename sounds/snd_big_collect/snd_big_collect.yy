@@ -13,7 +13,7 @@
   "name":"snd_big_collect",
   "parent":{
     "name":"collectables",
-    "path":"folders/Sprites/Sounds/collectables.yy",
+    "path":"folders/Sounds/collectables.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_big_collect.mp3",
   "type":0,
-  "volume":0.6,
+  "volume":0.36,
 }

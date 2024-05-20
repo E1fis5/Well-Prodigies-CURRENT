@@ -25,10 +25,55 @@ if !instance_exists(obj_transition)
 			global.walksp_boost_active = false;
 				global.shopitem_bought = false;
 	global.escape_touch = false;
-	
+			if (global.lap2_active = true)
+		{
+			time_source_stop(global.lap2_drain);
+		}
+	    global.lap2_active = false;
 	global.ach_Sec_cd = true;
 	
 if (global.ach_emeralds = false) and (global.gem_counter = 5)
 {
 	global.ach_emeralds = true;
 }
+
+
+if (score >= 0)
+   {
+	 global.hub_currency += 50
+   }
+   
+   if score >= 1850
+   {
+	 global.hub_currency += 75
+   }
+   
+      if score >= 4875
+   {
+	 global.hub_currency += 100
+   }
+
+      if score >= 8750
+   {
+	  global.hub_currency += 125
+   }
+   
+         if score >= 12750
+   {
+	 global.hub_currency += 150
+   }
+   
+            if score >= 17000
+   {
+	   global.hub_currency += 175
+   }
+
+         if (score >= 20000)
+   {
+	  global.hub_currency += 200
+   }
+   
+            if (score >= 20000) and (global.rift_taken = true) and (global.gem_counter >= 5) and (global.shopitem_bought = false) and (global.gamemode_hard = true)
+   {
+	  global.hub_currency += 275
+   }

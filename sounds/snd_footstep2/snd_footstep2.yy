@@ -13,7 +13,7 @@
   "name":"snd_footstep2",
   "parent":{
     "name":"footsteps",
-    "path":"folders/Sprites/Sounds/footsteps.yy",
+    "path":"folders/Sounds/footsteps.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

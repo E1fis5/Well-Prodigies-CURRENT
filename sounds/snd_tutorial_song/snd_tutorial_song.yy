@@ -13,7 +13,7 @@
   "name":"snd_tutorial_song",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Sprites/Sounds.yy",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_tutorial_song.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.66,
 }

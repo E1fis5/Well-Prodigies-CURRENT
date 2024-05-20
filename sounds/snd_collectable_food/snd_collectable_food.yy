@@ -9,11 +9,11 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.313469,
+  "duration":0.288,
   "name":"snd_collectable_food",
   "parent":{
     "name":"collectables",
-    "path":"folders/Sprites/Sounds/collectables.yy",
+    "path":"folders/Sounds/collectables.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_collectable_food.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.68,
 }

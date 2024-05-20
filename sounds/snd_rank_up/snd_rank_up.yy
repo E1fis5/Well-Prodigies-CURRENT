@@ -13,7 +13,7 @@
   "name":"snd_rank_up",
   "parent":{
     "name":"collectables",
-    "path":"folders/Sprites/Sounds/collectables.yy",
+    "path":"folders/Sounds/collectables.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_rank_up.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.84,
 }

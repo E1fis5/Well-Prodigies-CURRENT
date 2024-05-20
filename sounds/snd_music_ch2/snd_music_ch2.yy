@@ -13,7 +13,7 @@
   "name":"snd_music_ch2",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Sprites/Sounds.yy",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -13,7 +13,7 @@
   "name":"tutorialtrackproto",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Sprites/Sounds.yy",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"tutorialtrackproto.wav",
   "type":0,
-  "volume":0.56,
+  "volume":0.4,
 }

@@ -55,7 +55,7 @@ if (instance_exists(obj_Lwiz_mini))
 {
 	walksp += 0.75
 	global.walksp_run_max += 0.75;
-		dash_distance = 195
+		dash_distance = 200
     dash_time = 18
 }
 	
@@ -191,12 +191,13 @@ if sprite_index = spr_player_bomb or grv = -1
 {
 	walksp = 1.5
 	can_dash = true
-	dash_distance = 260
+	dash_distance = 300
 	dash_time = 19
 	if (input_check("dash"))
 	{
 		 instance_create_depth(x,y,399,obj_bomb_explosion);
 		 audio_play_sound(snd_bomb_explosion,5,false);
+		 walksp += 1.5;
 	}
 }
 
@@ -292,8 +293,8 @@ if (can_dash) and (input_check_pressed("dash"))
 	dash_energy = dash_distance;
 	stateNormal = Dashstate
 	sprite_index = spr_player_dash
-	dash_distance = 140
-    dash_time = 15
+	dash_distance = 155
+    dash_time = 16
 	grv = 0
 	global.dJump_active = false
 	audio_play_sound(snd_dash_p,8,false)
@@ -401,7 +402,7 @@ if (global.sanity >= 70) and (bombActive = false)
 {
 	walksp += 0.45
 	global.walksp_run_max += 0.45
-	dash_distance = 160
+	dash_distance = 170
     dash_time = 17
 }
 
@@ -409,7 +410,7 @@ if (global.sanity <= 30)and (bombActive = false)
 {
 	walksp += 0.35
 	global.walksp_run_max += 0.35
-	dash_distance = 150
+	dash_distance = 160
     dash_time = 16
 }
 
@@ -684,7 +685,7 @@ if (global.timer <= 0) and score <= 0 and (instance_exists(obj_escape_timer))
 //Power Crawl
 if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 {
-	walksp = 9.3;
+	walksp = 9.8;
 	time_source_start(timer_power_crawl);
 	if (!instance_exists(obj_blood_effect))
 	{
@@ -694,11 +695,21 @@ if (!input_check("down"))
 {
 	instance_destroy(obj_blood_effect);
 }
+if (global.health <= 1)
+{
+	time_source_start(timer_power_crawl_1_health);
+	time_source_pause(timer_power_crawl);
+}
+else
+{
+	time_source_stop(timer_power_crawl_1_health);
+}
 }
 else
 	{
 		time_source_pause(timer_power_crawl);
 		instance_destroy(obj_blood_effect);
+		time_source_pause(timer_power_crawl_1_health);
 	}
 
 //Noclip

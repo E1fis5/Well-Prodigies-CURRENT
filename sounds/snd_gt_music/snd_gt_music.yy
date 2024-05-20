@@ -13,7 +13,7 @@
   "name":"snd_gt_music",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Sprites/Sounds.yy",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_gt_music.mp3",
   "type":0,
-  "volume":0.65,
+  "volume":0.39,
 }

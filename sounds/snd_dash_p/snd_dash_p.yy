@@ -13,7 +13,7 @@
   "name":"snd_dash_p",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Sprites/Sounds.yy",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"snd_dash_p.mp3",
   "type":0,
-  "volume":0.39,
+  "volume":0.35,
 }

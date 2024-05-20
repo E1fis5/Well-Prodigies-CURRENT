@@ -13,7 +13,7 @@
   "name":"snd_rock_break",
   "parent":{
     "name":"Sounds",
-    "path":"folders/Sprites/Sounds.yy",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_rock_break.mp3",
   "type":0,
-  "volume":0.9,
+  "volume":0.47,
 }
