@@ -48,6 +48,11 @@ if input_check("run") = false and input_check("down") = false
 	walksp = 5.65
 }
 
+if (input_check("left")) and (input_check("right"))
+{
+	sprite_index = spr_playernew;
+}
+
 
 
 //Mini wizard
@@ -300,6 +305,7 @@ if (can_dash) and (input_check_pressed("dash"))
 	audio_play_sound(snd_dash_p,8,false)
 	global.dash_active = true
 	global.particle_start = false
+	time_source_start(timer_dBoost_create);
 	if (!instance_exists(obj_dash_effect))
 	{
 		instance_create_depth(x,y,399,obj_dash_effect);
@@ -369,6 +375,7 @@ y += vsp;
 	   stateNormal = state_normal
 	   canJump = 10
 	   global.dash_active = false;
+	   time_source_stop(timer_dBoost_create);
 	   if (global.jestraught_player = true)
 	{
 		walksp += 0.1;
@@ -728,4 +735,24 @@ if (global.debug_active = true) and (global.noclip = true)
 	{
 		grv = 999;
 	}
+}
+
+//Dash boost
+if (instance_exists(obj_dash_boost)) and (input_check("attack"))
+{
+	time_source_start(timer_dBoost_deactivate);
+    instance_create_depth(x,y,-999,obj_dBoost_additive);
+}
+
+if (instance_exists(obj_dBoost_additive))
+{
+	walksp += 1.3;
+	dash_distance = 185;
+	dash_time = 17;
+	time_source_stop(timer_dBoost_create);
+}
+
+if (!instance_exists(obj_dash_boost)) and (input_check("attack")) and (time_source_exists(timer_dBoost_create))
+{
+	time_source_stop(timer_dBoost_create);
 }

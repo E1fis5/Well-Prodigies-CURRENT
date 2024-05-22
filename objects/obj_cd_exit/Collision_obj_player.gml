@@ -39,40 +39,40 @@ if (global.ach_emeralds = false) and (global.gem_counter = 5)
 
 if (score >= 0)
    {
-	 global.hub_currency += 50
+	 global.hub_currency += 25
    }
    
    if score >= 1850
    {
-	 global.hub_currency += 75
+	 global.hub_currency += 1
    }
    
       if score >= 4875
    {
-	 global.hub_currency += 100
+	 global.hub_currency += 1
    }
 
       if score >= 8750
    {
-	  global.hub_currency += 125
+	  global.hub_currency += 1
    }
    
          if score >= 12750
    {
-	 global.hub_currency += 150
+	 global.hub_currency += 1
    }
    
             if score >= 17000
    {
-	   global.hub_currency += 175
+	   global.hub_currency += 1
    }
 
          if (score >= 20000)
    {
-	  global.hub_currency += 200
+	  global.hub_currency += 1
    }
    
             if (score >= 20000) and (global.rift_taken = true) and (global.gem_counter >= 5) and (global.shopitem_bought = false) and (global.gamemode_hard = true)
    {
-	  global.hub_currency += 275
+	  global.hub_currency += 1
    }

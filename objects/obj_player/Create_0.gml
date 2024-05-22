@@ -98,7 +98,7 @@ global.debug_active = true
 global.collisions_enabled = true;
 global.noclip = false;
 global.escape_touch = false;
-global.hub_currency = 900;
+global.hub_currency = 999;
 global.blocker_exists = false;
 //Power crawl
 var power_crawl_damage = function()
@@ -116,7 +116,24 @@ var power_crawl_damage_1_hp = function()
 	score -= 75
 	audio_play_sound(snd_player_hurt,6,false);
 }
-	
+
+//Dash Boost
+
+var dBoost_create = function()
+{
+	instance_create_depth(x,y,-999,obj_dash_boost);
+}
+
+var dBoost_deactivate = function()
+{
+	if (time_source_exists(timer_dBoost_deactivate))
+	{
+		time_source_stop(timer_dBoost_deactivate);
+		instance_destroy(obj_dBoost_additive);
+	}
+}
+timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
+timer_dBoost_deactivate = time_source_create(time_source_game,8,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
 timer_power_crawl = time_source_create(time_source_game,2,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,1,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);

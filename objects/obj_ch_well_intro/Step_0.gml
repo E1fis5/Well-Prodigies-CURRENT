@@ -9,6 +9,10 @@ if (input_check_pressed("accept"))
 	  instance_destroy();
 	  audio_stop_sound(snd_wellhub)
 	  global.gem_counter = 0
+	  	  if (!instance_exists(obj_score))
+	  {
+	  	  instance_create_depth(-999,-999,-9999,obj_score);
+	  }
 	  	  if (!instance_exists(obj_sanitymeter))
 	  {
 		  instance_create_depth(-999,-999,-9999,obj_sanitymeter);

@@ -2,9 +2,9 @@ score += 120
 
 instance_destroy();
 
-audio_play_sound(snd_collect_medium,0,false);
+audio_play_sound(snd_collect_medium,5,false);
 
-effect_create_above(ef_ring,x,y,1,c_aqua)
+instance_create_depth(x,y,-1000,obj_collect_effect2)
 
 global.sanity += 1
 
