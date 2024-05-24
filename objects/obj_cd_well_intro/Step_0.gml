@@ -23,5 +23,6 @@ if (input_check_pressed("accept"))
 if (input_check_pressed("cancel"))
 {
 	instance_destroy();
+	instance_destroy(obj_hub_start);
 }
 

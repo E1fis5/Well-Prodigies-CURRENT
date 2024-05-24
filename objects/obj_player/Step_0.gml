@@ -742,6 +742,7 @@ if (instance_exists(obj_dash_boost)) and (input_check("attack"))
 {
 	time_source_start(timer_dBoost_deactivate);
     instance_create_depth(x,y,-999,obj_dBoost_additive);
+	audio_play_sound(snd_dBoost_start,6,false);
 }
 
 if (instance_exists(obj_dBoost_additive))
@@ -750,6 +751,10 @@ if (instance_exists(obj_dBoost_additive))
 	dash_distance = 185;
 	dash_time = 17;
 	time_source_stop(timer_dBoost_create);
+	if (!instance_exists(obj_dashB_active_effect))
+	{
+		instance_create_depth(x,y,399,obj_dashB_active_effect);
+	}
 }
 
 if (!instance_exists(obj_dash_boost)) and (input_check("attack")) and (time_source_exists(timer_dBoost_create))

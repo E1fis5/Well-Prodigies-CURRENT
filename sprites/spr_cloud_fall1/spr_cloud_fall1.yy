@@ -42,7 +42,7 @@
   "origin":0,
   "parent":{
     "name":"effects",
-    "path":"folders/Sprites/collectibles/effects.yy",
+    "path":"folders/Sprites/effects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

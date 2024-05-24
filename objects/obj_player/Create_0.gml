@@ -130,6 +130,7 @@ var dBoost_deactivate = function()
 	{
 		time_source_stop(timer_dBoost_deactivate);
 		instance_destroy(obj_dBoost_additive);
+		instance_destroy(obj_dashB_active_effect);
 	}
 }
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
