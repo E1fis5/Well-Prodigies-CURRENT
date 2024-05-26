@@ -1,3 +1,5 @@
 target_x = 224
 target_y = 1440
 target_rm = r_CaveDwellings_Escape1
+
+sprite_index = spr_cave_door;

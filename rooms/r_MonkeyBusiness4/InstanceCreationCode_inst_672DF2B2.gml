@@ -1,3 +1,3 @@
-target_x = 32
-target_y = 608
-target_rm = r_MonkeyBusiness_meeting_point
+target_x = 352
+target_y = 1472
+target_rm = r_MonkeyBusiness5

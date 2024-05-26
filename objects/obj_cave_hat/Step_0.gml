@@ -23,3 +23,12 @@ if (global.cave_hat_follow = true)
 			audio_play_sound(snd_cosmetic_change,8,false);
 	}
 }
+
+if (obj_player.player_left = true)
+{
+	sprite_index = spr_cave_hat_left;
+}
+else
+{
+	sprite_index = spr_cave_hat;
+}

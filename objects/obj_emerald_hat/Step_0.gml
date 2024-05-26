@@ -10,7 +10,7 @@ depth = 401;
 if (global.em_hat_follow = true)
 {
 	obj_emerald_hat.x = obj_player.x;
-	obj_emerald_hat.y = obj_player.y - 35;
+	obj_emerald_hat.y = obj_player.y - 40;
 	persistent = true;
 	if (input_check_pressed("down")) and (room = r_hat_room)
 	{
@@ -21,4 +21,13 @@ if (global.em_hat_follow = true)
 		instance_create_depth(x + 20,y - 23,399,obj_cosmetic_change);
 			audio_play_sound(snd_cosmetic_change,8,false);
 	}
+}
+
+if (obj_player.player_left = true)
+{
+	sprite_index = spr_emerald_hat_left;
+}
+else
+{
+	sprite_index = spr_emerald_hat;
 }

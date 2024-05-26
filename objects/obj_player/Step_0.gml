@@ -48,7 +48,7 @@ if input_check("run") = false and input_check("down") = false
 	walksp = 5.65
 }
 
-if (input_check("left")) and (input_check("right"))
+if (input_check("left")) and (input_check("right")) and (onground)
 {
 	sprite_index = spr_playernew;
 }
@@ -279,7 +279,9 @@ if (place_meeting(x,y,obj_deep_snow3))
 //MB fan
 if (place_meeting(x,y,obj_fan))
 {
-	grv = -2
+	grv = -2;
+	walksp += 0.45;
+	sprite_index = spr_player1;
 }
 
 //Force Crawl
@@ -760,4 +762,11 @@ if (instance_exists(obj_dBoost_additive))
 if (!instance_exists(obj_dash_boost)) and (input_check("attack")) and (time_source_exists(timer_dBoost_create))
 {
 	time_source_stop(timer_dBoost_create);
+}
+
+//Hud opacity decrease
+if (place_meeting(x,y,obj_hud_opac_lower))
+{
+	obj_ranks.image_alpha = 0.1;
+	obj_rank_cover.image_alpha = 0.1;
 }
