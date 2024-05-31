@@ -737,6 +737,7 @@ if (global.debug_active = true) and (global.noclip = true)
 	{
 		grv = 999;
 	}
+	walksp = 15;
 }
 
 //Dash boost

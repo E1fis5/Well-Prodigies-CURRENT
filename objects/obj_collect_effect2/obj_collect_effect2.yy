@@ -8,8 +8,8 @@
   "name":"obj_collect_effect2",
   "overriddenProperties":[],
   "parent":{
-    "name":"collectables",
-    "path":"folders/Objects/collectables.yy",
+    "name":"effects",
+    "path":"folders/Objects/effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

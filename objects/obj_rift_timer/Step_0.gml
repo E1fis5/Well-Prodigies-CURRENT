@@ -16,7 +16,6 @@ if (global.timer_rift <= 0)
   target_x = 3860
   target_y = 96
    audio_pause_sound(snd_escape)
-   audio_stop_sound(snd_escape)
    	audio_resume_sound(snd_cavedwellings2)
 }
 
@@ -30,13 +29,6 @@ image_index = image_index mod frame_count; // Wrap around the frame index
 if (global.timer_rift <= 0)
 {
    score -= 2000
-  target_rm = r_CaveDwellings10
-  target_x = 3860
-  target_y = 96
-  audio_stop_sound(snd_escape)
-  	audio_resume_sound(snd_cavedwellings2)
-	audio_pause_sound(snd_escape)
-	audio_stop_sound(snd_escape)
 }
 
 // Destroy self if in lobby
@@ -54,4 +46,9 @@ if (room == r_CaveDwellings10)
 if global.isActive_rift = false
 {
 	audio_pause_sound(snd_escape)
+}
+
+if (instance_exists(obj_escape_timer))
+{
+	instance_destroy();
 }
