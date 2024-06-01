@@ -35,8 +35,8 @@
   ],
   "name":"r_playtest_start",
   "parent":{
-    "name":"CHAPTER_1",
-    "path":"folders/Rooms/CHAPTER_1.yy",
+    "name":"misc_rooms",
+    "path":"folders/Rooms/misc_rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
@@ -51,7 +51,7 @@
   "roomSettings":{
     "Height":768,
     "inheritRoomSettings":false,
-    "persistent":false,
+    "persistent":true,
     "Width":1366,
   },
   "sequenceId":null,

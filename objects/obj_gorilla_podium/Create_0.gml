@@ -1,0 +1,1 @@
+global.banana_mb_active = false;
