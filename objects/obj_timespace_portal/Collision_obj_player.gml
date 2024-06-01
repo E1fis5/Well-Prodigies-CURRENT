@@ -7,7 +7,6 @@ if !instance_exists(obj_transition)
 }
 
 instance_destroy();
-audio_stop_sound(snd_escape)
 global.rift_taken = true
 
 if (instance_exists(obj_escape_timer))

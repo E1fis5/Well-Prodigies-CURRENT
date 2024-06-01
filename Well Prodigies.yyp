@@ -493,6 +493,8 @@
     {"id":{"name":"obj_rank_time_left","path":"objects/obj_rank_time_left/obj_rank_time_left.yy",},},
     {"id":{"name":"obj_ranks","path":"objects/obj_ranks/obj_ranks.yy",},},
     {"id":{"name":"obj_rankup_snd","path":"objects/obj_rankup_snd/obj_rankup_snd.yy",},},
+    {"id":{"name":"obj_rift_exit_mb","path":"objects/obj_rift_exit_mb/obj_rift_exit_mb.yy",},},
+    {"id":{"name":"obj_rift_exit","path":"objects/obj_rift_exit/obj_rift_exit.yy",},},
     {"id":{"name":"obj_rift_timer_gt","path":"objects/obj_rift_timer_gt/obj_rift_timer_gt.yy",},},
     {"id":{"name":"obj_rift_timer","path":"objects/obj_rift_timer/obj_rift_timer.yy",},},
     {"id":{"name":"obj_rockparticle","path":"objects/obj_rockparticle/obj_rockparticle.yy",},},

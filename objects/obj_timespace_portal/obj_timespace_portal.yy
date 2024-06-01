@@ -8,8 +8,8 @@
   "name":"obj_timespace_portal",
   "overriddenProperties":[],
   "parent":{
-    "name":"level_stuff",
-    "path":"folders/Objects/level_stuff.yy",
+    "name":"escape_slash_rift",
+    "path":"folders/Objects/escape_slash_rift.yy",
   },
   "parentObjectId":{
     "name":"obj_targetExit",

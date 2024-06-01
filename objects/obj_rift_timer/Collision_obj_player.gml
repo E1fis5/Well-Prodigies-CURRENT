@@ -3,7 +3,8 @@ if (!global.isActive_rift) {
     global.timer_rift = 80
 }
 
-if (!audio_played) {
+if (!audio_played) and (global.isActive = false)
+{
     audio_play_sound(snd_escape,10,true)
     audio_played = true; // Set the persistent variable to indicate that the audio has played
 	audio_pause_sound(snd_cavedwellings2);
