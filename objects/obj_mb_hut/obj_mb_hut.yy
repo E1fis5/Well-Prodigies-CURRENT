@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mb_hut_ph",
-    "path":"sprites/spr_mb_hut_ph/spr_mb_hut_ph.yy",
+    "name":"spr_mb_hut_outside",
+    "path":"sprites/spr_mb_hut_outside/spr_mb_hut_outside.yy",
   },
   "spriteMaskId":null,
   "visible":true,
