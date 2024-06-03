@@ -94,7 +94,7 @@ global.ach_Sec_cd = false;
 global.torch_active = false
 global.hypothermia_amount = 0
 //Debug
-global.debug_active = true
+global.debug_active = true;
 global.collisions_enabled = true;
 global.noclip = false;
 global.escape_touch = false;
@@ -138,6 +138,7 @@ timer_dBoost_deactivate = time_source_create(time_source_game,8,time_source_unit
 //Power crawl timer
 timer_power_crawl = time_source_create(time_source_game,2,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,1,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
+// Idle Breaker
 
 //States
 state_normal = function()
