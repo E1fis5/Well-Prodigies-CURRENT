@@ -18,7 +18,10 @@ stateNormal();
 state_crawl();
 
 
-
+if (global.sprite_idlebreak = true)
+{
+	sprite_index = spr_player_idlebreaker_1;
+}
 
 if (global.jestraught_player = true)
 {
@@ -53,8 +56,16 @@ if (input_check("left")) and (input_check("right")) and (onground)
 	sprite_index = spr_playernew;
 }
 
-
-
+//Idle breaker trigger
+if (sprite_index = spr_playernew)
+{
+	time_source_start(timer_idle_breaker_jk);
+}
+else
+{
+	time_source_stop(timer_idle_breaker_jk);
+	global.sprite_idlebreak = false;
+}
 //Mini wizard
 if (instance_exists(obj_Lwiz_mini))
 {
@@ -757,6 +768,7 @@ if (instance_exists(obj_dBoost_additive))
 	if (!instance_exists(obj_dashB_active_effect))
 	{
 		instance_create_depth(x,y,399,obj_dashB_active_effect);
+		time_source_stop(global.timer_wallboost_deactivate);
 	}
 }
 
@@ -770,4 +782,9 @@ if (place_meeting(x,y,obj_hud_opac_lower))
 {
 	obj_ranks.image_alpha = 0.1;
 	obj_rank_cover.image_alpha = 0.1;
+}
+
+if (instance_exists(obj_wallboost))
+{
+	walksp += 0.3;
 }

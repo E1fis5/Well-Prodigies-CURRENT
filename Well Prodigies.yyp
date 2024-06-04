@@ -268,7 +268,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.4.1.152",
   },
   "name":"Well Prodigies",
   "resources":[
@@ -558,6 +558,8 @@
     {"id":{"name":"obj_vent_exit_hide","path":"objects/obj_vent_exit_hide/obj_vent_exit_hide.yy",},},
     {"id":{"name":"obj_vent_exit","path":"objects/obj_vent_exit/obj_vent_exit.yy",},},
     {"id":{"name":"obj_ventcover","path":"objects/obj_ventcover/obj_ventcover.yy",},},
+    {"id":{"name":"obj_wallboost_effect","path":"objects/obj_wallboost_effect/obj_wallboost_effect.yy",},},
+    {"id":{"name":"obj_wallboost","path":"objects/obj_wallboost/obj_wallboost.yy",},},
     {"id":{"name":"obj_wallclimb_effect_left","path":"objects/obj_wallclimb_effect_left/obj_wallclimb_effect_left.yy",},},
     {"id":{"name":"obj_wallclimb_effect","path":"objects/obj_wallclimb_effect/obj_wallclimb_effect.yy",},},
     {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},},
@@ -1472,6 +1474,7 @@
     {"id":{"name":"spr_vent_exit_uncover","path":"sprites/spr_vent_exit_uncover/spr_vent_exit_uncover.yy",},},
     {"id":{"name":"spr_ventcover","path":"sprites/spr_ventcover/spr_ventcover.yy",},},
     {"id":{"name":"spr_walksp_buyable","path":"sprites/spr_walksp_buyable/spr_walksp_buyable.yy",},},
+    {"id":{"name":"spr_wallboost_effect","path":"sprites/spr_wallboost_effect/spr_wallboost_effect.yy",},},
     {"id":{"name":"spr_wallclimb_effect_left","path":"sprites/spr_wallclimb_effect_left/spr_wallclimb_effect_left.yy",},},
     {"id":{"name":"spr_wallclimb_effect","path":"sprites/spr_wallclimb_effect/spr_wallclimb_effect.yy",},},
     {"id":{"name":"spr_wallclimbcollision","path":"sprites/spr_wallclimbcollision/spr_wallclimbcollision.yy",},},

@@ -7,6 +7,18 @@ global.speed_add = false;
 
  global.time_source_moment = time_source_create(time_source_game,2,time_source_units_seconds,time_source_run_add,[],1);
 
+var idle_breaker = function()
+{
+	global.sprite_idlebreak = true;
+}
+var wallboost_destroy = function()
+{
+	instance_destroy(obj_wallboost);
+	instance_destroy(obj_wallboost_effect);
+	global.wallboost_amount = 0;
+}
+
+global.timer_wallboost_deactivate = time_source_create(time_source_game,5,time_source_units_seconds,wallboost_destroy,[],1);
 
 
 
@@ -15,9 +27,7 @@ global.speed_add = false;
 
 
 
-
-
-
+global.sprite_idlebreak = false;
 hsp = 0;
 hsp_wjump = 4;
 vsp = 10;
@@ -74,6 +84,7 @@ global.isActive = false;
 jumpmax = 2
 jumps_active = 0
 onground = false
+global.wallboost_amount = 0;
 //Dash
 can_dash = false
 dash_distance = 125
@@ -133,6 +144,9 @@ var dBoost_deactivate = function()
 		instance_destroy(obj_dashB_active_effect);
 	}
 }
+
+//Idle breaker
+timer_idle_breaker_jk = time_source_create(time_source_game,5,time_source_units_seconds,idle_breaker,[],-1);
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
 timer_dBoost_deactivate = time_source_create(time_source_game,8,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
@@ -154,7 +168,17 @@ if (onwall != 0) && (!onground) && (input_check("jump"))
 	hsp = -onwall * hsp_wjump;
 	vsp = vsp_wjump;
 	audio_play_sound(snd_stone1,5,false)
+	global.wallboost_amount += 1
+	if (time_source_exists(global.timer_wallboost_deactivate))
+	{
+	time_source_stop(global.timer_wallboost_deactivate);
+	}
 		can_dash = true;
+	if (!instance_exists(obj_wallboost)) and (global.wallboost_amount >= 3)
+	{
+		instance_create_depth(x,y,100,obj_wallboost);
+		instance_create_depth(-999,-999,399,obj_wallboost_effect);
+	}
 		instance_create_depth(x,y,401,obj_wallclimb_effect);
 		if (player_left = true)
 		{
@@ -308,7 +332,7 @@ if player_left = false && input_check("right") = false
 	image_yscale = 1
 }
 
-  if input_check("right") = false && input_check("left") = false && player_left = false 
+  if input_check("right") = false && input_check("left") = false && player_left = false and (!global.sprite_idlebreak = true)
 {
 	sprite_index = spr_playernew
 	image_xscale = 1
