@@ -12,4 +12,4 @@ time_amount = 0
 global.spr_destroy_lap_boost = false
 global.lap2_drain = time_source_create(time_source_game,2,time_source_units_seconds,lap2_drain_score,[],-1);
 score_add = 0
-
+mb_fire = false;

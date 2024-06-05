@@ -47,3 +47,8 @@ if (!instance_exists(obj_lap_boost_sign))
 {
 	instance_create_depth(-999,-999,401,obj_lap_boost_sign);
 }
+
+if (mb_fire = true)
+{
+	instance_create_depth(-999,-999,-9996,obj_lap2_mb_fire_filter);
+}
