@@ -33,22 +33,22 @@ if (global.jestraught_player = true)
 //Run
 if  input_check("run") = true 
  {
-   walksp = 7.3
+   walksp = 7.75
  }
 
 if input_check("run") = false and input_check("down") = false
 {
-	walksp = 5.65
+	walksp = 6.5
 }
 
 if input_check("run") = true and input_check("down") = true
 {
-	walksp = 7.3
+	walksp = 7.6
 }
 
 if input_check("run") = false and input_check("down") = false
 {
-	walksp = 5.65
+	walksp = 6.5
 }
 
 if (input_check("left")) and (input_check("right")) and (onground)

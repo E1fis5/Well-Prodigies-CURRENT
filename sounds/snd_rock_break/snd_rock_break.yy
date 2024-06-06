@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_rock_break.mp3",
   "type":0,
-  "volume":0.47,
+  "volume":0.17,
 }

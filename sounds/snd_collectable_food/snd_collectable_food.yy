@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_collectable_food.mp3",
   "type":0,
-  "volume":0.68,
+  "volume":0.42,
 }

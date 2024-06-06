@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_freeze_damage.mp3",
   "type":0,
-  "volume":0.6,
+  "volume":0.24,
 }

@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_lap.mp3",
   "type":0,
-  "volume":0.8,
+  "volume":0.42,
 }

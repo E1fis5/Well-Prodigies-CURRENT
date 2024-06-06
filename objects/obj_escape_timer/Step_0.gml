@@ -18,6 +18,7 @@ if (global.isActive = true)
 {
 	instance_destroy(obj_escape_collision)
 	instance_destroy(obj_escape_collision_climb)
+	obj_player.walksp += 0.35;
 }
 
 if (sound_timer <= 0) and global.isActive = true {

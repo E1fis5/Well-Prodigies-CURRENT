@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_switch_collision_red",
-    "path":"sprites/spr_switch_collision_red/spr_switch_collision_red.yy",
+    "name":"spr_gate_switch_normal",
+    "path":"sprites/spr_gate_switch_normal/spr_gate_switch_normal.yy",
   },
   "spriteMaskId":null,
   "visible":true,

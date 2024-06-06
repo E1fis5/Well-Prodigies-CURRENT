@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_monkey_kill.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.48,
 }
