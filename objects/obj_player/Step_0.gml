@@ -772,7 +772,7 @@ if (instance_exists(obj_dBoost_additive))
 	}
 }
 
-if (!instance_exists(obj_dash_boost)) and (input_check("attack")) and (time_source_exists(timer_dBoost_create))
+if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_exists(obj_blood_effect))) and (time_source_exists(timer_dBoost_create))
 {
 	time_source_stop(timer_dBoost_create);
 }
