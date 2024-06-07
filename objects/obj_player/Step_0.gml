@@ -788,3 +788,4 @@ if (instance_exists(obj_wallboost))
 {
 	walksp += 0.3;
 }
+

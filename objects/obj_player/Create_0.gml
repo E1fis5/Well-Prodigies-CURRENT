@@ -85,6 +85,7 @@ jumpmax = 2
 jumps_active = 0
 onground = false
 global.wallboost_amount = 0;
+global.dash_amount = 0;
 //Dash
 can_dash = false
 dash_distance = 125
