@@ -25,8 +25,7 @@ global.timer_wallboost_deactivate = time_source_create(time_source_game,5,time_s
 
 
 
-
-
+global.dash_cancel_speed = false;
 global.sprite_idlebreak = false;
 hsp = 0;
 hsp_wjump = 4;
@@ -112,6 +111,14 @@ global.noclip = false;
 global.escape_touch = false;
 global.hub_currency = 999;
 global.blocker_exists = false;
+global.dash_Jboost_3 = false;
+global.dash_Jboost_4 = false;
+global.dash_Jboost_5 = false;
+global.dash_Jboost_6 = false;
+global.dash_Jboost_7 = false;
+global.dash_Jboost_8 = false;
+global.dash_Jboost_9 = false;
+global.dash_Jboost_10 = false;
 //Power crawl
 var power_crawl_damage = function()
 {
@@ -151,7 +158,7 @@ timer_idle_breaker_jk = time_source_create(time_source_game,5,time_source_units_
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
 timer_dBoost_deactivate = time_source_create(time_source_game,8,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
-timer_power_crawl = time_source_create(time_source_game,2,time_source_units_seconds,power_crawl_damage,[],-1);
+timer_power_crawl = time_source_create(time_source_game,1.75,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,1,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
 // Idle Breaker
 
@@ -214,7 +221,20 @@ if (canJump-- > 0) and (input_check_pressed("jump"))
 
 
 
+if (global.dash_amount = 2)
+{
+	walksp += 1.2;
+}
 
+if (global.dash_amount = 3)
+{
+	walksp += 1.2;
+}
+
+if (global.dash_amount = 4)
+{
+	walksp += 1.2;
+}
 //Run jump
 if (input_check("run") = true) and (sprite_index = spr_playerwalk = true) or (sprite_index = spr_playerwalkleft = true)  and (input_check("jump") = true) and (grv = -1 = false)
 {

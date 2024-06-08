@@ -337,6 +337,7 @@
     {"id":{"name":"obj_collect_carrot","path":"objects/obj_collect_carrot/obj_collect_carrot.yy",},},
     {"id":{"name":"obj_collect_effect","path":"objects/obj_collect_effect/obj_collect_effect.yy",},},
     {"id":{"name":"obj_collect_effect2","path":"objects/obj_collect_effect2/obj_collect_effect2.yy",},},
+    {"id":{"name":"obj_collectable_respawn","path":"objects/obj_collectable_respawn/obj_collectable_respawn.yy",},},
     {"id":{"name":"obj_collectable1","path":"objects/obj_collectable1/obj_collectable1.yy",},},
     {"id":{"name":"obj_collectable1big","path":"objects/obj_collectable1big/obj_collectable1big.yy",},},
     {"id":{"name":"obj_collectable2","path":"objects/obj_collectable2/obj_collectable2.yy",},},

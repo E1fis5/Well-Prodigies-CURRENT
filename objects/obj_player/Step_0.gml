@@ -314,6 +314,8 @@ if (can_dash) and (input_check_pressed("dash"))
 	dash_distance = 155
     dash_time = 16
 	grv = 0
+	global.dash_amount += 1;
+	global.dash_cancel_speed = false;
 	global.dJump_active = false
 	audio_play_sound(snd_dash_p,8,false)
 	global.dash_active = true
@@ -389,14 +391,63 @@ y += vsp;
 	   canJump = 10
 	   global.dash_active = false;
 	   time_source_stop(timer_dBoost_create);
-	   if (global.jestraught_player = true)
-	{
-		walksp += 0.1;
-	}
    }
 }
 }
+//Dash Joost
+if (global.dash_cancel_speed = true)
+{
+	global.dash_amount = 0;
+}
+if (onground = true)
+{
+	global.dash_cancel_speed = true;
+}
 
+if (global.dash_amount >= 2)
+{
+	walksp += 0.20;
+}
+
+if (global.dash_amount >= 3)
+{
+	walksp += 0.20;
+}
+
+if (global.dash_amount >= 4)
+{
+	walksp += 0.20;
+}
+if (global.dash_amount >= 5)
+{
+	walksp += 0.20;
+}
+
+if (global.dash_amount >= 6)
+{
+	walksp += 0.20;
+}
+
+if (global.dash_amount >= 7)
+{
+	walksp += 0.20;
+}
+
+if (global.dash_amount >= 8)
+{
+	walksp += 0.20;
+}
+
+if (global.dash_amount >= 9)
+{
+	walksp += 0.15;
+}
+
+if (global.dash_amount >= 10)
+{
+	walksp += 0;
+	global.dash_amount = 10;
+}
 //Dash breakable
 if (sprite_index = spr_player_dash) and (place_meeting(x,y,obj_dash_breakable))
 {
@@ -428,10 +479,9 @@ if (global.sanity >= 70) and (bombActive = false)
 
 if (global.sanity <= 30)and (bombActive = false)
 {
-	walksp += 0.35
-	global.walksp_run_max += 0.35
-	dash_distance = 160
-    dash_time = 16
+	walksp -= 0.45
+	dash_distance = 150
+    dash_time = 15
 }
 
 if (place_meeting(x,y,obj_slide))
@@ -705,7 +755,7 @@ if (global.timer <= 0) and score <= 0 and (instance_exists(obj_escape_timer))
 //Power Crawl
 if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 {
-	walksp = 9.8;
+	walksp = 11.5
 	time_source_start(timer_power_crawl);
 	if (!instance_exists(obj_blood_effect))
 	{
@@ -764,6 +814,7 @@ if (instance_exists(obj_dBoost_additive))
 	walksp += 1.3;
 	dash_distance = 185;
 	dash_time = 17;
+	global.dash_cancel_speed = false;
 	time_source_stop(timer_dBoost_create);
 	if (!instance_exists(obj_dashB_active_effect))
 	{

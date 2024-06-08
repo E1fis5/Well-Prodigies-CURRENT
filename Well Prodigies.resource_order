@@ -215,6 +215,7 @@
     {"name":"obj_collect_big2","order":11,"path":"objects/obj_collect_big2/obj_collect_big2.yy",},
     {"name":"obj_collect_carrot","order":1,"path":"objects/obj_collect_carrot/obj_collect_carrot.yy",},
     {"name":"obj_collect_effect2","order":15,"path":"objects/obj_collect_effect2/obj_collect_effect2.yy",},
+    {"name":"obj_collectable_respawn","order":12,"path":"objects/obj_collectable_respawn/obj_collectable_respawn.yy",},
     {"name":"obj_collectable1big","order":6,"path":"objects/obj_collectable1big/obj_collectable1big.yy",},
     {"name":"obj_collectable2","order":1,"path":"objects/obj_collectable2/obj_collectable2.yy",},
     {"name":"obj_collision_wall","order":2,"path":"objects/obj_collision_wall/obj_collision_wall.yy",},
