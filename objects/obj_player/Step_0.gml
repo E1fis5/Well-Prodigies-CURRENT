@@ -69,8 +69,7 @@ else
 //Mini wizard
 if (instance_exists(obj_Lwiz_mini))
 {
-	walksp += 0.75
-	global.walksp_run_max += 0.75;
+	walksp += 0.75;
 		dash_distance = 200
     dash_time = 18
 }
@@ -406,47 +405,27 @@ if (onground = true)
 
 if (global.dash_amount >= 2)
 {
-	walksp += 0.20;
+	walksp += 0.40;
 }
 
 if (global.dash_amount >= 3)
 {
-	walksp += 0.20;
+	walksp += 0.40;
 }
 
 if (global.dash_amount >= 4)
 {
-	walksp += 0.20;
+	walksp += 0.40;
 }
 if (global.dash_amount >= 5)
 {
-	walksp += 0.20;
+	walksp += 0.40;
 }
 
 if (global.dash_amount >= 6)
 {
-	walksp += 0.20;
-}
-
-if (global.dash_amount >= 7)
-{
-	walksp += 0.20;
-}
-
-if (global.dash_amount >= 8)
-{
-	walksp += 0.20;
-}
-
-if (global.dash_amount >= 9)
-{
-	walksp += 0.15;
-}
-
-if (global.dash_amount >= 10)
-{
 	walksp += 0;
-	global.dash_amount = 10;
+	global.dash_amount = 6;
 }
 //Dash breakable
 if (sprite_index = spr_player_dash) and (place_meeting(x,y,obj_dash_breakable))
@@ -458,7 +437,6 @@ if (sprite_index = spr_player_dash) and (place_meeting(x,y,obj_dash_breakable))
 if (global.walksp_boost_active = true) 
 {
 	walksp += 0.60;
-	global.walksp_run_max += 0.60;
 }
 
 if (sprite_index = spr_player_bomb or spr_player_bomb_escape)
@@ -472,7 +450,6 @@ if (sprite_index = spr_player_bomb or spr_player_bomb_escape)
 if (global.sanity >= 70) and (bombActive = false)
 {
 	walksp += 0.45
-	global.walksp_run_max += 0.45
 	dash_distance = 170
     dash_time = 17
 }

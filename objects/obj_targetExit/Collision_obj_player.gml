@@ -5,4 +5,3 @@ if !instance_exists(obj_transition)
 	  inst.target_y = target_y;
       inst.target_rm = target_rm;
 }
-
