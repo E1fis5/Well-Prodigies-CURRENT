@@ -23,22 +23,21 @@ global.timer_wallboost_deactivate = time_source_create(time_source_game,5,time_s
 
 
 
-
-
+global.powercrawl = false;
 global.dash_cancel_speed = false;
 global.sprite_idlebreak = false;
 hsp = 0;
 hsp_wjump = 4;
 vsp = 10;
 grv = 0.07
-grv_wall = 0.16;
+grv_wall = 0.50;
 walksp =4;
 global.walksp_run_max = 0
 vspJump = -6
 vspDJump = -9
 vsp_wjump = -5;
 vsp_max_wall = 4;
-canJump = 0
+canJump = 7
 global.dJump_idle = false
 global.health = 0
 runsp = 5.5;
@@ -154,7 +153,7 @@ var dBoost_deactivate = function()
 }
 
 //Idle breaker
-timer_idle_breaker_jk = time_source_create(time_source_game,5,time_source_units_seconds,idle_breaker,[],-1);
+timer_idle_breaker_jk = time_source_create(time_source_game,1,time_source_units_seconds,idle_breaker,[],-1);
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
 timer_dBoost_deactivate = time_source_create(time_source_game,8,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
@@ -209,7 +208,7 @@ vsp = clamp(vsp, -vsp_max_final, vsp_max_final);
 if (canJump-- > 0) and (input_check_pressed("jump"))
 {
 	vsp = vspJump;
-	canJump = 10;
+	canJump = 7;
 	audio_play_sound(snd_pJump,4,false);
 	jump_allowed = true;
 	canCrawl = 1
@@ -353,7 +352,7 @@ if player_left = false && input_check("right") = false
 	image_yscale = 1
 }
 
-  if input_check("right") = false && input_check("left") = false && player_left = false and (!global.sprite_idlebreak = true)
+  if input_check("right") = false && input_check("left") = false && player_left = false and (global.idlespr_active = false)
 {
 	sprite_index = spr_playernew
 	image_xscale = 1
@@ -379,14 +378,13 @@ if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood)
 
 state_FastFall = function()
 {
-	if (input_check("down") = true) and (grv = -1 = false) and (input_check("jump") = true) and (!place_meeting(x,y,obj_ladder_wood))
+	if (input_check("down") = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (onground = false)
 {
 	grv = 5
 	walksp = 4.8
 	sprite_index = spr_player_downp
 	vsp = 10
 	global.fallspr_deactivate = true
-	FastFall = true
 	global.dJump_active = false
 }           
 }

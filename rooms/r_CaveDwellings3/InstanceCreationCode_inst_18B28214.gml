@@ -3,4 +3,4 @@ target_y = 1120
 target_rm = r_CaveDwellings10
 
 time_amount = 1
-score_add = 2000
+score_add = 2150

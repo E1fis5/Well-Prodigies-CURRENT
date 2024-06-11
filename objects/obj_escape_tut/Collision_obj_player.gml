@@ -27,7 +27,7 @@ if (global.gamemode_easy = true)
 }
 if (global.gamemode_hard = true)
 {
-    global.timer = 60
+    global.timer = 125
 }
 
 if (!global.escape_transition_end) and (!instance_exists(obj_escape_transition))

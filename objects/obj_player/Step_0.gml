@@ -18,10 +18,7 @@ stateNormal();
 state_crawl();
 
 
-if (global.sprite_idlebreak = true)
-{
-	sprite_index = spr_player_idlebreaker_1;
-}
+
 
 if (global.jestraught_player = true)
 {
@@ -33,22 +30,24 @@ if (global.jestraught_player = true)
 //Run
 if  input_check("run") = true 
  {
-   walksp = 7.75
+   walksp = 7.95
  }
 
 if input_check("run") = false and input_check("down") = false
 {
-	walksp = 6.5
+	walksp = 6.8
 }
 
 if input_check("run") = true and input_check("down") = true
 {
-	walksp = 7.6
+	walksp = 7.95
+	
 }
 
 if input_check("run") = false and input_check("down") = false
 {
-	walksp = 6.5
+	walksp = 6.8
+	global.sprite_idlebreak = false;
 }
 
 if (input_check("left")) and (input_check("right")) and (onground)
@@ -237,7 +236,7 @@ state_FastFall();
 
 if (sprite_index = spr_player_downp) and (onground = true)
 {
-	sprite_index = spr_playernew
+	sprite_index = spr_playernew;
 }
 
 //Ladder
@@ -304,7 +303,6 @@ if (place_meeting(x,y,obj_forcecrawl))
 if (can_dash) and (input_check_pressed("dash"))
 {
 	can_dash = false;
-	canJump = 0;
 	dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")))
 	dash_sp = dash_distance/dash_time;
 	dash_energy = dash_distance;
@@ -313,7 +311,6 @@ if (can_dash) and (input_check_pressed("dash"))
 	dash_distance = 155
     dash_time = 16
 	grv = 0
-	global.dash_amount += 1;
 	global.dash_cancel_speed = false;
 	global.dJump_active = false
 	audio_play_sound(snd_dash_p,8,false)
@@ -387,9 +384,13 @@ y += vsp;
    if (dash_energy <= 0)
    {
 	   stateNormal = state_normal
-	   canJump = 10
+	   canJump = 7
 	   global.dash_active = false;
 	   time_source_stop(timer_dBoost_create);
+	   if (onground = false) and (onwall = false)
+	   {
+		   global.dash_amount += 1;
+	   }
    }
 }
 }
@@ -405,26 +406,26 @@ if (onground = true)
 
 if (global.dash_amount >= 2)
 {
-	walksp += 0.40;
+	walksp += 0.20;
 }
 
 if (global.dash_amount >= 3)
 {
-	walksp += 0.40;
+	walksp += 0.20;
 }
 
 if (global.dash_amount >= 4)
 {
-	walksp += 0.40;
+	walksp += 0.25;
 }
 if (global.dash_amount >= 5)
 {
-	walksp += 0.40;
+	walksp += 0.25;
 }
 
 if (global.dash_amount >= 6)
 {
-	walksp += 0;
+	walksp += 0.30;
 	global.dash_amount = 6;
 }
 //Dash breakable
@@ -734,6 +735,7 @@ if (input_check("run")) and (input_check("down")) and (input_check("attack")) an
 {
 	walksp = 11.5
 	time_source_start(timer_power_crawl);
+	global.powercrawl = true;
 	if (!instance_exists(obj_blood_effect))
 	{
 		instance_create_depth(x,y,399,obj_blood_effect);
