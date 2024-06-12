@@ -19,10 +19,6 @@ var wallboost_destroy = function()
 }
 
 global.timer_wallboost_deactivate = time_source_create(time_source_game,5,time_source_units_seconds,wallboost_destroy,[],1);
-
-
-
-
 global.powercrawl = false;
 global.dash_cancel_speed = false;
 global.sprite_idlebreak = false;
@@ -58,6 +54,7 @@ if (global.targetX != -1)
 	y = global.targetY;
 	direction = global.targetDirection;
 }
+global.abilityscore = 0;
 player_left = false
 inAir = false
 canCrawl = 0
@@ -84,6 +81,7 @@ jumps_active = 0
 onground = false
 global.wallboost_amount = 0;
 global.dash_amount = 0;
+global.doll_ability_active = false;
 //Dash
 can_dash = false
 dash_distance = 125

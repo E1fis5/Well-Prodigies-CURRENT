@@ -1,2 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+if (global.isActive = true)
+{
+	instance_create_depth(x,y,401,obj_escape_collision)
+}

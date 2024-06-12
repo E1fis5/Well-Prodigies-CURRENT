@@ -20,6 +20,8 @@ state_crawl();
 
 
 
+
+
 if (global.jestraught_player = true)
 {
 	state_crawl = false
@@ -406,26 +408,26 @@ if (onground = true)
 
 if (global.dash_amount >= 2)
 {
-	walksp += 0.20;
+	walksp += 0.25;
 }
 
 if (global.dash_amount >= 3)
 {
-	walksp += 0.20;
+	walksp += 0.25;
 }
 
 if (global.dash_amount >= 4)
 {
-	walksp += 0.25;
+	walksp += 0.30;
 }
 if (global.dash_amount >= 5)
 {
-	walksp += 0.25;
+	walksp += 0.30;
 }
 
 if (global.dash_amount >= 6)
 {
-	walksp += 0.30;
+	walksp += 0.40;
 	global.dash_amount = 6;
 }
 //Dash breakable
@@ -733,7 +735,7 @@ if (global.timer <= 0) and score <= 0 and (instance_exists(obj_escape_timer))
 //Power Crawl
 if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 {
-	walksp = 11.5
+	walksp = 10.5
 	time_source_start(timer_power_crawl);
 	global.powercrawl = true;
 	if (!instance_exists(obj_blood_effect))
@@ -790,7 +792,7 @@ if (instance_exists(obj_dash_boost)) and (input_check("attack"))
 
 if (instance_exists(obj_dBoost_additive))
 {
-	walksp += 1.3;
+	walksp += 0.85;
 	dash_distance = 185;
 	dash_time = 17;
 	global.dash_cancel_speed = false;
@@ -799,6 +801,7 @@ if (instance_exists(obj_dBoost_additive))
 	{
 		instance_create_depth(x,y,399,obj_dashB_active_effect);
 		time_source_stop(global.timer_wallboost_deactivate);
+		global.abilityscore += 50;
 	}
 }
 
@@ -819,3 +822,8 @@ if (instance_exists(obj_wallboost))
 	walksp += 0.3;
 }
 
+if (global.doll_ability_active = true)
+{
+	walksp += 0.8;
+	dash_distance = 210;
+}

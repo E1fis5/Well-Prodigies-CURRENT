@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_ranks_P",
+    "path":"sprites/spr_ranks_P/spr_ranks_P.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

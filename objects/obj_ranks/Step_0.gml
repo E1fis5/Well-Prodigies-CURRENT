@@ -1,5 +1,5 @@
 
-if (score >= 0)
+if (score <= 0)
    {
 	 sprite_index = spr_ranks_F
    }
