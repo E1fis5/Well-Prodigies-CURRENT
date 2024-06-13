@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"water",
-    "path":"folders/Objects/water.yy",
+    "path":"folders/Objects/tutorial_stuff/water.yy",
   },
   "parentObjectId":null,
   "persistent":true,

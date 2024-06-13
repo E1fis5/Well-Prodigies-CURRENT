@@ -5,6 +5,7 @@ if (input_check_pressed("accept"))
 	  inst.target_y = 512
       inst.target_rm = r_GT1
 	  global.sanity = 65
+	  instance_create_depth(x,y,-9999,obj_dashBoost_pause);
 	  global.scoreHider = false
 	  global.escape_transition_end = false
 	  audio_stop_sound(snd_wellhub)

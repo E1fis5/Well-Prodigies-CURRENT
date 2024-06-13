@@ -9,4 +9,5 @@ if (global.abilityscore = 150) and (input_check("ability")) and (!instance_exist
 	global.doll_ability_active = true;
 	sprite_index = spr_angry_luigi;
 	audio_play_sound(snd_ability_use,6,false);
+	global.abilityscore = 0;
 }

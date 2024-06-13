@@ -1,5 +1,5 @@
 score += 825
-
+global.abilityscore += 50;
 instance_destroy();
 
 instance_create_depth(x,y,-1000,obj_gem_collect)

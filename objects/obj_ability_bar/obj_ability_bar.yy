@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ability_bar",
-    "path":"sprites/spr_ability_bar/spr_ability_bar.yy",
+    "name":"spr_ability_bar_deactivated",
+    "path":"sprites/spr_ability_bar_deactivated/spr_ability_bar_deactivated.yy",
   },
   "spriteMaskId":null,
   "visible":true,

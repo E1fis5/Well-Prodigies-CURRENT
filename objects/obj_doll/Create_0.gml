@@ -7,5 +7,5 @@ var doll_boost_destroy = function()
 	audio_play_sound(snd_ability_wearoff,6,false);
 }
 global.doll_ability_active = false;
-
-global.doll_boost_destroy = time_source_create(time_source_game,12,time_source_units_seconds,doll_boost_destroy,[],1)
+global.abilityscore = 0;
+global.doll_boost_destroy = time_source_create(time_source_game,15,time_source_units_seconds,doll_boost_destroy,[],1)

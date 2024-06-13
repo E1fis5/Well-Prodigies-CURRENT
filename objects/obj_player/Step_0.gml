@@ -801,7 +801,6 @@ if (instance_exists(obj_dBoost_additive))
 	{
 		instance_create_depth(x,y,399,obj_dashB_active_effect);
 		time_source_stop(global.timer_wallboost_deactivate);
-		global.abilityscore += 50;
 	}
 }
 

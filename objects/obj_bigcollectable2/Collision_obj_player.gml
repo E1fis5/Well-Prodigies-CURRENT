@@ -1,5 +1,5 @@
 score += 350
-
+global.abilityscore += 25;
 instance_destroy();
 
 audio_play_sound(snd_collect_medium,0,false);

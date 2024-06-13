@@ -4,6 +4,7 @@ if place_meeting(x,y,obj_player) and input_check("up") and !instance_exists(obj_
       inst.target_x = target_x;
 	  inst.target_y = target_y;
       inst.target_rm = target_rm;
+	  instance_create_depth(x,y,-9999,obj_dashBoost_pause);
 }
 
 depth = 401
