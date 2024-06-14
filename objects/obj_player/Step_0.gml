@@ -401,9 +401,14 @@ if (global.dash_cancel_speed = true)
 {
 	global.dash_amount = 0;
 }
-if (onground = true)
+if (onground = true) and (!instance_exists(obj_dashjoost_pause))
 {
 	global.dash_cancel_speed = true;
+}
+
+if (place_meeting(x,y + 30, obj_collision_wall)) and (!instance_exists(obj_dashjoost_pause))
+{
+	instance_create_depth(x,y,-9999,obj_dashjoost_pause);
 }
 
 if (global.dash_amount >= 2)
@@ -735,7 +740,7 @@ if (global.timer <= 0) and score <= 0 and (instance_exists(obj_escape_timer))
 //Power Crawl
 if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 {
-	walksp = 10.5
+	walksp = 10.8
 	time_source_start(timer_power_crawl);
 	global.powercrawl = true;
 	if (!instance_exists(obj_blood_effect))
@@ -801,6 +806,11 @@ if (instance_exists(obj_dBoost_additive))
 	{
 		instance_create_depth(x,y,399,obj_dashB_active_effect);
 		time_source_stop(global.timer_wallboost_deactivate);
+	}
+	
+	if (instance_exists(obj_dashjoost_pause))
+	{
+		instance_destroy(obj_dashjoost_pause);
 	}
 }
 

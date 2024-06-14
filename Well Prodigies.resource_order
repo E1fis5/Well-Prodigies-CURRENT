@@ -233,6 +233,7 @@
     {"name":"obj_dashB_active_effect","order":14,"path":"objects/obj_dashB_active_effect/obj_dashB_active_effect.yy",},
     {"name":"obj_dashBoost_effect","order":12,"path":"objects/obj_dashBoost_effect/obj_dashBoost_effect.yy",},
     {"name":"obj_dashBoost_pause","order":26,"path":"objects/obj_dashBoost_pause/obj_dashBoost_pause.yy",},
+    {"name":"obj_dashjoost_pause","order":27,"path":"objects/obj_dashjoost_pause/obj_dashjoost_pause.yy",},
     {"name":"obj_dBoost_additive","order":24,"path":"objects/obj_dBoost_additive/obj_dBoost_additive.yy",},
     {"name":"obj_debug_switcher","order":22,"path":"objects/obj_debug_switcher/obj_debug_switcher.yy",},
     {"name":"obj_deep_snow2","order":1,"path":"objects/obj_deep_snow2/obj_deep_snow2.yy",},

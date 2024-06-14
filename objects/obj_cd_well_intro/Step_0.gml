@@ -18,7 +18,9 @@ if (input_check_pressed("accept"))
 		  instance_create_depth(-999,-999,-9999,obj_sanitymeter);
 		  instance_create_depth(-999,-999,-9999,obj_sanity_bg);
 	  }
-	    instance_create_depth(x,y,-9999,obj_dashBoost_pause);
+	  
+
+	    instance_create_depth(x,y,-9999,obj_dashBoost_pause)
 }
 
 if (input_check_pressed("cancel"))

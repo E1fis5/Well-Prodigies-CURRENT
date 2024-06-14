@@ -23,13 +23,19 @@ if !instance_exists(obj_transition)
 	instance_destroy(obj_torch_hud);
 			instance_destroy(obj_lap2_alert)
 			time_source_stop(global.timer_drain)
+			if (time_source_exists(global.lap2_drain))
+			{
 			    time_source_stop(global.lap2_drain);
+			}
 		global.walksp_boost_active = false;
 		global.shopitem_bought = false;
 		global.torch_active = false;
 		global.wood_sparked = false;
 		global.hypothermia_amount = 300;
 	global.escape_touch = false;
+			instance_destroy(obj_doll);
+		global.soldout_doll = false;
+		global.soldout_speed = false;
 
 
 if (score >= 0)

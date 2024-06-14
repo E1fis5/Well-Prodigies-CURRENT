@@ -357,6 +357,7 @@
     {"id":{"name":"obj_dashB_active_effect","path":"objects/obj_dashB_active_effect/obj_dashB_active_effect.yy",},},
     {"id":{"name":"obj_dashBoost_effect","path":"objects/obj_dashBoost_effect/obj_dashBoost_effect.yy",},},
     {"id":{"name":"obj_dashBoost_pause","path":"objects/obj_dashBoost_pause/obj_dashBoost_pause.yy",},},
+    {"id":{"name":"obj_dashjoost_pause","path":"objects/obj_dashjoost_pause/obj_dashjoost_pause.yy",},},
     {"id":{"name":"obj_dBoost_additive","path":"objects/obj_dBoost_additive/obj_dBoost_additive.yy",},},
     {"id":{"name":"obj_debug_switcher","path":"objects/obj_debug_switcher/obj_debug_switcher.yy",},},
     {"id":{"name":"obj_deep_snow1","path":"objects/obj_deep_snow1/obj_deep_snow1.yy",},},

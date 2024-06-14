@@ -1,3 +1,3 @@
-target_x = 4320
-target_y = 1408
+target_x = 4256
+target_y = 1376
 target_rm = r_CaveDwellings8
