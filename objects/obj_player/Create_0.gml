@@ -153,9 +153,9 @@ var dBoost_deactivate = function()
 //Idle breaker
 timer_idle_breaker_jk = time_source_create(time_source_game,1,time_source_units_seconds,idle_breaker,[],-1);
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
-timer_dBoost_deactivate = time_source_create(time_source_game,8,time_source_units_seconds, dBoost_deactivate,[],1);
+timer_dBoost_deactivate = time_source_create(time_source_game,9,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
-timer_power_crawl = time_source_create(time_source_game,1.75,time_source_units_seconds,power_crawl_damage,[],-1);
+timer_power_crawl = time_source_create(time_source_game,2,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,1,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
 // Idle Breaker
 
@@ -384,6 +384,10 @@ state_FastFall = function()
 	vsp = 10
 	global.fallspr_deactivate = true
 	global.dJump_active = false
+	if (global.dash_amount = 6)
+	{
+		walksp = 7.5
+	}
 }           
 }
 

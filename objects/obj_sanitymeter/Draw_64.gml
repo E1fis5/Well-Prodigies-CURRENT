@@ -1,39 +1,42 @@
+
+
+
+draw_sprite_ext(sprite_index,image_index,8,64,image_xscale,image_yscale,0,c_white,image_alpha);
+
+
 	if (global.sanity <= 100)
 {
-   	draw_sprite(spr_sanitymeternew,0,8,64)
+   	image_index = 0;
 }
-
-
-
 
 if (global.sanity <= 90) 
 {
-	draw_sprite(spr_sanitymeternew,1,8,64)
+	image_index = 1;
 }
 
 if (global.sanity <= 80) 
 {
-	draw_sprite(spr_sanitymeternew,2,8,64)
+	image_index = 2;
 }
 
 if (global.sanity <= 70) 
 {
-	draw_sprite(spr_sanitymeternew,3,8,64)
+	image_index = 3;
 }
 
 if (global.sanity <= 60) 
 {
-	draw_sprite(spr_sanitymeternew,4,8,64)
+	image_index = 4;
 }
 
 if (global.sanity <= 50)
 {
-	draw_sprite(spr_sanitymeternew,5,8,64)
+	image_index = 5;
 }
 
 if (global.sanity <= 40) 
 {
-	draw_sprite(spr_sanitymeternew,6,8,64)	
+	image_index = 6;
 }
 
 if (global.sanity <= 40) and (!instance_exists(obj_sanity_notif))
@@ -44,12 +47,12 @@ if (global.sanity <= 40) and (!instance_exists(obj_sanity_notif))
 
 if (global.sanity <= 30) 
 {
-	draw_sprite(spr_sanitymeternew,7,8,64)
+	image_index = 7;
 }
 
 if (global.sanity <= 20) 
 {
-	draw_sprite(spr_sanitymeternew,8,8,64)
+	image_index = 8;
 	global.sanity = 20
 	time_source_pause(sanityTimerNormal)
 	time_source_pause(sanityTimerHard)

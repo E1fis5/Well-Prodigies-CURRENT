@@ -20,6 +20,12 @@ if (input_check_pressed("accept"))
 		  instance_create_depth(-999,-999,-9999,obj_sanitymeter);
 		  instance_create_depth(-999,-999,-9999,obj_sanity_bg);
 	  }
+	  
+	  	  
+       if (!instance_exists(obj_ranks))
+	   {
+		   instance_create_depth(1000,1000,-9999,obj_ranks);
+	   }
     instance_create_depth(x,y,-9999,obj_dashBoost_pause)
 }
 

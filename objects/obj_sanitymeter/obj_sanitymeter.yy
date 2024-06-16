@@ -31,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_sanitymeternew",
+    "path":"sprites/spr_sanitymeternew/spr_sanitymeternew.yy",
+  },
   "spriteMaskId":{
     "name":"spr_sanitymeternew",
     "path":"sprites/spr_sanitymeternew/spr_sanitymeternew.yy",

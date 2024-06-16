@@ -31,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_health_new",
+    "path":"sprites/spr_health_new/spr_health_new.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

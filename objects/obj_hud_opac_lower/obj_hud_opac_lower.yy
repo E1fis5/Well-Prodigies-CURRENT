@@ -32,5 +32,5 @@
     "path":"sprites/spr_black/spr_black.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

@@ -1,42 +1,43 @@
 if (global.health <= 6) and (global.gamemode_hard = true)
 {
-	draw_sprite(spr_health_new,0,1550,870)
+	image_index = 0;
 }
 
 if (global.health <= 5) and (global.gamemode_hard = true)
 {
-	draw_sprite(spr_health_new,1,1550,870)
+	image_index = 1;
 }
 
 if (global.health <= 4) and (global.gamemode_hard = true)
 {
-	draw_sprite(spr_health_new,2,1550,870)
+	image_index = 2;
 }
 
 if (global.health <= 3) and (global.gamemode_hard = true)
 {
-	draw_sprite(spr_health_new,3,1550,870)
+	image_index = 3;
 }
 
 if (global.health <= 2) and (global.gamemode_hard = true)
 {
-	draw_sprite(spr_health_new,4,1550,870)
+	image_index = 4;
 }
 
 if (global.health <= 1) and (global.gamemode_hard = true)
 {
-	draw_sprite(spr_health_new,5,1550,870)
+	image_index = 5;
 }
 
 if (global.health <= 0) and (global.gamemode_hard = true)
 {
-	draw_sprite(spr_health_new,6,1550,870)
-	global.sanity = 0
+	image_index = 6;
+	global.sanity = 0;
 	game_restart();
 }
 
 
 
-depth = -9999
+depth = -9999;
 
 
+  draw_sprite_ext(sprite_index,image_index,1550,870,image_xscale,image_yscale,0,c_white,image_alpha);

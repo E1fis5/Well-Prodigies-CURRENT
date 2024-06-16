@@ -319,6 +319,10 @@ if (can_dash) and (input_check_pressed("dash"))
 	global.dash_active = true
 	global.particle_start = false
 	time_source_start(timer_dBoost_create);
+	if (place_meeting(x,y,obj_dash_breakable))
+	{
+		instance_destroy(obj_dash_breakable);
+	}
 	if (!instance_exists(obj_dash_effect))
 	{
 		instance_create_depth(x,y,399,obj_dash_effect);
@@ -413,26 +417,26 @@ if (place_meeting(x,y + 30, obj_collision_wall)) and (!instance_exists(obj_dashj
 
 if (global.dash_amount >= 2)
 {
-	walksp += 0.25;
+	walksp += 0.30;
 }
 
 if (global.dash_amount >= 3)
 {
-	walksp += 0.25;
+	walksp += 0.30;
 }
 
 if (global.dash_amount >= 4)
 {
-	walksp += 0.30;
+	walksp += 0.35
 }
 if (global.dash_amount >= 5)
 {
-	walksp += 0.30;
+	walksp += 0.35;
 }
 
 if (global.dash_amount >= 6)
 {
-	walksp += 0.40;
+	walksp += 0.45;
 	global.dash_amount = 6;
 }
 //Dash breakable
@@ -795,9 +799,10 @@ if (instance_exists(obj_dash_boost)) and (input_check("attack"))
 	audio_play_sound(snd_dBoost_start,6,false);
 }
 
+
 if (instance_exists(obj_dBoost_additive))
 {
-	walksp += 0.85;
+	walksp += 0.70;
 	dash_distance = 185;
 	dash_time = 17;
 	global.dash_cancel_speed = false;
@@ -820,12 +825,27 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 }
 
 //Hud opacity decrease
-if (place_meeting(x,y,obj_hud_opac_lower))
+if (place_meeting(x,y,obj_hud_opac_lower)) and (instance_exists(obj_ranks)) and (instance_exists(obj_rank_cover)) and (instance_exists(obj_score)) and (instance_exists(obj_health)) and (instance_exists(obj_health_bg)) and (instance_exists(obj_sanitymeter)) and (instance_exists(obj_sanity_bg))
 {
-	obj_ranks.image_alpha = 0.1;
-	obj_rank_cover.image_alpha = 0.1;
+	obj_ranks.image_alpha = 0.4;
+	obj_rank_cover.image_alpha = 0.4;
+	obj_score.image_alpha = 0.4;
+	obj_health.image_alpha = 0.4;
+	obj_health_bg.image_alpha = 0.4;
+	obj_sanitymeter.image_alpha = 0.4;
+	obj_sanity_bg.image_alpha = 0.4;
 }
-
+if (!place_meeting(x,y,obj_hud_opac_lower)) and (instance_exists(obj_ranks)) and (instance_exists(obj_rank_cover)) and (instance_exists(obj_score)) and (instance_exists(obj_health)) and (instance_exists(obj_health_bg)) and (instance_exists(obj_sanitymeter)) and (instance_exists(obj_sanity_bg))
+{
+		obj_ranks.image_alpha = 1;
+	obj_rank_cover.image_alpha = 1;
+	obj_score.image_alpha = 1;
+		obj_health.image_alpha = 1;
+	obj_health_bg.image_alpha = 1;
+		obj_sanitymeter.image_alpha = 1;
+	obj_sanity_bg.image_alpha = 1;
+}
+//Wall Boost
 if (instance_exists(obj_wallboost))
 {
 	walksp += 0.3;
@@ -834,5 +854,5 @@ if (instance_exists(obj_wallboost))
 if (global.doll_ability_active = true)
 {
 	walksp += 0.8;
-	dash_distance = 210;
+	dash_distance = 215;
 }

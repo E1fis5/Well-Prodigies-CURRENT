@@ -1,6 +1,6 @@
-draw_sprite(spr_bg_sanity,0,0,20)
 
+draw_sprite_ext(sprite_index,image_index,0,20,image_xscale,image_yscale,0,c_white,image_alpha);
 
-depth = -9999
+depth = -9999;
 
 

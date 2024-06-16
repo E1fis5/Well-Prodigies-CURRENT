@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_bg_sanity",
+    "path":"sprites/spr_bg_sanity/spr_bg_sanity.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

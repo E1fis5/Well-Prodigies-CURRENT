@@ -1,6 +1,6 @@
 if instance_exists(obj_player) and (global.scoreHider = false)
 {
-		    draw_sprite_ext(spr_scorehud,0,1350,0,1,1,0,c_white,1)
+		    draw_sprite_ext(sprite_index,image_index,1350,0,image_xscale,image_yscale,0,c_white,image_alpha);
 }
 
 
@@ -17,3 +17,7 @@ if sprite_exists(spr_scorehud) and (global.scoreHider = false)
 	draw_set_valign(fa_top);
 	depth = -9998
 }
+
+x = -999;
+
+y = -999;

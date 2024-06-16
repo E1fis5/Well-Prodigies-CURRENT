@@ -1602,7 +1602,6 @@
     {"roomId":{"name":"r_MonkeyBusiness1","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},},
     {"roomId":{"name":"r_MonkeyBusiness_hut1","path":"rooms/r_MonkeyBusiness_hut1/r_MonkeyBusiness_hut1.yy",},},
     {"roomId":{"name":"r_MonkeyBusiness2","path":"rooms/r_MonkeyBusiness2/r_MonkeyBusiness2.yy",},},
-    {"roomId":{"name":"r_Tutorial1","path":"rooms/r_Tutorial1/r_Tutorial1.yy",},},
     {"roomId":{"name":"r_Tutorial2","path":"rooms/r_Tutorial2/r_Tutorial2.yy",},},
     {"roomId":{"name":"r_Tutorial3","path":"rooms/r_Tutorial3/r_Tutorial3.yy",},},
     {"roomId":{"name":"r_Tutorial4","path":"rooms/r_Tutorial4/r_Tutorial4.yy",},},
@@ -1675,6 +1674,7 @@
     {"roomId":{"name":"r_MonkeyBusiness_escape1","path":"rooms/r_MonkeyBusiness_escape1/r_MonkeyBusiness_escape1.yy",},},
     {"roomId":{"name":"r_MonkeyBusiness_escape2","path":"rooms/r_MonkeyBusiness_escape2/r_MonkeyBusiness_escape2.yy",},},
     {"roomId":{"name":"r_MonkeyBusiness_rift","path":"rooms/r_MonkeyBusiness_rift/r_MonkeyBusiness_rift.yy",},},
+    {"roomId":{"name":"r_Tutorial1","path":"rooms/r_Tutorial1/r_Tutorial1.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
