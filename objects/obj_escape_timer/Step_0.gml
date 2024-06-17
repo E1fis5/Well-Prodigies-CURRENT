@@ -6,12 +6,26 @@ if (global.timer < 30)
 if (global.timer = 0) and (global.isActive = true)
 {
    time_source_start(global.timer_drain);
+   audio_stop_sound(snd_clock_tick);
+    if (global.timeout_sprite_active = false)
+	{
+		global.timeout_sprite_active = true;
+	}
 }
 else
 {
 	time_source_stop(global.timer_drain);
 }
 
+if (global.timeout_sprite_active = false)
+{
+	sprite_index = spr_timer_broken_close;
+}
+
+if (global.timeout_sprite_active = true)
+{
+	sprite_index = spr_timer_broken_close;
+}
 
 
 if (global.isActive = true)

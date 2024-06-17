@@ -17,7 +17,7 @@ var wallboost_destroy = function()
 	instance_destroy(obj_wallboost_effect);
 	global.wallboost_amount = 0;
 }
-
+global.fakeout_pause = false;
 global.timer_wallboost_deactivate = time_source_create(time_source_game,5,time_source_units_seconds,wallboost_destroy,[],1);
 global.powercrawl = false;
 global.dash_cancel_speed = false;

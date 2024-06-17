@@ -848,11 +848,16 @@ if (!place_meeting(x,y,obj_hud_opac_lower)) and (instance_exists(obj_ranks)) and
 //Wall Boost
 if (instance_exists(obj_wallboost))
 {
-	walksp += 0.3;
+	walksp += 0.35;
 }
 
 if (global.doll_ability_active = true)
 {
 	walksp += 0.8;
 	dash_distance = 215;
+}
+//Destroy escape blink if overlay is off
+if (global.escapeoverlay_trigger = false)
+{
+	global.fakeout_pause = true;
 }

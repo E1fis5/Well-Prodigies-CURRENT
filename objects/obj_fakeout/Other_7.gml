@@ -1,7 +1,6 @@
-room_goto(target_rm);
-obj_player.x = target_x;
-obj_player.y = target_y;
 
 image_speed = -1;
 
-global.fakeout_pause = false
+global.fakeout_pause = true;
+
+

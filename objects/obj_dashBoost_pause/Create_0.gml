@@ -1,6 +1,9 @@
 var pause_dboost_destroy = function()
 {
-	time_source_resume(obj_player.timer_dBoost_deactivate);
+	if (instance_exists(obj_player))
+	{
+		time_source_resume(obj_player.timer_dBoost_deactivate);
+	}
 	instance_destroy();
 }
 

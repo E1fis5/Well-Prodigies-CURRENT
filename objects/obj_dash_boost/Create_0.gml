@@ -1,7 +1,6 @@
 var dBoost_destroy = function()
 {
 	instance_destroy();
-	obj_player.image_blend = c_white;
 }
 
 time_source_dBoost_destroy = time_source_create(time_source_game, 0.1, time_source_units_seconds,dBoost_destroy,[],1)
