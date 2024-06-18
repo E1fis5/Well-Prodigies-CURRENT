@@ -8,6 +8,6 @@ var pause_dboost_destroy = function()
 }
 
 
-timer_dBoost_pause = time_source_create(time_source_game,1.3,time_source_units_seconds,pause_dboost_destroy,[],-1);
+timer_dBoost_pause = time_source_create(time_source_game,1.5,time_source_units_seconds,pause_dboost_destroy,[],-1);
 
 

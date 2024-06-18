@@ -17,16 +17,6 @@ else
 	time_source_stop(global.timer_drain);
 }
 
-if (global.timeout_sprite_active = false)
-{
-	sprite_index = spr_timer_broken_close;
-}
-
-if (global.timeout_sprite_active = true)
-{
-	sprite_index = spr_timer_broken_close;
-}
-
 
 if (global.isActive = true)
 {

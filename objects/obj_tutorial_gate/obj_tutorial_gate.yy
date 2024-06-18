@@ -8,8 +8,8 @@
   "name":"obj_tutorial_gate",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"tutorial_stuff",
+    "path":"folders/Objects/tutorial_stuff.yy",
   },
   "parentObjectId":{
     "name":"obj_door",
