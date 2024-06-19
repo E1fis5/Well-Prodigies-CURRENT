@@ -1,11 +1,9 @@
 if (global.debug_active = true)
 {
 	draw_text(100,900,"DEBUG = TRUE");
-	draw_text(100,500,global.dash_amount);
     draw_text(100,300,instance_count);
 	draw_text(100,400,obj_player.walksp);
-	draw_text(100,200,global.abilityscore);
-	draw_text(100,600,fps_real);
+	show_debug_overlay(true);
 }
 
 

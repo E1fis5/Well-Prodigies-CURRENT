@@ -23,3 +23,8 @@ if (global.sanity >= 100)
 instance_create_depth(-999,-999,-9990,obj_diamond_notif)
 
 global.collectable_destroy = true
+
+if (global.sanity <= 50)
+{
+	sprite_index = spr_diamond_infected;
+}

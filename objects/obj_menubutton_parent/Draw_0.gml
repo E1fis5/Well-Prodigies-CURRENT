@@ -1,6 +1,6 @@
 draw_self();
 
-draw_set_font(ft_menu_new);
+draw_set_font(ft_menu);
 
 draw_text(x, y, button_text);
 

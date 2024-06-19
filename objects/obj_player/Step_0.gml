@@ -1,14 +1,3 @@
-//Variables
-var _keyRight = keyboard_check(vk_right) or keyboard_check(ord("D"))
-var _keyLeft = keyboard_check(vk_left) or keyboard_check(ord("A"))
-var _spriteLeft = keyboard_check(vk_left) or keyboard_check(ord("A"))
-var _spriteRight = keyboard_check(vk_right) or keyboard_check(ord("D"))
-var _keyDown = keyboard_check(vk_down) or keyboard_check(ord("S"))
-var _keySanitylow = keyboard_check_pressed(vk_alt)
-var _Left = keyboard_check_pressed (vk_left);
-var _Attack = keyboard_check_pressed(ord("X"))
-var prevX = x;
-var prevY = y;
 
 
 //Normal State
