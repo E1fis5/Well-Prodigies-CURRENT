@@ -998,6 +998,7 @@
     {"name":"spr_demo","order":13,"path":"sprites/spr_demo/spr_demo.yy",},
     {"name":"spr_diamond_collect_notif","order":18,"path":"sprites/spr_diamond_collect_notif/spr_diamond_collect_notif.yy",},
     {"name":"spr_diamond_infected","order":14,"path":"sprites/spr_diamond_infected/spr_diamond_infected.yy",},
+    {"name":"spr_doll","order":21,"path":"sprites/spr_doll/spr_doll.yy",},
     {"name":"spr_door_notif","order":10,"path":"sprites/spr_door_notif/spr_door_notif.yy",},
     {"name":"spr_door","order":4,"path":"sprites/spr_door/spr_door.yy",},
     {"name":"spr_doorenter","order":18,"path":"sprites/spr_doorenter/spr_doorenter.yy",},

@@ -1211,6 +1211,7 @@
     {"id":{"name":"spr_demo","path":"sprites/spr_demo/spr_demo.yy",},},
     {"id":{"name":"spr_diamond_collect_notif","path":"sprites/spr_diamond_collect_notif/spr_diamond_collect_notif.yy",},},
     {"id":{"name":"spr_diamond_infected","path":"sprites/spr_diamond_infected/spr_diamond_infected.yy",},},
+    {"id":{"name":"spr_doll","path":"sprites/spr_doll/spr_doll.yy",},},
     {"id":{"name":"spr_door_notif","path":"sprites/spr_door_notif/spr_door_notif.yy",},},
     {"id":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},},
     {"id":{"name":"spr_doorenter","path":"sprites/spr_doorenter/spr_doorenter.yy",},},
