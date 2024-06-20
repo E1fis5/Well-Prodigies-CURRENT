@@ -25,11 +25,11 @@ function __input_config_verbs()
             cancel:  input_binding_key(vk_escape),
             action:  input_binding_key(vk_enter),
             run:     input_binding_key(vk_shift),
-			dash:    [input_binding_key("C"), input_binding_key("F")],
+			dash:    [input_binding_key("C"), input_binding_key("L")],
 			W:  input_binding_key("W"),
 			P:  input_binding_key("P"),
-			attack: input_binding_key("X"),
-			ability: input_binding_key("Q"),
+			attack: [input_binding_key("X"),  input_binding_key("K")],
+			ability: [input_binding_key("Q"),   input_binding_key("J")],
 
         },
         

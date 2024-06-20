@@ -7,10 +7,6 @@ if (global.timer = 0) and (global.isActive = true)
 {
    time_source_start(global.timer_drain);
    audio_stop_sound(snd_clock_tick);
-    if (global.timeout_sprite_active = false)
-	{
-		global.timeout_sprite_active = true;
-	}
 }
 else
 {

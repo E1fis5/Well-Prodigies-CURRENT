@@ -10,7 +10,6 @@ state_crawl();
 
 
 
-
 if (global.jestraught_player = true)
 {
 	state_crawl = false
@@ -816,13 +815,13 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 //Hud opacity decrease
 if (place_meeting(x,y,obj_hud_opac_lower)) and (instance_exists(obj_ranks)) and (instance_exists(obj_rank_cover)) and (instance_exists(obj_score)) and (instance_exists(obj_health)) and (instance_exists(obj_health_bg)) and (instance_exists(obj_sanitymeter)) and (instance_exists(obj_sanity_bg))
 {
-	obj_ranks.image_alpha = 0.4;
-	obj_rank_cover.image_alpha = 0.4;
-	obj_score.image_alpha = 0.4;
-	obj_health.image_alpha = 0.4;
-	obj_health_bg.image_alpha = 0.4;
-	obj_sanitymeter.image_alpha = 0.4;
-	obj_sanity_bg.image_alpha = 0.4;
+	obj_ranks.image_alpha = 0.3;
+	obj_rank_cover.image_alpha = 0.3;
+	obj_score.image_alpha = 0.3;
+	obj_health.image_alpha = 0.3;
+	obj_health_bg.image_alpha = 0.3;
+	obj_sanitymeter.image_alpha = 0.3;
+	obj_sanity_bg.image_alpha = 0.3;
 }
 if (!place_meeting(x,y,obj_hud_opac_lower)) and (instance_exists(obj_ranks)) and (instance_exists(obj_rank_cover)) and (instance_exists(obj_score)) and (instance_exists(obj_health)) and (instance_exists(obj_health_bg)) and (instance_exists(obj_sanitymeter)) and (instance_exists(obj_sanity_bg))
 {
@@ -849,4 +848,13 @@ if (global.doll_ability_active = true)
 if (global.escapeoverlay_trigger = false)
 {
 	global.fakeout_pause = true;
+}
+
+//Pause
+if (global.pause_active = true)
+{
+	walksp = 0;
+	grv = 0
+	can_dash = 0;
+	
 }

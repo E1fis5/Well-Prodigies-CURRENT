@@ -400,3 +400,4 @@ var time_source_sprite_switch = function()
 	global.idlespr_active = true
 }
 time_source_ext_idle = time_source_create(time_source_game,8,time_source_units_seconds,time_source_sprite_switch,[],-1)
+

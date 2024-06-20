@@ -15,3 +15,4 @@ audio_pause_sound(snd_cavedwellings2)
 audio_stop_sound(snd_tutorial_song)
 
 global.isActive = false
+

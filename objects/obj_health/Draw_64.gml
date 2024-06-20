@@ -37,7 +37,7 @@ if (global.health <= 0) and (global.gamemode_hard = true)
 
 
 
-depth = -9999;
+depth = -10000
 
 
-  draw_sprite_ext(sprite_index,image_index,1550,870,image_xscale,image_yscale,0,c_white,image_alpha);
+  draw_sprite_ext(sprite_index,image_index,8,314,image_xscale,image_yscale,0,c_white,image_alpha);
