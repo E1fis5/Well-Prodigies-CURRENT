@@ -6,6 +6,7 @@
 /// @param   verb/array
 /// @param   [playerIndex=0]
 /// @param   [bufferDuration=0]
+/// n word
 
 function input_check(_verb, _player_index = 0, _buffer_duration = 0)
 {
