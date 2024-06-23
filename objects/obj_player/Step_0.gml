@@ -53,7 +53,7 @@ if vk_anykey
 	if (instance_exists(obj_Lwiz_mini))
 	{
 		walksp += 0.75;
-			dash_distance = 200
+		dash_distance = 200
 	    dash_time = 18
 	}
 	
