@@ -34,11 +34,6 @@ if input_check("run") = true and input_check("down") = true
 	
 }
 
-if input_check("run") = false and input_check("down") = false
-{
-	walksp = 6.8
-	global.sprite_idlebreak = false;
-}
 
 if (input_check("left")) and (input_check("right")) and (onground)
 {
