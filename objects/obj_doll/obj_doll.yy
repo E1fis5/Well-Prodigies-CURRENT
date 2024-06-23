@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_happy_luigi",
-    "path":"sprites/spr_happy_luigi/spr_happy_luigi.yy",
+    "name":"spr_doll",
+    "path":"sprites/spr_doll/spr_doll.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -10,6 +10,7 @@ if (input_check_pressed("accept"))
 	  global.escape_transition_end = false
 	  audio_stop_sound(snd_wellhub)
 	  global.gem_counter = 0
+	  	instance_destroy(obj_hub_start);
 	  instance_create_depth(-999,-999,-9998,obj_hypothermia_meter);
 	  if (!instance_exists(obj_sanitymeter))
 	  {

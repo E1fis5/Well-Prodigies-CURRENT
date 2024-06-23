@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"spr_back_key_shop",
+  "%Name":"obj_back_key_shop",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"spr_back_key_shop",
+  "name":"obj_back_key_shop",
   "overriddenProperties":[],
   "parent":{
     "name":"shop",

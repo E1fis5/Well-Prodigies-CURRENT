@@ -377,8 +377,8 @@ y += vsp;
    dash_energy -= dash_sp
    if (dash_energy <= 0)
    {
-	   stateNormal = state_normal
-	   canJump = 7
+	   stateNormal = state_normal;
+	   canJump = 6;
 	   global.dash_active = false;
 	   time_source_stop(timer_dBoost_create);
 	   if (onground = false) and (onwall = false)
@@ -392,6 +392,10 @@ y += vsp;
 if (global.dash_cancel_speed = true)
 {
 	global.dash_amount = 0;
+		if (instance_exists(obj_dashJoost_counter))
+	{
+		instance_destroy(obj_dashJoost_counter);
+	}
 }
 if (onground = true) and (!instance_exists(obj_dashjoost_pause))
 {
@@ -405,27 +409,41 @@ if (place_meeting(x,y + 30, obj_collision_wall)) and (!instance_exists(obj_dashj
 
 if (global.dash_amount >= 2)
 {
-	walksp += 0.30;
+	walksp += 0.25
+	if (!instance_exists(obj_dashJoost_counter))
+	{
+		instance_create_depth(-999,-999,-11000,obj_dashJoost_counter);
+	}
 }
 
 if (global.dash_amount >= 3)
 {
-	walksp += 0.30;
+	walksp += 0.25
 }
 
 if (global.dash_amount >= 4)
 {
-	walksp += 0.35
+	walksp += 0.30;
 }
 if (global.dash_amount >= 5)
 {
-	walksp += 0.35;
+	walksp += 0.30;
 }
 
 if (global.dash_amount >= 6)
 {
-	walksp += 0.45;
-	global.dash_amount = 6;
+	walksp += 0.35;
+}
+
+if (global.dash_amount >= 7)
+{
+	walksp += 0.35;
+}
+
+if (global.dash_amount >= 8)
+{
+	walksp += 0.55;
+	global.dash_amount = 8;
 }
 //Dash breakable
 if (sprite_index = spr_player_dash) and (place_meeting(x,y,obj_dash_breakable))

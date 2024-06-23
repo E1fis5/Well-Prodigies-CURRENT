@@ -4,7 +4,7 @@ instance_destroy();
 
 audio_play_sound(snd_collect_medium,0,false);
 
-effect_create_above(ef_ring,x,y,1.5,c_purple)
+instance_create_depth(x,y,-1000,obj_collect_effect_big);
 
 
 

@@ -4,6 +4,7 @@ if !instance_exists(obj_transition) and (input_check_pressed("cancel"))
       inst.target_x = target_x;
 	  inst.target_y = target_y;
       inst.target_rm = target_rm;
+	  time_source_resume(obj_sanitymeter.sanityTimerHard);
 }
 
 

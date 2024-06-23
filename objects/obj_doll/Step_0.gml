@@ -1,6 +1,3 @@
-x = obj_player.x;
-
-y = obj_player.y;
 
 if (global.abilityscore = 150) and (input_check("ability")) and (!instance_exists(obj_doll_boosts))
 {
