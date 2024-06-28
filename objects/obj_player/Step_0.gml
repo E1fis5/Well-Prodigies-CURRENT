@@ -266,7 +266,11 @@ if vk_anykey
 			sprite_index = spr_player_snow_idle_left;
 		}
 	}
-
+//Run sound
+if (input_check("run")) and (!audio_exists(snd_goober_Run))
+{
+	audio_play_sound(snd_goober_Run,8,false)
+}
 	//MB fan
 	if (place_meeting(x,y,obj_fan))
 	{
@@ -307,8 +311,16 @@ if vk_anykey
 		{
 			instance_create_depth(x,y,399,obj_dash_effect);
 		}
+		if (!onground)
 		{
+			sprite_index = spr_player_dash_air;
 			if (player_left = true)
+			{
+				sprite_index = spr_player_dash_air_left;
+			}
+		}
+		{
+			if (player_left = true) and (onground)
 			{
 				sprite_index = spr_player_dash_left
 				global.fallspr_deactivate = true
@@ -401,7 +413,7 @@ if vk_anykey
 
 	if (global.dash_amount >= 2)
 	{
-		walksp += 0.25
+		walksp += 0.30;
 		if (!instance_exists(obj_dashJoost_counter))
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter);
@@ -410,31 +422,31 @@ if vk_anykey
 
 	if (global.dash_amount >= 3)
 	{
-		walksp += 0.25
+		walksp += 0.30;
 	}
 
 	if (global.dash_amount >= 4)
 	{
-		walksp += 0.30;
+		walksp += 0.35;
 	}
 	if (global.dash_amount >= 5)
 	{
-		walksp += 0.30;
+		walksp += 0.35;
 	}
 
 	if (global.dash_amount >= 6)
 	{
-		walksp += 0.35;
+		walksp += 0.40;
 	}
 
 	if (global.dash_amount >= 7)
 	{
-		walksp += 0.35;
+		walksp += 0.40;
 	}
 
 	if (global.dash_amount >= 8)
 	{
-		walksp += 0.55;
+		walksp += 0.45;
 		global.dash_amount = 8;
 	}
 	//Dash breakable
@@ -742,7 +754,7 @@ if vk_anykey
 	//Power Crawl
 	if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 	{
-		walksp = 10.8
+		walksp += 2;
 		time_source_start(timer_power_crawl);
 		global.powercrawl = true;
 		if (!instance_exists(obj_blood_effect))
@@ -807,7 +819,7 @@ if vk_anykey
 		time_source_stop(timer_dBoost_create);
 		if (!instance_exists(obj_dashB_active_effect))
 		{
-			instance_create_depth(x,y,399,obj_dashB_active_effect);
+			instance_create_depth(x,y,401,obj_dashB_active_effect);
 			time_source_stop(global.timer_wallboost_deactivate);
 		}
 	
@@ -846,7 +858,7 @@ if vk_anykey
 	//Wall Boost
 	if (instance_exists(obj_wallboost))
 	{
-		walksp += 0.35;
+		walksp += 0.45;
 	}
 
 	if (global.doll_ability_active = true)

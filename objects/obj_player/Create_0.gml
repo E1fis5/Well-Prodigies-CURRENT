@@ -155,8 +155,8 @@ timer_idle_breaker_jk = time_source_create(time_source_game,1,time_source_units_
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
 timer_dBoost_deactivate = time_source_create(time_source_game,9,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
-timer_power_crawl = time_source_create(time_source_game,2,time_source_units_seconds,power_crawl_damage,[],-1);
-timer_power_crawl_1_health = time_source_create(time_source_game,1,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
+timer_power_crawl = time_source_create(time_source_game,1.85,time_source_units_seconds,power_crawl_damage,[],-1);
+timer_power_crawl_1_health = time_source_create(time_source_game,0.85,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
 // Idle Breaker
 
 //States
@@ -218,20 +218,7 @@ if (canJump-- > 0) and (input_check_pressed("jump"))
 
 
 
-if (global.dash_amount = 2)
-{
-	walksp += 1.2;
-}
 
-if (global.dash_amount = 3)
-{
-	walksp += 1.2;
-}
-
-if (global.dash_amount = 4)
-{
-	walksp += 1.2;
-}
 //Run jump
 if (input_check("run") = true) and (sprite_index = spr_playerwalk = true) or (sprite_index = spr_playerwalkleft = true)  and (input_check("jump") = true) and (grv = -1 = false)
 {
@@ -379,15 +366,10 @@ state_FastFall = function()
 	if (input_check("down") = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (onground = false)
 {
 	grv = 5
-	walksp = 4.8
 	sprite_index = spr_player_downp
 	vsp = 10
 	global.fallspr_deactivate = true
 	global.dJump_active = false
-	if (global.dash_amount = 6)
-	{
-		walksp = 7.5
-	}
 }           
 }
 

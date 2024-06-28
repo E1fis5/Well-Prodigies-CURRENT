@@ -12,8 +12,8 @@
   "duration":7.896,
   "name":"snd_cave_crumble",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Well Prodigies",
+    "path":"Well Prodigies.yyp",
   },
   "preload":false,
   "resourceType":"GMSound",
