@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"Object313",
-  "eventList":[],
+  "%Name":"obj_shop_pauses",
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"Object313",
+  "name":"obj_shop_pauses",
   "overriddenProperties":[],
   "parent":{
-    "name":"monkey_business_stuff",
-    "path":"folders/Objects/monkey_business_stuff.yy",
+    "name":"shop",
+    "path":"folders/Objects/shop.yy",
   },
   "parentObjectId":null,
   "persistent":false,

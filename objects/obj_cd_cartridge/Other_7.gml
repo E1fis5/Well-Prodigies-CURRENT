@@ -1,0 +1,1 @@
+sprite_index = spr_cd_cartridge_pause;

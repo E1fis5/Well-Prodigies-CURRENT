@@ -9,7 +9,9 @@ if (input_check_pressed("accept"))
 	  global.escape_transition_end = false
 	  audio_stop_sound(snd_wellhub)
 	  global.gem_counter = 0
+	  instance_destroy(obj_cd_intro_start_top);
 	  instance_destroy();
+	  instance_destroy(obj_cd_cartridge);
 	  instance_destroy(obj_hub_start);
        if (!instance_exists(obj_score))
 	   {
@@ -32,5 +34,7 @@ if (input_check_pressed("cancel"))
 {
 	instance_destroy();
 	instance_destroy(obj_hub_start);
+		  instance_destroy(obj_cd_cartridge);
+		  	  instance_destroy(obj_cd_intro_start_top);
 }
 

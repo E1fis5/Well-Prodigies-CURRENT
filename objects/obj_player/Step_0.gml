@@ -288,6 +288,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	//Dash
 	if (can_dash) and (input_check_pressed("dash"))
 	{
+
 		can_dash = false;
 		dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")))
 		dash_sp = dash_distance/dash_time;
