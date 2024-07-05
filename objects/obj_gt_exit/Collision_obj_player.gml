@@ -36,8 +36,10 @@ if !instance_exists(obj_transition)
 			instance_destroy(obj_doll);
 		global.soldout_doll = false;
 		global.soldout_speed = false;
-
-
+time_source_stop(global.timesource_freeze);
+time_source_stop(global.timesource_freeze2);
+time_source_stop(global.timesource_freeze_no_torch);
+time_source_stop(global.timesource_freeze_penalty);
 if (score >= 0)
    {
 	 global.hub_currency += 50

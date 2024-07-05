@@ -35,10 +35,7 @@ if !instance_exists(obj_transition)
 		
 	
 	
-if (global.ach_emeralds = false) and (global.gem_counter = 5)
-{
-	global.ach_emeralds = true;
-}
+
 
 
 if (score >= 0)

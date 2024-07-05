@@ -112,8 +112,8 @@
   ],
   "name":"r_Tutorial5",
   "parent":{
-    "name":"tutorial",
-    "path":"folders/Rooms/tutorial.yy",
+    "name":"misc_rooms",
+    "path":"folders/Rooms/misc_rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

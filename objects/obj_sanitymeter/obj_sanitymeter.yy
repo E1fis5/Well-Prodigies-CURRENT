@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_sanitymeternew",
-    "path":"sprites/spr_sanitymeternew/spr_sanitymeternew.yy",
+    "name":"spr_sanity_remake",
+    "path":"sprites/spr_sanity_remake/spr_sanity_remake.yy",
   },
   "spriteMaskId":{
     "name":"spr_sanitymeternew",

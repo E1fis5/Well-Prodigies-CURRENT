@@ -383,7 +383,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	   if (dash_energy <= 0)
 	   {
 		   stateNormal = state_normal;
-		   canJump = 6;
+		   canJump = 8;
 		   global.dash_active = false;
 		   time_source_stop(timer_dBoost_create);
 		   if (onground = false) and (onwall = false)
