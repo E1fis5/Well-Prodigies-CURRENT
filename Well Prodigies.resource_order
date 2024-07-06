@@ -510,6 +510,7 @@
     {"name":"r_MonkeyBusiness_hut2","order":4,"path":"rooms/r_MonkeyBusiness_hut2/r_MonkeyBusiness_hut2.yy",},
     {"name":"r_MonkeyBusiness_meeting_point","order":11,"path":"rooms/r_MonkeyBusiness_meeting_point/r_MonkeyBusiness_meeting_point.yy",},
     {"name":"r_MonkeyBusiness_p1_2","order":1,"path":"rooms/r_MonkeyBusiness_p1_2/r_MonkeyBusiness_p1_2.yy",},
+    {"name":"r_MonkeyBusiness_p1_3","order":2,"path":"rooms/r_MonkeyBusiness_p1_3/r_MonkeyBusiness_p1_3.yy",},
     {"name":"r_MonkeyBusiness_p2_2","order":2,"path":"rooms/r_MonkeyBusiness_p2_2/r_MonkeyBusiness_p2_2.yy",},
     {"name":"r_MonkeyBusiness_rift","order":13,"path":"rooms/r_MonkeyBusiness_rift/r_MonkeyBusiness_rift.yy",},
     {"name":"r_MonkeyBusiness","order":6,"path":"rooms/r_MonkeyBusiness/r_MonkeyBusiness.yy",},

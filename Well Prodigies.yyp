@@ -668,6 +668,7 @@
     {"id":{"name":"r_MonkeyBusiness_meeting_point","path":"rooms/r_MonkeyBusiness_meeting_point/r_MonkeyBusiness_meeting_point.yy",},},
     {"id":{"name":"r_MonkeyBusiness_p1_1","path":"rooms/r_MonkeyBusiness_p1_1/r_MonkeyBusiness_p1_1.yy",},},
     {"id":{"name":"r_MonkeyBusiness_p1_2","path":"rooms/r_MonkeyBusiness_p1_2/r_MonkeyBusiness_p1_2.yy",},},
+    {"id":{"name":"r_MonkeyBusiness_p1_3","path":"rooms/r_MonkeyBusiness_p1_3/r_MonkeyBusiness_p1_3.yy",},},
     {"id":{"name":"r_MonkeyBusiness_p2_1","path":"rooms/r_MonkeyBusiness_p2_1/r_MonkeyBusiness_p2_1.yy",},},
     {"id":{"name":"r_MonkeyBusiness_p2_2","path":"rooms/r_MonkeyBusiness_p2_2/r_MonkeyBusiness_p2_2.yy",},},
     {"id":{"name":"r_MonkeyBusiness_rift","path":"rooms/r_MonkeyBusiness_rift/r_MonkeyBusiness_rift.yy",},},
@@ -1727,6 +1728,7 @@
     {"roomId":{"name":"r_tut4","path":"rooms/r_tut4/r_tut4.yy",},},
     {"roomId":{"name":"r_MonkeyBusiness_p1_1","path":"rooms/r_MonkeyBusiness_p1_1/r_MonkeyBusiness_p1_1.yy",},},
     {"roomId":{"name":"r_MonkeyBusiness_p1_2","path":"rooms/r_MonkeyBusiness_p1_2/r_MonkeyBusiness_p1_2.yy",},},
+    {"roomId":{"name":"r_MonkeyBusiness_p1_3","path":"rooms/r_MonkeyBusiness_p1_3/r_MonkeyBusiness_p1_3.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
