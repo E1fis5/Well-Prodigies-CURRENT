@@ -8,12 +8,12 @@ instance_create_depth(x,y,-1000,obj_collect_apple)
 
 global.sanity += 0.5
 
-if (global.sanity >= 100)
+if (global.sanity >= 300)
 {
 	global.sanity -= 0.5
 }
 
-if (global.sanity <= 50)
+if (global.sanity <= 80)
 {
 	score -= 10
 }

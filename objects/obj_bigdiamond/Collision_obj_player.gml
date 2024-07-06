@@ -10,7 +10,7 @@ global.gem_counter += 1
 
 global.sanity += 10
 
-if (global.sanity >= 100)
+if (global.sanity >= 300)
 {
 	global.sanity -= 10
 }

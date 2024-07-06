@@ -1,4 +1,4 @@
-global.sanity = 180
+global.sanity = 210
 global.sanity_Prank_switch = false;
 var sanity_drain = function()
 {
@@ -7,7 +7,7 @@ var sanity_drain = function()
 sanityTimerNormal = time_source_create(time_source_game,30,time_source_units_seconds,sanity_drain, [], -1);
 
 
-sanityTimerHard = time_source_create(time_source_game,8.6,time_source_units_seconds,sanity_drain, [], -1);
+sanityTimerHard = time_source_create(time_source_game,15,time_source_units_seconds,sanity_drain, [], -1);
 
 sanityTimerSimple = time_source_create(time_source_game,35,time_source_units_seconds,sanity_drain, [], -1);
 

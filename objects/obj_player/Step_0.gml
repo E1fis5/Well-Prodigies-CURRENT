@@ -295,7 +295,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		dash_energy = dash_distance;
 		stateNormal = Dashstate
 		sprite_index = spr_player_dash
-		dash_distance = 155
+		dash_distance = 160
 	    dash_time = 16
 		grv = 0
 		global.dash_cancel_speed = false;
@@ -470,17 +470,17 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 
 
 	//Sanity values
-	if (global.sanity >= 70) and (bombActive = false)
+	if (global.sanity >= 220) and (bombActive = false)
 	{
 		walksp += 0.45
-		dash_distance = 170
+		dash_distance = 175
 	    dash_time = 17
 	}
 
-	if (global.sanity <= 30)and (bombActive = false)
+	if (global.sanity <= 100) and (bombActive = false)
 	{
 		walksp -= 0.45
-		dash_distance = 150
+		dash_distance = 155
 	    dash_time = 15
 	}
 
@@ -814,7 +814,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	if (instance_exists(obj_dBoost_additive))
 	{
 		walksp += 0.70;
-		dash_distance = 185;
+		dash_distance = 180
 		dash_time = 17;
 		global.dash_cancel_speed = false;
 		time_source_stop(timer_dBoost_create);

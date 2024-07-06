@@ -2,8 +2,6 @@ if (global.debug_active = true)
 {
 	draw_text(100,900,"DEBUG = TRUE");
 	show_debug_overlay(true);
-	draw_text(100,400,global.sanity);
-
 }
 
 if (global.pause_active = true)
@@ -14,4 +12,3 @@ if (!instance_exists(obj_score))
 {
 	draw_set_font(ft_menu);
 }
-

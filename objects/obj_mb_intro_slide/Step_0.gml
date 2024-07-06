@@ -4,7 +4,7 @@ if (input_check_pressed("accept"))
      inst.target_x = 4624
      inst.target_y = 1184
      inst.target_rm = r_MonkeyBusiness1
-	  global.sanity = 65
+	  global.sanity = 210
 	  global.scoreHider = false
 	  global.escape_transition_end = false
 	  audio_stop_sound(snd_wellhub)
