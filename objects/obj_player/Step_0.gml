@@ -864,7 +864,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 
 	if (global.doll_ability_active = true)
 	{
-		walksp += 0.8;
+		walksp += 0.95;
 		dash_distance = 215;
 	}
 	//Destroy escape blink if overlay is off
@@ -872,14 +872,4 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	{
 		global.fakeout_pause = true;
 	}
-
-	//Pause
-	if (global.pause_active = true)
-	{
-		walksp = 0;
-		grv = 0
-		can_dash = 0;
-	
-	}
-	}
-	//Run
+}

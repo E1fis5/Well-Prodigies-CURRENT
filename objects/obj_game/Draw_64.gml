@@ -4,10 +4,7 @@ if (global.debug_active = true)
 	show_debug_overlay(true);
 }
 
-if (global.pause_active = true)
-{
-	draw_text(100,200,"1");
-}
+
 if (!instance_exists(obj_score))
 {
 	draw_set_font(ft_menu);

@@ -374,7 +374,6 @@
     {"name":"obj_oxygen_meter","order":1,"path":"objects/obj_oxygen_meter/obj_oxygen_meter.yy",},
     {"name":"obj_papya","order":9,"path":"objects/obj_papya/obj_papya.yy",},
     {"name":"obj_pause_screen","order":14,"path":"objects/obj_pause_screen/obj_pause_screen.yy",},
-    {"name":"obj_pause","order":10,"path":"objects/obj_pause/obj_pause.yy",},
     {"name":"obj_pickaxe","order":8,"path":"objects/obj_pickaxe/obj_pickaxe.yy",},
     {"name":"obj_player","order":1,"path":"objects/obj_player/obj_player.yy",},
     {"name":"obj_playerdirection","order":2,"path":"objects/obj_playerdirection/obj_playerdirection.yy",},

@@ -3,9 +3,13 @@
   "%Name":"ts_gt_deco_big",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":0,
-    "SerialiseWidth":0,
-    "TileSerialiseData":[],
+    "SerialiseHeight":35,
+    "SerialiseWidth":12,
+    "TileCompressedData":[
+      1,0,-11,600,1,0,-11,600,1,0,-11,600,1,0,-11,600,1,0,-11,600,1,0,-11,600,1,0,-11,600,1,0,-11,600,1,0,
+      -11,600,1,0,-11,600,1,0,-11,600,-288,0,
+    ],
+    "TileDataFormat":1,
   },
   "name":"ts_gt_deco_big",
   "out_columns":32,

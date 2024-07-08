@@ -124,7 +124,10 @@
         {"name":"g_WhiteNoiseAnimation","type":0,"value":"0.5",},
         {"name":"g_WhiteNoiseTexture","type":2,"value":"_filter_whitenoise_noise",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMREffectLayer":"","%Name":"Effect_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_1","properties":[],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMREffectLayer":"","%Name":"Effect_1","depth":100,"effectEnabled":true,"effectType":"_filter_contrast","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_1","properties":[
+        {"name":"g_ContrastIntensity","type":0,"value":"0.5",},
+        {"name":"g_ContrastBrightness","type":0,"value":"1.1",},
+      ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_2","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_2","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":98,"SerialiseWidth":250,"TileCompressedData":[
           -275,-2147483648,-3,0,-247,-2147483648,-3,0,162,115,116,115,116,115,116,115,116,115,116,115,116,115,
           116,115,116,115,116,115,116,115,116,115,116,115,116,115,116,115,116,115,116,115,116,115,116,115,116,

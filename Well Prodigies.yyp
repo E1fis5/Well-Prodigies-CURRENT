@@ -510,7 +510,6 @@
     {"id":{"name":"obj_oxygen_meter","path":"objects/obj_oxygen_meter/obj_oxygen_meter.yy",},},
     {"id":{"name":"obj_papya","path":"objects/obj_papya/obj_papya.yy",},},
     {"id":{"name":"obj_pause_screen","path":"objects/obj_pause_screen/obj_pause_screen.yy",},},
-    {"id":{"name":"obj_pause","path":"objects/obj_pause/obj_pause.yy",},},
     {"id":{"name":"obj_pickaxe","path":"objects/obj_pickaxe/obj_pickaxe.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_playerdirection","path":"objects/obj_playerdirection/obj_playerdirection.yy",},},

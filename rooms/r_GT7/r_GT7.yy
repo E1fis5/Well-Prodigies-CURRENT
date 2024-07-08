@@ -73,8 +73,8 @@
         {"name":"g_WhiteNoiseTexture","type":2,"value":"_filter_whitenoise_noise",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMREffectLayer":"","%Name":"Effect_5","depth":-300,"effectEnabled":true,"effectType":"_filter_contrast","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_5","properties":[
-        {"name":"g_ContrastIntensity","type":0,"value":"1",},
-        {"name":"g_ContrastBrightness","type":0,"value":"1.25",},
+        {"name":"g_ContrastIntensity","type":0,"value":"0.5",},
+        {"name":"g_ContrastBrightness","type":0,"value":"1.1",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMREffectLayer":"","%Name":"Effect_4","depth":-200,"effectEnabled":true,"effectType":"_effect_windblown_particles","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_4","properties":[
         {"name":"param_sprite","type":2,"value":"spr_snow_particle_mini",},
