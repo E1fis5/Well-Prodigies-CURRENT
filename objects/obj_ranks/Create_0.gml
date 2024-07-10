@@ -1,0 +1,1 @@
+global.sanity_Prank_switch = false;

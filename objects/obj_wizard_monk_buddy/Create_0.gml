@@ -2,6 +2,7 @@
 {
 	obj_monk_wiz_collision.sprite_index = spr_switch_collisions_purple;
 	instance_destroy();
+	instance_deactivate_object(obj_monkey_wiz_collision_reverse);
 }
 
 

@@ -1,4 +1,6 @@
-//Normal State
+target_x = 224
+target_y = 736
+target_rm = r_MonkeyBusiness_p1_1//Normal State
 stateNormal();
 
 //Crawl
@@ -304,6 +306,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		global.dash_active = true
 		global.particle_start = false
 		time_source_start(timer_dBoost_create);
+
 		if (place_meeting(x,y,obj_dash_breakable))
 		{
 			instance_destroy(obj_dash_breakable);
@@ -407,7 +410,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		global.dash_cancel_speed = true;
 	}
 
-	if (place_meeting(x,y + 30, obj_collision_wall)) and (!instance_exists(obj_dashjoost_pause))
+	if (place_meeting(x,y + 50, obj_collision_wall)) and (!instance_exists(obj_dashjoost_pause)) and (global.dash_amount >= 3)
 	{
 		instance_create_depth(x,y,-9999,obj_dashjoost_pause);
 	}
@@ -805,10 +808,12 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	//Dash boost
 	if (instance_exists(obj_dash_boost)) and (input_check("attack"))
 	{
-		time_source_start(timer_dBoost_deactivate);
 	    instance_create_depth(x,y,-999,obj_dBoost_additive);
 		audio_play_sound(snd_dBoost_start,6,false);
 	}
+	
+
+
 
 
 	if (instance_exists(obj_dBoost_additive))
@@ -823,13 +828,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 			instance_create_depth(x,y,401,obj_dashB_active_effect);
 			time_source_stop(global.timer_wallboost_deactivate);
 		}
-	
-		if (instance_exists(obj_dashjoost_pause))
-		{
-			instance_destroy(obj_dashjoost_pause);
-		}
 	}
-
 	if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_exists(obj_blood_effect))) and (time_source_exists(timer_dBoost_create))
 	{
 		time_source_stop(timer_dBoost_create);
