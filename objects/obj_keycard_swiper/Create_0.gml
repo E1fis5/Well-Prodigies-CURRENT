@@ -1,1 +1,2 @@
-global.keycard_blocker_destroy = false
+global.keycard_blocker_destroy = false;
+depth = 401;

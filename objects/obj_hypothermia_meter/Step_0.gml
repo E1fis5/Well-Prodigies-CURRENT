@@ -1,6 +1,5 @@
 
-x = -999;
-y = -999;
+
 
 if (global.torch_active = true)
 {

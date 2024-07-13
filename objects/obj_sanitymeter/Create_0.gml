@@ -11,7 +11,8 @@ sanityTimerHard = time_source_create(time_source_game,15,time_source_units_secon
 
 sanityTimerSimple = time_source_create(time_source_game,35,time_source_units_seconds,sanity_drain, [], -1);
 
-
+x = -999;
+y = -999;
 if (global.gamemode_hard = true)
 {
 	time_source_start(sanityTimerHard)

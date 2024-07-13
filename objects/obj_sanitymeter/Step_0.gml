@@ -13,5 +13,3 @@ if (global.sanity > 300)
 	global.sanity = 300;
 }
 
-x = -999;
-y = -999;

@@ -6,6 +6,3 @@ else
 {
 	visible = true;
 }
-
-x = -999;
-y = -999;

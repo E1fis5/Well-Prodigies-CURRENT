@@ -1,6 +1,4 @@
-target_x = 224
-target_y = 736
-target_rm = r_MonkeyBusiness_p1_1//Normal State
+//Normal State
 stateNormal();
 
 //Crawl
@@ -20,7 +18,7 @@ if vk_anykey
 {
 	if  input_check("run") = true 
 	 {
-	   walksp = 7.95
+	   walksp = 8.25
 	 }
 
 	if input_check("run") = false and input_check("down") = false
@@ -306,7 +304,6 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		global.dash_active = true
 		global.particle_start = false
 		time_source_start(timer_dBoost_create);
-
 		if (place_meeting(x,y,obj_dash_breakable))
 		{
 			instance_destroy(obj_dash_breakable);
@@ -410,7 +407,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		global.dash_cancel_speed = true;
 	}
 
-	if (place_meeting(x,y + 50, obj_collision_wall)) and (!instance_exists(obj_dashjoost_pause)) and (global.dash_amount >= 3)
+	if (place_meeting(x,y + 30, obj_collision_wall)) and (!instance_exists(obj_dashjoost_pause))
 	{
 		instance_create_depth(x,y,-9999,obj_dashjoost_pause);
 	}
@@ -806,33 +803,39 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	}
 
 	//Dash boost
-	if (instance_exists(obj_dash_boost)) and (input_check("attack"))
+
+//Dash boost
+if (instance_exists(obj_dash_boost)) and (input_check("attack"))
+{
+	time_source_start(timer_dBoost_deactivate);
+    instance_create_depth(x,y,-999,obj_dBoost_additive);
+	audio_play_sound(snd_dBoost_start,6,false);
+}
+
+
+if (instance_exists(obj_dBoost_additive))
+{
+	walksp += 0.70;
+	dash_distance = 185;
+	dash_time = 17;
+	global.dash_cancel_speed = false;
+	time_source_stop(timer_dBoost_create);
+	if (!instance_exists(obj_dashB_active_effect))
 	{
-	    instance_create_depth(x,y,-999,obj_dBoost_additive);
-		audio_play_sound(snd_dBoost_start,6,false);
+		instance_create_depth(x,y,399,obj_dashB_active_effect);
+		time_source_stop(global.timer_wallboost_deactivate);
 	}
 	
-
-
-
-
-	if (instance_exists(obj_dBoost_additive))
+	if (instance_exists(obj_dashjoost_pause))
 	{
-		walksp += 0.70;
-		dash_distance = 180
-		dash_time = 17;
-		global.dash_cancel_speed = false;
-		time_source_stop(timer_dBoost_create);
-		if (!instance_exists(obj_dashB_active_effect))
-		{
-			instance_create_depth(x,y,401,obj_dashB_active_effect);
-			time_source_stop(global.timer_wallboost_deactivate);
-		}
+		instance_destroy(obj_dashjoost_pause);
 	}
-	if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_exists(obj_blood_effect))) and (time_source_exists(timer_dBoost_create))
-	{
-		time_source_stop(timer_dBoost_create);
-	}
+}
+
+if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_exists(obj_blood_effect))) and (time_source_exists(timer_dBoost_create))
+{
+	time_source_stop(timer_dBoost_create);
+}
 
 	//Hud opacity decrease
 	if (place_meeting(x,y,obj_hud_opac_lower)) and (instance_exists(obj_ranks)) and (instance_exists(obj_rank_cover)) and (instance_exists(obj_score)) and (instance_exists(obj_health)) and (instance_exists(obj_health_bg)) and (instance_exists(obj_sanitymeter)) and (instance_exists(obj_sanity_bg))

@@ -8,7 +8,6 @@ audio_pause_sound(snd_clock_tick)
 
 audio_pause_sound(snd_cave_crumble)
 
-instance_destroy(obj_hud);
 
 audio_pause_sound(snd_cavedwellings2)
 

@@ -4,7 +4,6 @@ if (global.debug_active = true)
 	show_debug_overlay(true);
 }
 
-
 if (!instance_exists(obj_score))
 {
 	draw_set_font(ft_menu);

@@ -19,10 +19,6 @@ if (global.abilityscore >= 150)
 	global.abilityscore = 150;
 }
 
-depth = -9999;
-
-x = -999;
-y = -999;
 
 if (instance_exists(obj_hide_hud))
 {

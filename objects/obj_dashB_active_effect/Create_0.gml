@@ -4,4 +4,6 @@ var dashB_end_warning = function()
 }
 
 timer_dashBoost_warning = time_source_create(time_source_game,6,time_source_units_seconds,dashB_end_warning,[],-1);
+time_source_start(timer_dashBoost_warning);
+
 

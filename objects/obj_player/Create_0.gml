@@ -143,7 +143,6 @@ var dBoost_deactivate = function()
 {
 	if (time_source_exists(timer_dBoost_deactivate))
 	{
-		time_source_stop(timer_dBoost_deactivate);
 		instance_destroy(obj_dBoost_additive);
 		instance_destroy(obj_dashB_active_effect);
 	}
@@ -178,11 +177,7 @@ if (onwall != 0) && (!onground) && (input_check("jump"))
 	time_source_stop(global.timer_wallboost_deactivate);
 	}
 		can_dash = true;
-	if (!instance_exists(obj_wallboost)) and (global.wallboost_amount >= 3)
-	{
-		instance_create_depth(x,y,100,obj_wallboost);
-		instance_create_depth(-999,-999,399,obj_wallboost_effect);
-	}
+
 		instance_create_depth(x,y,401,obj_wallclimb_effect);
 		if (player_left = true)
 		{

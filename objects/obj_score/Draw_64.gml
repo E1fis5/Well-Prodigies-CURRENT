@@ -15,9 +15,4 @@ if sprite_exists(spr_scorehud) and (global.scoreHider = false)
 	draw_text(1625,135, score);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
-	depth = -9998
 }
-
-x = -999;
-
-y = -999;
