@@ -3,7 +3,7 @@ score += 11
 global.abilityscore += 1;
 
 instance_destroy();
-
+instance_create_depth(x,y,600,obj_collectable_respawn1);
 audio_play_sound(snd_collectable_collect,0,false);
 
 instance_create_depth(x,y,-1000,obj_collect_effect)

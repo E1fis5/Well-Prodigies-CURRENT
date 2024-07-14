@@ -11,6 +11,7 @@ if (input_check_pressed("accept"))
 	  global.gem_counter = 0
 	  instance_destroy(obj_cd_intro_start_top);
 	  instance_destroy();
+	  instance_activate_object(obj_collectable1);
 	  instance_destroy(obj_cd_cartridge);
 	  instance_destroy(obj_hub_start);
        if (!instance_exists(obj_score))

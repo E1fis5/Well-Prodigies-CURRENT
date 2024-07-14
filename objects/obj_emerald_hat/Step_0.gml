@@ -5,7 +5,6 @@ if (global.ach_emeralds = true) and (place_meeting(x,y,obj_player)) and (input_c
 	audio_play_sound(snd_cosmetic_change,8,false);
 }
 
-depth = 401;
 
 if (global.em_hat_follow = true)
 {

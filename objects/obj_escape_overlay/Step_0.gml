@@ -1,7 +1,3 @@
-if (global.escapeoverlay_trigger = false)
-{
-	instance_destroy();
-}
 
 if (global.timer = 0)
 {

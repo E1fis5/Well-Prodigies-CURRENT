@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_collectable_respawn",
-  "eventList":[],
+  "%Name":"obj_collectable_respawn1",
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_collectable_respawn",
+  "name":"obj_collectable_respawn1",
   "overriddenProperties":[],
   "parent":{
     "name":"collectables",
@@ -28,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"rat",
-    "path":"sprites/rat/rat.yy",
+    "name":"spr_collect1",
+    "path":"sprites/spr_collect1/spr_collect1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,8 +1,6 @@
 global.isActive = false; // Set the initial state of the timer 215
 global.timer = 999
 
-sound_timer = 1500;
-waitTime = 25; // Set the time to wait in seconds
 
 global.fontEscape = font_add_sprite_ext(spr_font_escape,"0123456789:",true,1)
 

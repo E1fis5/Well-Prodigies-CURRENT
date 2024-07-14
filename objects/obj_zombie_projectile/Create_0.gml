@@ -1,4 +1,4 @@
-instance_create_depth(x,y,590,obj_enemy_sight)
+instance_create_depth(x,y,1000,obj_enemy_sight)
 
 var projectile_zombie_trigger = function()
 {
