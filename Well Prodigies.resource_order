@@ -1,6 +1,13 @@
 {
-  "FolderOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"cave_horrors","order":1,"path":"folders/Rooms/CHAPTER_1/cave_horrors.yy",},
+    {"name":"encore","order":2,"path":"folders/Rooms/CHAPTER_1/encore.yy",},
+    {"name":"resort","order":1,"path":"folders/Rooms/CHAPTER_1/encore/resort.yy",},
+    {"name":"glacial_tundra","order":4,"path":"folders/Rooms/CHAPTER_1/glacial_tundra.yy",},
+    {"name":"monkey_buisness","order":3,"path":"folders/Rooms/CHAPTER_1/monkey_buisness.yy",},
+  ],
   "ResourceOrderSettings":[
+    {"name":"obj_player_dash_hitbox","order":3,"path":"objects/obj_player_dash_hitbox/obj_player_dash_hitbox.yy",},
     {"name":"obj_super_dashBoost","order":1,"path":"objects/obj_super_dashBoost/obj_super_dashBoost.yy",},
     {"name":"obj_super_dBoost_active_effect","order":1,"path":"objects/obj_super_dBoost_active_effect/obj_super_dBoost_active_effect.yy",},
     {"name":"obj_super_dBoost_additive","order":2,"path":"objects/obj_super_dBoost_additive/obj_super_dBoost_additive.yy",},
@@ -9,6 +16,7 @@
     {"name":"spr_dBoost_super_spawn1","order":2,"path":"sprites/spr_dBoost_super_spawn1/spr_dBoost_super_spawn1.yy",},
     {"name":"spr_dBoost_super_spawn2","order":3,"path":"sprites/spr_dBoost_super_spawn2/spr_dBoost_super_spawn2.yy",},
     {"name":"spr_mb_basement_ts1","order":1,"path":"sprites/spr_mb_basement_ts1/spr_mb_basement_ts1.yy",},
+    {"name":"spr_playerdash_hitbox","order":1,"path":"sprites/spr_playerdash_hitbox/spr_playerdash_hitbox.yy",},
     {"name":"ts_mb_basement1","order":1,"path":"tilesets/ts_mb_basement1/ts_mb_basement1.yy",},
   ],
 }

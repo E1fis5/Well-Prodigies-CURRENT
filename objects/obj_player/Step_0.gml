@@ -303,6 +303,10 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		audio_play_sound(snd_dash_p,8,false)
 		global.dash_active = true
 		global.particle_start = false
+		if (!instance_exists(obj_player_dash_hitbox))
+		{
+			instance_create_depth(x,y,401,obj_player_dash_hitbox);
+		}
 		time_source_start(timer_dBoost_create);
 		if (place_meeting(x,y,obj_dash_breakable))
 		{
@@ -384,6 +388,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	   {
 		   stateNormal = state_normal;
 		   canJump = 8;
+		   instance_destroy(obj_player_dash_hitbox);
 		   global.dash_active = false;
 		   time_source_stop(timer_dBoost_create);
 		   if (onground = false) and (onwall = false)
@@ -755,7 +760,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	//Power Crawl
 	if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 	{
-		walksp += 2;
+		walksp += 2.5;
 		time_source_start(timer_power_crawl);
 		global.powercrawl = true;
 		if (!instance_exists(obj_blood_effect))

@@ -21,7 +21,6 @@ else
 
 if (global.isActive && global.timer > 0) and (global.doll_ability_active = false) {
     global.timer -= 1 / room_speed; // Decrement the timer by 1 second each step
-   sound_timer -= 1
    image_speed = 1;
 }
    if (global.doll_ability_active = true) and (global.isActive and global.timer > 0)
