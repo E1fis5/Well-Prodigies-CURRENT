@@ -1,0 +1,1 @@
+global.monkeyh_wiz_buddy_time = 15;

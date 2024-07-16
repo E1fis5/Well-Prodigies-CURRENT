@@ -35,6 +35,7 @@ if !instance_exists(obj_transition)
 	global.escape_touch = false;
 			instance_destroy(obj_doll);
 		global.soldout_doll = false;
+			global.rift_taken = false;
 		global.soldout_speed = false;
 time_source_stop(global.timesource_freeze);
 time_source_stop(global.timesource_freeze2);

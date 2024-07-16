@@ -419,7 +419,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 
 	if (global.dash_amount >= 2)
 	{
-		walksp += 0.30;
+		walksp += 0.25;
 		if (!instance_exists(obj_dashJoost_counter))
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter);
@@ -428,31 +428,31 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 
 	if (global.dash_amount >= 3)
 	{
-		walksp += 0.30;
+		walksp += 0.25;
 	}
 
 	if (global.dash_amount >= 4)
 	{
-		walksp += 0.35;
+		walksp += 0.30;
 	}
 	if (global.dash_amount >= 5)
 	{
-		walksp += 0.35;
+		walksp += 0.30;
 	}
 
 	if (global.dash_amount >= 6)
 	{
-		walksp += 0.40;
+		walksp += 0.35;
 	}
 
 	if (global.dash_amount >= 7)
 	{
-		walksp += 0.40;
+		walksp += 0.35;
 	}
 
 	if (global.dash_amount >= 8)
 	{
-		walksp += 0.45;
+		walksp += 0.40;
 		global.dash_amount = 8;
 	}
 	//Dash breakable
@@ -477,7 +477,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	//Sanity values
 	if (global.sanity >= 220) and (bombActive = false)
 	{
-		walksp += 0.45
+		walksp += 0.55
 		dash_distance = 175
 	    dash_time = 17
 	}
@@ -820,7 +820,7 @@ if (instance_exists(obj_dash_boost)) and (input_check("attack"))
 
 if (instance_exists(obj_dBoost_additive))
 {
-	walksp += 0.70;
+	walksp += 0.90;
 	dash_distance = 185;
 	dash_time = 17;
 	global.dash_cancel_speed = false;

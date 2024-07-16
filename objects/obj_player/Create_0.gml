@@ -65,6 +65,7 @@ global.dashspr_left = false
 global.fallsp = 0
 global.fall_effect_trigger = false
 global.bombactive = false
+global.gems_collected = 0;
 global.idlespr_active = false
 global.dash_active = false
 global.totalkills = 0

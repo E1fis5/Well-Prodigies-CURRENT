@@ -123,6 +123,7 @@ if (global.sanity <= 90)
 if (global.sanity <= 80)
 {
 	image_index = 23;
+	global.sanity_Prank_switch = true;
 }
 
 if (global.sanity <= 70)

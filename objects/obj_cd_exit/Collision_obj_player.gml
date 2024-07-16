@@ -17,7 +17,8 @@ if !instance_exists(obj_transition)
 	instance_destroy(obj_escape_overlay_lap2)
 	instance_destroy(obj_health)
 	instance_destroy(obj_health_bg)
-	if (global.gem_counter = 5)
+	global.rift_taken = false;
+	if (global.gems_collected >= 5)
 		{
 			global.ach_emeralds = true;
 		}
@@ -38,6 +39,8 @@ if !instance_exists(obj_transition)
 		instance_destroy(obj_doll);
 		global.soldout_doll = false;
 		global.soldout_speed = false;
+		global.gems_collected = 0;
+		global.sanity_Prank_switch = false;
 
 		
 	
