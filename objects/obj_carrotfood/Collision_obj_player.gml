@@ -1,5 +1,8 @@
 score += 55
-global.abilityscore += 4;
+if (global.abilityscore <= 150)
+{
+	global.abilityscore += 4;
+}
 instance_destroy();
 
 audio_play_sound(snd_collectable_food,0,false);

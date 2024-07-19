@@ -1,4 +1,4 @@
-global.sanity += 10
+global.sanity += 20
 
 instance_destroy();
 

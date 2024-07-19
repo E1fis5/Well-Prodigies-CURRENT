@@ -1,0 +1,1 @@
+global.item_counter_spawner = 0;

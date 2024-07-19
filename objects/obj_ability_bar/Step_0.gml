@@ -16,7 +16,6 @@ if (global.abilityscore >= 100)
 if (global.abilityscore >= 150)
 {
 	sprite_index = spr_ability_bar_full;
-	global.abilityscore = 150;
 }
 
 

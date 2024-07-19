@@ -15,15 +15,12 @@ if !instance_exists(obj_transition)
 	instance_destroy(obj_escape_timer)
 	instance_destroy(obj_escape_overlay)
 	instance_destroy(obj_escape_overlay_lap2)
-	instance_destroy(obj_health)
-	instance_destroy(obj_health_bg)
 	global.rift_taken = false;
 	if (global.gems_collected >= 5)
 		{
 			global.ach_emeralds = true;
 		}
 	
-	instance_destroy(obj_score)
 		audio_stop_sound(snd_clock_tick)
 		instance_destroy(obj_lap2_alert)
 		time_source_stop(global.timer_drain)

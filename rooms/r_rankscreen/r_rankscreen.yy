@@ -1,5 +1,5 @@
 {
-  "$GMRoom":"",
+  "$GMRoom":"v1",
   "%Name":"r_rankscreen",
   "creationCodeFile":"",
   "inheritCode":false,

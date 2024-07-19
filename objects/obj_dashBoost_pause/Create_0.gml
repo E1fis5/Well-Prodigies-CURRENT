@@ -8,13 +8,10 @@ var pause_dboost_destroy = function()
 }
 
 
-timer_dBoost_pause = time_source_create(time_source_game,1.5,time_source_units_seconds,pause_dboost_destroy,[],-1);
+timer_dBoost_pause = time_source_create(time_source_game,1.25,time_source_units_seconds,pause_dboost_destroy,[],-1);
 
 time_source_start(timer_dBoost_pause);
 
-if (instance_exists(obj_player))
-{
-	time_source_pause(obj_player.timer_dBoost_deactivate);
-}
+
 
 

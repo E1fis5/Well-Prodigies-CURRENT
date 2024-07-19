@@ -5,7 +5,7 @@ var time_source_run_add = function()
 
 global.speed_add = false;
 
- global.time_source_moment = time_source_create(time_source_game,2,time_source_units_seconds,time_source_run_add,[],1);
+
 
 var idle_breaker = function()
 {

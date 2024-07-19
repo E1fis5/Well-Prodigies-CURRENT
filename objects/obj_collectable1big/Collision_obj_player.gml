@@ -1,6 +1,9 @@
 score += 120
 
-global.abilityscore += 8;
+if (global.abilityscore <= 150)
+{
+	global.abilityscore += 8;
+}
 instance_destroy();
 
 audio_play_sound(snd_collect_medium,5,false);

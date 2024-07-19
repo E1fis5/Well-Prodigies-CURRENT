@@ -15,9 +15,6 @@ if !instance_exists(obj_transition)
 	instance_destroy(obj_escape_timer)
 	instance_destroy(obj_escape_overlay)
 	instance_destroy(obj_escape_overlay_lap2)
-	instance_destroy(obj_health)
-	instance_destroy(obj_health_bg)
-	instance_destroy(obj_score)
 	instance_destroy(obj_torch);
 	instance_destroy(obj_hypothermia_meter);
 	instance_destroy(obj_torch_hud);

@@ -29,7 +29,7 @@ if vk_anykey
 
 	if input_check("run") = true and input_check("down") = true
 	{
-		walksp = 7.95
+		walksp = 8.2
 	}
 
 	if (input_check("left")) and (input_check("right")) and (onground)
@@ -308,10 +308,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 			instance_create_depth(x,y,401,obj_player_dash_hitbox);
 		}
 		time_source_start(timer_dBoost_create);
-		if (place_meeting(x,y,obj_dash_breakable))
-		{
-			instance_destroy(obj_dash_breakable);
-		}
+
 		if (!instance_exists(obj_dash_effect))
 		{
 			instance_create_depth(x,y,399,obj_dash_effect);

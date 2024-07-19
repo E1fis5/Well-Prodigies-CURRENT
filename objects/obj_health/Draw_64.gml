@@ -35,9 +35,11 @@ if (global.health <= 0) and (global.gamemode_hard = true)
 	game_restart();
 }
 
+if (visible = true)
+{
+	draw_sprite_ext(sprite_index,image_index,8,314,image_xscale,image_yscale,0,c_white,image_alpha);
+}
 
 
-depth = -10000
 
-
-  draw_sprite_ext(sprite_index,image_index,8,314,image_xscale,image_yscale,0,c_white,image_alpha);
+  
