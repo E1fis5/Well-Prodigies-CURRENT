@@ -601,33 +601,6 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	{
 		grv = 0
 	}
-	//Snow idle
-	if (global.snowlvl_freeze = true) and (sprite_index = spr_playernew)
-	{
-		sprite_index = spr_player_freeze
-	}
-
-	if (global.snowlvl_freeze = true) and (sprite_index = spr_player_left)
-	{
-		sprite_index = spr_player_freeze
-	}
-
-
-
-	if (global.snowlvl_freeze = true) and (sprite_index = spr_player_escapeidle)
-	{
-		sprite_index = spr_player_escapeidle
-	}
-
-
-	//Boxnite jumpscare
-	if (instance_exists(obj_boxnite_jumpscare))
-	{
-		walksp = 0
-	    can_dash = false
-		canJump = 0
-		grv = 0
-	}
 
 	if (global.scorebook_active = true)
 	{
@@ -668,12 +641,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		}
 	}
 	// water
-	if (place_meeting(x,y,obj_water))
-	{
-		grv = 0.05
-		dash_distance = 165
-	    dash_time = 16
-	}
+
 
 	if (sprite_index = spr_player_bomb) or (sprite_index = spr_player_bomb_escape)
 	{
@@ -685,36 +653,6 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		global.fallspr_deactivate = true
 	}
 
-	if (place_meeting(x,y,obj_dash_breakable)) and (Dashstate())
-	{
-		instance_destroy(obj_dash_breakable)
-	}
-
-	if (global.totalkills >= 5)
-	{
-		score *= 1.1
-	}
-
-	if (global.totalkills >= 10)
-	{
-		score *= 1.3
-	}
-
-	if (global.totalkills >= 15)
-	{
-		score *= 1.5
-	}
-
-	if (global.totalkills >= 20)
-	{
-		score *= 1.7
-	}
-
-
-	if (global.totalkills >= 1) and (!instance_exists(obj_kills_meter))
-	{
-		instance_create_depth(-999,-999,-10001,obj_kills_meter)
-	}
 	// Djump sprite
 	if (global.dJump_active = true) and (onground = false) and (!global.dJump_idle = true)
 	{
