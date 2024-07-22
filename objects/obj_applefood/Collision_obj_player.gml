@@ -9,11 +9,11 @@ audio_play_sound(snd_collectable_food,0,false);
 
 instance_create_depth(x,y,-1000,obj_collect_apple)
 
-global.sanity += 0.5
+global.sanity += 0.6
 
 if (global.sanity >= 300)
 {
-	global.sanity -= 0.5
+	global.sanity -= 0.6
 }
 
 if (global.sanity <= 80)

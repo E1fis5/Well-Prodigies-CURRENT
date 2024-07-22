@@ -10,4 +10,4 @@ var doll_boost_destroy = function()
 
 global.doll_ability_active = false;
 global.abilityscore = 0;
-global.doll_boost_destroy = time_source_create(time_source_game,15,time_source_units_seconds,doll_boost_destroy,[],1)
+global.doll_boost_destroy = time_source_create(time_source_game,25,time_source_units_seconds,doll_boost_destroy,[],1)

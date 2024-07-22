@@ -77,7 +77,6 @@
     {"name":"inst_5F1BD63D","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
     {"name":"inst_22815532","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
     {"name":"inst_226F7F43","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
-    {"name":"inst_3F28541B","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
     {"name":"inst_5CD76A01","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
     {"name":"inst_22C14B1","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
     {"name":"inst_3AADFAB5","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
@@ -101,6 +100,7 @@
     {"name":"inst_5B5C4385","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
     {"name":"inst_6D8F31C5","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
     {"name":"inst_20AE7971","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
+    {"name":"inst_62584B73","path":"rooms/r_MonkeyBusiness1/r_MonkeyBusiness1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -494,8 +494,8 @@
     {"$GMRInstanceLayer":"","%Name":"Player_and_misc","depth":900,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_1DD74343","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1DD74343","objectId":{"name":"obj_mb_song1","path":"objects/obj_mb_song1/obj_mb_song1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4576.0,"y":1184.0,},
         {"$GMRInstance":"v1","%Name":"inst_1EBC90FB","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1EBC90FB","objectId":{"name":"obj_targetExit","path":"objects/obj_targetExit/obj_targetExit.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":3.140625,"x":0.0,"y":1207.0,},
-        {"$GMRInstance":"v1","%Name":"inst_3F28541B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3F28541B","objectId":{"name":"obj_health_bg","path":"objects/obj_health_bg/obj_health_bg.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4512.0,"y":1056.0,},
         {"$GMRInstance":"v1","%Name":"inst_5CD76A01","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5CD76A01","objectId":{"name":"obj_health","path":"objects/obj_health/obj_health.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4384.0,"y":1056.0,},
+        {"$GMRInstance":"v1","%Name":"inst_62584B73","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_62584B73","objectId":{"name":"obj_health_bg","path":"objects/obj_health_bg/obj_health_bg.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4448.0,"y":992.0,},
       ],"layers":[],"name":"Player_and_misc","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_1570A082","animationSpeed":1.0,"colour":4291611852,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_1570A082","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":3.5,"scaleY":3.5,"spriteId":{"name":"spr_mb_sign1_out","path":"sprites/spr_mb_sign1_out/spr_mb_sign1_out.yy",},"x":608.0,"y":1248.0,},

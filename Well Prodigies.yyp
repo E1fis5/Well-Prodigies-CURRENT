@@ -476,6 +476,7 @@
     {"id":{"name":"obj_mb_gate","path":"objects/obj_mb_gate/obj_mb_gate.yy",},},
     {"id":{"name":"obj_mb_hut","path":"objects/obj_mb_hut/obj_mb_hut.yy",},},
     {"id":{"name":"obj_mb_intro_slide","path":"objects/obj_mb_intro_slide/obj_mb_intro_slide.yy",},},
+    {"id":{"name":"obj_mb_monk_wiz_collision_reverse","path":"objects/obj_mb_monk_wiz_collision_reverse/obj_mb_monk_wiz_collision_reverse.yy",},},
     {"id":{"name":"obj_mb_monkey1","path":"objects/obj_mb_monkey1/obj_mb_monkey1.yy",},},
     {"id":{"name":"obj_mb_play_button","path":"objects/obj_mb_play_button/obj_mb_play_button.yy",},},
     {"id":{"name":"obj_mb_song1","path":"objects/obj_mb_song1/obj_mb_song1.yy",},},

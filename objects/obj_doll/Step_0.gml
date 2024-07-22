@@ -1,5 +1,5 @@
 
-if (global.abilityscore = 150) and (input_check("ability")) and (!instance_exists(obj_doll_boosts))
+if (global.abilityscore >= 150) and (input_check("ability")) and (!instance_exists(obj_doll_boosts))
 {
 	instance_create_depth(x,y,-999,obj_doll_boosts);
     time_source_start(global.doll_boost_destroy);

@@ -6,3 +6,4 @@ var instance_deactivate = function()
 depth = 399;
 time_source_Lwiz_mini = time_source_create(time_source_game,27,time_source_units_seconds,instance_deactivate,[],1);
 time_source_start(time_source_Lwiz_mini);
+

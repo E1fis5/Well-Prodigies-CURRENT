@@ -2,6 +2,7 @@
 {
 	obj_monk_wiz_collision.sprite_index = spr_switch_collisions_purple;
 	instance_destroy();
+	global.wiz_buddy_active = false;
 }
 
 
@@ -14,3 +15,4 @@ if (instance_exists(obj_monk_wiz_collision))
 {
 	obj_monk_wiz_collision.sprite_index = spr_switch_collision_red;
 }
+

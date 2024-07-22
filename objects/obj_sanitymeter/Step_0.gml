@@ -8,7 +8,7 @@ else
 {
 	visible = true
 }
-if (global.sanity > 300)
+if (global.sanity >= 300)
 {
 	global.sanity = 300;
 }

@@ -1,7 +1,7 @@
 score += 825
 if (global.abilityscore <= 150)
 {
-	global.abilityscore += 50;
+	global.abilityscore += 40;
 }
 instance_destroy();
 
@@ -12,11 +12,11 @@ audio_play_sound(snd_big_collect,0,false);
 global.gem_counter += 1
 global.gems_collected += 1
 
-global.sanity += 10
+global.sanity += 15
 
 if (global.sanity >= 300)
 {
-	global.sanity -= 10
+	global.sanity -= 15
 }
 
 instance_create_depth(-999,-999,-9990,obj_gem_notif)

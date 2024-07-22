@@ -7,6 +7,7 @@
     {"name":"monkey_buisness","order":3,"path":"folders/Rooms/CHAPTER_1/monkey_buisness.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_mb_monk_wiz_collision_reverse","order":1,"path":"objects/obj_mb_monk_wiz_collision_reverse/obj_mb_monk_wiz_collision_reverse.yy",},
     {"name":"obj_player_dash_hitbox","order":3,"path":"objects/obj_player_dash_hitbox/obj_player_dash_hitbox.yy",},
     {"name":"obj_super_dashBoost","order":1,"path":"objects/obj_super_dashBoost/obj_super_dashBoost.yy",},
     {"name":"obj_super_dBoost_active_effect","order":1,"path":"objects/obj_super_dBoost_active_effect/obj_super_dBoost_active_effect.yy",},

@@ -1,1 +1,1 @@
-global.monkey_wiz_buddy_time = 25;
+global.monkey_wiz_buddy_time = 27;

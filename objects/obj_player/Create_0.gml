@@ -172,6 +172,7 @@ if (onwall != 0) && (!onground) && (input_check("jump"))
 	hsp = -onwall * hsp_wjump;
 	vsp = vsp_wjump;
 	audio_play_sound(snd_stone1,5,false)
+	global.dJump_active = false
 	global.wallboost_amount += 1
 	if (time_source_exists(global.timer_wallboost_deactivate))
 	{
@@ -291,6 +292,7 @@ if (onground) jumpbuffer = 6;
 if (onground)
 {
 	canCrawl = 0
+	global.dJump_active = false
 }
 
 if (!onground)
@@ -369,12 +371,3 @@ state_FastFall = function()
 }
 
 depth = 400
-
-
-//Extended Idle
-var time_source_sprite_switch = function()
-{
-	global.idlespr_active = true
-}
-time_source_ext_idle = time_source_create(time_source_game,8,time_source_units_seconds,time_source_sprite_switch,[],-1)
-

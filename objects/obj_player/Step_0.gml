@@ -24,81 +24,12 @@ if vk_anykey
 	if input_check("run") = false and input_check("down") = false
 	{
 		walksp = 6.8
-		global.sprite_idlebreak = false;
-	}
-
-	if input_check("run") = true and input_check("down") = true
-	{
-		walksp = 8.2
-	}
-
-	if (input_check("left")) and (input_check("right")) and (onground)
-	{
-		sprite_index = spr_playernew;
-	}
-
-	//Idle breaker trigger
-	if (sprite_index = spr_playernew)
-	{
-		time_source_start(timer_idle_breaker_jk);
-	}
-	else
-	{
-		time_source_stop(timer_idle_breaker_jk);
-		global.sprite_idlebreak = false;
-	}
-	//Mini wizard
-	if (instance_exists(obj_Lwiz_mini))
-	{
-		walksp += 0.75;
-		dash_distance = 200
-	    dash_time = 18
-	}
-	
-
-	//Jestraught run/values
-	if  input_check("run") = true and (global.jestraught_player = true)
-	{
-	    walksp = 7.1
-	}
-
-	if input_check("run") = false and (global.jestraught_player = true)
-	{
-		walksp = 6.6
-	}
-
-	if (global.jestraught_dash_walksp_add = 1)
-	{
-		walksp += 0.3
-		dash_distance -= 10
-		dash_time -= 2
-	}
-
-	if (global.jestraught_dash_walksp_add = 2)
-	{
-		walksp += 0.6
-		dash_distance -= 20
-		dash_time -= 4
 	}
 
 
-	if (global.jestraught_dash_walksp_add >= 3)
-	{
-		dash_distance -= 20
-		dash_time -= 2
-	}
 
-	if (global.jestraught_player = true) and (sprite_index = spr_playernew)
-	{
-		sprite_index = spr_jestraught_idle
-	}
-	//Jestraught dash boost destroy
-	if (place_meeting(x + hsp ,y, obj_collision_wall)) and (global.jestraught_player = true)
-	{
-		global.jestraught_dash_walksp_add = 0
-	}
+
 	//Bomb state
-
 	if (place_meeting(x,y,obj_bomb_launcher))
 	{
 		sprite_index = spr_player_bomb
@@ -107,11 +38,6 @@ if vk_anykey
 		bombActive = true
 		global.dJump_active = false
 		global.particle_start = false
-	}
-
-	if (bombActive = true) and (onground = true)
-	{
-		bombActive = false
 	}
 
 
@@ -123,10 +49,7 @@ if vk_anykey
 	}
 
 
-	if (grv = -1 && place_meeting(x,y,obj_collision_wall)) 
-	{
-		grv = 0.07
-	}
+
 
 	if grv = -1 and (!place_meeting(x,y,obj_ladder_wood))
 	{
@@ -135,50 +58,22 @@ if vk_anykey
 		image_yscale = 1
 	}
 
-	if grv = -1 and input_check("down") = true
-	{
-		sprite_index = spr_playercrawl
-		image_xscale = 1
-		image_yscale = 1
-	}
 
 
 
 
-	if place_meeting(x, y, obj_lap_portal) {
-	    with (obj_L2_block) {
-	        instance_destroy(); //
-	    }
-	}
 
 
-	// Lap anims
-	if global.isActive = true and sprite_index = spr_player_left and (!global.sanity <= 40)
-	{
-		sprite_index = spr_player_escape_left
-		image_xscale  = 1
-	    image_yscale = 1
-	}
 
-	if global.isActive = true and (sprite_index = spr_playernew) and (!global.sanity <= 40)
+	if global.isActive = true and (sprite_index = spr_playernew)
 	{
 		sprite_index = spr_player_escapeidle
 		image_xscale  = 1
 	    image_yscale = 1
-	}
-
-	if global.isActive = true and sprite_index = spr_player_escape_left and (global.sanity <= 40)
-	{
-		sprite_index = spr_player_insane_escape_idle_left
-		image_xscale  = 1
-	    image_yscale = 1
-	}
-
-	if global.isActive = true and (sprite_index = spr_player_escapeidle) and (global.sanity <= 40)
-	{
-		sprite_index = spr_player_insane_escape_idle
-		image_xscale  = 1
-	    image_yscale = 1
+		if (sprite_index = spr_player_left)
+		{
+			sprite_index = spr_player_escape_left;
+		}
 	}
 
 
@@ -193,7 +88,6 @@ if vk_anykey
 		{
 			 instance_create_depth(x,y,399,obj_bomb_explosion);
 			 audio_play_sound(snd_bomb_explosion,5,false);
-			 walksp += 1.5;
 		}
 	}
 
@@ -202,24 +96,11 @@ if vk_anykey
 		sprite_index = spr_player_bomb_escape
 	}
 
-	//Return back to normal idle if in lobby
-	if (room == rWellhub2) && sprite_index = spr_player_escapeidle
-	{
-		sprite_index = spr_playernew
-	}
+//Fast fall
+state_FastFall();
 
 
-	//Falling speed
 
-	//Fast fall
-
-	state_FastFall();
-
-
-	if (sprite_index = spr_player_downp) and (onground = true)
-	{
-		sprite_index = spr_playernew;
-	}
 
 	//Ladder
 	if (place_meeting(x,y,obj_ladder_wood) and (input_check("up") = true))
@@ -266,11 +147,7 @@ if vk_anykey
 			sprite_index = spr_player_snow_idle_left;
 		}
 	}
-//Run sound
-if (input_check("run")) and (!audio_exists(snd_goober_Run))
-{
-	audio_play_sound(snd_goober_Run,8,false)
-}
+
 	//MB fan
 	if (place_meeting(x,y,obj_fan))
 	{
@@ -279,11 +156,6 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		sprite_index = spr_player1;
 	}
 
-	//Force Crawl
-	if (place_meeting(x,y,obj_forcecrawl))
-	{
-		sprite_index = spr_playercrawl;
-	}
 
 	//Dash
 	if (can_dash) and (input_check_pressed("dash"))
@@ -302,7 +174,6 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		global.dJump_active = false
 		audio_play_sound(snd_dash_p,8,false)
 		global.dash_active = true
-		global.particle_start = false
 		if (!instance_exists(obj_player_dash_hitbox))
 		{
 			instance_create_depth(x,y,401,obj_player_dash_hitbox);
@@ -328,17 +199,10 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 				global.fallspr_deactivate = true
 				global.dash_active = true
 			}
-			if (global.jestraught_player = true)
-			{
-				sprite_index = spr_jestraught_dash;
-			}
 	}
 	} 
 
-	if (sprite_index = spr_player_fall) and (player_left = true)
-	{
-		sprite_index = spr_player_fall_left
-	}
+
 
 	Dashstate = function()
 	//Movement
@@ -452,16 +316,12 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		walksp += 0.40;
 		global.dash_amount = 8;
 	}
-	//Dash breakable
-	if (sprite_index = spr_player_dash) and (place_meeting(x,y,obj_dash_breakable))
-	{
-		instance_destroy(obj_dash_breakable);
-	}
+
 
 	//Walksp boost
 	if (global.walksp_boost_active = true) 
 	{
-		walksp += 0.60;
+		walksp += 0.75;
 	}
 
 	if (sprite_index = spr_player_bomb or spr_player_bomb_escape)
@@ -472,6 +332,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 
 
 	//Sanity values
+	
 	if (global.sanity >= 220) and (bombActive = false)
 	{
 		walksp += 0.55
@@ -486,10 +347,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	    dash_time = 15
 	}
 
-	if (place_meeting(x,y,obj_slide))
-	{
-		walksp = 8.5
-	}
+
 	// lap 2 anims
 	if (global.lap2_active = true) and (sprite_index = spr_player_escapeidle)
 	{
@@ -568,12 +426,7 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 
 
 
-	if (input_check("run")) and (input_check("left"))
-	{
-		global.fallspr_deactivate = true
-	}
-
-	if (input_check("run")) and (input_check("right"))
+	if (input_check("run"))
 	{
 		global.fallspr_deactivate = true
 	}
@@ -581,10 +434,6 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 	if (global.fallspr_deactivate = false) and (global.dJump_active = false)
 	{
 		sprite_index = spr_player_fall
-		if (global.jestraught_player = true)
-		{
-			sprite_index = spr_jestraught_fall;
-		}
 	}
 
 	if (global.fallspr_deactivate = false) and (player_left = true) and (global.dJump_active = false)
@@ -602,12 +451,6 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		grv = 0
 	}
 
-	if (global.scorebook_active = true)
-	{
-		walksp = 0
-		can_dash = false
-		canJump = 0
-	}
 
 	//Enemy projectiles
 	if (place_meeting(x,y,obj_enemy_sight)) and (instance_exists(obj_zombie_projectile))
@@ -640,7 +483,6 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 			sprite_index = spr_player_backwards_left
 		}
 	}
-	// water
 
 
 	if (sprite_index = spr_player_bomb) or (sprite_index = spr_player_bomb_escape)
@@ -670,20 +512,6 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 			}
 		}
 		}
-	}
-
-
-
-
-	if onground = true
-	{
-	    global.dJump_active = false
-	}
-
-
-	if (onwall = true)
-	{
-		global.dJump_active = false
 	}
 
 	//Game over
@@ -735,14 +563,9 @@ if (input_check("run")) and (!audio_exists(snd_goober_Run))
 		{
 			grv = -999;
 		}
-		if (input_check("down"))
-		{
-			grv = 999;
-		}
 		walksp = 15;
 	}
 
-	//Dash boost
 
 //Dash boost
 if (instance_exists(obj_dash_boost)) and (input_check("attack"))
@@ -798,16 +621,12 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 			obj_sanitymeter.image_alpha = 1;
 		obj_sanity_bg.image_alpha = 1;
 	}
-	//Wall Boost
-	if (instance_exists(obj_wallboost))
-	{
-		walksp += 0.45;
-	}
+
 
 	if (global.doll_ability_active = true)
 	{
-		walksp += 0.95;
-		dash_distance = 215;
+		walksp += 1.25;
+		dash_distance = 210;
 	}
 	//Destroy escape blink if overlay is off
 	if (global.escapeoverlay_trigger = false)
