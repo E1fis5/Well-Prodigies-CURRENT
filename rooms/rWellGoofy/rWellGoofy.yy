@@ -45,7 +45,6 @@
     {"name":"inst_9CD79","path":"rooms/rWellGoofy/rWellGoofy.yy",},
     {"name":"inst_7F67F5EF","path":"rooms/rWellGoofy/rWellGoofy.yy",},
     {"name":"inst_2E234ACF","path":"rooms/rWellGoofy/rWellGoofy.yy",},
-    {"name":"inst_64CA188","path":"rooms/rWellGoofy/rWellGoofy.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -98,7 +97,6 @@
         {"$GMRInstance":"v1","%Name":"inst_9CD79","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_9CD79","objectId":{"name":"obj_slide","path":"objects/obj_slide/obj_slide.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":448.0,"y":288.0,},
         {"$GMRInstance":"v1","%Name":"inst_7F67F5EF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7F67F5EF","objectId":{"name":"obj_lectern_mb","path":"objects/obj_lectern_mb/obj_lectern_mb.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":832.0,"y":96.0,},
         {"$GMRInstance":"v1","%Name":"inst_2E234ACF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2E234ACF","objectId":{"name":"obj_goldbigcollectable","path":"objects/obj_goldbigcollectable/obj_goldbigcollectable.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":608.0,"y":128.0,},
-        {"$GMRInstance":"v1","%Name":"inst_64CA188","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_64CA188","objectId":{"name":"obj_collectable2","path":"objects/obj_collectable2/obj_collectable2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":704.0,"y":128.0,},
       ],"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

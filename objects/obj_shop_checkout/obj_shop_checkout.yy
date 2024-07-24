@@ -1,21 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_collectable2",
+  "%Name":"obj_shop_checkout",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_collectable2",
+  "name":"obj_shop_checkout",
   "overriddenProperties":[],
   "parent":{
-    "name":"collectables",
-    "path":"folders/Objects/collectables.yy",
+    "name":"shop",
+    "path":"folders/Objects/shop.yy",
   },
-  "parentObjectId":{
-    "name":"obj_collectable1",
-    "path":"objects/obj_collectable1/obj_collectable1.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -34,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_collectable2",
-    "path":"sprites/spr_collectable2/spr_collectable2.yy",
+    "name":"spr_checkout",
+    "path":"sprites/spr_checkout/spr_checkout.yy",
   },
   "spriteMaskId":null,
   "visible":true,

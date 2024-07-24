@@ -38,6 +38,9 @@ if !instance_exists(obj_transition)
 		global.soldout_speed = false;
 		global.gems_collected = 0;
 		global.sanity_Prank_switch = false;
-
-		
+		global.magnet_collect_pull = false;
+		global.magnet_collect_strong_pull = false;
+		global.magnet_soldout = false;
+		global.magnet_pickup = false;
+		instance_destroy(obj_shop_magnet);
 	

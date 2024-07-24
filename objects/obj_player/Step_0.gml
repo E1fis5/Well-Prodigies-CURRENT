@@ -586,7 +586,6 @@ if (instance_exists(obj_dBoost_additive))
 	if (!instance_exists(obj_dashB_active_effect))
 	{
 		instance_create_depth(x,y,399,obj_dashB_active_effect);
-		time_source_stop(global.timer_wallboost_deactivate);
 	}
 	
 	if (instance_exists(obj_dashjoost_pause))

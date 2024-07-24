@@ -1,7 +1,18 @@
 score += 55
-if (global.abilityscore <= 150)
+if (global.abilityscore <= 150) and (global.magnet_collect_strong_pull = false)
 {
 	global.abilityscore += 4;
+}
+
+if (global.magnet_collect_pull = true)
+{
+	global.sanity -= 0.1;
+}
+
+if (global.magnet_collect_strong_pull = true)
+{
+	score += 16.5;
+	global.sanity -= 0.2;
 }
 instance_destroy();
 

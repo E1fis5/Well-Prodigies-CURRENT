@@ -1,5 +1,5 @@
 score += 825
-if (global.abilityscore <= 150)
+if (global.abilityscore <= 150) and (global.magnet_collect_strong_pull = false)
 {
 	global.abilityscore += 40;
 }

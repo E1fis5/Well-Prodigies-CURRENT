@@ -1,9 +1,20 @@
 score += 350
-if (global.abilityscore <= 150)
+if (global.abilityscore <= 150) and (global.magnet_collect_strong_pull = false)
 {
 	global.abilityscore += 20;
 }
 instance_destroy();
+
+if (global.magnet_collect_pull = true)
+{
+	global.sanity -= 0.5;
+}
+
+if (global.magnet_collect_strong_pull = true)
+{
+	score += 105;
+	global.sanity -= 1;
+}
 
 audio_play_sound(snd_collect_medium,0,false);
 

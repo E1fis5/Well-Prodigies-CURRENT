@@ -34,52 +34,13 @@ if !instance_exists(obj_transition)
 		global.soldout_doll = false;
 			global.rift_taken = false;
 		global.soldout_speed = false;
+		global.magnet_collect_pull = false;
+		global.magnet_collect_strong_pull = false;
+		global.magnet_soldout = false;
+		global.magnet_pickup = false;
+		instance_destroy(obj_shop_magnet);
+	
 time_source_stop(global.timesource_freeze);
 time_source_stop(global.timesource_freeze2);
 time_source_stop(global.timesource_freeze_no_torch);
 time_source_stop(global.timesource_freeze_penalty);
-if (score >= 0)
-   {
-	 global.hub_currency += 50
-   }
-   
-   if score >= 1850
-   {
-	 global.hub_currency += 75
-   }
-   
-      if score >= 4875
-   {
-	 global.hub_currency += 100
-   }
-
-      if score >= 8750
-   {
-	  global.hub_currency += 125
-   }
-   
-         if score >= 12750
-   {
-	 global.hub_currency += 150
-   }
-   
-            if score >= 17000
-   {
-	   global.hub_currency += 175
-   }
-
-         if (score >= 20000)
-   {
-	  global.hub_currency += 200
-   }
-   
-            if (score >= 20000) and (global.rift_taken = true) and (global.gem_counter >= 5) and (global.shopitem_bought = false) and (global.gamemode_hard = true)
-   {
-	  global.hub_currency += 275
-   }
-   
-   		if (global.lap2_active = true)
-		{
-			time_source_stop(global.lap2_drain);
-		}
-	    global.lap2_active = false;

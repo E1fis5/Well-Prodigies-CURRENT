@@ -1,5 +1,5 @@
 score += 55
-if (global.abilityscore <= 150)
+if (global.abilityscore <= 150) and (global.magnet_collect_strong_pull = false)
 {
 	global.abilityscore += 4;
 }
@@ -9,6 +9,16 @@ audio_play_sound(snd_collectable_food,0,false);
 
 instance_create_depth(x,y,-1000,obj_collect_apple)
 
+if (global.magnet_collect_pull = true)
+{
+	global.sanity -= 0.1;
+}
+
+if (global.magnet_collect_strong_pull = true)
+{
+	score += 16.5;
+	global.sanity -= 0.2;
+}
 global.sanity += 0.6
 
 if (global.sanity >= 300)

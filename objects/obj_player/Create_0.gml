@@ -1,9 +1,4 @@
-var time_source_run_add = function()
-{
-	walksp += 0.2;
-}
 
-global.speed_add = false;
 
 
 
@@ -11,14 +6,11 @@ var idle_breaker = function()
 {
 	global.sprite_idlebreak = true;
 }
-var wallboost_destroy = function()
-{
-	instance_destroy(obj_wallboost);
-	instance_destroy(obj_wallboost_effect);
-	global.wallboost_amount = 0;
-}
+
+global.magnet_collect_strong_pull = false;
+global.magnet_collect_pull = true;
+global.soldout_speed = false;
 global.fakeout_pause = false;
-global.timer_wallboost_deactivate = time_source_create(time_source_game,5,time_source_units_seconds,wallboost_destroy,[],1);
 global.powercrawl = false;
 global.dash_cancel_speed = false;
 global.sprite_idlebreak = false;
@@ -173,11 +165,7 @@ if (onwall != 0) && (!onground) && (input_check("jump"))
 	vsp = vsp_wjump;
 	audio_play_sound(snd_stone1,5,false)
 	global.dJump_active = false
-	global.wallboost_amount += 1
-	if (time_source_exists(global.timer_wallboost_deactivate))
-	{
-	time_source_stop(global.timer_wallboost_deactivate);
-	}
+
 		can_dash = true;
 
 		instance_create_depth(x,y,401,obj_wallclimb_effect);

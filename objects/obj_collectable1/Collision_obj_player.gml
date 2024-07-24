@@ -1,10 +1,20 @@
 score += 11
 
-if (global.abilityscore <= 150)
+if (global.abilityscore <= 150) and (global.magnet_collect_strong_pull = false)
 {
 	global.abilityscore += 1;
 }
 
+if (global.magnet_collect_pull = true)
+{
+	global.sanity -= 0.05;
+}
+
+if (global.magnet_collect_strong_pull = true)
+{
+	score += 4;
+	global.sanity -= 0.1;
+}
 instance_destroy();
 audio_play_sound(snd_collectable_collect,0,false);
 

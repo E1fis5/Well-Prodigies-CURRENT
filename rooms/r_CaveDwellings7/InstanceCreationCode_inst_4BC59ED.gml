@@ -1,3 +1,3 @@
-target_x = 1168
-target_y = 1908
-target_rm = r_CaveDwellings_shop
+target_x = 288
+target_y = 512
+target_rm = r_Shop_new
