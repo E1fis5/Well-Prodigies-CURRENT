@@ -7,6 +7,7 @@ var doll_boost_destroy = function()
 	audio_play_sound(snd_ability_wearoff,6,false);
 }
 
+instance_create_depth(0,0,-9999,obj_ability_bar);
 
 global.doll_ability_active = false;
 global.abilityscore = 0;
