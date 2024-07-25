@@ -21,6 +21,7 @@
     {"name":"obj_super_dBoost_additive","order":2,"path":"objects/obj_super_dBoost_additive/obj_super_dBoost_additive.yy",},
     {"name":"obj_super_dBoost_effect","order":2,"path":"objects/obj_super_dBoost_effect/obj_super_dBoost_effect.yy",},
     {"name":"r_Difficulty_select","order":5,"path":"rooms/r_Difficulty_select/r_Difficulty_select.yy",},
+    {"name":"r_Shop_new_gt","order":2,"path":"rooms/r_Shop_new_gt/r_Shop_new_gt.yy",},
     {"name":"r_Shop_new","order":1,"path":"rooms/r_Shop_new/r_Shop_new.yy",},
     {"name":"r_Wellhub_encore1","order":7,"path":"rooms/r_Wellhub_encore1/r_Wellhub_encore1.yy",},
     {"name":"rAch_room","order":6,"path":"rooms/rAch_room/rAch_room.yy",},

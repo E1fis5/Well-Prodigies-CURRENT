@@ -689,6 +689,7 @@
     {"id":{"name":"r_rankscreen","path":"rooms/r_rankscreen/r_rankscreen.yy",},},
     {"id":{"name":"r_room_null","path":"rooms/r_room_null/r_room_null.yy",},},
     {"id":{"name":"r_rt1","path":"rooms/r_rt1/r_rt1.yy",},},
+    {"id":{"name":"r_Shop_new_gt","path":"rooms/r_Shop_new_gt/r_Shop_new_gt.yy",},},
     {"id":{"name":"r_Shop_new","path":"rooms/r_Shop_new/r_Shop_new.yy",},},
     {"id":{"name":"r_test1","path":"rooms/r_test1/r_test1.yy",},},
     {"id":{"name":"r_tut1","path":"rooms/r_tut1/r_tut1.yy",},},
@@ -1747,6 +1748,7 @@
     {"roomId":{"name":"r_MonkeyBusiness_p1_2","path":"rooms/r_MonkeyBusiness_p1_2/r_MonkeyBusiness_p1_2.yy",},},
     {"roomId":{"name":"r_Wellhub_encore1","path":"rooms/r_Wellhub_encore1/r_Wellhub_encore1.yy",},},
     {"roomId":{"name":"r_Shop_new","path":"rooms/r_Shop_new/r_Shop_new.yy",},},
+    {"roomId":{"name":"r_Shop_new_gt","path":"rooms/r_Shop_new_gt/r_Shop_new_gt.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

@@ -39,6 +39,7 @@ if !instance_exists(obj_transition)
 		global.magnet_soldout = false;
 		global.magnet_pickup = false;
 		instance_destroy(obj_shop_magnet);
+			instance_destroy(obj_ability_bar);
 	
 time_source_stop(global.timesource_freeze);
 time_source_stop(global.timesource_freeze2);

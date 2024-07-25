@@ -1,0 +1,1 @@
+global.debug_active = false;

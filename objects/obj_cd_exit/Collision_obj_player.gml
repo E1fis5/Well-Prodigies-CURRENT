@@ -34,6 +34,7 @@ if !instance_exists(obj_transition)
 		}
 			    global.lap2_active = false;
 		instance_destroy(obj_doll);
+		instance_destroy(obj_ability_bar);
 		global.soldout_doll = false;
 		global.soldout_speed = false;
 		global.gems_collected = 0;
