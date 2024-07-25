@@ -10,4 +10,7 @@ global.timer_magnet_end = time_source_create(time_source_game,25,time_source_uni
 
 
 depth = 399;
-instance_create_depth(0,0,-9999,obj_ability_bar);
+if (!instance_exists(obj_ability_bar))
+{
+	instance_create_depth(0,0,-9999,obj_ability_bar);
+}

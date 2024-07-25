@@ -33,7 +33,6 @@ if (global.gem_counter = 6)
     sprite_index = spr_gems_6
 }
 
-draw_self();
 
 
 
