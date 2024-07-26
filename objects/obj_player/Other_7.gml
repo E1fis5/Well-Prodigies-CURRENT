@@ -1,10 +1,5 @@
-if (sprite_index = spr_player_gem_collect) and (global.dJump_active = true) and (onground = false)
+if (sprite_index = spr_player_gem_collect)
 {
-	global.dJump_idle = true
+	sprite_index = spr_player_fall;
 }
 
-if (sprite_index = spr_player_idlebreaker_1)
-{
-	sprite_index = spr_playernew;
-	global.idlespr_active = false;
-}

@@ -1,8 +1,7 @@
-global.bombactive = true
 
 global.fallspr_deactivate = true
 
-if (!audio_played) and (!instance_exists(obj_bomb_explosion))
+if (!instance_exists(obj_bomb_explosion))
 {
    audio_play_sound(snd_bomb_explosion,5,false);
    audio_played = true;

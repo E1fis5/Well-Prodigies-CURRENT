@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.108571,
+  "duration":2.616,
   "name":"snd_dBoost_start",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_dBoost_start.mp3",
   "type":0,
-  "volume":0.16,
+  "volume":0.25,
 }

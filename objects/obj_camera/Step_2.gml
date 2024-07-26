@@ -12,7 +12,3 @@ if instance_exists(obj_player)
 
 //Set camera position
 camera_set_view_pos( view_camera[0], x, y);
-
-x += random_range(-shake_remain,shake_remain);
-y += random_range(-shake_remain,shake_remain);
-shake_remain = max(0,shake_remain-((1/shake_length)*shake_magnitude));

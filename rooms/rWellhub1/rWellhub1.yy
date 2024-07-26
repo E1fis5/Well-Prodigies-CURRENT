@@ -13,7 +13,6 @@
     {"name":"inst_56C33681","path":"rooms/rWellhub1/rWellhub1.yy",},
     {"name":"inst_1F24EBAE","path":"rooms/rWellhub1/rWellhub1.yy",},
     {"name":"inst_6D272020","path":"rooms/rWellhub1/rWellhub1.yy",},
-    {"name":"inst_7F814F21","path":"rooms/rWellhub1/rWellhub1.yy",},
     {"name":"inst_201AB61A","path":"rooms/rWellhub1/rWellhub1.yy",},
     {"name":"inst_336480AE","path":"rooms/rWellhub1/rWellhub1.yy",},
   ],
@@ -34,7 +33,6 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_menubutton_parent","path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",},"propertyId":{"name":"button_text","path":"objects/obj_menubutton_parent/obj_menubutton_parent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Credits",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":160.0,"y":448.0,},
         {"$GMRInstance":"v1","%Name":"inst_56C33681","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_56C33681","objectId":{"name":"obj_select","path":"objects/obj_select/obj_select.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":704.0,"y":64.0,},
-        {"$GMRInstance":"v1","%Name":"inst_7F814F21","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7F814F21","objectId":{"name":"obj_cd_badge_holder","path":"objects/obj_cd_badge_holder/obj_cd_badge_holder.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1088.0,"y":128.0,},
         {"$GMRInstance":"v1","%Name":"inst_201AB61A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_201AB61A","objectId":{"name":"obj_collision_wall","path":"objects/obj_collision_wall/obj_collision_wall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.5,"scaleY":3.0,"x":448.0,"y":1024.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Player_and_misc","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

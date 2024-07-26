@@ -43,14 +43,6 @@ if vk_anykey
 
 
 
-	if (place_meeting(x,y,obj_bomb_launcher))
-	{
-		grv = -1
-	}
-
-
-
-
 	if grv = -1 and (!place_meeting(x,y,obj_ladder_wood))
 	{
 		sprite_index = spr_player_bomb
@@ -78,13 +70,13 @@ if vk_anykey
 
 
 
-	if sprite_index = spr_player_bomb or grv = -1
+	if sprite_index = spr_player_bomb
 	{
 		walksp = 1.5
 		can_dash = true
 		dash_distance = 300
 		dash_time = 19
-		if (input_check("dash"))
+		if (input_check("dash")) and (!instance_exists(obj_bomb_explosion))
 		{
 			 instance_create_depth(x,y,399,obj_bomb_explosion);
 			 audio_play_sound(snd_bomb_explosion,5,false);
@@ -374,17 +366,8 @@ state_FastFall();
 	{
 		global.fallspr_deactivate = false
 	}
+	
 	//Sprite gravity
-	if sprite_index = spr_playernew
-	{
-		grv = 0.07
-	}
-
-	if sprite_index = spr_player_left
-	{
-		grv = 0.07
-	}
-
 	if sprite_index = spr_playerwalkleft
 	{
 		grv = 0.065
@@ -426,7 +409,7 @@ state_FastFall();
 
 
 
-	if (input_check("run"))
+	if (input_check("left")) or (input_check("right"))
 	{
 		global.fallspr_deactivate = true
 	}
@@ -514,11 +497,6 @@ state_FastFall();
 		}
 	}
 
-	//Game over
-	if (global.timer <= 0) and score <= 0 and (instance_exists(obj_escape_timer))
-	{
-	   game_restart()
-	}
 
 	//Power Crawl
 	if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
@@ -565,7 +543,13 @@ state_FastFall();
 		}
 		walksp = 15;
 	}
-
+	//Lap Boost
+	if (instance_exists(obj_Lwiz_mini))
+	{
+		obj_player.walksp += 9;
+		obj_player.dash_distance = 210;
+	    obj_player.dash_time = 18;
+	}
 
 //Dash boost
 if (instance_exists(obj_dash_boost)) and (input_check("attack"))
@@ -618,14 +602,19 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 			obj_health.image_alpha = 1;
 		obj_health_bg.image_alpha = 1;
 			obj_sanitymeter.image_alpha = 1;
-		obj_sanity_bg.image_alpha = 1;
+		obj_sanity_bg.image_alpha = 1;	
+		exit;
 	}
-
+	
 
 	if (global.doll_ability_active = true)
 	{
 		walksp += 1.25;
 		dash_distance = 210;
+		if (global.doll_ability_active = false)
+		{
+			exit;
+		}
 	}
 	//Destroy escape blink if overlay is off
 	if (global.escapeoverlay_trigger = false)

@@ -32,6 +32,7 @@ if (global.isActive && global.timer > 0) and (global.doll_ability_active = false
 if (instance_exists(obj_hide_hud))
 {
     visible = false
+	exit;
 }
 else
 {

@@ -79,6 +79,7 @@ can_dash = false
 dash_distance = 125
 dash_time = 15
 bombActive = false
+bomb_explosion_disable = false;
 global.fall_effect_destroy = false
 global.dJump_active = false
 global.gravity_force = 0;

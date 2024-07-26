@@ -7,6 +7,7 @@ if (instance_exists(obj_hide_hud))
 else
 {
 	visible = true
+	exit;
 }
 if (global.sanity >= 300)
 {
