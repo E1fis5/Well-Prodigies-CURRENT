@@ -109,6 +109,21 @@ global.dash_Jboost_7 = false;
 global.dash_Jboost_8 = false;
 global.dash_Jboost_9 = false;
 global.dash_Jboost_10 = false;
+global.dBoost_deactivate_time = 9
+//Control Variables
+global.keyUp = input_check("up");
+global.keyDown = input_check("down");
+global.keyLeft = input_check("left");
+global.keyRight = input_check("right");
+global.keyDash = input_check("dash");
+global.keyJump = input_check("jump");
+global.keyAttack = input_check("attack");
+global.keyAbility = input_check("ability");
+global.keySprint = input_check("run");
+global.keyAccept = input_check("accept");
+global.keyCancel= input_check("cancel");
+global.keyDash_pressed = input_check_pressed("dash");
+global.keyJump_pressed = input_check_pressed("jump");
 //Power crawl
 var power_crawl_damage = function()
 {
@@ -145,7 +160,7 @@ var dBoost_deactivate = function()
 //Idle breaker
 timer_idle_breaker_jk = time_source_create(time_source_game,1,time_source_units_seconds,idle_breaker,[],-1);
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
-timer_dBoost_deactivate = time_source_create(time_source_game,9,time_source_units_seconds, dBoost_deactivate,[],1);
+timer_dBoost_deactivate = time_source_create(time_source_game,global.dBoost_deactivate_time,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
 timer_power_crawl = time_source_create(time_source_game,1.85,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,0.85,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
@@ -156,10 +171,10 @@ state_normal = function()
 {
 walljumpdelay =max(walljumpdelay-1,0);
 if (walljumpdelay == 0) 
-hsp =(input_check("right") - input_check("left")) * walksp
+hsp =(global.keyRight - global.keyLeft) * walksp
 
 
-if (onwall != 0) && (!onground) && (input_check("jump"))
+if (onwall != 0) && (!onground) && (global.keyJump)
 {
 	walljumpdelay = walljumpdelay_max;
 	hsp = -onwall * hsp_wjump;
@@ -188,7 +203,7 @@ vsp = vsp + grv
 vsp = clamp(vsp, -vsp_max_final, vsp_max_final);
 
 //Deciding to jump or not
-if (canJump-- > 0) and (input_check_pressed("jump"))
+if (canJump-- > 0) and global.keyJump_pressed
 {
 	vsp = vspJump;
 	canJump = 7;
@@ -205,24 +220,24 @@ if (canJump-- > 0) and (input_check_pressed("jump"))
 
 
 //Run jump
-if (input_check("run") = true) and (sprite_index = spr_playerwalk = true) or (sprite_index = spr_playerwalkleft = true)  and (input_check("jump") = true) and (grv = -1 = false)
+if (global.keySprint) and (sprite_index = spr_playerwalk = true) or (sprite_index = spr_playerwalkleft = true)  and (global.keyJump) and (grv = -1 = false)
 {
 	grv = 0.065
 }
 
-if (input_check("run") = true) and (sprite_index = spr_playerwalkleft = true) and (input_check("jump") = true) and (grv = -1 = false)
+if (global.keySprint) and (sprite_index = spr_playerwalkleft = true) and (global.keyJump) and (grv = -1 = false)
 {
 	grv = 0.065
 }
 
-if (input_check("run") = false) and (input_check("jump") = true) and (grv = -1 = false)
+if (global.keySprint = false) and (global.keyJump) and (grv = -1 = false)
 {
 	grv = 0.07
 }
 
 
 //Double Jump
-if (jump_allowed = true) and (input_check_pressed("jump")) and (onground = false)
+if (jump_allowed = true) and (global.keyJump_pressed) and (onground = false)
 {
 	vsp = vspDJump
 	canJump = 0;
@@ -290,7 +305,7 @@ if (!onground)
 }
 
 //Change direction in animation
-if input_check("left")
+if (global.keyLeft)
 {
 	sprite_index = spr_playerwalkleft
 	image_xscale = 1
@@ -299,14 +314,14 @@ if input_check("left")
 	slide_left = true 
 }
 
-if player_left = false && input_check("right") = false
+if (player_left = false) && (global.keyRight = false)
 {
 	sprite_index = spr_player_left
 	image_xscale = 1
 	image_yscale = 1
 }
 
-  if input_check("right") = true
+  if (global.keyRight) = true
 {
 	sprite_index = spr_playerwalk
 	image_xscale = 1
@@ -316,14 +331,14 @@ if player_left = false && input_check("right") = false
 }
 
 
-  if input_check("right") = false && input_check("left") = false && player_left = true
+  if (global.keyRight) = false && (global.keyLeft) = false && player_left = true
 {
 	sprite_index = spr_player_left
 	image_xscale = 1
 	image_yscale = 1
 }
 
-  if input_check("right") = false && input_check("left") = false && player_left = false and (global.idlespr_active = false)
+  if (global.keyRight) = false && (global.keyLeft) = false && player_left = false and (global.idlespr_active = false)
 {
 	sprite_index = spr_playernew
 	image_xscale = 1
@@ -335,7 +350,7 @@ stateNormal = state_normal
 //Crawl state
 state_crawl = function()
 {
-if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood)
+if (global.keyDown) and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood)
 {
 	sprite_index = spr_playercrawl
     image_xscale = 1
@@ -349,7 +364,7 @@ if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood)
 
 state_FastFall = function()
 {
-	if (input_check("down") = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (onground = false)
+	if (global.keyDown = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (onground = false)
 {
 	grv = 5
 	sprite_index = spr_player_downp

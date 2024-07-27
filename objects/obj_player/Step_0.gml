@@ -4,24 +4,27 @@ stateNormal();
 //Crawl
 state_crawl();
 
-
-
-
-
-if (global.jestraught_player = true)
-{
-	state_crawl = false
-	state_FastFall = false
-}
-
-if vk_anykey
-{
-	if  input_check("run") = true 
+//Control Variables
+global.keyUp = input_check("up");
+global.keyDown = input_check("down");
+global.keyLeft = input_check("left");
+global.keyRight = input_check("right");
+global.keyDash = input_check("dash");
+global.keyJump = input_check("jump");
+global.keyAttack = input_check("attack");
+global.keyAbility = input_check("ability");
+global.keySprint = input_check("run");
+global.keyAccept = input_check("accept");
+global.keyCancel= input_check("cancel");
+global.keyDash_pressed = input_check_pressed("dash");
+global.keyJump_pressed = input_check_pressed("jump");
+//Sprint
+	if global.keySprint = true 
 	 {
 	   walksp = 8.25
 	 }
 
-	if input_check("run") = false and input_check("down") = false
+	if (global.keySprint = false) and (global.keyDown = false)
 	{
 		walksp = 6.8
 	}
@@ -76,7 +79,7 @@ if vk_anykey
 		can_dash = true
 		dash_distance = 300
 		dash_time = 19
-		if (input_check("dash")) and (!instance_exists(obj_bomb_explosion))
+		if global.keyDash and (!instance_exists(obj_bomb_explosion))
 		{
 			 instance_create_depth(x,y,399,obj_bomb_explosion);
 			 audio_play_sound(snd_bomb_explosion,5,false);
@@ -95,13 +98,13 @@ state_FastFall();
 
 
 	//Ladder
-	if (place_meeting(x,y,obj_ladder_wood) and (input_check("up") = true))
+	if (place_meeting(x,y,obj_ladder_wood) and (global.keyUp = true))
 	{
 		grv = -2
 		sprite_index = spr_player1
 	}
 
-	if (place_meeting(x,y,obj_ladder_wood) and (input_check("up") = false))
+	if (place_meeting(x,y,obj_ladder_wood) and (global.keyUp = false))
 	{
 		grv = 0.07
 	}
@@ -150,11 +153,11 @@ state_FastFall();
 
 
 	//Dash
-	if (can_dash) and (input_check_pressed("dash"))
+	if (can_dash) and (global.keyDash_pressed)
 	{
 
 		can_dash = false;
-		dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")))
+		dash_direction = point_direction(0,0,global.keyRight - global.keyLeft, (global.keyDown))
 		dash_sp = dash_distance/dash_time;
 		dash_energy = dash_distance;
 		stateNormal = Dashstate
@@ -409,7 +412,7 @@ state_FastFall();
 
 
 
-	if (input_check("left")) or (input_check("right"))
+	if (global.keyLeft) or (global.keyRight)
 	{
 		global.fallspr_deactivate = true
 	}
@@ -424,7 +427,7 @@ state_FastFall();
 		sprite_index = spr_player_fall_left
 	}
 
-	if (input_check_pressed("dash")) and (can_dash) and (global.fallspr_deactivate = false)
+	if (global.keyDash) and (can_dash) and (global.fallspr_deactivate = false)
 	{
 		global.fallspr_deactivate = true
 	}
@@ -499,7 +502,7 @@ state_FastFall();
 
 
 	//Power Crawl
-	if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
+	if (global.keySprint) and (global.keyDown) and (global.keyAttack) and (global.keyRight) or (global.keyLeft) and (sprite_index = spr_playercrawl)
 	{
 		walksp += 2.5;
 		time_source_start(timer_power_crawl);
@@ -508,7 +511,7 @@ state_FastFall();
 		{
 			instance_create_depth(x,y,399,obj_blood_effect);
 		}
-	if (!input_check("down"))
+	if (!global.keyDown)
 	{
 		instance_destroy(obj_blood_effect);
 	}
@@ -532,12 +535,12 @@ state_FastFall();
 	//Noclip
 	if (global.debug_active = true) and (global.noclip = true)
 	{
-	    if (input_check("jump"))
+	    if (global.keyJump)
 		{
 			global.noclip = false;
 			global.collisions_enabled = true;
 		}
-		if (input_check("up"))
+		if (global.keyUp)
 		{
 			grv = -999;
 		}
@@ -550,9 +553,10 @@ state_FastFall();
 		obj_player.dash_distance = 210;
 	    obj_player.dash_time = 18;
 	}
+	//Voo doo dashB buff
 
 //Dash boost
-if (instance_exists(obj_dash_boost)) and (input_check("attack"))
+if (instance_exists(obj_dash_boost)) and (global.keyAttack)
 {
 	time_source_start(timer_dBoost_deactivate);
     instance_create_depth(x,y,-999,obj_dBoost_additive);
@@ -578,7 +582,7 @@ if (instance_exists(obj_dBoost_additive))
 	}
 }
 
-if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_exists(obj_blood_effect))) and (time_source_exists(timer_dBoost_create))
+if (!instance_exists(obj_dash_boost)) and (global.keyAttack) or (instance_exists(obj_blood_effect)) and (time_source_exists(timer_dBoost_create))
 {
 	time_source_stop(timer_dBoost_create);
 }
@@ -615,10 +619,14 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 		{
 			exit;
 		}
+		if (instance_exists(obj_voodoo_magic_shop_item))
+		{
+			walksp += 1.75;
+			dash_distance = 225;
+		}
 	}
 	//Destroy escape blink if overlay is off
 	if (global.escapeoverlay_trigger = false)
 	{
 		global.fakeout_pause = true;
 	}
-}
