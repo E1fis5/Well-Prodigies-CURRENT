@@ -132,6 +132,7 @@ var dBoost_deactivate = function()
 	{
 		instance_destroy(obj_dBoost_additive);
 		instance_destroy(obj_dashB_active_effect);
+		instance_create_depth(x,y,-9999,obj_dashjoost_pause);
 	}
 }
 

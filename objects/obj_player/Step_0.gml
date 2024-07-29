@@ -243,7 +243,7 @@ state_FastFall();
 	   if (dash_energy <= 0)
 	   {
 		   stateNormal = state_normal;
-		   canJump = 8;
+		   canJump = 10;
 		   instance_destroy(obj_player_dash_hitbox);
 		   global.dash_active = false;
 		   time_source_stop(timer_dBoost_create);
