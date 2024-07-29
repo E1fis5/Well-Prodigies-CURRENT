@@ -9,8 +9,8 @@
   "name":"obj_door",
   "overriddenProperties":[],
   "parent":{
-    "name":"Well Prodigies",
-    "path":"Well Prodigies.yyp",
+    "name":"level_stuff",
+    "path":"folders/Objects/level_stuff.yy",
   },
   "parentObjectId":{
     "name":"obj_targetExit",
