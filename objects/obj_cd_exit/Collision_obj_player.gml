@@ -11,7 +11,6 @@ if !instance_exists(obj_transition)
 	audio_stop_sound(snd_escape)
 	audio_stop_sound(snd_lap2)
 	global.isActive = false
-	global.cd_complete = true
 	instance_destroy(obj_escape_timer)
 	instance_destroy(obj_escape_overlay)
 	instance_destroy(obj_escape_overlay_lap2)
@@ -36,7 +35,9 @@ if !instance_exists(obj_transition)
 		instance_destroy(obj_doll);
 		instance_destroy(obj_ability_bar);
 		global.soldout_doll = false;
+		global.doll_pickup = false;
 		global.soldout_speed = false;
+		global.speed_pickup = false;
 		global.gems_collected = 0;
 		global.sanity_Prank_switch = false;
 		global.magnet_collect_pull = false;
@@ -44,4 +45,7 @@ if !instance_exists(obj_transition)
 		global.magnet_soldout = false;
 		global.magnet_pickup = false;
 		instance_destroy(obj_shop_magnet);
+		instance_destroy(obj_voodoo_magic_shop_item);
+		global.voodoo_pickup = false;
+		global.voodoo_soldout = false;
 	

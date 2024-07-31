@@ -5,10 +5,7 @@ if (global.abilityscore <= 150) and (global.magnet_collect_strong_pull = false)
 }
 instance_destroy();
 
-if (global.magnet_collect_pull = true)
-{
-	global.sanity -= 0.5;
-}
+
 
 if (global.magnet_collect_strong_pull = true)
 {

@@ -613,14 +613,18 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 		obj_sanity_bg.image_alpha = 1;
 	}
 
-
+//Doll Buffs
+if (global.doll_ability_active = false) and (instance_exists(obj_doll))
+{
+	walksp -= 0.35;
+}
 	if (global.doll_ability_active = true)
 	{
-		walksp += 1.25;
+		walksp += 1.35;
 		dash_distance = 210;
 		if (instance_exists(obj_voodoo_magic_shop_item))
 		{
-			walksp += 2;
+			walksp += 1.85;
 			dash_distance = 225;
 		}
 	}

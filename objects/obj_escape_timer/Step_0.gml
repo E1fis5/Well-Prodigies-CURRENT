@@ -16,16 +16,13 @@ else
 
 
 
-// Destroy self if in lobby
-
-
 if (global.isActive && global.timer > 0) and (global.doll_ability_active = false) {
     global.timer -= 1 / room_speed; // Decrement the timer by 1 second each step
    image_speed = 1;
 }
    if (global.doll_ability_active = true) and (global.isActive and global.timer > 0)
    { 
-     global.timer -= 0.6 / room_speed
+     global.timer -= 0.7 / room_speed
 	 image_speed = 0.8;
    }
 

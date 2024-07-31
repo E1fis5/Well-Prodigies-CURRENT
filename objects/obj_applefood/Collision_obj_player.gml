@@ -9,10 +9,7 @@ audio_play_sound(snd_collectable_food,0,false);
 
 instance_create_depth(x,y,-1000,obj_collect_apple)
 
-if (global.magnet_collect_pull = true)
-{
-	global.sanity -= 0.1;
-}
+
 
 if (global.magnet_collect_strong_pull = true)
 {

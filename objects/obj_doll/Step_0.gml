@@ -13,7 +13,7 @@ obj_doll.y = obj_player.y;
 
 if (instance_exists(obj_voodoo_magic_shop_item))
 {
-	global.doll_ability_deactivate_time = 35;
+	global.doll_ability_deactivate_time = 32;
 }
 else
 {

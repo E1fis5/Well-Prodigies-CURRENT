@@ -1,7 +1,7 @@
 if (!global.isActive) 
 {
     global.isActive = true;
-    global.timer = 160
+    global.timer = 155
 }
 
 if (!audio_played) and (global.sanity >=30) {
@@ -24,14 +24,7 @@ if (!audio_played) and global.sanity <= 40 {
 		audio_stop_sound(snd_escape)
 }
 
-if (global.gamemode_easy = true)
-{
-    global.timer = 190
-}
-if (global.gamemode_hard = true)
-{
-    global.timer = 155
-}
+
 
 if (!global.escape_transition_end) and (!instance_exists(obj_escape_transition))
 {
