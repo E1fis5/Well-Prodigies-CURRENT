@@ -1,3 +1,2 @@
-global.timer += 24;
+global.timer += 20;
 instance_destroy();
-score += 3;

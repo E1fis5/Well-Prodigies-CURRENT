@@ -20,7 +20,7 @@ instance_destroy();
 
 score += score_add;
 
-global.lap2_active = true
+global.lap2_passed = true;
 
 global.sanity += 55
 

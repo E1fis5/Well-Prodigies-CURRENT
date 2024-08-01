@@ -1,7 +1,6 @@
 
 
 
-
 global.magnet_collect_strong_pull = false;
 global.magnet_collect_pull = true;
 global.soldout_speed = false;
@@ -141,7 +140,7 @@ timer_dBoost_deactivate = time_source_create(time_source_game,9,time_source_unit
 //Power crawl timer
 timer_power_crawl = time_source_create(time_source_game,1.85,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,0.85,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
-// Idle Breaker
+// Idle Breaker	
 
 //States
 state_normal = function()
@@ -332,7 +331,6 @@ if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood)
 	sprite_index = spr_playercrawl
     image_xscale = 1
 	image_yscale = 1
-	walksp = 4
 	canJump = false
 	can_dash = false
 	stateCrawl = state_crawl

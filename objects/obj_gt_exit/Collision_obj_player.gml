@@ -16,10 +16,7 @@ if !instance_exists(obj_transition)
 	instance_destroy(obj_escape_overlay)
 	instance_destroy(obj_escape_overlay_lap2)
 	global.rift_taken = false;
-	if (global.gems_collected >= 5)
-		{
-			global.ach_emeralds = true;
-		}
+    global.lap2_passed = false;
 	
 		audio_stop_sound(snd_clock_tick)
 		instance_destroy(obj_lap2_alert)
@@ -28,7 +25,7 @@ if !instance_exists(obj_transition)
 		global.shopitem_bought = false;
 		global.escape_touch = false;
 		global.gem_counter = 0;
-		if (global.lap2_active = true)
+		if (global.lap2_passed = true)
 		{
 			time_source_stop(global.lap2_drain);
 		}

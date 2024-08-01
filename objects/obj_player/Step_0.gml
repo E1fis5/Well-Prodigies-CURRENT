@@ -321,7 +321,14 @@ state_FastFall();
 		global.fallspr_deactivate = true
 	}
 
+//Lap Wizard Boost
 
+	if (instance_exists(obj_Lwiz_mini))
+	{
+		walksp += 0.95;
+		dash_distance = 215;
+	    dash_time = 18;
+	} 
 
 	//Sanity values
 	
@@ -341,12 +348,12 @@ state_FastFall();
 
 
 	// lap 2 anims
-	if (global.lap2_active = true) and (sprite_index = spr_player_escapeidle)
+	if (global.timer <= 30) and (sprite_index = spr_player_escapeidle)
 	{
 		sprite_index = spr_player_lap2;
 	}
 
-	if (global.lap2_active = true) and (sprite_index = spr_player_escape_left)
+	if (global.timer <= 30) and (sprite_index = spr_player_escape_left)
 	{
 		sprite_index = spr_player_lap2_left;
 	}

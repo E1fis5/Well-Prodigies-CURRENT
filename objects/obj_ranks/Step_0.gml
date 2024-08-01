@@ -34,7 +34,7 @@ if (score <= 0)
 	  sprite_index = spr_ranks_W
    }
    
-            if (score >= 20000) and (global.rift_taken = true) and (global.gems_collected >= 5) and (global.sanity_Prank_switch = false)
+            if (score >= 21000) and (global.rift_taken = true) and (global.gems_collected >= 5) and (global.sanity_Prank_switch = false)
    {
 	  sprite_index = spr_ranks_P
    }
