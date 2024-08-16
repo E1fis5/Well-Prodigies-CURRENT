@@ -268,8 +268,31 @@ state_FastFall();
 		global.dash_cancel_speed = true;
 	}
 
+//Score Buffs
+if (score >= 3000)
+{
+	walksp += 0.15;
+}
+
+if (score >= 7000)
+{
+	walksp += 0.15
+}
 
 
+if (score >= 12000)
+{
+	walksp += 0.15
+}
+
+
+if (score >= 20000)
+{
+	walksp += 0.15
+}
+
+
+//Dash Boost
 	if (global.dash_amount >= 2)
 	{
 		walksp += 0.25;
@@ -295,17 +318,17 @@ state_FastFall();
 
 	if (global.dash_amount >= 6)
 	{
-		walksp += 0.35;
+		walksp += 0.30;
 	}
 
 	if (global.dash_amount >= 7)
 	{
-		walksp += 0.35;
+		walksp += 0.30;
 	}
 
 	if (global.dash_amount >= 8)
 	{
-		walksp += 0.40;
+		walksp += 0.35;
 		global.dash_amount = 8;
 	}
 
@@ -334,14 +357,14 @@ state_FastFall();
 	
 	if (global.sanity >= 220) and (bombActive = false)
 	{
-		walksp += 0.55
+		walksp += 0.25
 		dash_distance = 175
 	    dash_time = 17
 	}
 
 	if (global.sanity <= 100) and (bombActive = false)
 	{
-		walksp -= 0.45
+		walksp -= 0.55
 		dash_distance = 155
 	    dash_time = 15
 	}

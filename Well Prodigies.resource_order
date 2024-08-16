@@ -41,6 +41,8 @@
     {"name":"resort","order":1,"path":"folders/Rooms/CHAPTER_1/encore/resort.yy",},
     {"name":"glacial_tundra","order":4,"path":"folders/Rooms/CHAPTER_1/glacial_tundra.yy",},
     {"name":"monkey_buisness","order":3,"path":"folders/Rooms/CHAPTER_1/monkey_buisness.yy",},
+    {"name":"seasonal","order":5,"path":"folders/Rooms/CHAPTER_1/seasonal.yy",},
+    {"name":"pumpkin_rush","order":1,"path":"folders/Rooms/CHAPTER_1/seasonal/pumpkin_rush.yy",},
     {"name":"Scripts","order":11,"path":"folders/Scripts.yy",},
     {"name":"Shaders","order":12,"path":"folders/Shaders.yy",},
     {"name":"Sounds","order":13,"path":"folders/Sounds.yy",},
