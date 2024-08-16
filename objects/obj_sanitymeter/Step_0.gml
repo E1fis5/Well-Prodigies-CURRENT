@@ -13,4 +13,3 @@ if (global.sanity >= 300)
 {
 	global.sanity = 300;
 }
-

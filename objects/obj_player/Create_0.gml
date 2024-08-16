@@ -1,6 +1,6 @@
 
-
-
+global.presents_soldout = false;
+global.presents_pickup = false;
 global.magnet_collect_strong_pull = false;
 global.magnet_collect_pull = true;
 global.soldout_speed = false;

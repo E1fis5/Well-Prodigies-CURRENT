@@ -580,6 +580,10 @@ if (instance_exists(obj_dBoost_additive))
 	walksp += 0.90;
 	dash_distance = 185;
 	dash_time = 17;
+	if (instance_exists(obj_voodoo_magic_shop_item))
+	{
+		walksp += 0.15;
+	}
 	global.dash_cancel_speed = false;
 	time_source_stop(timer_dBoost_create);
 	if (!instance_exists(obj_dashB_active_effect))
@@ -628,10 +632,10 @@ if (global.doll_ability_active = false) and (instance_exists(obj_doll))
 	if (global.doll_ability_active = true)
 	{
 		walksp += 1.35;
-		dash_distance = 210;
+		dash_distance = 215;
 		if (instance_exists(obj_voodoo_magic_shop_item))
 		{
-			walksp += 1.85;
+			walksp += 1.60;
 			dash_distance = 225;
 		}
 	}

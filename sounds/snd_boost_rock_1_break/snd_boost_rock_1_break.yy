@@ -12,8 +12,8 @@
   "duration":1.802449,
   "name":"snd_boost_rock_1_break",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"collectables",
+    "path":"folders/Sounds/collectables.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

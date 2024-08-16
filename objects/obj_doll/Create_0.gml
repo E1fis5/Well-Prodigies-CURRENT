@@ -16,3 +16,4 @@ if (!instance_exists(obj_ability_bar))
 {
 	instance_create_depth(0,0,-9999,obj_ability_bar);
 }
+
