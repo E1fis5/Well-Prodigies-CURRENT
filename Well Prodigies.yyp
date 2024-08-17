@@ -692,6 +692,8 @@
     {"id":{"name":"r_MonkeyBusiness7","path":"rooms/r_MonkeyBusiness7/r_MonkeyBusiness7.yy",},},
     {"id":{"name":"r_parent","path":"rooms/r_parent/r_parent.yy",},},
     {"id":{"name":"r_playtest_start","path":"rooms/r_playtest_start/r_playtest_start.yy",},},
+    {"id":{"name":"r_PR1","path":"rooms/r_PR1/r_PR1.yy",},},
+    {"id":{"name":"r_PR2","path":"rooms/r_PR2/r_PR2.yy",},},
     {"id":{"name":"r_rank_screen_cd","path":"rooms/r_rank_screen_cd/r_rank_screen_cd.yy",},},
     {"id":{"name":"r_rank_screen_gt","path":"rooms/r_rank_screen_gt/r_rank_screen_gt.yy",},},
     {"id":{"name":"r_rank_screen","path":"rooms/r_rank_screen/r_rank_screen.yy",},},
@@ -1757,6 +1759,8 @@
     {"roomId":{"name":"r_Wellhub_encore1","path":"rooms/r_Wellhub_encore1/r_Wellhub_encore1.yy",},},
     {"roomId":{"name":"r_Shop_new","path":"rooms/r_Shop_new/r_Shop_new.yy",},},
     {"roomId":{"name":"r_Shop_new_gt","path":"rooms/r_Shop_new_gt/r_Shop_new_gt.yy",},},
+    {"roomId":{"name":"r_PR1","path":"rooms/r_PR1/r_PR1.yy",},},
+    {"roomId":{"name":"r_PR2","path":"rooms/r_PR2/r_PR2.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

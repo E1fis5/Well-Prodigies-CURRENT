@@ -106,6 +106,7 @@
     {"name":"obj_timeup_box","order":1,"path":"objects/obj_timeup_box/obj_timeup_box.yy",},
     {"name":"obj_voodoo_magic_shop_item","order":7,"path":"objects/obj_voodoo_magic_shop_item/obj_voodoo_magic_shop_item.yy",},
     {"name":"r_Difficulty_select","order":5,"path":"rooms/r_Difficulty_select/r_Difficulty_select.yy",},
+    {"name":"r_PR2","order":3,"path":"rooms/r_PR2/r_PR2.yy",},
     {"name":"r_Shop_new_gt","order":2,"path":"rooms/r_Shop_new_gt/r_Shop_new_gt.yy",},
     {"name":"r_Shop_new","order":1,"path":"rooms/r_Shop_new/r_Shop_new.yy",},
     {"name":"r_Wellhub_encore1","order":7,"path":"rooms/r_Wellhub_encore1/r_Wellhub_encore1.yy",},
