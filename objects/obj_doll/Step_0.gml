@@ -6,7 +6,7 @@ if (global.abilityscore >= 150) and (input_check("ability")) and (!instance_exis
 	global.doll_ability_active = true;
 	sprite_index = spr_angry_luigi;
 	audio_play_sound(snd_ability_use,6,false);
-	global.abilityscore = 0;
+	global.abilityscore -= 150;
 }
 obj_doll.x = obj_player.x;
 obj_doll.y = obj_player.y;

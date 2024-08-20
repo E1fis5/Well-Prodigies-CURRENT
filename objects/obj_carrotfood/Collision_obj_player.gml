@@ -9,6 +9,10 @@ if (global.magnet_collect_strong_pull = true)
 {
 	score += 16.5;
 	global.sanity -= 0.2;
+	if (instance_exists(obj_voodoo_magic_shop_item))
+	{
+		global.sanity += 0.2;
+	}
 }
 instance_destroy();
 

@@ -13,7 +13,7 @@ state_crawl();
 // Sprint
 	if  input_check("run") = true 
 	 {
-	   walksp = 8.25
+	   walksp = 8
 	 }
 
 	if input_check("run") = false and input_check("down") = false
@@ -545,7 +545,7 @@ if (score >= 20000)
 	//Power Crawl
 	if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 	{
-		walksp += 2.5;
+		walksp += 2.25;
 		time_source_start(timer_power_crawl);
 		global.powercrawl = true;
 		if (!instance_exists(obj_blood_effect))
@@ -605,7 +605,7 @@ if (instance_exists(obj_dBoost_additive))
 	dash_time = 17;
 	if (instance_exists(obj_voodoo_magic_shop_item))
 	{
-		walksp += 0.15;
+		walksp += 0.1;
 	}
 	global.dash_cancel_speed = false;
 	time_source_stop(timer_dBoost_create);
@@ -654,11 +654,11 @@ if (global.doll_ability_active = false) and (instance_exists(obj_doll))
 }
 	if (global.doll_ability_active = true)
 	{
-		walksp += 1.35;
+		walksp += 1.25;
 		dash_distance = 215;
 		if (instance_exists(obj_voodoo_magic_shop_item))
 		{
-			walksp += 1.60;
+			walksp += 1.45;
 			dash_distance = 225;
 		}
 	}

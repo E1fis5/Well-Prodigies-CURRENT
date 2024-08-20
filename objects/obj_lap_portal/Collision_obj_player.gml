@@ -13,7 +13,7 @@ if (!audio_once_played) {
     audio_once_played = true;
 }
 
-
+global.abilityscore += 95;
 global.timer += time_amount
 
 instance_destroy();
