@@ -287,7 +287,8 @@ if input_check("left")
 	image_xscale = 1
 	image_yscale = 1
 	player_left = true
-	slide_left = true 
+	slide_left = true
+	walksp = 8
 }
 
 if player_left = false && input_check("right") = false
@@ -304,6 +305,7 @@ if player_left = false && input_check("right") = false
 	image_yscale = 1
 	player_left = false
 	global.fallspr_deactivate = true
+	walksp = 8
 }
 
 
@@ -312,13 +314,15 @@ if player_left = false && input_check("right") = false
 	sprite_index = spr_player_left
 	image_xscale = 1
 	image_yscale = 1
+	walksp = 8
 }
 
-  if input_check("right") = false && input_check("left") = false && player_left = false and (global.idlespr_active = false)
+  if input_check("right") = false && input_check("left") = false && player_left = false
 {
 	sprite_index = spr_playernew
 	image_xscale = 1
 	image_yscale = 1
+	walksp = 8
 }
 }
 stateNormal = state_normal

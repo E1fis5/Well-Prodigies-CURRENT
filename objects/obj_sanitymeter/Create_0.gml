@@ -2,11 +2,7 @@ global.sanity = 210
 global.sanity_Prank_switch = false;
 var sanity_drain = function()
 {
-	global.sanity -= 10
-    if (global.doll_ability_active = true)
-	{
-		global.sanity -= 12;
-	}
+	global.sanity -= 10;
 }
 sanityTimerNormal = time_source_create(time_source_game,30,time_source_units_seconds,sanity_drain, [], -1);
 

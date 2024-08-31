@@ -9,21 +9,6 @@ state_crawl();
 
 
 
-
-// Sprint
-	if  input_check("run") = true 
-	 {
-	   walksp = 8
-	 }
-
-	if input_check("run") = false and input_check("down") = false
-	{
-		walksp = 6.8
-	}
-
-
-
-
 	//Bomb state
 	if (place_meeting(x,y,obj_bomb_launcher))
 	{
@@ -57,9 +42,6 @@ state_crawl();
 
 
 
-
-
-
 	if global.isActive = true and (sprite_index = spr_playernew)
 	{
 		sprite_index = spr_player_escapeidle
@@ -77,7 +59,7 @@ state_crawl();
 	{
 		walksp = 1.5
 		can_dash = true
-		dash_distance = 300
+		dash_distance = 325
 		dash_time = 19
 		if (input_check("dash"))
 		{
@@ -165,6 +147,7 @@ state_FastFall();
 		dash_distance = 160
 	    dash_time = 16
 		grv = 0
+		walksp = 8;
 		global.dash_cancel_speed = false;
 		global.dJump_active = false
 		audio_play_sound(snd_dash_p,8,false)
@@ -246,6 +229,7 @@ state_FastFall();
 		   canJump = 10;
 		   instance_destroy(obj_player_dash_hitbox);
 		   global.dash_active = false;
+		   	walksp = 8;
 		   time_source_stop(timer_dBoost_create);
 		   if (onground = false) and (onwall = false)
 		   {
@@ -543,7 +527,7 @@ if (score >= 20000)
 	}
 
 	//Power Crawl
-	if (input_check("run")) and (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
+	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 	{
 		walksp += 2.25;
 		time_source_start(timer_power_crawl);
@@ -590,13 +574,12 @@ if (score >= 20000)
 
 
 //Dash boost
-if (instance_exists(obj_dash_boost)) and (input_check("attack"))
+if (instance_exists(obj_dash_boost)) and (input_check("attack")) and (place_meeting(x,y + 190, obj_collision_wall))
 {
 	time_source_start(timer_dBoost_deactivate);
-    instance_create_depth(x,y,-999,obj_dBoost_additive);
 	audio_play_sound(snd_dBoost_start,6,false);
+	instance_create_depth(x,y,-999,obj_dBoost_additive);
 }
-
 
 if (instance_exists(obj_dBoost_additive))
 {
