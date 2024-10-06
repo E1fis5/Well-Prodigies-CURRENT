@@ -10,5 +10,12 @@ if instance_exists(obj_player)
 	y = obj_player.y - _camH/2;
 }
 
+if instance_exists(obj_jestraught_player)
+{
+	x = obj_jestraught_player.x - _camW/2;
+	y = obj_jestraught_player.y - _camH/2;
+}
+
+
 //Set camera position
 camera_set_view_pos( view_camera[0], x, y);

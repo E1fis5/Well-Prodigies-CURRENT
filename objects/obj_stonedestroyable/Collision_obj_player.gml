@@ -17,3 +17,4 @@ if (instance_exists(obj_dashB_active_effect))
 	}
 }
 	
+instance_create_depth(x,y,-1000,obj_rock_destroyable_effect);

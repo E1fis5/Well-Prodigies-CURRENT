@@ -1,7 +1,7 @@
 if (global.speed_pickup = true) and (input_check("up")) and (global.soldout_speed = false)
 {
 	global.walksp_boost_active = true;
-	global.gem_counter -= 2;
+	global.gem_counter -= 1;
 	global.soldout_speed = true;
 	instance_create_depth(0,0,399,obj_speed_boost_effect);
 	audio_play_sound(snd_boost_buy,6,false);

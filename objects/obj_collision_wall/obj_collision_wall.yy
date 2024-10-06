@@ -34,5 +34,5 @@
     "path":"sprites/collision_wall/collision_wall.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

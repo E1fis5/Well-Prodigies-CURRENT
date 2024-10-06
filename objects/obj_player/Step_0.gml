@@ -59,11 +59,10 @@ state_crawl();
 	{
 		walksp = 1.5
 		can_dash = true
-		dash_distance = 325
+		dash_distance = 400
 		dash_time = 19
 		if (input_check("dash"))
 		{
-			 instance_create_depth(x,y,399,obj_bomb_explosion);
 			 audio_play_sound(snd_bomb_explosion,5,false);
 		}
 	}
@@ -144,7 +143,7 @@ state_FastFall();
 		dash_energy = dash_distance;
 		stateNormal = Dashstate
 		sprite_index = spr_player_dash
-		dash_distance = 160
+		dash_distance = 190
 	    dash_time = 16
 		grv = 0
 		walksp = 8;
@@ -226,7 +225,7 @@ state_FastFall();
 	   if (dash_energy <= 0)
 	   {
 		   stateNormal = state_normal;
-		   canJump = 10;
+		   canJump = 12;
 		   instance_destroy(obj_player_dash_hitbox);
 		   global.dash_active = false;
 		   	walksp = 8;
@@ -260,19 +259,19 @@ if (score >= 3000)
 
 if (score >= 7000)
 {
-	walksp += 0.15
+	walksp += 0.20
 }
 
 
 if (score >= 12000)
 {
-	walksp += 0.15
+	walksp += 0.25
 }
 
 
 if (score >= 20000)
 {
-	walksp += 0.15
+	walksp += 0.30
 }
 
 
@@ -320,7 +319,7 @@ if (score >= 20000)
 	//Walksp boost
 	if (global.walksp_boost_active = true) 
 	{
-		walksp += 0.75;
+		walksp += 0.60;
 	}
 
 	if (sprite_index = spr_player_bomb or spr_player_bomb_escape)
@@ -333,7 +332,7 @@ if (score >= 20000)
 	if (instance_exists(obj_Lwiz_mini))
 	{
 		walksp += 0.95;
-		dash_distance = 215;
+		dash_distance = 235;
 	    dash_time = 18;
 	} 
 
@@ -342,14 +341,14 @@ if (score >= 20000)
 	if (global.sanity >= 220) and (bombActive = false)
 	{
 		walksp += 0.25
-		dash_distance = 175
+		dash_distance = 200
 	    dash_time = 17
 	}
 
 	if (global.sanity <= 100) and (bombActive = false)
 	{
 		walksp -= 0.55
-		dash_distance = 155
+		dash_distance = 175
 	    dash_time = 15
 	}
 
@@ -574,7 +573,7 @@ if (score >= 20000)
 
 
 //Dash boost
-if (instance_exists(obj_dash_boost)) and (input_check("attack")) and (place_meeting(x,y + 190, obj_collision_wall))
+if (instance_exists(obj_dash_boost)) and (input_check("attack"))
 {
 	time_source_start(timer_dBoost_deactivate);
 	audio_play_sound(snd_dBoost_start,6,false);
@@ -584,7 +583,7 @@ if (instance_exists(obj_dash_boost)) and (input_check("attack")) and (place_meet
 if (instance_exists(obj_dBoost_additive))
 {
 	walksp += 0.90;
-	dash_distance = 185;
+	dash_distance = 205;
 	dash_time = 17;
 	if (instance_exists(obj_voodoo_magic_shop_item))
 	{

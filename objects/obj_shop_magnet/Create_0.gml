@@ -5,7 +5,7 @@ var magnet_ability_end = function()
 	audio_play_sound(snd_freeze_damage,6,false);
 }
 
-global.timer_magnet_end = time_source_create(time_source_game,25,time_source_units_seconds,magnet_ability_end,[],1)
+global.timer_magnet_end = time_source_create(time_source_game,32,time_source_units_seconds,magnet_ability_end,[],1)
 
 
 

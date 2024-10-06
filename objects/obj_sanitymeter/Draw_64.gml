@@ -156,5 +156,4 @@ if (global.sanity <= 20)
 	image_index = 29;
 	time_source_stop(sanityTimerHard);
 }
-depth = -10000
 
