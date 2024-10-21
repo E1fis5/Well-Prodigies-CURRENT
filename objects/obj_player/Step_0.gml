@@ -149,13 +149,18 @@ state_FastFall();
 		walksp = 8;
 		global.dash_cancel_speed = false;
 		global.dJump_active = false
+		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect))
+		{
+			time_source_start(timer_dBoost_cooldown);
+			global.dashboost_dash = false;
+			time_source_start(timer_dBoost_create);
+		}
 		audio_play_sound(snd_dash_p,8,false)
 		global.dash_active = true
 		if (!instance_exists(obj_player_dash_hitbox))
 		{
 			instance_create_depth(x,y,401,obj_player_dash_hitbox);
 		}
-		time_source_start(timer_dBoost_create);
 
 		if (!instance_exists(obj_dash_effect))
 		{
@@ -580,9 +585,15 @@ if (instance_exists(obj_dash_boost)) and (input_check("attack"))
 	instance_create_depth(x,y,-999,obj_dBoost_additive);
 }
 
+if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect))
+{
+	dash_distance = 255;
+	dash_time = 18;
+}
+
 if (instance_exists(obj_dBoost_additive))
 {
-	walksp += 0.90;
+	walksp += 1;
 	dash_distance = 205;
 	dash_time = 17;
 	if (instance_exists(obj_voodoo_magic_shop_item))

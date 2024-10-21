@@ -186,7 +186,7 @@ state_FastFall();
 	with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 	{
 		sprite_index = other.sprite_index;
-		image_blend = c_gray;
+		image_blend = c_red;
 		image_alpha = 0.7;
 	}
 	{

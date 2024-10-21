@@ -5,8 +5,12 @@ if (global.debug_active = true)
 	if (instance_exists(obj_player))
 	{
 		draw_text(100,700,obj_player.walksp);
+		if (global.dashboost_dash = true)
+		{
+			draw_text(100,600,"1");
+		}
 	}
-	draw_text(100,500,instance_count);
+	draw_text(100,500,obj_player.dash_distance);
 	if (instance_exists(obj_jestraught_player))
 	{
 			draw_text(100,700,obj_jestraught_player.walksp);
