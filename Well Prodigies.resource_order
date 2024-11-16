@@ -150,6 +150,7 @@
     {"name":"snd_cave_crumble","order":93,"path":"sounds/snd_cave_crumble/snd_cave_crumble.yy",},
     {"name":"snd_collect_medium","order":4,"path":"sounds/snd_collect_medium/snd_collect_medium.yy",},
     {"name":"snd_collectable_collect","order":3,"path":"sounds/snd_collectable_collect/snd_collectable_collect.yy",},
+    {"name":"snd_collectable_food_big","order":6,"path":"sounds/snd_collectable_food_big/snd_collectable_food_big.yy",},
     {"name":"snd_collectable_food","order":2,"path":"sounds/snd_collectable_food/snd_collectable_food.yy",},
     {"name":"snd_dash_rock_snd1","order":1,"path":"sounds/snd_dash_rock_snd1/snd_dash_rock_snd1.yy",},
     {"name":"snd_dashBoost_cd_over","order":2,"path":"sounds/snd_dashBoost_cd_over/snd_dashBoost_cd_over.yy",},

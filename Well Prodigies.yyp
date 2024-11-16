@@ -1089,6 +1089,7 @@
     {"id":{"name":"snd_clock_tick","path":"sounds/snd_clock_tick/snd_clock_tick.yy",},},
     {"id":{"name":"snd_collect_medium","path":"sounds/snd_collect_medium/snd_collect_medium.yy",},},
     {"id":{"name":"snd_collectable_collect","path":"sounds/snd_collectable_collect/snd_collectable_collect.yy",},},
+    {"id":{"name":"snd_collectable_food_big","path":"sounds/snd_collectable_food_big/snd_collectable_food_big.yy",},},
     {"id":{"name":"snd_collectable_food","path":"sounds/snd_collectable_food/snd_collectable_food.yy",},},
     {"id":{"name":"snd_cosmetic_change","path":"sounds/snd_cosmetic_change/snd_cosmetic_change.yy",},},
     {"id":{"name":"snd_dash_explosion","path":"sounds/snd_dash_explosion/snd_dash_explosion.yy",},},
