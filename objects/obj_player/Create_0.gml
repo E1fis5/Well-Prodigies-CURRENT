@@ -141,13 +141,16 @@ var dBoost_deactivate = function()
 var dBoost_cooldown = function()
 {
 	global.dashboost_dash = true;
+	audio_play_sound(snd_dashBoost_cd_over,5,false);
+	time_source_stop(timer_dBoost_cooldown);
+	instance_create_depth(-999,-999,-9999,obj_dBoost_notif);
 }
-timer_dBoost_cooldown = time_source_create(time_source_game,4,time_source_units_seconds,dBoost_cooldown,[],-1);
+timer_dBoost_cooldown = time_source_create(time_source_game,3.5,time_source_units_seconds,dBoost_cooldown,[],-1);
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
-timer_dBoost_deactivate = time_source_create(time_source_game,9,time_source_units_seconds, dBoost_deactivate,[],1);
+timer_dBoost_deactivate = time_source_create(time_source_game,9.5,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
-timer_power_crawl = time_source_create(time_source_game,2,time_source_units_seconds,power_crawl_damage,[],-1);
-timer_power_crawl_1_health = time_source_create(time_source_game,1.2,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
+timer_power_crawl = time_source_create(time_source_game,2.2,time_source_units_seconds,power_crawl_damage,[],-1);
+timer_power_crawl_1_health = time_source_create(time_source_game,1.5,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
 // Idle Breaker	
 
 //States

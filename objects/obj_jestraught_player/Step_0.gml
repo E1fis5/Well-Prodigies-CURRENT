@@ -144,9 +144,13 @@ state_FastFall();
 		dash_energy = dash_distance;
 		stateNormal = Dashstate
 		sprite_index = spr_jestraught_dash
-		dash_distance = 225;
+		dash_distance = 235;
 	    dash_time = 15;
 		grv = 0
+		if (!instance_exists(obj_jest_dBoost_cooldown))
+		{
+			time_source_start(timer_jest_dBoost_create);
+		}
 		walksp = 12.5;
 		global.dash_cancel_speed = false;
 		global.dJump_active = false
@@ -557,43 +561,21 @@ if (score >= 20000)
 		{
 			grv = -999;
 		}
-		walksp = 15;
+		walksp = 25;
 	}
 
 
 //Dash boost
-if (instance_exists(obj_dash_boost)) and (input_check("attack"))
+if (instance_exists(obj_super_dashBoost)) and (input_check("attack"))
 {
-	time_source_start(timer_dBoost_deactivate);
 	audio_play_sound(snd_dBoost_start,6,false);
-	instance_create_depth(x,y,-999,obj_dBoost_additive);
+	instance_create_depth(x,y,399,obj_jest_dBoost_effect_hit);
 }
 
-if (instance_exists(obj_dBoost_additive))
-{
-	walksp += 0.90;
-	dash_distance = 185;
-	dash_time = 17;
-	if (instance_exists(obj_voodoo_magic_shop_item))
-	{
-		walksp += 0.1;
-	}
-	global.dash_cancel_speed = false;
-	time_source_stop(timer_dBoost_create);
-	if (!instance_exists(obj_dashB_active_effect))
-	{
-		instance_create_depth(x,y,399,obj_dashB_active_effect);
-	}
-	
-	if (instance_exists(obj_dashjoost_pause))
-	{
-		instance_destroy(obj_dashjoost_pause);
-	}
-}
 
-if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_exists(obj_blood_effect))) and (time_source_exists(timer_dBoost_create))
+if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_exists(obj_blood_effect))) and (time_source_exists(timer_jest_dBoost_create))
 {
-	time_source_stop(timer_dBoost_create);
+	time_source_stop(timer_jest_dBoost_create);
 }
 
 	//Hud opacity decrease

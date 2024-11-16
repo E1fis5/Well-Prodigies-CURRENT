@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_super_dBoost_effect",
+  "%Name":"obj_dBoost_notif",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_super_dBoost_effect",
+  "name":"obj_dBoost_notif",
   "overriddenProperties":[],
   "parent":{
-    "name":"effects",
-    "path":"folders/Objects/effects.yy",
+    "name":"hud",
+    "path":"folders/Objects/hud.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_gem_notif",
+    "path":"objects/obj_gem_notif/obj_gem_notif.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dBoost_super_spawn1",
-    "path":"sprites/spr_dBoost_super_spawn1/spr_dBoost_super_spawn1.yy",
+    "name":"spr_dBoost_notif",
+    "path":"sprites/spr_dBoost_notif/spr_dBoost_notif.yy",
   },
   "spriteMaskId":null,
   "visible":true,

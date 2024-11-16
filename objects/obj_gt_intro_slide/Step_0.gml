@@ -13,7 +13,6 @@ if (input_check_pressed("accept"))
 	  instance_destroy(obj_cd_intro_start_top);
 	  instance_destroy(obj_cd_cartridge);
 	  instance_destroy(obj_hub_start);
-	  instance_create_depth(0,0,-9999,obj_hypothermia_meter);
        if (!instance_exists(obj_score))
 	   {
 		   instance_create_depth(1000,1000,-9999,obj_score);

@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_bomb_explosion.mp3",
   "type":0,
-  "volume":0.21,
+  "volume":0.36,
 }

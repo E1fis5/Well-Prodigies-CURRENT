@@ -69,7 +69,7 @@ global.dash_amount = 0;
 global.doll_ability_active = false;
 //Dash
 can_dash = false
-dash_distance = 125
+dash_distance = 235
 dash_time = 15
 bombActive = false
 global.fall_effect_destroy = false
@@ -120,23 +120,13 @@ var power_crawl_damage_1_hp = function()
 
 //Dash Boost
 
-var dBoost_create = function()
+var jest_dBoost_create = function()
 {
-	instance_create_depth(x,y,-999,obj_dash_boost);
+	instance_create_depth(x,y,-999,obj_super_dashBoost);
 }
 
-var dBoost_deactivate = function()
-{
-	if (time_source_exists(timer_dBoost_deactivate))
-	{
-		instance_destroy(obj_dBoost_additive);
-		instance_destroy(obj_dashB_active_effect);
-		instance_create_depth(x,y,-9999,obj_dashjoost_pause);
-	}
-}
+timer_jest_dBoost_create = time_source_create(time_source_game,0.25,time_source_units_seconds,jest_dBoost_create,[],1);
 
-timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
-timer_dBoost_deactivate = time_source_create(time_source_game,9,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
 timer_power_crawl = time_source_create(time_source_game,1.75,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,0.95,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);

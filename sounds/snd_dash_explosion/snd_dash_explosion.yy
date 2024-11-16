@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_dash_explosion",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.848,
+  "name":"snd_dash_explosion",
+  "parent":{
+    "name":"player_sounds",
+    "path":"folders/Sounds/player_sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_dash_explosion.mp3",
+  "type":0,
+  "volume":0.69,
+}

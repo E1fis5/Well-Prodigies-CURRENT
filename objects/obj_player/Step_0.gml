@@ -57,13 +57,13 @@ state_crawl();
 
 	if sprite_index = spr_player_bomb or grv = -1
 	{
-		walksp = 1.5
-		can_dash = true
-		dash_distance = 400
-		dash_time = 19
+		walksp = 2.25;
+		can_dash = true;
+		dash_distance = 400;
+		dash_time = 19;
 		if (input_check("dash"))
 		{
-			 audio_play_sound(snd_bomb_explosion,5,false);
+			 audio_play_sound(snd_dash_explosion,5,false);
 		}
 	}
 
@@ -533,7 +533,7 @@ if (score >= 20000)
 	//Power Crawl
 	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 	{
-		walksp += 2.25;
+		walksp += 2.35;
 		time_source_start(timer_power_crawl);
 		global.powercrawl = true;
 		if (!instance_exists(obj_blood_effect))
@@ -573,7 +573,7 @@ if (score >= 20000)
 		{
 			grv = -999;
 		}
-		walksp = 15;
+		walksp = 25;
 	}
 
 
@@ -587,7 +587,7 @@ if (instance_exists(obj_dash_boost)) and (input_check("attack"))
 
 if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect))
 {
-	dash_distance = 255;
+	dash_distance = 285;
 	dash_time = 18;
 }
 
@@ -598,7 +598,7 @@ if (instance_exists(obj_dBoost_additive))
 	dash_time = 17;
 	if (instance_exists(obj_voodoo_magic_shop_item))
 	{
-		walksp += 0.1;
+		walksp += 0.35;
 	}
 	global.dash_cancel_speed = false;
 	time_source_stop(timer_dBoost_create);
@@ -643,16 +643,16 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 //Doll Buffs
 if (global.doll_ability_active = false) and (instance_exists(obj_doll))
 {
-	walksp -= 0.35;
+	walksp -= 0.25;
 }
 	if (global.doll_ability_active = true)
 	{
-		walksp += 1.25;
-		dash_distance = 215;
+		walksp += 1.75;
+		dash_distance = 225;
 		if (instance_exists(obj_voodoo_magic_shop_item))
 		{
-			walksp += 1.45;
-			dash_distance = 225;
+			walksp += 1.25;
+			dash_distance = 250;
 		}
 	}
 	//Destroy escape blink if overlay is off
