@@ -46,10 +46,3 @@ if !instance_exists(obj_transition)
 		instance_destroy(obj_voodoo_magic_shop_item);
 		global.voodoo_pickup = false;
 		global.voodoo_soldout = false;
-	    instance_destroy(obj_hypothermia_meter);
-		instance_destroy(obj_torch);
-		instance_destroy(obj_torch_hud);
-time_source_stop(global.timesource_freeze);
-time_source_stop(global.timesource_freeze2);
-time_source_stop(global.timesource_freeze_no_torch);
-time_source_stop(global.timesource_freeze_penalty);

@@ -651,7 +651,7 @@ if (global.doll_ability_active = false) and (instance_exists(obj_doll))
 		dash_distance = 225;
 		if (instance_exists(obj_voodoo_magic_shop_item))
 		{
-			walksp += 1.25;
+			walksp += 1;
 			dash_distance = 250;
 		}
 	}
