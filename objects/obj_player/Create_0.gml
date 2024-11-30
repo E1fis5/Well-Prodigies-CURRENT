@@ -360,7 +360,6 @@ state_FastFall = function()
 	vsp = 10
 	global.fallspr_deactivate = true
 	global.dJump_active = false
-}           
 }
-
+}
 depth = 400

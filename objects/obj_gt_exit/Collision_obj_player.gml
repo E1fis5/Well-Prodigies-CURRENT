@@ -16,7 +16,6 @@ if !instance_exists(obj_transition)
 	instance_destroy(obj_escape_overlay)
 	instance_destroy(obj_escape_overlay_lap2)
 	global.rift_taken = false;
-    global.lap2_passed = false;
 	
 		audio_stop_sound(snd_clock_tick)
 		instance_destroy(obj_lap2_alert)
@@ -28,6 +27,7 @@ if !instance_exists(obj_transition)
 		if (global.lap2_passed = true)
 		{
 			time_source_stop(global.lap2_drain);
+			global.lap2_passed = false;
 		}
 			    global.lap2_active = false;
 		instance_destroy(obj_doll);

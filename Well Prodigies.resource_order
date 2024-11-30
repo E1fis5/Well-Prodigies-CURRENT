@@ -56,6 +56,7 @@
     {"name":"Tile Sets","order":107,"path":"folders/Tile Sets.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"n_milestones","order":109,"path":"notes/n_milestones/n_milestones.yy",},
     {"name":"obj_ach_well","order":9,"path":"objects/obj_ach_well/obj_ach_well.yy",},
     {"name":"obj_banana_throwable_Block","order":8,"path":"objects/obj_banana_throwable_Block/obj_banana_throwable_Block.yy",},
     {"name":"obj_blood_effect","order":3,"path":"objects/obj_blood_effect/obj_blood_effect.yy",},
