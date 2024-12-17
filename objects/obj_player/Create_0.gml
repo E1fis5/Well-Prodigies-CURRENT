@@ -72,6 +72,8 @@ can_dash = false
 dash_distance = 190
 dash_time = 16
 bombActive = false
+//Lapping
+global.lap2_passed = false;
 global.fall_effect_destroy = false
 global.dJump_active = false
 global.gravity_force = 0;
@@ -102,8 +104,11 @@ global.dash_Jboost_7 = false;
 global.dash_Jboost_8 = false;
 global.dash_Jboost_9 = false;
 global.dash_Jboost_10 = false;
-
-
+//Mind Split
+global.mindSplit_active = false;
+global.dash_switch_mindSplit = false;
+global.dash_Mindsplit = false;
+global.dash_Normal = true;
 //Power crawl
 var power_crawl_damage = function()
 {
@@ -145,13 +150,33 @@ var dBoost_cooldown = function()
 	time_source_stop(timer_dBoost_cooldown);
 	instance_create_depth(-999,-999,-9999,obj_dBoost_notif);
 }
+
+var dBoost_cooldown = function()
+{
+	global.dashboost_dash = true;
+	audio_play_sound(snd_dashBoost_cd_over,5,false);
+	time_source_stop(timer_dBoost_cooldown);
+	instance_create_depth(-999,-999,-9999,obj_dBoost_notif);
+}
+
+//Mind Split Functions
+var mindSplit_cooldown = function()
+{
+	audio_play_sound(snd_dashBoost_cd_over,5,false);
+	time_source_stop(timer_mindSplit_cooldown);
+	global.dash_Mindsplit = false;
+	global.mindSplit_active = false;
+}
+
+//Dboost Timers
 timer_dBoost_cooldown = time_source_create(time_source_game,3.5,time_source_units_seconds,dBoost_cooldown,[],-1);
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
-timer_dBoost_deactivate = time_source_create(time_source_game,9.5,time_source_units_seconds, dBoost_deactivate,[],1);
+timer_dBoost_deactivate = time_source_create(time_source_game,14,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
 timer_power_crawl = time_source_create(time_source_game,2.2,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,1.5,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
-// Idle Breaker	
+//Mind Split Timers
+timer_mindSplit_cooldown = time_source_create(time_source_game,35,time_source_units_seconds,mindSplit_cooldown,[],-1);
 
 //States
 state_normal = function()
@@ -298,7 +323,7 @@ if input_check("left")
 	image_yscale = 1
 	player_left = true
 	slide_left = true
-	walksp = 8
+	walksp = 8.55
 }
 
 if player_left = false && input_check("right") = false
@@ -315,7 +340,7 @@ if player_left = false && input_check("right") = false
 	image_yscale = 1
 	player_left = false
 	global.fallspr_deactivate = true
-	walksp = 8
+	walksp = 8.55
 }
 
 
@@ -324,7 +349,7 @@ if player_left = false && input_check("right") = false
 	sprite_index = spr_player_left
 	image_xscale = 1
 	image_yscale = 1
-	walksp = 8
+	walksp = 8.55
 }
 
   if input_check("right") = false && input_check("left") = false && player_left = false
@@ -332,7 +357,7 @@ if player_left = false && input_check("right") = false
 	sprite_index = spr_playernew
 	image_xscale = 1
 	image_yscale = 1
-	walksp = 8
+	walksp = 8.55
 }
 }
 stateNormal = state_normal

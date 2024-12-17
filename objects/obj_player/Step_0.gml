@@ -146,7 +146,7 @@ state_FastFall();
 		dash_distance = 190
 	    dash_time = 16
 		grv = 0
-		walksp = 8;
+		walksp = 8.55;
 		global.dash_cancel_speed = false;
 		global.dJump_active = false
 		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect))
@@ -164,7 +164,7 @@ state_FastFall();
 
 		if (!instance_exists(obj_dash_effect))
 		{
-			instance_create_depth(x,y,399,obj_dash_effect);
+			instance_create_depth(x - 40,y - 20,399,obj_dash_effect);
 		}
 		if (!onground)
 		{
@@ -257,26 +257,22 @@ state_FastFall();
 	}
 
 //Score Buffs
-if (score >= 3000)
-{
-	walksp += 0.15;
-}
 
 if (score >= 7000)
 {
-	walksp += 0.20
+	walksp += 0.5;
 }
 
 
 if (score >= 12000)
 {
-	walksp += 0.25
+	walksp += 0.5;
 }
 
 
 if (score >= 20000)
 {
-	walksp += 0.30
+	walksp += 1;
 }
 
 
@@ -337,7 +333,7 @@ if (score >= 20000)
 	if (instance_exists(obj_Lwiz_mini))
 	{
 		walksp += 0.95;
-		dash_distance = 235;
+		dash_distance = 260;
 	    dash_time = 18;
 	} 
 
@@ -345,9 +341,7 @@ if (score >= 20000)
 	
 	if (global.sanity >= 220) and (bombActive = false)
 	{
-		walksp += 0.25
-		dash_distance = 200
-	    dash_time = 17
+		walksp += 0.35
 	}
 
 	if (global.sanity <= 100) and (bombActive = false)
@@ -578,11 +572,15 @@ if (score >= 20000)
 
 
 //Dash boost
-if (instance_exists(obj_dash_boost)) and (input_check("attack"))
+if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!instance_exists(obj_dBoost_additive))
 {
 	time_source_start(timer_dBoost_deactivate);
 	audio_play_sound(snd_dBoost_start,6,false);
 	instance_create_depth(x,y,-999,obj_dBoost_additive);
+	if (global.dash_Mindsplit = true)
+	{
+		global.health -= 1;
+	}
 }
 
 if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect))
@@ -593,13 +591,27 @@ if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)
 
 if (instance_exists(obj_dBoost_additive))
 {
-	walksp += 1;
+	walksp += 0.65;
 	dash_distance = 205;
 	dash_time = 17;
 	if (instance_exists(obj_voodoo_magic_shop_item))
 	{
-		walksp += 0.35;
+		walksp += 0.25;
 	}
+	
+if (global.dash_Mindsplit = true)
+{
+		walksp += 2;
+		dash_distance = 250;
+		dash_time = 18;
+		if (input_check_pressed("special")) and (global.mindSplit_active = true)
+		{
+			global.mindSplit_active = false;
+			global.dash_Mindsplit = false;
+			obj_dashB_active_effect.sprite_index = spr_dashB_active_effect;
+		}
+}
+
 	global.dash_cancel_speed = false;
 	time_source_stop(timer_dBoost_create);
 	if (!instance_exists(obj_dashB_active_effect))
@@ -660,3 +672,15 @@ if (global.doll_ability_active = false) and (instance_exists(obj_doll))
 	{
 		global.fakeout_pause = true;
 	}
+
+//Mind Split Special
+if (input_check_pressed("special")) and (global.mindSplit_active = false) and (!instance_exists(obj_dashB_active_effect))
+{
+	global.sanity -= 20;
+	global.mindSplit_active = true;
+	time_source_start(timer_mindSplit_cooldown);
+	global.dash_Mindsplit = true;
+	instance_create_depth(-999,-999,-9999,obj_dashjoost_pause);
+}
+
+

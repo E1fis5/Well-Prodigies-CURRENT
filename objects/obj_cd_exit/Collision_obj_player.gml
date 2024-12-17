@@ -34,6 +34,7 @@ if !instance_exists(obj_transition)
 		}
 
 		instance_destroy(obj_doll);
+		instance_destroy(obj_score);
 		instance_destroy(obj_ability_bar);
 		global.soldout_doll = false;
 		global.doll_pickup = false;
