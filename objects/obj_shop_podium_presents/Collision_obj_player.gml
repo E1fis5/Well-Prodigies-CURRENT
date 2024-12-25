@@ -1,4 +1,4 @@
-if (input_check("up")) and (global.gem_counter >= 1)
+if (input_check("up")) and (global.gem_counter >= 1) and (global.presents_pickup = false)
 {
 	global.presents_pickup = true;
 }

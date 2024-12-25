@@ -17,14 +17,13 @@ if (global.magnet_collect_pull = true)
 if (global.magnet_collect_strong_pull = true)
 {
 	score += 2;
-	global.sanity -= 0.1;
 	if (instance_exists(obj_voodoo_magic_shop_item))
 	{
 		global.sanity += 0.1;
 	}
 }
 instance_destroy();
-audio_play_sound(snd_collectable_collect,0,false);
+audio_play_sound(snd_collectable_collect,4,false);
 
 instance_create_depth(x,y,-1000,obj_collect_effect)
 

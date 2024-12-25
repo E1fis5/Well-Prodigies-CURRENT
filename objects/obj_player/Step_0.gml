@@ -197,7 +197,20 @@ state_FastFall();
 	{
 		sprite_index = other.sprite_index;
 		image_blend = c_gray;
-		image_alpha = 0.7;
+		image_alpha = 0.6;
+		audio_sound_pitch(snd_dash_p,1)
+		if (instance_exists(obj_dashB_active_effect))
+		{
+			image_blend = c_navy
+			audio_sound_pitch(snd_dash_p,1.1)
+		{
+			if (global.dash_Mindsplit = true)
+			{
+				image_blend = c_black;
+				audio_sound_pitch(snd_dash_p,0.7)
+			}
+		}
+		}
 	}
 	{
 		if (place_meeting(x + hsp, y, obj_collision_wall))
@@ -523,7 +536,12 @@ if (score >= 20000)
 	{
 	   game_restart()
 	}
-
+	
+	//Doll Buff
+	if (global.isActive = true) and (instance_exists(obj_doll))
+	{
+		walksp += 0.45;
+	}
 	//Power Crawl
 	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 	{
@@ -579,7 +597,8 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!i
 	instance_create_depth(x,y,-999,obj_dBoost_additive);
 	if (global.dash_Mindsplit = true)
 	{
-		global.health -= 1;
+		global.sanity -= 10;
+		audio_sound_pitch(snd_dBoost_start,0.7)
 	}
 }
 
@@ -592,17 +611,17 @@ if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)
 if (instance_exists(obj_dBoost_additive))
 {
 	walksp += 0.65;
-	dash_distance = 205;
+	dash_distance = 225;
 	dash_time = 17;
 	if (instance_exists(obj_voodoo_magic_shop_item))
 	{
-		walksp += 0.25;
+		walksp += 0.65;
 	}
 	
 if (global.dash_Mindsplit = true)
 {
 		walksp += 2;
-		dash_distance = 250;
+		dash_distance = 265;
 		dash_time = 18;
 		if (input_check_pressed("special")) and (global.mindSplit_active = true)
 		{
@@ -652,21 +671,6 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 		obj_sanity_bg.image_alpha = 1;
 	}
 
-//Doll Buffs
-if (global.doll_ability_active = false) and (instance_exists(obj_doll))
-{
-	walksp -= 0.25;
-}
-	if (global.doll_ability_active = true)
-	{
-		walksp += 1.75;
-		dash_distance = 225;
-		if (instance_exists(obj_voodoo_magic_shop_item))
-		{
-			walksp += 1;
-			dash_distance = 250;
-		}
-	}
 	//Destroy escape blink if overlay is off
 	if (global.escapeoverlay_trigger = false)
 	{
@@ -674,9 +678,9 @@ if (global.doll_ability_active = false) and (instance_exists(obj_doll))
 	}
 
 //Mind Split Special
-if (input_check_pressed("special")) and (global.mindSplit_active = false) and (!instance_exists(obj_dashB_active_effect))
+if (input_check_pressed("special")) and (global.mindSplit_active = false)
 {
-	global.sanity -= 20;
+	global.sanity -= 10;
 	global.mindSplit_active = true;
 	time_source_start(timer_mindSplit_cooldown);
 	global.dash_Mindsplit = true;

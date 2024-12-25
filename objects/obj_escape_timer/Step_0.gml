@@ -16,15 +16,18 @@ else
 
 
 
-if (global.isActive && global.timer > 0) and (global.doll_ability_active = false) {
+if (global.isActive && global.timer > 0) and (!instance_exists(obj_doll))
+{
     global.timer -= 1 / room_speed; // Decrement the timer by 1 second each step
    image_speed = 1;
 }
-   if (global.doll_ability_active = true) and (global.isActive and global.timer > 0)
-   { 
-     global.timer -= 0.7 / room_speed
-	 image_speed = 0.8;
-   }
+
+if (instance_exists(obj_doll)) and (global.isActive = true) and (global.timer > 0)
+{
+	global.timer -= 0.8 / room_speed;
+	image_speed = 0.8;
+}
+
 
 if (instance_exists(obj_hide_hud))
 {

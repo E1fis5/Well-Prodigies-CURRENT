@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"snd_dash_p.mp3",
   "type":0,
-  "volume":0.15,
+  "volume":0.29,
 }

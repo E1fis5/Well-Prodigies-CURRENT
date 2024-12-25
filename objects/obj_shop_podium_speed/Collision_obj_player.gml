@@ -1,4 +1,4 @@
-if (input_check("up")) and (global.gem_counter >= 1)
+if (input_check("up")) and (global.gem_counter >= 1) and (global.speed_pickup = false)
 {
 	global.speed_pickup = true;
 }

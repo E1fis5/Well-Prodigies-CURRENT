@@ -9,7 +9,6 @@ if (global.abilityscore <= 150) and (global.magnet_collect_strong_pull = false)
 if (global.magnet_collect_strong_pull = true)
 {
 	score += 20;
-	global.sanity -= 0.5;
 	if (instance_exists(obj_voodoo_magic_shop_item))
 	{
 		global.sanity += 0.5;

@@ -155,6 +155,7 @@
     {"name":"snd_collectable_food","order":2,"path":"sounds/snd_collectable_food/snd_collectable_food.yy",},
     {"name":"snd_dash_rock_snd1","order":1,"path":"sounds/snd_dash_rock_snd1/snd_dash_rock_snd1.yy",},
     {"name":"snd_dashBoost_cd_over","order":2,"path":"sounds/snd_dashBoost_cd_over/snd_dashBoost_cd_over.yy",},
+    {"name":"snd_dashBoost_create","order":1,"path":"sounds/snd_dashBoost_create/snd_dashBoost_create.yy",},
     {"name":"snd_wellhub","order":2,"path":"sounds/snd_wellhub/snd_wellhub.yy",},
     {"name":"spr_candy_cane_collect","order":1,"path":"sprites/spr_candy_cane_collect/spr_candy_cane_collect.yy",},
     {"name":"spr_cd_wood_deco1","order":1,"path":"sprites/spr_cd_wood_deco1/spr_cd_wood_deco1.yy",},

@@ -18,7 +18,7 @@ if (global.magnet_pickup = true) and (input_check("up")) and (global.magnet_sold
 
 if (global.doll_pickup = true) and (input_check("up")) and (global.soldout_doll = false)
 {
-	global.gem_counter -= 3;
+	global.gem_counter -= 1;
 	global.soldout_doll = true;
 	instance_create_depth(0,0,399,obj_doll);
 	audio_play_sound(snd_buy,5,false);
