@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.809796,
+  "duration":2.5,
   "name":"snd_put_it_in_the_monkey",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_put_it_in_the_monkey.mp3",
+  "soundFile":"snd_put_it_in_the_monkey.wav",
   "type":0,
-  "volume":0.24,
+  "volume":1.0,
 }

@@ -24,8 +24,8 @@ if (global.isActive && global.timer > 0) and (!instance_exists(obj_doll))
 
 if (instance_exists(obj_doll)) and (global.isActive = true) and (global.timer > 0)
 {
-	global.timer -= 0.8 / room_speed;
-	image_speed = 0.8;
+	global.timer -= 0.9 / room_speed;
+	image_speed = 0.9;
 }
 
 

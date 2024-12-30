@@ -9,15 +9,15 @@ global.powercrawl = false;
 global.dash_cancel_speed = false;
 global.sprite_idlebreak = false;
 hsp = 0;
-hsp_wjump = 4;
+hsp_wjump = 5;
 vsp = 10;
-grv = 0.07
+grv = 0.07;
 grv_wall = 0.50;
-walksp =4;
-vspJump = -6
-vspDJump = -9
+walksp = 8.5;
+vspJump = -4.5;
+vspDJump = -5.5;
 vsp_wjump = -5;
-vsp_max_wall = 4;
+vsp_max_wall = 9;
 canJump = 7
 global.dJump_idle = false
 global.health = 0
@@ -162,10 +162,15 @@ var dBoost_cooldown = function()
 //Mind Split Functions
 var mindSplit_cooldown = function()
 {
-	audio_play_sound(snd_dashBoost_cd_over,5,false);
+	audio_play_sound(snd_mindSplit_end,5,false);
 	time_source_stop(timer_mindSplit_cooldown);
 	global.dash_Mindsplit = false;
 	global.mindSplit_active = false;
+	if (instance_exists(obj_dashB_active_effect))
+	{
+		obj_dashB_active_effect.sprite_index = spr_dashB_active_effect;
+	}
+	instance_destroy(obj_sanity_notif);
 }
 
 //Dboost Timers
@@ -365,7 +370,7 @@ stateNormal = state_normal
 //Crawl state
 state_crawl = function()
 {
-if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood)
+if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood) and (input_check("right") or input_check("left"))
 {
 	sprite_index = spr_playercrawl
     image_xscale = 1
@@ -380,9 +385,8 @@ state_FastFall = function()
 {
 	if (input_check("down") = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (onground = false)
 {
-	grv = 5
+	grv = 1.5
 	sprite_index = spr_player_downp
-	vsp = 10
 	global.fallspr_deactivate = true
 	global.dJump_active = false
 }

@@ -273,13 +273,13 @@ state_FastFall();
 
 if (score >= 7000)
 {
-	walksp += 0.5;
+	walksp += 0.55;
 }
 
 
 if (score >= 12000)
 {
-	walksp += 0.5;
+	walksp += 0.55;
 }
 
 
@@ -615,7 +615,7 @@ if (instance_exists(obj_dBoost_additive))
 	dash_time = 17;
 	if (instance_exists(obj_voodoo_magic_shop_item))
 	{
-		walksp += 0.65;
+		walksp += 0.40;
 	}
 	
 if (global.dash_Mindsplit = true)
@@ -659,6 +659,10 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 		obj_health_bg.image_alpha = 0.3;
 		obj_sanitymeter.image_alpha = 0.3;
 		obj_sanity_bg.image_alpha = 0.3;
+		if (instance_exists(obj_escape_timer))
+		{
+			obj_escape_timer.image_alpha = 0.3;
+		}
 	}
 	if (!place_meeting(x,y,obj_hud_opac_lower)) and (instance_exists(obj_ranks)) and (instance_exists(obj_rank_cover)) and (instance_exists(obj_score)) and (instance_exists(obj_health)) and (instance_exists(obj_health_bg)) and (instance_exists(obj_sanitymeter)) and (instance_exists(obj_sanity_bg))
 	{
@@ -669,6 +673,10 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 		obj_health_bg.image_alpha = 1;
 			obj_sanitymeter.image_alpha = 1;
 		obj_sanity_bg.image_alpha = 1;
+		if (instance_exists(obj_escape_timer))
+		{
+			obj_escape_timer.image_alpha = 1;
+		}
 	}
 
 	//Destroy escape blink if overlay is off
@@ -678,13 +686,16 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 	}
 
 //Mind Split Special
-if (input_check_pressed("special")) and (global.mindSplit_active = false)
+if (input_check_pressed("special")) and (global.mindSplit_active = false) and (!instance_exists(obj_dashB_active_effect))
 {
 	global.sanity -= 10;
 	global.mindSplit_active = true;
 	time_source_start(timer_mindSplit_cooldown);
 	global.dash_Mindsplit = true;
 	instance_create_depth(-999,-999,-9999,obj_dashjoost_pause);
+	instance_create_depth(-999,-999,-9999,obj_sanity_notif);
+	audio_play_sound(snd_mindSplit_start,5,false);
+	hsp_wjump = 6;
 }
 
 

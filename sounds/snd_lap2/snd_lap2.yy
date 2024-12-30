@@ -12,8 +12,8 @@
   "duration":141.42694,
   "name":"snd_lap2",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"escape",
+    "path":"folders/Sounds/escape.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

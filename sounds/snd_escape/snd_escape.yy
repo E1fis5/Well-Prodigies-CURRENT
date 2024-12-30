@@ -9,11 +9,11 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":256.20898,
+  "duration":266.256,
   "name":"snd_escape",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"escape",
+    "path":"folders/Sounds/escape.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_escape.mp3",
   "type":0,
-  "volume":0.2,
+  "volume":0.35,
 }
