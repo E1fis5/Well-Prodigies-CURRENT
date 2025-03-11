@@ -7,3 +7,8 @@ if (global.walksp_boost_active = false)
 {
 	instance_destroy();
 }
+
+if (instance_exists(obj_voodoo_magic_shop_item)) and (global.walksp_boost_additive < 2)
+{
+	time_source_start(global.voodoo_boost_walksp);
+}

@@ -6,10 +6,11 @@ if (global.debug_active = true)
 	{
 		draw_text(100,700,obj_player.walksp);
 			draw_text(100,500,obj_player.dash_distance);
-		if (global.dashboost_dash = true)
-		{
-			draw_text(100,600,"1");
-		}
+				draw_text(100,400,obj_player.vsp_wjump);
+					if (obj_player.bombActive = true)
+					{
+						draw_text(100,600,"1");
+					}
 	}
 	if (instance_exists(obj_jestraught_player))
 	{

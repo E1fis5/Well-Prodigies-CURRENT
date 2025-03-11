@@ -272,8 +272,8 @@
   ],
   "name":"r_ch_fakeout",
   "parent":{
-    "name":"cave_horrors",
-    "path":"folders/Rooms/CHAPTER_1/cave_horrors.yy",
+    "name":"old layout",
+    "path":"folders/Rooms/CHAPTER_1/encore/cave_horrors/old layout.yy",
   },
   "parentRoom":{
     "name":"r_CaveDwellings1_cave",

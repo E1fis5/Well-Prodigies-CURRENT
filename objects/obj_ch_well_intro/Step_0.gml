@@ -3,7 +3,7 @@ if (input_check_pressed("accept"))
 	  var inst = instance_create_depth(0, 0, -9999, obj_transition);
       inst.target_x = 128
 	  inst.target_y = 448
-      inst.target_rm = r_ch
+      inst.target_rm = r_ch_old
 	  global.sanity = 0
 	  global.scoreHider = false
 	  instance_destroy();

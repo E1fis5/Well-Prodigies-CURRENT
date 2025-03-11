@@ -28,5 +28,7 @@ global.shopitem_bought = false
 global.waterlvl_true = false
 global.jestraught_player = false
 global.debug_active = false;
+global.sanity = 0;
+global.sanity_Prank_switch = false;
 //Time sources
 

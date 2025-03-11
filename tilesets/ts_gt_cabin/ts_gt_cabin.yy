@@ -5,12 +5,7 @@
   "macroPageTiles":{
     "SerialiseHeight":24,
     "SerialiseWidth":11,
-    "TileCompressedData":[
-      -165,
-      0,
-      -99,
-      454,
-    ],
+    "TileCompressedData":[-165,0,-99,454,],
     "TileDataFormat":1,
   },
   "name":"ts_gt_cabin",

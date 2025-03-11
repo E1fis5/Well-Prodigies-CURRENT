@@ -16,14 +16,14 @@ if (global.magnet_collect_strong_pull = true)
 	score += 16.5;
 		if (instance_exists(obj_voodoo_magic_shop_item))
 	{
-		global.sanity += 0.2;
+		global.sanity += 2;
 	}
 }
-global.sanity += 0.6
+global.sanity += 2
 
 if (global.sanity >= 300)
 {
-	global.sanity -= 0.6
+	global.sanity -= 2
 }
 
 if (global.sanity <= 80)
@@ -31,12 +31,12 @@ if (global.sanity <= 80)
 	score -= 10
 }
 
-if (global.gamemode_hard = true)
+if (global.health_lock = false)
 {
 	global.health += 0.2
 }
 
-if (global.gamemode_hard = true) and (global.health >= 6)
+if (global.health_lock = false) and (global.health >= 6)
 {
 	global.health -= 0.2
 }

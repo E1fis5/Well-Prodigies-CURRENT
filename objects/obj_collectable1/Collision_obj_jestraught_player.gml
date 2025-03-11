@@ -7,10 +7,9 @@ if (global.abilityscore <= 150) and (global.magnet_collect_strong_pull = false)
 
 if (global.magnet_collect_pull = true)
 {
-	global.sanity -= 0.05;
 	if (instance_exists(obj_voodoo_magic_shop_item))
 	{
-		global.sanity += 0.05;
+		global.sanity += 0.5;
 	}
 }
 
@@ -32,11 +31,11 @@ if (global.sanity <= 80)
 	score -= 4
 }
 
-global.sanity += 0.3
+global.sanity += 0.5
 
 if (global.sanity >= 300)
 {
-	global.sanity -= 0.3
+	global.sanity -= 0.5
 }
 
 instance_create_depth(-999,-999,-9990,obj_diamond_notif)

@@ -5,7 +5,7 @@ if !instance_exists(obj_transition)
 	  inst.target_y = target_y;
       inst.target_rm = target_rm;
 }
-
+instance_create_depth(-999,-999,-9999,obj_cavedwellings_song2);
 instance_destroy();
 audio_stop_sound(snd_escape)
 global.rift_taken = true

@@ -1,0 +1,1 @@
+instance_activate_object(obj_lap_portal);

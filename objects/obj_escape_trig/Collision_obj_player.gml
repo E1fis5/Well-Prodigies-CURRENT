@@ -2,6 +2,10 @@ if (!global.isActive)
 {
     global.isActive = true;
     global.timer = 160
+	if (global.challenge_mode = true)
+	{
+		global.timer -= 70;
+	}
 }
 
 if (!audio_played)

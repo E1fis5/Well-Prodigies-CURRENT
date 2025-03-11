@@ -3,17 +3,17 @@ if (global.abilityscore < 50)
 	sprite_index = spr_ability_bar_deactivated;
 }
 
-if (global.abilityscore >= 50)
+if (global.abilityscore >= 150)
 {
 	sprite_index = spr_ability_bar_1;
 }
 
-if (global.abilityscore >= 100)
+if (global.abilityscore >= 250)
 {
 	sprite_index = spr_ability_bar_2;
 }
 
-if (global.abilityscore >= 150)
+if (global.abilityscore >= 550)
 {
 	sprite_index = spr_ability_bar_full;
 }

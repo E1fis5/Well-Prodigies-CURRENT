@@ -1,3 +1,3 @@
-draw_sprite(sprite_index,image_index,550,80);
+draw_sprite(sprite_index,image_index,750,80);
 
-draw_text(615,85,global.abilityscore);
+draw_text(815,85,global.abilityscore);

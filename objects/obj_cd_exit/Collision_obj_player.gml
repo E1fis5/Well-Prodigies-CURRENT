@@ -50,4 +50,5 @@ if !instance_exists(obj_transition)
 		instance_destroy(obj_voodoo_magic_shop_item);
 		global.voodoo_pickup = false;
 		global.voodoo_soldout = false;
-	
+		global.challenge_mode = false;
+		global.health_lock = false;

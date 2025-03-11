@@ -26,6 +26,11 @@ if (instance_exists(obj_doll)) and (global.isActive = true) and (global.timer > 
 {
 	global.timer -= 0.9 / room_speed;
 	image_speed = 0.9;
+	if (instance_exists(obj_voodoo_magic_shop_item))
+	{
+		global.timer += 0.1 / room_speed;
+		image_speed = 0.8;
+	}
 }
 
 

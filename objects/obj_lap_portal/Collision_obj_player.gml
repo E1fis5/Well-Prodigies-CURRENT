@@ -22,7 +22,7 @@ score += score_add;
 
 global.lap2_passed = true;
 
-global.sanity += 55
+global.sanity += 60;
 
 instance_create_depth(890,985,-9999,obj_lap2_alert);
 

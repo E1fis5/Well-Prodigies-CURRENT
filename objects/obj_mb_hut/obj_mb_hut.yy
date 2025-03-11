@@ -6,8 +6,8 @@
   "name":"obj_mb_hut",
   "overriddenProperties":[],
   "parent":{
-    "name":"level_stuff",
-    "path":"folders/Objects/level_stuff.yy",
+    "name":"monkey_business_stuff",
+    "path":"folders/Objects/monkey_business_stuff.yy",
   },
   "parentObjectId":{
     "name":"obj_door",

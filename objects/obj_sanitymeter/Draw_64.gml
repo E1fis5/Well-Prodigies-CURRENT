@@ -123,7 +123,6 @@ if (global.sanity <= 90)
 if (global.sanity <= 80)
 {
 	image_index = 23;
-	global.sanity_Prank_switch = true;
 }
 
 if (global.sanity <= 70)
@@ -150,10 +149,3 @@ if (global.sanity <= 30)
 {
 	image_index = 28;
 }
-
-if (global.sanity <= 20)
-{
-	image_index = 29;
-	time_source_stop(sanityTimerHard);
-}
-

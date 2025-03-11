@@ -10,3 +10,4 @@ if (global.magnet_collect_strong_pull = true) and (distance_to_object(obj_shop_m
 	{
 			move_towards_point(obj_shop_magnet.x,obj_shop_magnet.y,obj_player.walksp);
 	}
+	

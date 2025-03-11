@@ -8,6 +8,15 @@ global.fakeout_pause = false;
 global.powercrawl = false;
 global.dash_cancel_speed = false;
 global.sprite_idlebreak = false;
+//Wall Boost Stats
+global.walljumps = 0;
+global.walljump_boost1 = false
+global.walljump_boost2 = false
+//Challenges
+global.damage_blocker = false;
+global.health_lock = false;
+global.challenge_mode = false;
+//Gravity
 hsp = 0;
 hsp_wjump = 5;
 vsp = 10;
@@ -25,7 +34,7 @@ runsp = 5.5;
 airTime = 0;
 onwall = 0;
 global.dash_jump_active = false;
-jumpbuffer = 0;
+jumpbuffer = 5;
 walljumpdelay = 0;
 walljumpdelay_max = 17;
 global.sanity = 180;
@@ -140,21 +149,23 @@ var dBoost_deactivate = function()
 		instance_destroy(obj_dBoost_additive);
 		instance_destroy(obj_dashB_active_effect);
 		instance_create_depth(x,y,-9999,obj_dashjoost_pause);
+		audio_play_sound(snd_dashboost_diminish,6,false);
+				if (global.dash_Mindsplit = true)
+			{
+				audio_sound_pitch(snd_dashboost_diminish,0.85);
+			}
 	}
 }
 
-var dBoost_cooldown = function()
-{
-	global.dashboost_dash = true;
-	audio_play_sound(snd_dashBoost_cd_over,5,false);
-	time_source_stop(timer_dBoost_cooldown);
-	instance_create_depth(-999,-999,-9999,obj_dBoost_notif);
-}
 
 var dBoost_cooldown = function()
 {
 	global.dashboost_dash = true;
 	audio_play_sound(snd_dashBoost_cd_over,5,false);
+	if (global.dash_Mindsplit = true)
+	{
+		audio_sound_pitch(snd_dashBoost_cd_over,0.85);
+	}
 	time_source_stop(timer_dBoost_cooldown);
 	instance_create_depth(-999,-999,-9999,obj_dBoost_notif);
 }
@@ -181,7 +192,7 @@ timer_dBoost_deactivate = time_source_create(time_source_game,14,time_source_uni
 timer_power_crawl = time_source_create(time_source_game,2.2,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,1.5,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
 //Mind Split Timers
-timer_mindSplit_cooldown = time_source_create(time_source_game,35,time_source_units_seconds,mindSplit_cooldown,[],-1);
+timer_mindSplit_cooldown = time_source_create(time_source_game,55,time_source_units_seconds,mindSplit_cooldown,[],-1);
 
 //States
 state_normal = function()
@@ -191,13 +202,14 @@ if (walljumpdelay == 0)
 hsp =(input_check("right") - input_check("left")) * walksp
 
 
-if (onwall != 0) && (!onground) && (input_check("jump"))
+if (onwall != 0) && (!onground) && (input_check("jump")) and (!input_check("attack"))
 {
 	walljumpdelay = walljumpdelay_max;
 	hsp = -onwall * hsp_wjump;
 	vsp = vsp_wjump;
-	audio_play_sound(snd_stone1,5,false)
-	global.dJump_active = false
+	audio_play_sound(snd_stone1,5,false);
+	global.dJump_active = false;
+	global.walljumps += 1;
 
 		can_dash = true;
 
@@ -386,9 +398,9 @@ state_FastFall = function()
 	if (input_check("down") = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (onground = false)
 {
 	grv = 1.5
-	sprite_index = spr_player_downp
-	global.fallspr_deactivate = true
-	global.dJump_active = false
+	sprite_index = spr_player_downp;
+	global.fallspr_deactivate = true;
+	global.dJump_active = false;
 }
 }
 depth = 400

@@ -5,12 +5,7 @@
   "macroPageTiles":{
     "SerialiseHeight":17,
     "SerialiseWidth":10,
-    "TileCompressedData":[
-      -60,
-      0,
-      -110,
-      23,
-    ],
+    "TileCompressedData":[-60,0,-110,23,],
     "TileDataFormat":1,
   },
   "name":"ts_mb_vent",
