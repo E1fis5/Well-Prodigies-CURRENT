@@ -22,16 +22,11 @@ instance_create_depth(x,y,-1000,obj_collect_effect_big);
 
 
 
-global.sanity += 20
+global.sanity += 10
 
 if (global.sanity >= 300)
 {
-	global.sanity -= 20
-}
-
-if (global.sanity <= 80)
-{
-	score -= 75
+	global.sanity -= 10
 }
 
 

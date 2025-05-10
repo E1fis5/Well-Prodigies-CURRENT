@@ -50,8 +50,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"effects",
-    "path":"folders/Sprites/effects.yy",
+    "name":"emerald_effects",
+    "path":"folders/Sprites/effects/emerald_effects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

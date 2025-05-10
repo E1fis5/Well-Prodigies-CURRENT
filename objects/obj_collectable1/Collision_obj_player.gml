@@ -1,4 +1,8 @@
 score += 11
+if (infected_collect = true)
+{
+	score -= 4;
+}
 
 if (global.abilityscore <= 550) and (global.magnet_collect_strong_pull = false)
 {

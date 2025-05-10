@@ -8,7 +8,7 @@ if !instance_exists(obj_transition)
 
 instance_destroy();
 global.rift_taken = true
-instance_destroy(obj_cavedwellings_song2);
+audio_pause_sound(song_destroy);
 if (instance_exists(obj_escape_timer))
 {
 	global.timer += 25;

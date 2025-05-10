@@ -2,7 +2,7 @@
   "$GMObject":"",
   "%Name":"obj_cavedwellings_song2",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_cavedwellings_song2",
@@ -11,10 +11,7 @@
     "name":"songs",
     "path":"folders/Objects/songs.yy",
   },
-  "parentObjectId":{
-    "name":"obj_cavedwellings_music",
-    "path":"objects/obj_cavedwellings_music/obj_cavedwellings_music.yy",
-  },
+  "parentObjectId":null,
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

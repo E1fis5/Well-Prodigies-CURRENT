@@ -12,10 +12,10 @@ if (global.debug_active = true)
 						draw_text(100,600,"1");
 					}
 	}
-	if (instance_exists(obj_jestraught_player))
+	if (instance_exists(obj_jestraught_play))
 	{
-			draw_text(100,700,obj_jestraught_player.walksp);
-			draw_text(100,500,obj_jestraught_player.dash_distance);
+			draw_text(100,700,obj_jestraught_play.walksp);
+			draw_text(100,500,obj_jestraught_play.dash_distance);
 	}
 }
 

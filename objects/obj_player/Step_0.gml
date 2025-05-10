@@ -47,9 +47,9 @@ state_crawl();
 		sprite_index = spr_player_escapeidle
 		image_xscale  = 1
 	    image_yscale = 1
-		if (sprite_index = spr_player_left)
+		if (global.sanity <= 80)
 		{
-			sprite_index = spr_player_escape_left;
+			sprite_index = spr_player_insane_escape_idle;
 		}
 	}
 
@@ -267,10 +267,64 @@ if (global.walljumps >= 7) and (global.walljump_boost2 = false)
 		   global.dash_active = false;
 		   	walksp = 8;
 		   time_source_stop(timer_dBoost_create);
-		   if (onground = false) and (onwall = false)
+		   if (onground = false) 
 		   {
 			   global.dash_amount += 1;
 		   }
+		   //Dash Boost
+		   	if (global.dash_amount >= 2)
+	{
+		if (!instance_exists(obj_dashJoost_counter)) and dashJoost_hit_disable = false
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter);
+		}
+	}
+
+	if (global.dash_amount >= 3)
+	{
+		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+		}
+	}
+
+	if (global.dash_amount >= 4)
+	{
+		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+		}
+	}
+	if (global.dash_amount >= 5)
+	{
+		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+		}
+	}
+
+	if (global.dash_amount >= 6)
+	{
+		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+		}
+	}
+
+	if (global.dash_amount >= 7)
+	{
+		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+		}
+	}
+
+	if (global.dash_amount >= 8)
+	{
+		global.dash_amount = 8;
+		dashJoost_hit_disable = true;
+	}
+
 	   }
 	}
 	}
@@ -281,13 +335,48 @@ if (global.walljumps >= 7) and (global.walljump_boost2 = false)
 			if (instance_exists(obj_dashJoost_counter))
 		{
 			instance_destroy(obj_dashJoost_counter);
+			dashJoost_hit_disable = false;
 		}
 	}
 	if (onground = true) and (!instance_exists(obj_dashjoost_pause))
 	{
 		global.dash_cancel_speed = true;
 	}
+//Dash Joost Buffs
+if (global.dash_amount >= 2)
+{
+	walksp += 0.25;
+}
 
+if (global.dash_amount >= 3)
+{
+	walksp += 0.35;
+}
+
+if (global.dash_amount >= 4)
+{
+	walksp += 0.45;
+}
+
+if (global.dash_amount >= 5)
+{
+	walksp += 0.50;
+}
+
+if (global.dash_amount >= 6)
+{
+	walksp += 0.55;
+}
+
+if (global.dash_amount >= 7)
+{
+	walksp += 0.60;
+}
+
+if (global.dash_amount >= 8)
+{
+	walksp += 0.55;
+}
 //Score Buffs
 
 if (score >= 7000)
@@ -307,46 +396,6 @@ if (score >= 20000)
 	walksp += 1;
 }
 
-
-//Dash Boost
-	if (global.dash_amount >= 2)
-	{
-		walksp += 0.25;
-		if (!instance_exists(obj_dashJoost_counter))
-		{
-			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter);
-		}
-	}
-
-	if (global.dash_amount >= 3)
-	{
-		walksp += 0.35;
-	}
-
-	if (global.dash_amount >= 4)
-	{
-		walksp += 0.40;
-	}
-	if (global.dash_amount >= 5)
-	{
-		walksp += 0.45;
-	}
-
-	if (global.dash_amount >= 6)
-	{
-		walksp += 0.50;
-	}
-
-	if (global.dash_amount >= 7)
-	{
-		walksp += 0.50;
-	}
-
-	if (global.dash_amount >= 8)
-	{
-		walksp += 0.55;
-		global.dash_amount = 8;
-	}
 
 
 	//Walksp boost
@@ -509,7 +558,7 @@ if (score >= 20000)
 	//Intro physics
 	if (instance_exists(obj_cd_well_intro))
 	{
-		walksp = 0
+		walksp = 0;
 		canCrawl = false
 		canJump = 0
 		can_dash = false
@@ -535,6 +584,10 @@ if (score >= 20000)
 	if (global.dJump_active = true) and (onground = false) and (!global.dJump_idle = true)
 	{
 		sprite_index = spr_player_gem_collect;
+		if (global.jump_boost_shop = true)
+		{
+			vspDJump = 6.5;
+		}
 		if (player_left = true)
 		{
 			sprite_index = spr_gem_collect_left;
@@ -550,11 +603,7 @@ if (score >= 20000)
 		}
 	}
 
-	//Game over
-	if (global.timer <= 0) and score <= 0 and (instance_exists(obj_escape_timer))
-	{
-	   game_restart()
-	}
+
 	
 	//Doll Buff
 	if (global.isActive = true) and (instance_exists(obj_doll))
@@ -564,7 +613,7 @@ if (score >= 20000)
 	//Power Crawl
 	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 	{
-		walksp += 2.35;
+		walksp += 3.35;
 		time_source_start(timer_power_crawl);
 		global.powercrawl = true;
 		if (!instance_exists(obj_blood_effect))
@@ -631,7 +680,7 @@ if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)
 if (instance_exists(obj_dBoost_additive))
 {
 	walksp += 0.65;
-	dash_distance = 225;
+	dash_distance = 235;
 	dash_time = 17;
 	if (instance_exists(obj_voodoo_magic_shop_item))
 	{
@@ -707,7 +756,7 @@ if (!instance_exists(obj_dash_boost)) and (input_check("attack") or (instance_ex
 	}
 
 //Mind Split Special
-if (input_check_pressed("special")) and (global.mindSplit_active = false) and (!instance_exists(obj_dashB_active_effect))
+if (input_check_pressed("special")) and (global.mindSplit_active = false) and (!instance_exists(obj_dashB_active_effect)) and (global.mindSplit_unlocked = true)
 {
 	global.sanity -= 10;
 	global.mindSplit_active = true;
@@ -719,3 +768,8 @@ if (input_check_pressed("special")) and (global.mindSplit_active = false) and (!
 }
 
 
+//GT Special Animation
+if (obj_game.level = 2) and (sprite_index = spr_playernew)
+{
+	sprite_index = spr_player_freeze;
+}

@@ -1,4 +1,7 @@
+//Shop
+global.hud_opac_decrease = false;
 global.doll_ability = false;
+global.jump_boost_shop = false;
 global.targetRoom = -1;
 global.targetX = -1;
 global.targetY = -1;
@@ -30,5 +33,7 @@ global.jestraught_player = false
 global.debug_active = false;
 global.sanity = 0;
 global.sanity_Prank_switch = false;
-//Time sources
+global.mindSplit_unlocked = false;
+//Level Control
+level = 0;
 

@@ -1,4 +1,14 @@
-if (global.sanity > 40)
+//Opacity Control
+if (instance_exists(obj_hide_hud))
 {
-	instance_destroy();
+    visible = false
+}
+else
+{
+	visible = true
+}
+
+if (global.hud_opac_decrease = true)
+{
+	image_alpha = 0.3;
 }

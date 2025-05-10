@@ -1,4 +1,7 @@
-
+//Health
+global.maxhealth = 6;
+global.health = 0;
+//Shop
 global.presents_soldout = false;
 global.presents_pickup = false;
 global.magnet_collect_strong_pull = false;
@@ -8,6 +11,8 @@ global.fakeout_pause = false;
 global.powercrawl = false;
 global.dash_cancel_speed = false;
 global.sprite_idlebreak = false;
+//Effect Control
+dashJoost_hit_disable = false;
 //Wall Boost Stats
 global.walljumps = 0;
 global.walljump_boost1 = false
@@ -29,7 +34,6 @@ vsp_wjump = -5;
 vsp_max_wall = 9;
 canJump = 7
 global.dJump_idle = false
-global.health = 0
 runsp = 5.5;
 airTime = 0;
 onwall = 0;
@@ -119,6 +123,7 @@ global.dash_switch_mindSplit = false;
 global.dash_Mindsplit = false;
 global.dash_Normal = true;
 //Power crawl
+
 var power_crawl_damage = function()
 {
 	score -= 75
@@ -131,7 +136,7 @@ var power_crawl_damage = function()
 
 var power_crawl_damage_1_hp = function()
 {
-	score -= 75
+	score -= 150
 	audio_play_sound(snd_player_hurt,6,false);
 }
 
@@ -390,6 +395,7 @@ if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood) 
 	canJump = false
 	can_dash = false
 	stateCrawl = state_crawl
+	walksp -= 1;
 }
 }
 

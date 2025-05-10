@@ -6,8 +6,8 @@ if !instance_exists(obj_transition)
       inst.target_rm = target_rm;
 }
 
-
 	score = 0
+	global.sanity = 210;
 	global.timer = 0
 	audio_stop_sound(snd_escape)
 	audio_stop_sound(snd_lap2)
@@ -15,7 +15,12 @@ if !instance_exists(obj_transition)
 	instance_destroy(obj_escape_timer)
 	instance_destroy(obj_escape_overlay)
 	instance_destroy(obj_escape_overlay_lap2)
+	obj_game.level = 0;
 	global.rift_taken = false;
+	if (global.gems_collected >= 5)
+		{
+			global.ach_emeralds = true;
+		}
 	
 		audio_stop_sound(snd_clock_tick)
 		instance_destroy(obj_lap2_alert)
@@ -29,8 +34,9 @@ if !instance_exists(obj_transition)
 			time_source_stop(global.lap2_drain);
 			global.lap2_passed = false;
 		}
-			    global.lap2_active = false;
+
 		instance_destroy(obj_doll);
+		instance_destroy(obj_score);
 		instance_destroy(obj_ability_bar);
 		global.soldout_doll = false;
 		global.doll_pickup = false;
@@ -46,3 +52,6 @@ if !instance_exists(obj_transition)
 		instance_destroy(obj_voodoo_magic_shop_item);
 		global.voodoo_pickup = false;
 		global.voodoo_soldout = false;
+		global.challenge_mode = false;
+		global.health_lock = false;
+		global.fakeout_pause = false;

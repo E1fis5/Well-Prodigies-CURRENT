@@ -1,7 +1,7 @@
 if (!global.isActive)
 {
     global.isActive = true;
-    global.timer = 160
+    global.timer = 130
 	if (global.challenge_mode = true)
 	{
 		global.timer -= 70;
@@ -10,13 +10,11 @@ if (!global.isActive)
 
 if (!audio_played)
 {
-    audio_play_sound(snd_escape,9,true)
     audio_played = true; // Set the persistent variable to indicate that the audio has played
 	audio_stop_sound(snd_cavedwellings2);
 	audio_stop_sound(snd_cavedwellings);
-	audio_play_sound(snd_escape_break,4,false)
+	audio_play_sound(snd_rock_break,4,false)
 	audio_play_sound(snd_clock_tick,4,true)
-		audio_stop_sound(snd_escape_lowsanity)
 }
 
 

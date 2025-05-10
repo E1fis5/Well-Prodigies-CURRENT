@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_voodoo_magic_shop",
-    "path":"sprites/spr_voodoo_magic_shop/spr_voodoo_magic_shop.yy",
+    "name":"spr_voodoo_magic_item",
+    "path":"sprites/spr_voodoo_magic_item/spr_voodoo_magic_item.yy",
   },
   "spriteMaskId":null,
   "visible":true,

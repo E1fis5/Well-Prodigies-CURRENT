@@ -38,7 +38,7 @@ if (score <= 0)
    {
 	  sprite_index = spr_ranks_P
    }
-
+//Opacity Control
 if (instance_exists(obj_hide_hud))
 {
     visible = false
@@ -48,3 +48,7 @@ else
 	visible = true
 }
 
+if (global.hud_opac_decrease = true)
+{
+	image_alpha = 0.3;
+}

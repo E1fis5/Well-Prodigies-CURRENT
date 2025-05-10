@@ -9,8 +9,8 @@ instance_create_depth(x,y,-1000,obj_gem_collect)
 
 audio_play_sound(snd_big_collect,0,false);
 
-global.gem_counter += 1
-global.gems_collected += 1
+global.gem_counter += 1;
+global.gems_collected += 1;
 
 global.sanity += 20
 
@@ -19,4 +19,6 @@ if (global.sanity >= 300)
 	global.sanity -= 20
 }
 
-instance_create_depth(-999,-999,-9990,obj_gem_notif)
+
+instance_create_depth(-999,-999,-9990,obj_gem_notif);
+instance_destroy(obj_emerald_sparkle);

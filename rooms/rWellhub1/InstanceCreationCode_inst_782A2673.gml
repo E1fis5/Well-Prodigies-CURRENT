@@ -1,5 +1,5 @@
-target_x = 911
-target_y = 39
+target_x = 2368
+target_y = 0
 target_rm = rWellhub2
 
 

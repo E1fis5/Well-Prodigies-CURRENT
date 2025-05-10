@@ -7,6 +7,7 @@ if !instance_exists(obj_transition)
 }
 
 	score = 0
+	global.sanity = 210;
 	global.timer = 0
 	audio_stop_sound(snd_escape)
 	audio_stop_sound(snd_lap2)
@@ -14,6 +15,7 @@ if !instance_exists(obj_transition)
 	instance_destroy(obj_escape_timer)
 	instance_destroy(obj_escape_overlay)
 	instance_destroy(obj_escape_overlay_lap2)
+	obj_game.level = 0;
 	global.rift_taken = false;
 	if (global.gems_collected >= 5)
 		{
@@ -52,3 +54,4 @@ if !instance_exists(obj_transition)
 		global.voodoo_soldout = false;
 		global.challenge_mode = false;
 		global.health_lock = false;
+		global.fakeout_pause = false;

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":186.46204,
+  "duration":111.768,
   "name":"snd_gt_music",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_gt_music.mp3",
   "type":0,
-  "volume":0.12,
+  "volume":0.3,
 }

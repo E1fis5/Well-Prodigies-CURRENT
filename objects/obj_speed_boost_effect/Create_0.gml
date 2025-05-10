@@ -6,7 +6,7 @@ var voodoo_boost = function()
 	audio_play_sound(snd_buy,5,false);
 }
 
-global.voodoo_boost_walksp = time_source_create(time_source_game,60,time_source_units_seconds,voodoo_boost,[],5);
+global.voodoo_boost_walksp = time_source_create(time_source_game,120,time_source_units_seconds,voodoo_boost,[],5);
 
 
 depth = 399;

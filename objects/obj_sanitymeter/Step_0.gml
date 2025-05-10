@@ -1,5 +1,4 @@
-
-
+//Opacity Control
 if (instance_exists(obj_hide_hud))
 {
     visible = false
@@ -7,5 +6,9 @@ if (instance_exists(obj_hide_hud))
 else
 {
 	visible = true
-	exit;
+}
+
+if (global.hud_opac_decrease = true)
+{
+	image_alpha = 0.3;
 }

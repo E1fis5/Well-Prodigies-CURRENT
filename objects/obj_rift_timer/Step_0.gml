@@ -29,6 +29,7 @@ image_index = image_index mod frame_count; // Wrap around the frame index
 if (global.timer_rift <= 0)
 {
    score -= 2000
+   instance_destroy();
 }
 
 // Destroy self if in lobby

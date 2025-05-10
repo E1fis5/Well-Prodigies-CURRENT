@@ -9,8 +9,11 @@ if (input_check_pressed("accept"))
 	  global.escape_transition_end = false
 	  audio_stop_sound(snd_wellhub)
 	  global.gem_counter = 0
+	  obj_game.level = 1;
 	  instance_destroy(obj_cd_intro_start_top);
 	  instance_destroy();
+	  instance_create_depth(-999,-999,-9999,obj_health);
+	  instance_create_depth(-999,-999,-10000,obj_health_bg);
 	  instance_activate_object(obj_collectable1);
 	  instance_destroy(obj_cd_cartridge);
 	  instance_destroy(obj_hub_start);

@@ -11,10 +11,7 @@
     "name":"songs",
     "path":"folders/Objects/songs.yy",
   },
-  "parentObjectId":{
-    "name":"obj_cavedwellings_song2",
-    "path":"objects/obj_cavedwellings_song2/obj_cavedwellings_song2.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

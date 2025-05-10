@@ -3,14 +3,17 @@ if (global.timer < 30)
 	sprite_index = spr_timer_broken
 }
 
-if (global.timer = 0) and (global.isActive = true)
+if (global.timer = 0) and (global.isActive = true) and (time_defecit = false)
 {
    time_source_start(global.timer_drain);
-   audio_stop_sound(snd_clock_tick);
+   audio_stop_sound(snd_clock_tick); 
+   global.sanity = 80;
+   audio_sound_pitch(snd_escape,0.9);
 }
 else
 {
 	time_source_stop(global.timer_drain);
+	audio_sound_pitch(snd_escape,1);
 }
 
 

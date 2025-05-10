@@ -10,10 +10,10 @@ if instance_exists(obj_player)
 	y = obj_player.y - _camH/2;
 }
 
-if instance_exists(obj_jestraught_player)
+if instance_exists(obj_jestraught_play)
 {
-	x = obj_jestraught_player.x - _camW/2;
-	y = obj_jestraught_player.y - _camH/2;
+	x = obj_jestraught_play.x - _camW/2;
+	y = obj_jestraught_play.y - _camH/2;
 }
 
 

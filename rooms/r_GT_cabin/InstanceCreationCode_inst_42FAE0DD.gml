@@ -1,3 +1,3 @@
-target_x = 1312
-target_y = 922
-target_rm = r_GT7
+target_x = 1856
+target_y = 352
+target_rm = r_GT5

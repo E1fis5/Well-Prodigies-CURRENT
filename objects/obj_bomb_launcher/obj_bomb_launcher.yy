@@ -9,8 +9,8 @@
   "name":"obj_bomb_launcher",
   "overriddenProperties":[],
   "parent":{
-    "name":"level_stuff",
-    "path":"folders/Objects/level_stuff.yy",
+    "name":"bomb",
+    "path":"folders/Objects/level_stuff/bomb.yy",
   },
   "parentObjectId":null,
   "persistent":false,
