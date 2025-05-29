@@ -140,6 +140,7 @@
     {"name":"inst_111356C3","path":"rooms/r_GT2/r_GT2.yy",},
     {"name":"inst_9AEC176","path":"rooms/r_GT2/r_GT2.yy",},
     {"name":"inst_5E792253","path":"rooms/r_GT2/r_GT2.yy",},
+    {"name":"inst_3BA999B4","path":"rooms/r_GT2/r_GT2.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -284,9 +285,9 @@
       ],"depth":401,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Assets_1","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMREffectLayer":"","%Name":"Effect_1","depth":501,"effectEnabled":true,"effectType":"_effect_windblown_particles","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_1","properties":[
         {"name":"param_sprite","type":2,"value":"spr_snowballparticle",},
-        {"name":"param_num_particles","type":0,"value":"60",},
+        {"name":"param_num_particles","type":0,"value":"35",},
         {"name":"param_particle_spawn_time","type":0,"value":"100",},
-        {"name":"param_particle_spawn_all_at_start","type":0,"value":"1",},
+        {"name":"param_particle_spawn_all_at_start","type":0,"value":"0",},
         {"name":"param_warmup_frames","type":0,"value":"0",},
         {"name":"param_particle_mass_min","type":0,"value":"0.005",},
         {"name":"param_particle_mass_max","type":0,"value":"0.01",},
@@ -398,6 +399,7 @@
         {"$GMRInstance":"v1","%Name":"inst_111356C3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_111356C3","objectId":{"name":"obj_collectable1","path":"objects/obj_collectable1/obj_collectable1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3104.0,"y":1024.0,},
         {"$GMRInstance":"v1","%Name":"inst_9AEC176","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_9AEC176","objectId":{"name":"obj_collision_wall","path":"objects/obj_collision_wall/obj_collision_wall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":2.5,"x":-64.0,"y":320.0,},
         {"$GMRInstance":"v1","%Name":"inst_5E792253","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5E792253","objectId":{"name":"obj_collision_wall","path":"objects/obj_collision_wall/obj_collision_wall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":2.5,"x":3904.0,"y":1056.0,},
+        {"$GMRInstance":"v1","%Name":"inst_3BA999B4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3BA999B4","objectId":{"name":"obj_gt_gravestones","path":"objects/obj_gt_gravestones/obj_gt_gravestones.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1376.0,"y":448.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances_2","depth":701,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_49639AF7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_49639AF7","objectId":{"name":"obj_collision_wall","path":"objects/obj_collision_wall/obj_collision_wall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":11.5,"scaleY":1.0,"x":0.0,"y":480.0,},

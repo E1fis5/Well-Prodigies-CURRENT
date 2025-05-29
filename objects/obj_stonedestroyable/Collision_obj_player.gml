@@ -15,6 +15,7 @@ if (instance_exists(obj_dashB_active_effect))
 	{
 		audio_play_sound(snd_boost_buy,6,false);
 	}
+	score += 30;
 }
 	
 instance_create_depth(x,y,-1000,obj_rock_destroyable_effect);

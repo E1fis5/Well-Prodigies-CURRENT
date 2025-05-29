@@ -242,9 +242,9 @@
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMREffectLayer":"","%Name":"Effect_2","depth":300,"effectEnabled":true,"effectType":"_effect_windblown_particles","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_2","properties":[
         {"name":"param_sprite","type":2,"value":"spr_snowballparticle",},
-        {"name":"param_num_particles","type":0,"value":"60",},
+        {"name":"param_num_particles","type":0,"value":"35",},
         {"name":"param_particle_spawn_time","type":0,"value":"100",},
-        {"name":"param_particle_spawn_all_at_start","type":0,"value":"1",},
+        {"name":"param_particle_spawn_all_at_start","type":0,"value":"0",},
         {"name":"param_warmup_frames","type":0,"value":"0",},
         {"name":"param_particle_mass_min","type":0,"value":"0.005",},
         {"name":"param_particle_mass_max","type":0,"value":"0.01",},

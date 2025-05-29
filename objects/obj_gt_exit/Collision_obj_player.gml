@@ -12,7 +12,11 @@ if !instance_exists(obj_transition)
 	audio_stop_sound(snd_escape)
 	audio_stop_sound(snd_lap2)
 	global.isActive = false
-	instance_destroy(obj_escape_timer)
+	if (instance_exists(obj_escape_timer))
+	{
+		instance_destroy(obj_escape_timer);
+		time_source_stop(obj_escape_gt.timer_cave_crumble);
+	}
 	instance_destroy(obj_escape_overlay)
 	instance_destroy(obj_escape_overlay_lap2)
 	obj_game.level = 0;
@@ -46,6 +50,7 @@ if !instance_exists(obj_transition)
 		global.sanity_Prank_switch = false;
 		global.magnet_collect_pull = false;
 		global.magnet_collect_strong_pull = false;
+		time_source_stop(obj_sanitymeter.sanityTimerEscape);
 		global.magnet_soldout = false;
 		global.magnet_pickup = false;
 		instance_destroy(obj_shop_magnet);

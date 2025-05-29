@@ -12,7 +12,11 @@ if !instance_exists(obj_transition)
 	audio_stop_sound(snd_escape)
 	audio_stop_sound(snd_lap2)
 	global.isActive = false
-	instance_destroy(obj_escape_timer)
+	if (instance_exists(obj_escape_timer))
+	{
+		time_source_stop(obj_escape_timer.timer_cave_crumble);
+		instance_destroy(obj_escape_timer);
+	}
 	instance_destroy(obj_escape_overlay)
 	instance_destroy(obj_escape_overlay_lap2)
 	obj_game.level = 0;
@@ -25,7 +29,8 @@ if !instance_exists(obj_transition)
 		audio_stop_sound(snd_clock_tick)
 		instance_destroy(obj_lap2_alert)
 		time_source_stop(global.timer_drain)
-	global.walksp_boost_active = false;
+		time_source_stop(obj_sanitymeter.sanityTimerEscape);
+		global.walksp_boost_active = false;
 		global.shopitem_bought = false;
 		global.escape_touch = false;
 		global.gem_counter = 0;

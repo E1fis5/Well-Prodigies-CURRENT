@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"ranks",
-    "path":"folders/Sprites/ranks.yy",
+    "path":"folders/Sprites/hud/ranks.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

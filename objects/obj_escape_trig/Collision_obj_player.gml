@@ -14,7 +14,8 @@ if (!audio_played)
 	audio_stop_sound(snd_cavedwellings2);
 	audio_stop_sound(snd_cavedwellings);
 	audio_play_sound(snd_rock_break,4,false)
-	audio_play_sound(snd_clock_tick,4,true)
+	time_source_stop(obj_sanitymeter.sanityTimerHard);
+	time_source_start(obj_sanitymeter.sanityTimerEscape);
 }
 
 

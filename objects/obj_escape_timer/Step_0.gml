@@ -1,7 +1,10 @@
 if (global.timer < 30)
 {
-	sprite_index = spr_timer_broken
+	sprite_index = spr_timer_broken;
+	audio_sound_gain(snd_clock_tick,1.85,90);
 }
+
+
 
 if (global.timer = 0) and (global.isActive = true) and (time_defecit = false)
 {
@@ -9,6 +12,7 @@ if (global.timer = 0) and (global.isActive = true) and (time_defecit = false)
    audio_stop_sound(snd_clock_tick); 
    global.sanity = 80;
    audio_sound_pitch(snd_escape,0.9);
+   audio_sound_pitch(snd_lap2,0.9);
 }
 else
 {

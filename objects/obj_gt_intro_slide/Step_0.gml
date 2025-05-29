@@ -25,6 +25,10 @@ if (input_check_pressed("accept"))
 		  instance_create_depth(-999,-999,-9999,obj_sanitymeter);
 		  instance_create_depth(-999,-999,-9999,obj_sanity_bg);
 	  }
+	  	  if (instance_exists(obj_sanitymeter))
+			{
+				 time_source_start(obj_sanitymeter.sanityTimerHard);
+			}
 	  
        if (!instance_exists(obj_ranks))
 	   {

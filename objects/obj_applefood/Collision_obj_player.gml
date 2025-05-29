@@ -12,9 +12,9 @@ instance_destroy();
 
 audio_play_sound(snd_collectable_food,0,false);
 
-instance_create_depth(x,y,-1000,obj_collect_apple)
+instance_create_depth(x,y,-1000,obj_collect_apple);
 
-
+instance_create_depth(-999,-999,-9991,obj_apple_slash_carrot_notif);
 
 if (global.magnet_collect_strong_pull = true)
 {

@@ -27,7 +27,7 @@ hsp_wjump = 5;
 vsp = 10;
 grv = 0.07;
 grv_wall = 0.50;
-walksp = 8.5;
+walksp = 8.55;
 vspJump = -4.5;
 vspDJump = -5.5;
 vsp_wjump = -5;
@@ -117,16 +117,16 @@ global.dash_Jboost_7 = false;
 global.dash_Jboost_8 = false;
 global.dash_Jboost_9 = false;
 global.dash_Jboost_10 = false;
+up_cancel_eff = false;
 //Mind Split
 global.mindSplit_active = false;
 global.dash_switch_mindSplit = false;
 global.dash_Mindsplit = false;
 global.dash_Normal = true;
 //Power crawl
-
 var power_crawl_damage = function()
 {
-	score -= 75
+	score -= 45
 	audio_play_sound(snd_player_hurt,6,false);
 	if (global.gamemode_hard = true)
 	{
@@ -136,7 +136,7 @@ var power_crawl_damage = function()
 
 var power_crawl_damage_1_hp = function()
 {
-	score -= 150
+	score -= 75
 	audio_play_sound(snd_player_hurt,6,false);
 }
 
@@ -153,6 +153,7 @@ var dBoost_deactivate = function()
 	{
 		instance_destroy(obj_dBoost_additive);
 		instance_destroy(obj_dashB_active_effect);
+		walksp -= 0.65;
 		instance_create_depth(x,y,-9999,obj_dashjoost_pause);
 		audio_play_sound(snd_dashboost_diminish,6,false);
 				if (global.dash_Mindsplit = true)
@@ -195,7 +196,7 @@ timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_
 timer_dBoost_deactivate = time_source_create(time_source_game,14,time_source_units_seconds, dBoost_deactivate,[],1);
 //Power crawl timer
 timer_power_crawl = time_source_create(time_source_game,2.2,time_source_units_seconds,power_crawl_damage,[],-1);
-timer_power_crawl_1_health = time_source_create(time_source_game,1.5,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
+timer_power_crawl_1_health = time_source_create(time_source_game,1,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
 //Mind Split Timers
 timer_mindSplit_cooldown = time_source_create(time_source_game,55,time_source_units_seconds,mindSplit_cooldown,[],-1);
 
@@ -345,7 +346,6 @@ if input_check("left")
 	image_yscale = 1
 	player_left = true
 	slide_left = true
-	walksp = 8.55
 }
 
 if player_left = false && input_check("right") = false
@@ -362,7 +362,6 @@ if player_left = false && input_check("right") = false
 	image_yscale = 1
 	player_left = false
 	global.fallspr_deactivate = true
-	walksp = 8.55
 }
 
 
@@ -371,7 +370,6 @@ if player_left = false && input_check("right") = false
 	sprite_index = spr_player_left
 	image_xscale = 1
 	image_yscale = 1
-	walksp = 8.55
 }
 
   if input_check("right") = false && input_check("left") = false && player_left = false
@@ -379,7 +377,6 @@ if player_left = false && input_check("right") = false
 	sprite_index = spr_playernew
 	image_xscale = 1
 	image_yscale = 1
-	walksp = 8.55
 }
 }
 stateNormal = state_normal
@@ -395,7 +392,7 @@ if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood) 
 	canJump = false
 	can_dash = false
 	stateCrawl = state_crawl
-	walksp -= 1;
+	
 }
 }
 
@@ -405,6 +402,11 @@ state_FastFall = function()
 {
 	grv = 1.5
 	sprite_index = spr_player_downp;
+	if (!instance_exists(obj_upcancel_effect)) and (up_cancel_eff = false)
+	{
+		instance_create_depth(x,y,399,obj_upcancel_effect);
+		up_cancel_eff = true;
+	}
 	global.fallspr_deactivate = true;
 	global.dJump_active = false;
 }

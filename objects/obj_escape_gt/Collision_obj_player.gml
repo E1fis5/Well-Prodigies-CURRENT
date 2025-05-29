@@ -10,7 +10,10 @@ if (!audio_played)
 	audio_stop_sound(snd_gt_music);
 	audio_play_sound(snd_rock_break,4,false)
 	audio_play_sound(snd_clock_tick,4,true)
-		audio_stop_sound(snd_escape_lowsanity)
+	audio_stop_sound(snd_escape_lowsanity)
+	time_source_start(timer_cave_crumble);
+	time_source_stop(obj_sanitymeter.sanityTimerHard);
+	time_source_start(obj_sanitymeter.sanityTimerEscape);
 }
 
 

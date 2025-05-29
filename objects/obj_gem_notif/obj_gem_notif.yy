@@ -8,8 +8,8 @@
   "name":"obj_gem_notif",
   "overriddenProperties":[],
   "parent":{
-    "name":"hud",
-    "path":"folders/Objects/hud.yy",
+    "name":"collect_notif",
+    "path":"folders/Objects/hud/collect_notif.yy",
   },
   "parentObjectId":{
     "name":"obj_diamond_notif",

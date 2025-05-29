@@ -11,7 +11,8 @@ if (!audio_played) and (global.sanity >=30) {
 	audio_stop_sound(snd_mb_1);
 	audio_play_sound(snd_rock_break,4,false)
 	audio_play_sound(snd_clock_tick,4,true)
-		audio_stop_sound(snd_escape_lowsanity)
+	time_source_start(timer_cave_crumble);
+	audio_stop_sound(snd_escape_lowsanity)
 }
 
 if (!audio_played) and global.sanity <= 40 {
