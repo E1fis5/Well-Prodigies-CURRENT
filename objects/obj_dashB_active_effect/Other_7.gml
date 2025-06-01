@@ -11,3 +11,8 @@ if (sprite_index = spr_dBoost_mindSplit_swap)
 {
 	sprite_index = spr_dashB_active_effect;
 }
+
+if (sprite_index = spr_dBoost_super_spawn2)
+{
+	sprite_index = spr_dBoost_super_active;
+}

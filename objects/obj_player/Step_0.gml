@@ -15,27 +15,22 @@ state_crawl();
 		sprite_index = spr_player_bomb
 		image_xscale = 1
 		image_yscale = 1
-		bombActive = true
+		bomb_active = true
 		global.dJump_active = false
 		global.particle_start = false
 	}
 
 
 
-
-	if (place_meeting(x,y,obj_bomb_launcher)) and (bombActive = true)
+	if (place_meeting(x,y,obj_bomb_launcher))
 	{
 		grv = -1
 	}
 
 
-
-
-	if grv = -1 and (!place_meeting(x,y,obj_ladder_wood))
+	if grv = -1
 	{
 		sprite_index = spr_player_bomb
-		image_xscale = 1
-		image_yscale = 1
 	}
 
 
@@ -55,15 +50,22 @@ state_crawl();
 
 
 
-	if sprite_index = spr_player_bomb or grv = -1
+	if (bomb_active = true)
 	{
-		walksp = 2.25;
+		if (bomb_speed = false)
+		{
+			walksp -= 5;
+			bomb_speed = true;
+		}
 		can_dash = true;
 		dash_distance = 400;
 		dash_time = 19;
 		if (input_check("dash"))
 		{
 			 audio_play_sound(snd_dash_explosion,5,false);
+			 bomb_speed = false;
+			 bomb_active = false;
+			 walksp += 5;
 		}
 	}
 
@@ -269,65 +271,89 @@ if (global.walljumps >= 7) and (global.walljump_boost2 = false)
 		   {
 			   global.dash_amount += 1;
 		   }
-		   //Dash Boost
+		   //Dash Joost
 		   	if (global.dash_amount >= 2)
 	{
 		if (!instance_exists(obj_dashJoost_counter)) and dashJoost_hit_disable = false
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter);
-			walksp += 0.25;
+			if (!dashJoost_speed_cancel)
+			{
+				walksp += 0.25;
+			}
 		}
 	}
 
-	if (global.dash_amount >= 3)
+	if (global.dash_amount = 3)
 	{
 		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
-			walksp += 0.35;
+			if (!dashJoost_speed_cancel)
+			{
+				walksp += 0.35;
+			}
 		}
 	}
 
-	if (global.dash_amount >= 4)
+
+	if (global.dash_amount = 4)
 	{
 		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
-			walksp += 0.45;
+			if (!dashJoost_speed_cancel)
+			{
+				walksp += 0.45;
+			}
 		}
 	}
-	if (global.dash_amount >= 5)
+	if (global.dash_amount = 5)
 	{
 		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
-			walksp += 0.50;
+			if (!dashJoost_speed_cancel)
+			{
+				walksp += 0.50;
+			}
 		}
 	}
 
-	if (global.dash_amount >= 6)
+	if (global.dash_amount = 6)
 	{
 		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+			if (!dashJoost_speed_cancel)
+			{
+				walksp += 0.50;
+			}
+		}
+		
+	}
+
+	if (global.dash_amount = 7)
+	{
+		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+		if (!dashJoost_speed_cancel)
+		{
 			walksp += 0.55;
 		}
-	}
-
-	if (global.dash_amount >= 7)
-	{
-		if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
-		{
-			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
 		}
-		walksp += 0.55;
 	}
 
 	if (global.dash_amount >= 8)
 	{
 		global.dash_amount = 8;
 		dashJoost_hit_disable = true;
-		walksp += 0.55;
+		if (!dashJoost_speed_cancel)
+		{
+			walksp += 0.55;
+		}
+		dashJoost_speed_cancel = true;
 		if (!instance_exists(obj_dashJoost_maxxed_effect))
 		{
 			instance_create_depth(-999,-999,-9000,obj_dashJoost_maxxed_effect);
@@ -341,6 +367,7 @@ if (global.walljumps >= 7) and (global.walljump_boost2 = false)
 	if (global.dash_cancel_speed = true)
 	{
 		global.dash_amount = 0;
+		dashJoost_speed_cancel = false;
 			if (instance_exists(obj_dashJoost_counter))
 		{
 			instance_destroy(obj_dashJoost_counter);
@@ -351,28 +378,64 @@ if (global.walljumps >= 7) and (global.walljump_boost2 = false)
 			instance_destroy(obj_dashJoost_maxxed_effect);
 		}
 	}
-	if (onground = true) and (!instance_exists(obj_dashjoost_pause))
+	if (onground = true) and (!instance_exists(obj_dashjoost_pause)) and (!instance_exists(obj_dashB_active_effect))
 	{
 		global.dash_cancel_speed = true;
+		if (global.dash_amount = 2)
+		{
+			walksp -= 0.25;
+		}
+		
+			if (global.dash_amount = 3)
+			{
+				walksp -= 0.6;
+			}
+			
+				if (global.dash_amount = 4)
+				{
+					walksp -= 1.05;
+				}
+					if (global.dash_amount = 5)
+					{
+						walksp -= 1.55;
+					}
+					
+						if (global.dash_amount = 6)
+						{
+							walksp -= 2.05;
+						}
+						
+							if (global.dash_amount = 7)
+							{
+								walksp -= 2.60;
+							}
+							
+								if (global.dash_amount = 8)
+								{
+									walksp -= 3.15;
+								}
 	}
 
 //Score Buffs
 
-if (score >= 7000)
+if (score >= 7000) and (!score_boost1)
 {
 	walksp += 0.55;
+	score_boost1 = true;
 }
 
 
-if (score >= 12000)
+if (score >= 12000) and (!score_boost2)
 {
 	walksp += 0.55;
+	score_boost2 = true;
 }
 
 
-if (score >= 20000)
+if (score >= 20000) and (!score_boost3)
 {
 	walksp += 1;
+	score_boost3 = true;
 }
 
 
@@ -390,25 +453,28 @@ if (score >= 20000)
 
 //Lap Wizard Boost
 
-	if (instance_exists(obj_Lwiz_mini))
+	if (instance_exists(obj_Lwiz_mini)) and (!R2_boost)
 	{
 		walksp += 0.95;
 		dash_distance = 260;
 	    dash_time = 18;
+		R2_boost = true;
 	} 
 
 	//Sanity values
 	
-	if (global.sanity >= 220) and (bombActive = false)
+	if (global.sanity >= 250) and (!sanity_boost1)
 	{
-		walksp += 0.35
+		walksp += 0.35;
+		sanity_boost1 = true;
 	}
 
-	if (global.sanity <= 100) and (bombActive = false)
+	if (global.sanity <= 100) and (!sanity_slow)
 	{
-		walksp -= 0.55
-		dash_distance = 175
-	    dash_time = 15
+		sanity_slow = true;
+		walksp -= 0.85;
+		dash_distance = 175;
+	    dash_time = 15;
 	}
 
 
@@ -579,35 +645,8 @@ if (score >= 20000)
 		walksp += 0.45;
 	}
 	//Power Crawl
-	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
-	{
-		time_source_start(timer_power_crawl);
-		global.powercrawl = true;
-		if (!instance_exists(obj_blood_effect))
-		{
-			instance_create_depth(x,y,399,obj_blood_effect);
-		}
-	if (!input_check("down"))
-	{
-		instance_destroy(obj_blood_effect);
-	}
-	if (global.health <= 1)
-	{
-		time_source_start(timer_power_crawl_1_health);
-		time_source_pause(timer_power_crawl);
-	}
-	else
-	{
-		time_source_stop(timer_power_crawl_1_health);
-	}
-	}
-	else
-		{
-			time_source_pause(timer_power_crawl);
-			instance_destroy(obj_blood_effect);
-			time_source_pause(timer_power_crawl_1_health);
-		}
-
+	state_PCrawl();
+	
 	//Noclip
 	if (global.debug_active = true) and (global.noclip = true)
 	{
@@ -620,9 +659,7 @@ if (score >= 20000)
 		{
 			grv = -999;
 		}
-		walksp = 25;
 	}
-
 
 //Dash boost
 if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!instance_exists(obj_dBoost_additive))
@@ -632,6 +669,10 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!i
 	audio_play_sound(snd_dBoost_start,6,false);
 	instance_create_depth(x,y,-999,obj_dBoost_additive);
 	global.sanity += 5;
+	if (!global.health >= 6)
+	{
+		global.health += 0.25;	
+	}
 	if (global.dash_Mindsplit = true)
 	{
 		global.sanity -= 15;

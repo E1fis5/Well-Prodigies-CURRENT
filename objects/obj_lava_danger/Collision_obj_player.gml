@@ -8,4 +8,3 @@ if !instance_exists(obj_transition) and (global.damage_blocker = false)
 	   instance_create_depth(x,y,-9999,obj_dashBoost_pause);
 }
 
-obj_player.walksp += 2;

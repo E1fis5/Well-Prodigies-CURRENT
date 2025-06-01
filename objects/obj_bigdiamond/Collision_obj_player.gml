@@ -20,5 +20,5 @@ if (global.sanity >= 300)
 }
 
 
-instance_create_depth(-999,-999,-9990,obj_gem_notif);
+instance_create_depth(-999,-999,-9998,obj_gem_notif);
 instance_destroy(obj_emerald_sparkle);

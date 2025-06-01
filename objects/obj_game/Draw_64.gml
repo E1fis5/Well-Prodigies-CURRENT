@@ -7,9 +7,13 @@ if (global.debug_active = true)
 		draw_text(100,700,obj_player.walksp);
 			draw_text(100,500,obj_player.dash_distance);
 				draw_text(100,400,obj_player.vsp_wjump);
-					if (obj_player.bombActive = true)
+					if (obj_player.up_cancel_eff = true)
 					{
 						draw_text(100,600,"1");
+					}
+					if (obj_player.up_cancel_eff = false)
+					{
+						draw_text(100,600,"0");
 					}
 	}
 	if (instance_exists(obj_jestraught_play))

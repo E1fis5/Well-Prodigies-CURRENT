@@ -14,6 +14,9 @@ if (global.magnet_collect_strong_pull = true)
 		global.sanity += 3;
 	}
 }
+
+instance_create_depth(-999,-999,-9800,obj_bigdiamond_notif);
+
 instance_destroy();
 
 audio_play_sound(snd_collect_medium,5,false);

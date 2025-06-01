@@ -9,8 +9,8 @@
   "name":"obj_scoretext",
   "overriddenProperties":[],
   "parent":{
-    "name":"hud",
-    "path":"folders/Objects/hud.yy",
+    "name":"score",
+    "path":"folders/Objects/hud/score.yy",
   },
   "parentObjectId":null,
   "persistent":false,

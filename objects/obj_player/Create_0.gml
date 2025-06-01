@@ -80,11 +80,21 @@ onground = false
 global.wallboost_amount = 0;
 global.dash_amount = 0;
 global.doll_ability_active = false;
+//Speed control
+score_boost1 = false;
+score_boost2 = false;
+score_boost3 = false;
+dashJoost_speed_cancel = false;
+sanity_boost1 = false;
+sanity_slow = false;
+R2_boost = false;
+bomb_speed = false
+bomb_active = false
+slide_boost = false;
 //Dash
 can_dash = false
 dash_distance = 190
 dash_time = 16
-bombActive = false
 //Lapping
 global.lap2_passed = false;
 global.fall_effect_destroy = false
@@ -154,6 +164,7 @@ var dBoost_deactivate = function()
 		instance_destroy(obj_dBoost_additive);
 		instance_destroy(obj_dashB_active_effect);
 		walksp -= 0.65;
+		global.dboost_chance_active = false;
 		instance_create_depth(x,y,-9999,obj_dashjoost_pause);
 		audio_play_sound(snd_dashboost_diminish,6,false);
 				if (global.dash_Mindsplit = true)
@@ -203,6 +214,8 @@ timer_mindSplit_cooldown = time_source_create(time_source_game,55,time_source_un
 //States
 state_normal = function()
 {
+
+//Important Movement blah blah blah
 walljumpdelay =max(walljumpdelay-1,0);
 if (walljumpdelay == 0) 
 hsp =(input_check("right") - input_check("left")) * walksp
@@ -269,6 +282,8 @@ if (input_check("run") = false) and (input_check("jump") = true) and (grv = -1 =
 {
 	grv = 0.07
 }
+
+
 
 
 //Double Jump
@@ -379,6 +394,7 @@ if player_left = false && input_check("right") = false
 	image_yscale = 1
 }
 }
+
 stateNormal = state_normal
 
 //Crawl state
@@ -395,7 +411,7 @@ if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood) 
 	
 }
 }
-
+//Fastfall State
 state_FastFall = function()
 {
 	if (input_check("down") = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (onground = false)
@@ -409,6 +425,52 @@ state_FastFall = function()
 	}
 	global.fallspr_deactivate = true;
 	global.dJump_active = false;
+	stateUpcancel = state_FastFall;
+}
+else
+{
+	up_cancel_eff = false;
 }
 }
+
+
+//Slide State
+	state_PCrawl = function()
+	{
+	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
+	{
+		if (!slide_boost)
+		{ 
+			walksp += 2.25;
+			slide_boost = true;
+		}
+		time_source_start(timer_power_crawl);
+		global.powercrawl = true;
+		if (!instance_exists(obj_blood_effect))
+		{
+			instance_create_depth(x,y,399,obj_blood_effect);
+		}
+
+	if (global.health <= 1)
+	{
+		time_source_start(timer_power_crawl_1_health);
+		time_source_pause(timer_power_crawl);
+	}
+	else
+	{
+		time_source_stop(timer_power_crawl_1_health);
+	}
+	}
+	else
+		{
+			time_source_pause(timer_power_crawl);
+			instance_destroy(obj_blood_effect);
+			time_source_pause(timer_power_crawl_1_health);
+			if (slide_boost)
+			{
+				walksp -= 2.25;
+				slide_boost = false;
+			}
+		}
+	}
 depth = 400

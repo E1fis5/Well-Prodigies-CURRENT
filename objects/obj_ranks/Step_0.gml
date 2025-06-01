@@ -4,7 +4,7 @@ if (score <= 0)
 	 sprite_index = spr_ranks_F
    }
    
-   if score >= 1850
+   if score >= 2000
    {
 	 sprite_index = spr_ranks_D
    }

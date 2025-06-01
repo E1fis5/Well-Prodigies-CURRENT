@@ -16,7 +16,7 @@ var wither_drain = function()
 
 sanityTimerHard = time_source_create(time_source_game,11.5,time_source_units_seconds,sanity_drain, [], -1);
 sanityTimerEscape = time_source_create(time_source_game,9.5,time_source_units_seconds,sanity_drain, [], -1);
-sanityTimerWither = time_source_create(time_source_game,15,time_source_units_seconds,wither_drain,[],-1);
+sanityTimerWither = time_source_create(time_source_game,20,time_source_units_seconds,wither_drain,[],-1);
 depth = -10000;
 x = -999;
 y = -999;
