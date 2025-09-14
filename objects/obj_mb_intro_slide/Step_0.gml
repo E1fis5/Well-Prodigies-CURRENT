@@ -8,7 +8,13 @@ if (input_check_pressed("accept"))
 	  global.scoreHider = false
 	  global.escape_transition_end = false
 	  audio_stop_sound(snd_wellhub)
+	  if (!instance_exists(obj_health))
+	  {
+		  	instance_create_depth(-999,-999,-9999,obj_health);
+			instance_create_depth(-999,-999,-10000,obj_health_bg);
+	  }
 	  global.gem_counter = 0
+	  obj_game.level = 3;
 	  instance_destroy();
 	  instance_destroy(obj_cd_intro_start_top);
 	  instance_destroy(obj_cd_cartridge);

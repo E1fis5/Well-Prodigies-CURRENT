@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.037551,
+  "duration":1.996916,
   "name":"snd_rank_up",
   "parent":{
     "name":"collectables",

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":154.032,
+  "duration":153.99477,
   "name":"snd_menu_festive",
   "parent":{
     "name":"Sounds",

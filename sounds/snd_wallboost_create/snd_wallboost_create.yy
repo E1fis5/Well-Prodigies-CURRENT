@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":5.472,
+  "duration":5.433492,
   "name":"snd_wallboost_create",
   "parent":{
     "name":"footsteps",

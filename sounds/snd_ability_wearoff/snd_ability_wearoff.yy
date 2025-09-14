@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.011429,
+  "duration":1.9736961,
   "name":"snd_ability_wearoff",
   "parent":{
     "name":"shop",

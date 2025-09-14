@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":4.368,
+  "duration":4.3440137,
   "name":"snd_monkey_kill",
   "parent":{
     "name":"Sounds",

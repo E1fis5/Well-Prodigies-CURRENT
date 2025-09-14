@@ -5,6 +5,13 @@ if (instance_exists(obj_player))
 	obj_player.y = target_y;
 }
 
+if (instance_exists(obj_doll_stationary))
+{
+	obj_doll_stationary.x = target_x;
+	obj_doll_stationary.y = target_y;
+}
+
+
 if (instance_exists(obj_jestraught_play))
 {
 	obj_jestraught_play.x = target_x;

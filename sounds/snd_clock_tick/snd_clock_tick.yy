@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":25.260408,
+  "duration":25.216871,
   "name":"snd_clock_tick",
   "parent":{
     "name":"Sounds",

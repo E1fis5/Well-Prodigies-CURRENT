@@ -1,5 +1,6 @@
 if (!instance_exists(obj_dashB_active_effect))
 {
+	global.damage = true;
 	instance_destroy();
 	global.health -= 0.3;
 	score -= 75;

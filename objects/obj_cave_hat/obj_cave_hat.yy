@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cave_hat",
-    "path":"sprites/spr_cave_hat/spr_cave_hat.yy",
+    "name":"spr_dunce_hat",
+    "path":"sprites/spr_dunce_hat/spr_dunce_hat.yy",
   },
   "spriteMaskId":null,
   "visible":true,

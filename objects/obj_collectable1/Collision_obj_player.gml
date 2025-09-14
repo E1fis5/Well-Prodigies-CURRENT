@@ -23,10 +23,6 @@ audio_play_sound(snd_collectable_collect,4,false);
 
 instance_create_depth(x,y,-1000,obj_collect_effect)
 
-if (global.sanity <= 80)
-{
-	score -= 4
-}
 
 global.sanity += 0.2
 

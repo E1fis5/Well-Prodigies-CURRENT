@@ -1,8 +1,8 @@
-if (global.timer < 30)
-{
+
+if (global.isActive) and (global.timer < 30)
+{ 
 	sprite_index = spr_timer_broken;
-	audio_sound_gain(snd_clock_tick,1.85,90);
-}
+}	
 
 
 
@@ -13,31 +13,17 @@ if (global.timer = 0) and (global.isActive = true) and (time_defecit = false)
    global.sanity = 80;
    audio_sound_pitch(snd_escape,0.9);
    audio_sound_pitch(snd_lap2,0.9);
+   if (timesup_sound = false)
+   {
+	   audio_play_sound(snd_timesup,9,false,1.5);
+	   timesup_sound = true;
+   }
+   time_source_stop(timer_escape_drain);
 }
 else
 {
 	time_source_stop(global.timer_drain);
 	audio_sound_pitch(snd_escape,1);
-}
-
-
-
-
-if (global.isActive && global.timer > 0) and (!instance_exists(obj_doll))
-{
-    global.timer -= 1 / room_speed; // Decrement the timer by 1 second each step
-   image_speed = 1;
-}
-
-if (instance_exists(obj_doll)) and (global.isActive = true) and (global.timer > 0)
-{
-	global.timer -= 0.9 / room_speed;
-	image_speed = 0.9;
-	if (instance_exists(obj_voodoo_magic_shop_item))
-	{
-		global.timer += 0.1 / room_speed;
-		image_speed = 0.8;
-	}
 }
 
 
@@ -49,4 +35,10 @@ if (instance_exists(obj_hide_hud))
 else
 {
 	visible = true
+}
+
+//Doll Buff
+if (global.dollbuff) and (!dollbuff_activated)
+{
+	dollbuff_activated = true;
 }

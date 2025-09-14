@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":4.91102,
+  "duration":4.8761907,
   "name":"snd_freeze_damage",
   "parent":{
     "name":"Sounds",

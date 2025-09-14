@@ -10,6 +10,7 @@ if (input_check_pressed("accept"))
 	  audio_stop_sound(snd_wellhub)
 	  global.gem_counter = 0
 	  obj_game.level = 2;
+	  obj_game.gt_disable = true;
 	  instance_destroy();
 	  instance_create_depth(-999,-999,-9999,obj_health);
 	  instance_create_depth(-999,-999,-10000,obj_health_bg);
@@ -20,15 +21,11 @@ if (input_check_pressed("accept"))
 	   {
 		   instance_create_depth(1000,1000,-9999,obj_score);
 	   }
-	  	  if (!instance_exists(obj_sanitymeter))
+	  	  if (!instance_exists(obj_hypothermia_meter))
 	  {
-		  instance_create_depth(-999,-999,-9999,obj_sanitymeter);
+		  instance_create_depth(-999,-999,-9999,obj_hypothermia_meter);
 		  instance_create_depth(-999,-999,-9999,obj_sanity_bg);
 	  }
-	  	  if (instance_exists(obj_sanitymeter))
-			{
-				 time_source_start(obj_sanitymeter.sanityTimerHard);
-			}
 	  
        if (!instance_exists(obj_ranks))
 	   {

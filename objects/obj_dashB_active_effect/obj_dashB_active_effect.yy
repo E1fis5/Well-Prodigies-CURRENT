@@ -10,8 +10,8 @@
   "name":"obj_dashB_active_effect",
   "overriddenProperties":[],
   "parent":{
-    "name":"effects",
-    "path":"folders/Objects/effects.yy",
+    "name":"dash_boost",
+    "path":"folders/Objects/effects/dash_boost.yy",
   },
   "parentObjectId":null,
   "persistent":true,

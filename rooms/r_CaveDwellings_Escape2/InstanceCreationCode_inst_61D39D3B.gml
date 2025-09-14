@@ -1,3 +1,3 @@
-target_x = 2272
-target_y = 64
-target_rm = r_CaveDwellings7
+target_x = 3584
+target_y = 1120
+target_rm = r_CaveDwellings_Escape2

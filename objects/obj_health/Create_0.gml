@@ -5,6 +5,5 @@ x = -999
 y = -999;
 
 
-
-
+visible = false;
 depth = -10000

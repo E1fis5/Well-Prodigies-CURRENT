@@ -8,8 +8,8 @@
   "name":"obj_off_vcr",
   "overriddenProperties":[],
   "parent":{
-    "name":"mainmenu_buttons",
-    "path":"folders/Objects/mainmenu_buttons.yy",
+    "name":"On or Off Buttons",
+    "path":"folders/Objects/mainmenu_buttons/On or Off Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

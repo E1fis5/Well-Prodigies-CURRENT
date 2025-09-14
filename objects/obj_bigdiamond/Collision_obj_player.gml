@@ -12,11 +12,11 @@ audio_play_sound(snd_big_collect,0,false);
 global.gem_counter += 1;
 global.gems_collected += 1;
 
-global.sanity += 20
+global.sanity += 30;
 
 if (global.sanity >= 300)
 {
-	global.sanity -= 20
+	global.sanity -= 30;
 }
 
 

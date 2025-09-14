@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":4.08,
+  "duration":4.0402946,
   "name":"snd_dash_block_break",
   "parent":{
     "name":"Sounds",

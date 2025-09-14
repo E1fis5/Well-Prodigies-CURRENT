@@ -4,4 +4,4 @@ target_rm = r_CaveDwellings10;
 
 time_amount = 0;
 score_add = 1950;
-
+enclosed_check = true;

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":6.264,
+  "duration":6.24,
   "name":"snd_goober_Run",
   "parent":{
     "name":"Sounds",

@@ -1,4 +1,4 @@
-draw_sprite(spr_lap2_graph,1,890,985)
+draw_sprite(sprite_index,image_index,890,985)
 
 
 

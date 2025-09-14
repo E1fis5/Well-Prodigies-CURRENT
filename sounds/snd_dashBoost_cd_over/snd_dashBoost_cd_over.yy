@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.368,
+  "duration":1.33517,
   "name":"snd_dashBoost_cd_over",
   "parent":{
     "name":"Sounds",

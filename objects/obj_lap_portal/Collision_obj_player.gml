@@ -4,6 +4,16 @@ if !instance_exists(obj_transition)
       inst.target_x = target_x;
 	  inst.target_y = target_y;
       inst.target_rm = target_rm;
+	  	  if (outside_check)
+	  {
+		  global.outside = true;
+		  enclosed_check = false;
+	  }
+	  if (enclosed_check)
+	  {
+		  global.outside = false;
+		  outside_check = false;
+	  }
 }
  audio_stop_sound(snd_escape)
  audio_play_sound(snd_lap,3,false)
@@ -38,12 +48,8 @@ if (global.escapeoverlay_trigger = true)
 time_source_start(global.lap2_drain)
 
 
-if (!instance_exists(obj_Lwiz_mini))
-{
-	instance_create_depth(-999,-999,399,obj_Lwiz_mini);
-}
-
-if (!instance_exists(obj_lap_boost_sign))
+if (!instance_exists(obj_lap_boost_sign)) and (global.dash_amount = 8) 
 {
 	instance_create_depth(-999,-999,401,obj_lap_boost_sign);
+	instance_create_depth(-999,-999,399,obj_Lwiz_mini);
 }

@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_sign_point",
-    "path":"sprites/spr_sign_point/spr_sign_point.yy",
+    "name":"spr_escapesign1_remake",
+    "path":"sprites/spr_escapesign1_remake/spr_escapesign1_remake.yy",
   },
   "spriteMaskId":null,
   "visible":true,

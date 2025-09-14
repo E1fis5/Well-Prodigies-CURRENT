@@ -100,6 +100,7 @@ if (global.sanity <= 130) and (!instance_exists(obj_sanity_notif))
 	instance_create_depth(0,0,-9999,obj_sanity_notif);
 	audio_play_sound(snd_mindSplit_end,6,false);
 	instance_create_depth(-999,-999,-11000,obj_sanity_overlay);
+	global.player_insane = true;
 }
 
 if (global.sanity <= 120)
@@ -125,7 +126,6 @@ if (global.sanity <= 90)
 if (global.sanity <= 80)
 {
 	image_index = 23;
-	time_source_start(sanityTimerWither);
 }
 
 if (global.sanity <= 70)

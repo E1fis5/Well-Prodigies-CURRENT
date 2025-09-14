@@ -5,13 +5,13 @@ if !instance_exists(obj_transition)
 	  inst.target_y = target_y;
       inst.target_rm = target_rm;
 }
-
 	score = 0
 	global.sanity = 210;
 	global.timer = 0
 	audio_stop_sound(snd_escape)
 	audio_stop_sound(snd_lap2)
 	global.isActive = false
+	global.outside = false;
 	if (instance_exists(obj_escape_timer))
 	{
 		time_source_stop(obj_escape_timer.timer_cave_crumble);
@@ -60,3 +60,29 @@ if !instance_exists(obj_transition)
 		global.challenge_mode = false;
 		global.health_lock = false;
 		global.fakeout_pause = false;
+		obj_player.score_boost1 = false;
+		obj_player.score_boost2 = false;
+		obj_player.score_boost3 = false;
+		obj_player.sanity_boost1 = false;
+		obj_player.sanity_slow = false;
+		obj_player.R2_boost = false;
+		obj_player.bomb_speed = false;
+		obj_player.bomb_active = false;
+		obj_player.slide_boost = false;
+		obj_player.shop_shoe_boost = false;
+		obj_player.voodoo_dBoost = false;
+		obj_player.walksp = 8.55;
+		global.dash_amount = 0;
+		if (instance_exists(obj_dashJoost_counter))
+		{
+			instance_destroy(obj_dashJoost_counter);
+			obj_player.dashJoost_speed_cancel = false;
+			obj_player.dashJoost_hit_disable = false;
+		}
+		
+if (instance_exists(obj_dashB_active_effect))
+{
+	instance_destroy(obj_dashB_active_effect)
+	time_source_stop(obj_player.timer_dBoost_deactivate);
+	instance_destroy(obj_dBoost_additive);
+}

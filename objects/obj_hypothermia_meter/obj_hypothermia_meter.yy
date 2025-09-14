@@ -2,9 +2,9 @@
   "$GMObject":"",
   "%Name":"obj_hypothermia_meter",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_hypothermia_meter",
@@ -13,7 +13,10 @@
     "name":"glacial_tundra_stuff",
     "path":"folders/Objects/glacial_tundra_stuff.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_sanitymeter",
+    "path":"objects/obj_sanitymeter/obj_sanitymeter.yy",
+  },
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

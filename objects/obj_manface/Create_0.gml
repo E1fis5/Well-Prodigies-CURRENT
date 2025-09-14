@@ -1,0 +1,1 @@
+instance_create_depth(-999,-999,-9999,obj_boxnite_jumpscare);

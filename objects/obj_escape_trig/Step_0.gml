@@ -6,3 +6,8 @@ else {
     image_alpha = 0; // Make the object invisible in all other rooms
 }
 
+if (impact)
+{
+	obj_player.image_blend = c_black;
+	obj_player.depth = -500;
+}

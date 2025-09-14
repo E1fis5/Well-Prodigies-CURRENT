@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.809796,
+  "duration":0.76977324,
   "name":"snd_dash_p",
   "parent":{
     "name":"Sounds",

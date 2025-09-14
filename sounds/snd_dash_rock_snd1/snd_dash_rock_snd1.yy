@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.783673,
+  "duration":0.74303854,
   "name":"snd_dash_rock_snd1",
   "parent":{
     "name":"Sounds",

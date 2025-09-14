@@ -10,8 +10,8 @@ depth = 399
 
 if (global.cave_hat_follow = true)
 {
-	obj_cave_hat.x = obj_player.x + 7
-	obj_cave_hat.y = obj_player.y - 40
+	obj_cave_hat.x = obj_player.x - 5
+	obj_cave_hat.y = obj_player.y - 55
 	persistent = true;
 	if (input_check_pressed("down")) and (room = r_hat_room)
 	{
@@ -24,11 +24,3 @@ if (global.cave_hat_follow = true)
 	}
 }
 
-if (obj_player.player_left = true)
-{
-	sprite_index = spr_cave_hat_left;
-}
-else
-{
-	sprite_index = spr_cave_hat;
-}

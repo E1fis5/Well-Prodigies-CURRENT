@@ -1,6 +1,6 @@
-target_x = 2368
-target_y = 0
-target_rm = rWellhub2
+target_x = 909
+target_y = -1
+target_rm = rWellhub2_old
 
 
 

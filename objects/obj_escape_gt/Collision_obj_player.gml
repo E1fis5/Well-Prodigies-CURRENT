@@ -11,7 +11,6 @@ if (!audio_played)
 	audio_play_sound(snd_rock_break,4,false)
 	audio_play_sound(snd_clock_tick,4,true)
 	audio_stop_sound(snd_escape_lowsanity)
-	time_source_start(timer_cave_crumble);
 	time_source_stop(obj_sanitymeter.sanityTimerHard);
 	time_source_start(obj_sanitymeter.sanityTimerEscape);
 }
@@ -26,6 +25,7 @@ if (!global.escape_transition_end) and (!instance_exists(obj_escape_transition))
 if (!instance_exists(obj_escape_timer))
 {
 	instance_create_depth(-999,-999,-9999,obj_escape_timer)
+	global.grave_arise = true;
 }
 
 

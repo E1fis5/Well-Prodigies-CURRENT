@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":399.48,
+  "duration":399.44128,
   "name":"snd_music_ch2",
   "parent":{
     "name":"Sounds",

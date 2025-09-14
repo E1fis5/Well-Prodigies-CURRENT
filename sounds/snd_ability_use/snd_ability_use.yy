@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.089796,
+  "duration":2.043356,
   "name":"snd_ability_use",
   "parent":{
     "name":"shop",

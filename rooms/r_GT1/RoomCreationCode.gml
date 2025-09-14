@@ -11,3 +11,5 @@ audio_stop_sound(snd_escape)
 global.isActive = false
 
 score = 0
+
+audio_play_sound(snd_gt_wind,8,true);

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":73.58694,
+  "duration":73.5376,
   "name":"snd_wellhub",
   "parent":{
     "name":"shop",

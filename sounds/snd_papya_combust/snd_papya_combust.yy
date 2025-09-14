@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.776327,
+  "duration":1.7414966,
   "name":"snd_papya_combust",
   "parent":{
     "name":"Sounds",

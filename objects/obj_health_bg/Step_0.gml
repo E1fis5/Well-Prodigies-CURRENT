@@ -8,7 +8,12 @@ else
 	visible = true
 }
 
-if (global.hud_opac_decrease = true)
+if (global.damage)
 {
-	image_alpha = 0.3;
+	sprite_index = spr_health_bg_hurt;
+}
+
+if (!global.damage) and (global.isActive)
+{
+	sprite_index = spr_health_bg_escape;
 }

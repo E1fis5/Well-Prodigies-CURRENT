@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.888163,
+  "duration":0.8591383,
   "name":"snd_cosmetic_change",
   "parent":{
     "name":"Sounds",

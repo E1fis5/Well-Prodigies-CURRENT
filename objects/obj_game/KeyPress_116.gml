@@ -13,7 +13,8 @@ if (global.gamemode_easy = true)
 }
 if (global.gamemode_hard = true)
 {
-    global.timer = 999
+    global.timer = 999999;
+	global.grave_arise = true;
 }
 
 if (!global.escape_transition_end) and (!instance_exists(obj_escape_transition))

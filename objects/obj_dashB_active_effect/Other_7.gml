@@ -16,3 +16,8 @@ if (sprite_index = spr_dBoost_super_spawn2)
 {
 	sprite_index = spr_dBoost_super_active;
 }
+
+if (sprite_index = spr_dBoost_ending_explosion)
+{
+	instance_destroy();
+}

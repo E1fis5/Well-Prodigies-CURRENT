@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":305.2408,
+  "duration":305.2031,
   "name":"snd_escape_lowsanity",
   "parent":{
     "name":"player_sounds",
