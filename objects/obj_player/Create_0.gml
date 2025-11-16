@@ -24,6 +24,9 @@ global.damage_blocker = false;
 global.health_lock = false;
 global.challenge_mode = false;
 global.damage = false;
+//Score/Charge Mode 0 = Score 1 = Charge
+current_mode = 0;
+switch_cooldown = false;
 //Gravity
 hsp = 0;
 hsp_wjump = 5;
@@ -90,6 +93,7 @@ global.wallboost_amount = 0;
 global.dash_amount = 0;
 global.doll_ability_active = false;
 fastFall_avalible = true;
+upcancel_speed = false;
 //Speed control
 score_boost1 = false;
 score_boost2 = false;
@@ -106,6 +110,7 @@ shop_shoe_boost = false;
 voodoo_dBoost = false;
 doll_boost = false;
 restricted = false;
+immobile = false;
 speed_part_start = false;
 //Dash
 can_dash = false
@@ -126,6 +131,9 @@ Bomb_Dash_Active = false;
 dBoost_deactive = false;
 OH_dash_avalible = false;
 Bomb_dashes = 0;
+//Adrenaline/Damage
+adrenaline_speed_amount = 0;
+adrenaline_speed_loss = 0;
 //Lapping
 global.lap2_passed = false;
 global.fall_effect_destroy = false
@@ -170,12 +178,17 @@ up_dash_cancel = false;
 up_dash_distance = 45;
 captured_distance = 0;
 captured_time = 0;
-instance_create_depth(x,y,401,obj_nail_particle);
+adrenaline_boost = function()
+{
+	time_source_start(timer_adrenaline_speed_drain);
+	walksp += adrenaline_speed_amount;
+	instance_create_depth(x,y,401,obj_speed_particle);
+}
 //Mind Split
 global.mindSplit_active = false;
 global.dash_switch_mindSplit = false;
 global.dash_Mindsplit = false;
-global.dash_Normal = true;
+global.dash_Normal = false;
 //States
 haunt_cooldown = false;
 var haunt_cooldown_over = function()
@@ -188,6 +201,9 @@ var power_crawl_damage = function()
 {
 	instance_create_depth(x,y,399,obj_damage_effect1);
 	score -= 45
+	adrenaline_speed_amount = 2.5;
+	adrenaline_speed_loss = 0.05;
+	adrenaline_boost();
 	global.damage = true;
 	audio_play_sound(snd_player_hurt,6,false);
 	if (global.gamemode_hard = true)
@@ -198,6 +214,10 @@ var power_crawl_damage = function()
 
 var power_crawl_damage_1_hp = function()
 {
+	global.health -= 0.25;
+	adrenaline_speed_loss = 0.025;
+	adrenaline_speed_amount = 1.25;
+	adrenaline_boost();
 	global.damage = true;
 	instance_create_depth(x,y,399,obj_damage_effect1);
 	score -= 75
@@ -218,9 +238,11 @@ var dBoost_deactivate = function()
 		{
 			obj_dashB_active_effect.sprite_index = spr_dBoost_ending_explosion;
 		}
+		obj_health_dBoost_notif.sprite_index = spr_health_dashB_notif_destroy;
 		dash_distance -= 45;
 		dBoost_additives_active = false;
 		dash_damage -= 5;
+		time_source_stop(timer_dashB_afterimages);
 		if (instance_exists(obj_dashJoost_counter))
 		{
 			obj_dashJoost_counter.dashCounter_shake_warnin = true;
@@ -274,9 +296,11 @@ var lava_penalty = function()
 {
 	global.damage = true;
 	global.health -= 1;
-	walksp += 2.5;
-	time_source_stop(timer_lava_penalty);
 	audio_play_sound(snd_player_hurt,6,false);
+	adrenaline_speed_loss = 0.1;
+	adrenaline_speed_amount = 5;
+	adrenaline_boost();
+	walksp += 2.5;
 }
 
 //Extended Idle
@@ -291,8 +315,24 @@ var upcancel_boost = function()
 	upcancel_jump = false;
 	upcancel_pause = false;
 	grv = 0.07;
-	upcancel_avalible = true;
+	if (!onground)
+	{
+		upcancel_avalible = true;
+	}
+	if (upcancel_speed)
+	{
+		walksp -= 2;
+		upcancel_speed = false;
+	}
 }
+
+//Adrenaline Functions
+var adrenaline_speed_drain = function()
+{
+	walksp -= adrenaline_speed_loss;
+}
+
+timer_adrenaline_speed_drain = time_source_create(time_source_game,0.03,time_source_units_seconds,adrenaline_speed_drain,[],50);
 timer_upcancel_boost = time_source_create(time_source_game,0.85,time_source_units_seconds,upcancel_boost,[],1);
 //Upcancel Screenshake
 var Upcancel_screenshake = function()
@@ -313,6 +353,41 @@ var crawl_jump_remove = function()
 	time_source_stop(timer_crawl_jump);
 }
 timer_crawl_jump = time_source_create(time_source_game,0.5,time_source_units_seconds,crawl_jump_remove,[],1);
+//Hud Game Over Explosion
+var hud_explosion_start = function()
+{
+	if (instance_exists(obj_score))
+	{
+		time_source_start(obj_score.timer_hud_explosion_chain_sanity);
+		instance_create_depth(-999,-999,-10000,obj_hud_explosion_effect);
+		obj_hud_explosion_effect.hud_explosion_targetx = 1350;
+		obj_hud_explosion_effect.hud_explosion_targety = 0;
+		instance_destroy(obj_ranks);
+		instance_destroy(obj_rank_cover);
+		instance_destroy(obj_score);
+		audio_play_sound(snd_rock_break,8,false);
+		obj_gameover_effect.image_alpha = 0.4;
+	}
+}
+timer_hud_explosion_score = time_source_create(time_source_game,5,time_source_units_seconds,hud_explosion_start,[],1);
+//Hud Dash Boost Shake
+var hud_shake_start = function()
+{
+	global.hudshake = false;
+}
+
+//DashBoost Afterimagesss
+var dashB_afterimages = function()
+{
+	with (instance_create_depth(x,y,depth+1,obj_dBoost_trail))
+	{
+		sprite_index = other.sprite_index;
+		image_blend = choose(c_aqua,c_blue);
+		image_alpha = 1;
+	}
+}
+timer_dashB_afterimages = time_source_create(time_source_game,0.5,time_source_units_seconds,dashB_afterimages,[],-1);
+timer_hudshake =  time_source_create(time_source_game,0.2,time_source_units_seconds,hud_shake_start,[],1);
 //Dash Timer
 timer_dBoost_cooldown = time_source_create(time_source_game,3.5,time_source_units_seconds,dBoost_cooldown,[],-1);
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
@@ -325,14 +400,10 @@ timer_power_crawl_1_health = time_source_create(time_source_game,1,time_source_u
 timer_mindSplit_cooldown = time_source_create(time_source_game,55,time_source_units_seconds,mindSplit_cooldown,[],-1);
 //States
 state_normal = function()
-{
-	if (!restricted)
-{
-{
-
+{	
 //Important Movement blah blah blah
 walljumpdelay =max(walljumpdelay-1,0);
-if (walljumpdelay == 0) 
+if (walljumpdelay == 0) and (!immobile)
 hsp =(input_check("right") - input_check("left")) * walksp
 
 
@@ -393,15 +464,12 @@ if (wallclimb)
 //Walljump
 if (walljump) and (!onground)
 {
-	{
-		sprite_index = spr_player_walljump_normal;
-	}
+	sprite_index = spr_player_walljump_normal;
 	fallcancel = true;
 	if (player_left)
 	{
-		{
-			sprite_index = spr_player_walljump_left_normal;
-		}
+		sprite_index = spr_player_walljump_left_normal;
+		
 	}
 }
 }
@@ -430,10 +498,12 @@ if (canJump-- > 0) and (input_check_pressed("jump"))
 	global.grv_0 = false
 	global.particle_start = false
 	instance_create_depth(x + 8,y + 25,401,obj_fall_effect_cloud1);
-	if (upcancel_jump = true)
+	if (upcancel_jump = true) and (upcancel_speed = false)
 	{
+		upcancel_speed = true;
 		grv = 0.045;
 		can_dash = true;
+		walksp += 2;
 	}
 }
 
@@ -550,7 +620,6 @@ if input_check("left") and (wallclimb = 0)
 	fallcancel = false;
 	idle_active = true;
 }
-
 //Double Jump Sprite
 if (dJump_sprite_start) and (onground = false) and (!global.dJump_idle) and (!wallclimb)
 {
@@ -562,10 +631,9 @@ if (dJump_sprite_start) and (onground = false) and (!global.dJump_idle) and (!wa
 		sprite_index = spr_gem_collect_left;
 	
 	}
-	}
 }
 }
-}
+
 stateNormal = state_normal
 
 //Crawl state
@@ -590,11 +658,15 @@ state_FastFall = function()
 {
 	if (input_check("down") = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (upcancel_avalible) and (!slide_boost)
 {
-	
 	grv = 1.5
 	upcancel_active = true;
+	jump_allowed = false;
 	time_source_stop(timer_upcancel_boost);
 	sprite_index = spr_player_downp;
+	if (player_left)
+	{
+		sprite_index = spr_player_downp_left;
+	}
 	if (!instance_exists(obj_upcancel_effect)) and (up_cancel_eff = false)
 	{
 		instance_create_depth(x,y,399,obj_upcancel_effect);
@@ -602,10 +674,22 @@ state_FastFall = function()
 	}
 	global.fallspr_deactivate = true;
 	dJump_sprite_start = false;
+	with (instance_create_depth(x,y,depth+1,obj_trail_effect))
+	{
+		sprite_index = other.sprite_index;
+		image_blend = (c_ltgray);
+		image_alpha = 0.6;
+	}
 	walljump = false;
 	if (upcancel_jump = true)
 	{
 		upcancel_jump = false;
+		if (upcancel_speed)
+		{
+			upcancel_speed = false;
+			walksp -= 2;
+			time_source_stop(timer_upcancel_boost);
+		}
 	}
 	stateUpcancel = state_FastFall;
 	if (!drop_dash_avalible)
@@ -666,6 +750,14 @@ else
 	{
 	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
 	{
+		if (upcancel_speed)
+		{
+			upcancel_speed = false;
+			walksp -= 2;
+			time_source_stop(timer_upcancel_boost);
+			upcancel_jump = false;
+		}
+		upcancel_avalible = false;
 		if (!slide_boost)
 		{ 
 			walksp += 3;
@@ -760,4 +852,8 @@ state_Base = function()
 	can_dash = false;
 }
 	baseState = state_Base
+
+
+
+
 depth = 400

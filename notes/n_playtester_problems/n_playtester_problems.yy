@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"n_playtester_problems",
   "name":"n_playtester_problems",
   "parent":{

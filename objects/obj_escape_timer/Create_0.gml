@@ -1,9 +1,13 @@
 global.isActive = true;
 timesup_sound = false;
 timesup_sound2 = false;
+random_timeconfuse_chance = 0;
+timer_confuse_disable = true;
 tick_rate = 60;
 dollbuff_activated = false;
 grave_nerf1 = false;
+false_timer = 0;
+depth = -9999
 group = noone;
 CD_Dark_Layers = function()
 {
@@ -20,6 +24,7 @@ var escape_timer = function()
 	global.timer -= 1;
 	audio_stop_sound(snd_clock_tick);
 	audio_play_sound(snd_clock_tick,8,false);
+	false_timer -= 1;
 }
 
 var debug_timer = function()
@@ -58,6 +63,15 @@ var cave_crumble = function()
 		time_source_start(timer_lightning_light_disable);
 	}
 }
+var false_timer_disable = function()
+{
+	timer_confuse_disable = true;
+	audio_stop_sound(snd_clock_glitch1);
+	random_timeconfuse_chance = 0;
+	instance_create_depth(x,y,-10000,obj_clock_effect_glitch);
+}
+//Confused Timer Disable
+timer_confusion = time_source_create(time_source_game,20,time_source_units_seconds,false_timer_disable,[],1);
 //Doll Drains
 timer_drain_doll = time_source_create(time_source_game,70,time_source_units_frames,escape_timer,[],-1);
 timer_doll_voodoo_buff = time_source_create(time_source_game,80,time_source_units_frames,escape_timer,[],-1);

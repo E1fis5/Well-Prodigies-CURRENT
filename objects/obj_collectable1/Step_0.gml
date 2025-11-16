@@ -13,7 +13,16 @@ if (global.magnet_collect_strong_pull = true) and (distance_to_object(obj_shop_m
 	}
 	
 //Base collect aura
-if (instance_exists(obj_collectaura_hitbox)) and (distance_to_object(obj_collectaura_hitbox) < 30)
+if (instance_exists(obj_collectaura_hitbox)) and (distance_to_object(obj_collectaura_hitbox) < 50)
 {
 	move_towards_point(obj_collectaura_hitbox.x,obj_collectaura_hitbox.y, obj_player.walksp + 3);
+}
+
+if (obj_player.current_mode = 1)
+{
+	charge_gain = true;
+}
+else if (obj_player.current_mode = 0)
+{
+	charge_gain = false;
 }

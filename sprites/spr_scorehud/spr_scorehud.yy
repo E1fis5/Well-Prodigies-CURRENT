@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_scorehud",
   "bboxMode":0,
   "bbox_bottom":287,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0cd6e2a1-4850-44e9-a37f-cf5c396dec42","name":"0cd6e2a1-4850-44e9-a37f-cf5c396dec42","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0cd6e2a1-4850-44e9-a37f-cf5c396dec42","name":"0cd6e2a1-4850-44e9-a37f-cf5c396dec42","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -23,7 +23,7 @@
   ],
   "name":"spr_scorehud",
   "nineSlice":null,
-  "origin":0,
+  "origin":4,
   "parent":{
     "name":"score",
     "path":"folders/Sprites/hud/score.yy",
@@ -77,8 +77,8 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
-    "yorigin":0,
+    "xorigin":272,
+    "yorigin":144,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

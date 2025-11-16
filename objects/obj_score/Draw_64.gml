@@ -1,7 +1,12 @@
-if instance_exists(obj_player) and (global.scoreHider = false)
+if (!global.hudshake)
 {
-		    draw_sprite_ext(sprite_index,image_index,1350,0,image_xscale,image_yscale,0,c_white,image_alpha);
+	draw_sprite_ext(sprite_index,image_index,1622,144,image_xscale,image_yscale,0,c_white,image_alpha);
 }
+else
+{
+	draw_sprite_ext(sprite_index,image_index,1622 + random_range(5,-5),144 + random_range(5,-5),image_xscale,image_yscale,0,c_white,image_alpha);
+}
+
 
 
 if sprite_exists(spr_scorehud) and (global.scoreHider = false)
@@ -12,7 +17,7 @@ if sprite_exists(spr_scorehud) and (global.scoreHider = false)
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	
-	draw_text(1625,135, score);
+	draw_text(1670,189, score);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 }

@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index,image_index,hud_explosion_targetx,hud_explosion_targety,image_xscale,image_yscale,0,c_white,image_alpha);

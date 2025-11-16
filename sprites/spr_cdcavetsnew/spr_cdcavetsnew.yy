@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cdcavetsnew",
   "bboxMode":0,
   "bbox_bottom":143,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"1d73dc57-4d58-4d4e-82a3-e571d7d971b6","name":"1d73dc57-4d58-4d4e-82a3-e571d7d971b6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1d73dc57-4d58-4d4e-82a3-e571d7d971b6","name":"1d73dc57-4d58-4d4e-82a3-e571d7d971b6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_rank_gems",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"2c4c43aa-fa30-47f0-830a-fc0b7bed340f","name":"2c4c43aa-fa30-47f0-830a-fc0b7bed340f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"2c4c43aa-fa30-47f0-830a-fc0b7bed340f","name":"2c4c43aa-fa30-47f0-830a-fc0b7bed340f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

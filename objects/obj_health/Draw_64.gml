@@ -36,14 +36,18 @@ if (i <= 0)
 {
 	image_index = 6;
 	global.sanity = 0;
-	game_restart();
+	global.gameover_trigger = true;
+	global.hudshake = true;
 }
 
-if (visible)
+if (!global.hudshake)
 {
 	draw_sprite_ext(sprite_index,image_index,-70,220,image_xscale,image_yscale,0,c_white,image_alpha);
 }
-
+else
+{
+	draw_sprite_ext(sprite_index,image_index,-70 + random_range(5,-5),220 + random_range(5,-5),image_xscale,image_yscale,0,c_white,image_alpha);
+}
 
 
   

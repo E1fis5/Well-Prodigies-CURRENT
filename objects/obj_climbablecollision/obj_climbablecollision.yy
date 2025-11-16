@@ -35,5 +35,5 @@
     "path":"sprites/spr_wallclimbcollision/spr_wallclimbcollision.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

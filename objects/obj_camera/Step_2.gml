@@ -10,6 +10,11 @@ if instance_exists(obj_player)
 	y = obj_player.y - _camH/2;
 }
 
+if (instance_exists(obj_monkey_bot) and (obj_monkey_bot.character_switched))
+{
+	x = obj_monkey_bot.x - _camW/2;
+	y = obj_monkey_bot.y - _camH/2;
+}
 if instance_exists(obj_jestraught_play)
 {
 	x = obj_jestraught_play.x - _camW/2;

@@ -8,7 +8,7 @@ else
 	visible = true
 }
 
-if (global.hud_opac_decrease = true)
+if (global.hud_opac_decrease = true) or (obj_player.current_mode = 1)
 {
 	image_alpha = 0.3;
 }

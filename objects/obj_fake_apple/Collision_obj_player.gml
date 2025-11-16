@@ -10,6 +10,8 @@ if (global.abilityscore <= 550) and (global.magnet_collect_strong_pull = false)
 }
 instance_destroy();
 
+
+	
 audio_play_sound(snd_collectable_food,0,false,1,0,0.55);
 
 instance_create_depth(x,y,-1000,obj_collect_apple);
@@ -33,6 +35,9 @@ if (global.sanity >= 300)
 
 
 global.health -= 1;
+obj_player.adrenaline_speed_loss = 0.1;
+obj_player.adrenaline_speed_amount = 5;
+obj_player.adrenaline_boost();
 global.damage = true;
 
 

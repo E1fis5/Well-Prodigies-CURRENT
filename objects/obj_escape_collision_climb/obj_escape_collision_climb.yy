@@ -35,5 +35,5 @@
     "path":"sprites/spr_sanityblocker2/spr_sanityblocker2.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

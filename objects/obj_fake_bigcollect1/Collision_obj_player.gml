@@ -31,6 +31,9 @@ if (global.sanity >= 300)
 }
 
 global.health -= 0.45;
+obj_player.adrenaline_speed_loss = 0.045;
+obj_player.adrenaline_speed_amount = 2.25;
+obj_player.adrenaline_boost();
 global.damage = true;
 
 global.collectable_destroy = true

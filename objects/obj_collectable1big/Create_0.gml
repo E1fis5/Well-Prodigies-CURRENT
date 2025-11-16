@@ -1,7 +1,7 @@
 global.lap2 = false;
 global.collectable_destroy = false;
 infected_collect = false;
-
+charge_gain = false;
 if (global.player_insane)
 {
 		if(random(1) < 0.15)

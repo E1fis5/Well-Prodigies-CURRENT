@@ -1,7 +1,10 @@
-score += 350
-if (global.abilityscore <= 550) and (global.magnet_collect_strong_pull = false)
+if (!charge_gain)
 {
-	global.abilityscore += 20;
+	score += 350;
+}
+if (global.abilityscore <= 550) and (global.magnet_collect_strong_pull = false) and (charge_gain)
+{
+	global.abilityscore += 40;
 }
 instance_destroy();
 

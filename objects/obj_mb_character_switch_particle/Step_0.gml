@@ -1,0 +1,1 @@
+move_towards_point(obj_monkey_bot.x,obj_monkey_bot.y,12);

@@ -11,3 +11,12 @@ if (global.magnet_collect_strong_pull = true) and (distance_to_object(obj_shop_m
 	{
 			move_towards_point(obj_shop_magnet.x,obj_shop_magnet.y,obj_player.walksp + 2);
 	}
+	
+	if (obj_player.current_mode = 1)
+{
+	charge_gain = true;
+}
+else if (obj_player.current_mode = 0)
+{
+	charge_gain = false;
+}

@@ -108,20 +108,19 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 	if (place_meeting(x,y,obj_fan))
 	{
 		grv = -2;
-		walksp += 0.45;
 		sprite_index = spr_player1;
 	}
 
 
 	//Dash
-	if (can_dash) and (input_check_pressed("dash"))
+	if (can_dash) and (input_check_pressed("dash")) and (!immobile)
 	{
 		can_dash = false;
 		if (!OH_dash_avalible)
 		{
 			dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")));
 		}
-		else
+		if (OH_dash_avalible and (!onground))
 		{
 			dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")) - (input_check("up")));
 			if (input_check("up"))
@@ -131,10 +130,23 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 				audio_play_sound(snd_dashBoost_create,6,false,1.3,0,2);
 			}
 		}
+		if (onground)
+		{
+			dash_direction = point_direction(0,0,input_check("right")- input_check("left"),0);
+		}
+		//Upcancel
+		if (upcancel_speed)
+		{
+			upcancel_speed = false;
+			walksp -= 2;
+			time_source_stop(timer_upcancel_boost);
+			upcancel_jump = false;
+		}
+		//Distance Calculations
 		dash_sp = dash_distance/dash_time;
 		dash_energy = dash_distance;
-		stateNormal = Dashstate
-		sprite_index = spr_player_dash
+		stateNormal = Dashstate;
+		sprite_index = spr_player_dash;
 		fallcancel = true;
 		grv = 0
 		damage_deal = true;
@@ -215,10 +227,6 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 		image_blend = c_gray;
 		image_alpha = 0.6;
 		audio_sound_pitch(snd_dash_p,1)
-		if (instance_exists(obj_dashB_active_effect))
-		{
-			image_blend = c_navy
-			audio_sound_pitch(snd_dash_p,1.1)
 		{
 			if (global.dash_Mindsplit = true)
 			{
@@ -227,7 +235,6 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 			}
 		}
 		}
-	}
 	{
 		if (place_meeting(x + hsp, y, obj_collision_wall))
 	{
@@ -607,6 +614,14 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!i
 	time_source_start(timer_dBoost_deactivate);
 	walksp += 0.65;
 	dashBoost_fail = false;
+	global.hudshake = true;
+	time_source_start(timer_dashB_afterimages);
+	dashBoost_afterimages_trigger = true;
+	if (!instance_exists(obj_health_dBoost_notif))
+	{
+		instance_create_depth(-999,-999,-9998,obj_health_dBoost_notif);	
+	}
+	time_source_start(timer_hudshake);
 	audio_play_sound(snd_dBoost_start,6,false);
 	instance_create_depth(x,y,-999,obj_dBoost_additive);
 	global.sanity += 5;
@@ -765,4 +780,40 @@ if (walksp >= 17.5) and (!Dash_Scale3) and (!Dash_Scale_Disable)
 {
 	dash_distance += 30;
 	Dash_Scale3 = true;
+}
+
+//Immoble Character Switch
+if (immobile) and (input_check_pressed("dash")) and (!instance_exists(obj_mb_character_switch_particle))
+{
+	instance_create_depth(x,y,399,obj_mb_character_switch_particle);
+}
+
+if (global.gameover_trigger)
+{
+	sprite_index = spr_gameover;
+	immobile = true;
+	if (!instance_exists(obj_gameover_effect))
+	{
+		instance_create_depth(x,y,-399,obj_gameover_effect);
+		time_source_start(timer_hud_explosion_score);
+	}
+	depth = -9999;
+	if (layer_exists("Effect_Gameover"))
+	{
+		layer_set_visible("Effect_Gameover",true);
+	}
+	walksp = 0;
+	canJump = 0;
+}
+//Mode Switching
+if (current_mode = 0) and (instance_exists(obj_ability_bar)) and (input_check_pressed("mode_switch"))
+{
+	current_mode = 1;
+	obj_ability_bar.ability_selected = true;
+}
+else
+if (current_mode = 1) and (input_check_pressed("mode_switch"))
+{
+	current_mode = 0;
+	obj_ability_bar.ability_selected = false;
 }

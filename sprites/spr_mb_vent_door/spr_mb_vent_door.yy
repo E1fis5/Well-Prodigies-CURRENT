@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_mb_vent_door",
   "bboxMode":0,
   "bbox_bottom":215,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d233eab1-3245-478d-a633-e2c5d2c4b3d5","name":"d233eab1-3245-478d-a633-e2c5d2c4b3d5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d233eab1-3245-478d-a633-e2c5d2c4b3d5","name":"d233eab1-3245-478d-a633-e2c5d2c4b3d5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

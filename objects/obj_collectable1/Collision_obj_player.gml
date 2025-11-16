@@ -1,10 +1,13 @@
-score += 11
+if (!charge_gain)
+{
+	score += 11;
+}
 if (infected_collect = true)
 {
 	score -= 4;
 }
 
-if (global.abilityscore <= 550) and (global.magnet_collect_strong_pull = false)
+if (global.abilityscore <= 550) and (global.magnet_collect_strong_pull = false) and (charge_gain)
 {
 	global.abilityscore += 1;
 }

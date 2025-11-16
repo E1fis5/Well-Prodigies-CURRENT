@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_kills_meter",
   "bboxMode":0,
   "bbox_bottom":185,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6e4f9821-7f16-492b-99e5-4719c15093bc","name":"6e4f9821-7f16-492b-99e5-4719c15093bc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6e4f9821-7f16-492b-99e5-4719c15093bc","name":"6e4f9821-7f16-492b-99e5-4719c15093bc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -63,6 +63,8 @@
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
+    "seqHeight":192.0,
+    "seqWidth":384.0,
     "showBackdrop":true,
     "showBackdropImage":false,
     "timeUnits":1,

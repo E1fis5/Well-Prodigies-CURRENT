@@ -1,6 +1,6 @@
 if (!global.isActive_rift) {
     global.isActive_rift = true;
-    global.timer_rift = 80
+    global.timer_rift = 45
 }
 
 if (!audio_played) and (global.isActive = false)
@@ -19,5 +19,5 @@ if (global.gamemode_easy = true)
 
 if (global.gamemode_hard = true)
 {
-	global.timer_rift = 65
+	global.timer_rift = 45
 }

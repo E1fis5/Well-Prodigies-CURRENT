@@ -22,3 +22,16 @@ x = -999;
 y = -999;
 time_source_start(sanityTimerHard);
 heat = 0;
+
+//Hud Explosion Press
+var hud_explosion_press = function()
+{
+	if (instance_exists(obj_player))
+	{
+		instance_create_depth(obj_player.x + 3,obj_player.y - 85,-10000,obj_x_press);
+		audio_play_sound(snd_select,7,false);
+		obj_gameover_effect.image_alpha = 0.8;
+	}
+}
+
+timer_hud_explosion_press = time_source_create(time_source_game,5,time_source_units_seconds,hud_explosion_press,[],1);

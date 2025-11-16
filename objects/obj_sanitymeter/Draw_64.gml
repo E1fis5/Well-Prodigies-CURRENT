@@ -1,7 +1,13 @@
 
 
-
-draw_sprite_ext(sprite_index,image_index,-50,9,image_xscale,image_yscale,0,c_white,image_alpha);
+if (!global.hudshake)
+{
+	draw_sprite_ext(sprite_index,image_index,-50,9,image_xscale,image_yscale,0,image_blend,image_alpha);
+}
+else
+{
+	draw_sprite_ext(sprite_index,image_index,-50 + random_range(5,-5),9 + random_range(5,-5),image_xscale,image_yscale,0,c_white,image_alpha);
+}
 
 
 	if (global.sanity <= 300 )

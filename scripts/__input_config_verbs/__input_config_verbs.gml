@@ -30,6 +30,7 @@ function __input_config_verbs()
 			P:  input_binding_key("P"),
 			attack: [input_binding_key("X"),  input_binding_key("K")],
 			ability: [input_binding_key("Q"),   input_binding_key("J")],
+			mode_switch: input_binding_key(vk_alt),
 
         },
         

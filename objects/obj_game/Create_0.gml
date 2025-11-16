@@ -48,6 +48,8 @@ global.timer_gain = 0;
 global.sanity_Prank_switch = false;
 global.mindSplit_unlocked = true;
 global.player_insane = false;
+global.hudshake = false;
+shake_intensity = 0;
 //Level Control
 level = 0;
 //GT
@@ -60,3 +62,5 @@ global.rank = 0;
 //Pausing
 game_paused = false;
 game_pause_lock = false;
+//GameOver
+global.gameover_trigger = false;

@@ -4,8 +4,8 @@ if (global.debug_active = true)
 	show_debug_overlay(true);
 	if (instance_exists(obj_player))
 	{
-		draw_text(100,700,obj_player.grv);
-			draw_text(100,600,obj_player.dash_distance);
+		draw_text(100,700,obj_player.walksp);
+		draw_text(100,800,obj_player.current_mode);
 	}
 }
 	if (instance_exists(obj_jestraught_play))

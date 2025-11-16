@@ -6,4 +6,4 @@ y = -999;
 
 
 visible = false;
-depth = -10000
+depth = -10000;

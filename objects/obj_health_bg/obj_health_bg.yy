@@ -14,10 +14,7 @@
     "name":"hud",
     "path":"folders/Objects/hud.yy",
   },
-  "parentObjectId":{
-    "name":"obj_sanity_bg",
-    "path":"objects/obj_sanity_bg/obj_sanity_bg.yy",
-  },
+  "parentObjectId":null,
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
