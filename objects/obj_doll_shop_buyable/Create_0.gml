@@ -1,0 +1,1 @@
+global.soldout_doll = false;

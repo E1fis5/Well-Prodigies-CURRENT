@@ -1,0 +1,24 @@
+{
+  "name": "@gm-tools/project-tool-win-x64",
+  "version": "2024.14.145",
+  "description": "ProjectTool for win-x64",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://gmpm.gamemaker.io/"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "files": [ "*"],
+  "dependencies": {},
+  "gm": {
+    "destination" : "project-tool-win-x64",
+    "supportedArchitecture": "win-x64",
+    "tool": {
+      "path": "ProjectTool.exe"
+    }
+  }
+}

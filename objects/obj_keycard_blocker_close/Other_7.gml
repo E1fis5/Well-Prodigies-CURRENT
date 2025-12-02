@@ -1,0 +1,1 @@
+sprite_index = spr_mb_keycard_gate_closed

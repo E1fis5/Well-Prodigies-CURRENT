@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_escape_lowsanity",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":305.2031,
+  "exportDir":"",
+  "name":"snd_escape_lowsanity",
+  "parent":{
+    "name":"player_sounds",
+    "path":"folders/Sounds/player_sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_escape_lowsanity.mp3",
+  "volume":0.13,
+}

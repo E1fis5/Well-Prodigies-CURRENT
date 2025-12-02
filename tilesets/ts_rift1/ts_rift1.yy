@@ -1,0 +1,42 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"ts_rift1",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":16,
+    "SerialiseWidth":15,
+    "TileCompressedData":[
+      -65,0,-9,47,-6,0,-9,47,-6,0,-9,47,-6,0,-9,47,-6,0,-9,47,-6,0,-9,47,-6,0,-9,47,-6,0,-9,47,-6,0,-9,47,
+      -6,0,-9,47,-6,0,-9,47,-6,0,-9,47,1,0,
+    ],
+    "TileDataFormat":1,
+  },
+  "name":"ts_rift1",
+  "out_columns":16,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"rift",
+    "path":"folders/Tile Sets/rift.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_rift_ts_1",
+    "path":"sprites/spr_rift_ts_1/spr_rift_ts_1.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":16,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":16,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":256,
+}

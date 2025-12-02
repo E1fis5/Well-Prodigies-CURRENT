@@ -1,0 +1,1 @@
+time_source_start(global.timer_wallboost_deactivate);

@@ -1,0 +1,44 @@
+{
+    "id": "87cb334e-c2c4-4b14-9758-a4b6edae4b76",
+    "modelName": "GMProject",
+    "configs": [
+        
+    ],
+    "option_ecma": false,
+	"IsDnDProject": false,
+    "parentProject": {
+        "id": "8b9aa200-7eab-4914-abdf-361fe20358fc",
+        "modelName": "GMProjectParent",
+        "alteredResources": [
+            
+        ],
+        "hiddenResources": [
+            
+        ],
+        "projectPath": ""
+    },
+    "resources": [
+        {
+            "Key": "ed6a955d-5826-4f98-a450-10b414266c27",
+            "Value": {
+                "id": "c729f594-866f-47f1-b56a-6a5c2162436c",
+                "modelName": "GMResourceInfo",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],				
+				"resourceCreationConfig": "default",
+				"resourceFiles": [
+                    
+                ],
+                "resourcePath": "options\\main\\options_main.yy",
+                "resourceType": "GMMainOptions"
+            }
+        }
+    ],
+    "room_order": [
+        
+    ]
+}

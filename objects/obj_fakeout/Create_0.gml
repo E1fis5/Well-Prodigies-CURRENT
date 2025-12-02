@@ -1,0 +1,1 @@
+global.fakeout_pause = true;

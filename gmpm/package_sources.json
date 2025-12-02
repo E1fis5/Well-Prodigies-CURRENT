@@ -1,0 +1,56 @@
+{
+  "Sources": [
+    {
+      "Id": "e6d1c4d8-49a4-4c56-86c9-bf84209c5cc4",
+      "Name": "Prefabs",
+      "URL": "https://gmpm.gamemaker.io/",
+      "URLSearchPath": "-/verdaccio/data/packages",
+      "ReleaseStage": "Release",
+      "Scopes": "@gm-prefabs",
+      "Username": null,
+      "Password": null,
+      "InstallSubdirectory": "Prefabs",
+      "IsDefault": true,
+      "ForceAllPackagesVisible": false
+    },
+    {
+      "Id": "5c09ec29-2036-4583-b781-05c5bf0c6370",
+      "Name": "IDE Prefabs",
+      "URL": "https://gmpm.gamemaker.io/",
+      "URLSearchPath": "-/verdaccio/data/packages",
+      "ReleaseStage": "Release",
+      "Scopes": "@gm-ide-prefabs",
+      "Username": null,
+      "Password": null,
+      "InstallSubdirectory": "IDE Prefabs",
+      "IsDefault": true,
+      "ForceAllPackagesVisible": false
+    },
+    {
+      "Id": "2b56859b-98fd-4852-8f71-713fa8b6a2b9",
+      "Name": "GM Tools",
+      "URL": "https://gmpm.gamemaker.io/",
+      "URLSearchPath": "-/verdaccio/data/packages",
+      "ReleaseStage": "Release",
+      "Scopes": "@gm-tools",
+      "Username": null,
+      "Password": null,
+      "InstallSubdirectory": "GMTools",
+      "IsDefault": true,
+      "ForceAllPackagesVisible": false
+    },
+    {
+      "Id": "9daec752-502a-498c-91b6-0347c7800490",
+      "Name": "Localisation",
+      "URL": "https://gmpm.gamemaker.io/",
+      "URLSearchPath": "-/verdaccio/data/packages",
+      "ReleaseStage": "Release",
+      "Scopes": "@localisation_plugins",
+      "Username": null,
+      "Password": null,
+      "InstallSubdirectory": "LocalisationPlugins",
+      "IsDefault": true,
+      "ForceAllPackagesVisible": false
+    }
+  ]
+}

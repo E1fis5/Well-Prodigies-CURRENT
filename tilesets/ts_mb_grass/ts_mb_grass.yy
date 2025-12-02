@@ -1,0 +1,42 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"ts_mb_grass",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":22,
+    "SerialiseWidth":21,
+    "TileCompressedData":[
+      -150,0,-8,27,-2,0,-8,11,-3,0,-8,27,-2,0,-8,11,-3,0,-8,27,-2,0,-8,11,-3,0,-8,27,-2,0,-8,11,-3,0,-8,27,
+      -2,0,-8,11,-3,0,-8,27,-2,0,-8,11,-3,0,-8,27,-2,0,-8,11,-168,0,
+    ],
+    "TileDataFormat":1,
+  },
+  "name":"ts_mb_grass",
+  "out_columns":16,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"mb",
+    "path":"folders/Tile Sets/mb.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_mbtileset_grass",
+    "path":"sprites/spr_mbtileset_grass/spr_mbtileset_grass.yy",
+  },
+  "spriteNoExport":true,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":16,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":16,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":256,
+}

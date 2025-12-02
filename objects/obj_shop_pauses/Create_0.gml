@@ -1,0 +1,1 @@
+time_source_pause(obj_sanitymeter.sanityTimerHard);

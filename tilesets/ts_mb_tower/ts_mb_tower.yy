@@ -1,0 +1,42 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"ts_mb_tower",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":21,
+    "SerialiseWidth":17,
+    "TileCompressedData":[
+      -194,0,-10,129,-7,0,-10,129,-7,0,-10,129,-7,0,-10,129,-7,0,-10,129,-7,0,-10,129,-7,0,-10,129,-7,0,-10,
+      129,-7,0,-10,129,-7,0,-10,129,
+    ],
+    "TileDataFormat":1,
+  },
+  "name":"ts_mb_tower",
+  "out_columns":16,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"mb",
+    "path":"folders/Tile Sets/mb.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_mb_ts_tower",
+    "path":"sprites/spr_mb_ts_tower/spr_mb_ts_tower.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":16,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":16,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":256,
+}

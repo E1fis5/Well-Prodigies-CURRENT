@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"n_playtester_problems",
+  "name":"n_playtester_problems",
+  "parent":{
+    "name":"Notes",
+    "path":"folders/Notes.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

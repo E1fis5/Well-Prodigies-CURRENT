@@ -1,0 +1,1 @@
+global.torch_active = false

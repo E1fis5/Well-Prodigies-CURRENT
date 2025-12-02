@@ -1,0 +1,1 @@
+global.speed_pickup = false;
