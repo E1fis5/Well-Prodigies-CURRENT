@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_voodoo_magic_shop",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"72f5ad24-4060-4def-9cc5-3cecae997ce6","name":"72f5ad24-4060-4def-9cc5-3cecae997ce6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"72f5ad24-4060-4def-9cc5-3cecae997ce6","name":"72f5ad24-4060-4def-9cc5-3cecae997ce6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

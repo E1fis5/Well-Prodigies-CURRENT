@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_player_snow_idle_left",
   "bboxMode":2,
   "bbox_bottom":95,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3488fffc-2d2c-49c3-b1aa-cdc985b72a1c","name":"3488fffc-2d2c-49c3-b1aa-cdc985b72a1c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3488fffc-2d2c-49c3-b1aa-cdc985b72a1c","name":"3488fffc-2d2c-49c3-b1aa-cdc985b72a1c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

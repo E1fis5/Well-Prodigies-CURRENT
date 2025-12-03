@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cdtsgrass_2",
   "bboxMode":0,
   "bbox_bottom":232,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"55d883ec-e054-46b8-990a-72b552e9cacd","name":"55d883ec-e054-46b8-990a-72b552e9cacd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"55d883ec-e054-46b8-990a-72b552e9cacd","name":"55d883ec-e054-46b8-990a-72b552e9cacd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

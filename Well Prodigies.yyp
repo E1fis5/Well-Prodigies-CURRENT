@@ -2,7 +2,7 @@
   "$GMProject":"v1",
   "%Name":"Well Prodigies",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -215,7 +215,24 @@
     {"$GMFolder":"","%Name":"rift","folderPath":"folders/Tile Sets/rift.yy","name":"rift","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Tile Sets/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "ForcedPrefabProjectReferences":[],
+  "ForcedPrefabProjectReferences":[
+    {"link":"io.gamemaker.gm_filter_parallax-1.0.0","name":"io.gamemaker.gm_filter_parallax-1.0.0","path":"io.gamemaker.gm_filter_parallax-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_screenshake-1.0.0","name":"io.gamemaker.gm_filter_screenshake-1.0.0","path":"io.gamemaker.gm_filter_screenshake-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_whitenoise-1.0.0","name":"io.gamemaker.gm_filter_whitenoise-1.0.0","path":"io.gamemaker.gm_filter_whitenoise-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_heathaze-1.0.0","name":"io.gamemaker.gm_filter_heathaze-1.0.0","path":"io.gamemaker.gm_filter_heathaze-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_ripples-1.0.0","name":"io.gamemaker.gm_filter_ripples-1.0.0","path":"io.gamemaker.gm_filter_ripples-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_vignette-1.0.0","name":"io.gamemaker.gm_filter_vignette-1.0.0","path":"io.gamemaker.gm_filter_vignette-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_tintfilter-1.0.0","name":"io.gamemaker.gm_filter_tintfilter-1.0.0","path":"io.gamemaker.gm_filter_tintfilter-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_colour_balance-1.0.0","name":"io.gamemaker.gm_filter_colour_balance-1.0.0","path":"io.gamemaker.gm_filter_colour_balance-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_contrast-1.0.0","name":"io.gamemaker.gm_filter_contrast-1.0.0","path":"io.gamemaker.gm_filter_contrast-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_clouds-1.0.0","name":"io.gamemaker.gm_filter_clouds-1.0.0","path":"io.gamemaker.gm_filter_clouds-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_effect_glow-1.0.0","name":"io.gamemaker.gm_effect_glow-1.0.0","path":"io.gamemaker.gm_effect_glow-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_dots-1.0.0","name":"io.gamemaker.gm_filter_dots-1.0.0","path":"io.gamemaker.gm_filter_dots-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_mask-1.0.0","name":"io.gamemaker.gm_filter_mask-1.0.0","path":"io.gamemaker.gm_filter_mask-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_fractal_noise-1.0.0","name":"io.gamemaker.gm_filter_fractal_noise-1.0.0","path":"io.gamemaker.gm_filter_fractal_noise-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_effect_windblown_particles-1.0.0","name":"io.gamemaker.gm_effect_windblown_particles-1.0.0","path":"io.gamemaker.gm_effect_windblown_particles-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_old_film-1.0.0","name":"io.gamemaker.gm_filter_old_film-1.0.0","path":"io.gamemaker.gm_filter_old_film-1.0.0.yyp",},
+  ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"Atlas Earth Ad (4K remaster upload).mp4","CopyToMask":3035426170322551022,"filePath":"datafiles","name":"Atlas Earth Ad (4K remaster upload).mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"c.ogg","CopyToMask":-1,"filePath":"datafiles","name":"c.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -313,7 +330,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"Well Prodigies",
   "resources":[

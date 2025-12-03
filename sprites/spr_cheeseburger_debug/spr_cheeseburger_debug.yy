@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cheeseburger_debug",
   "bboxMode":0,
   "bbox_bottom":99,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f225b0b5-87b5-411d-a570-d158e19dffae","name":"f225b0b5-87b5-411d-a570-d158e19dffae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"995a179e-7c15-4b6b-a5a7-371125362b92","name":"995a179e-7c15-4b6b-a5a7-371125362b92","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f225b0b5-87b5-411d-a570-d158e19dffae","name":"f225b0b5-87b5-411d-a570-d158e19dffae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"995a179e-7c15-4b6b-a5a7-371125362b92","name":"995a179e-7c15-4b6b-a5a7-371125362b92","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

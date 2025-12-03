@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_jestraught_fall",
   "bboxMode":2,
   "bbox_bottom":95,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c087a874-0886-4c49-87aa-0500edc7a5b5","name":"c087a874-0886-4c49-87aa-0500edc7a5b5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c087a874-0886-4c49-87aa-0500edc7a5b5","name":"c087a874-0886-4c49-87aa-0500edc7a5b5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
