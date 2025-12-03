@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_hungerbar",
   "bboxMode":0,
   "bbox_bottom":167,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f0b29fc0-c9ac-4e2b-aa0c-934aa4ab4b64","name":"f0b29fc0-c9ac-4e2b-aa0c-934aa4ab4b64","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f0b29fc0-c9ac-4e2b-aa0c-934aa4ab4b64","name":"f0b29fc0-c9ac-4e2b-aa0c-934aa4ab4b64","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

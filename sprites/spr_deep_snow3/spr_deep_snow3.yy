@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_deep_snow3",
   "bboxMode":2,
   "bbox_bottom":25,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"04ba6d10-6351-4c6f-bbc0-de7a920a2f2c","name":"04ba6d10-6351-4c6f-bbc0-de7a920a2f2c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"04ba6d10-6351-4c6f-bbc0-de7a920a2f2c","name":"04ba6d10-6351-4c6f-bbc0-de7a920a2f2c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

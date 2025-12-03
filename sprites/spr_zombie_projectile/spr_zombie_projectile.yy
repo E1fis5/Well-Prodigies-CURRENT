@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_zombie_projectile",
   "bboxMode":2,
   "bbox_bottom":109,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d8b6fcaa-2d9a-4e1a-bcce-f7f16f08d319","name":"d8b6fcaa-2d9a-4e1a-bcce-f7f16f08d319","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d8b6fcaa-2d9a-4e1a-bcce-f7f16f08d319","name":"d8b6fcaa-2d9a-4e1a-bcce-f7f16f08d319","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
