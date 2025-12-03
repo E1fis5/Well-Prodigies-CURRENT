@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"spr_enemy_sight",
   "bboxMode":0,
   "bbox_bottom":255,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"49d9df98-7dcb-49cd-944d-ea1eaaa43dc9","name":"49d9df98-7dcb-49cd-944d-ea1eaaa43dc9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"49d9df98-7dcb-49cd-944d-ea1eaaa43dc9","name":"49d9df98-7dcb-49cd-944d-ea1eaaa43dc9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

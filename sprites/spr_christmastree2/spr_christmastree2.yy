@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"spr_christmastree2",
   "bboxMode":0,
   "bbox_bottom":207,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"70e16d95-6098-45c8-8ec4-2f5aa02619a9","name":"70e16d95-6098-45c8-8ec4-2f5aa02619a9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"70e16d95-6098-45c8-8ec4-2f5aa02619a9","name":"70e16d95-6098-45c8-8ec4-2f5aa02619a9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

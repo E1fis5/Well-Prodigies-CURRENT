@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"spr_dash_touch2",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"245c13da-6217-4e3f-867f-cd2b97f1df16","name":"245c13da-6217-4e3f-867f-cd2b97f1df16","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"2902697a-599b-4f09-a310-afa4665ded2b","name":"2902697a-599b-4f09-a310-afa4665ded2b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"245c13da-6217-4e3f-867f-cd2b97f1df16","name":"245c13da-6217-4e3f-867f-cd2b97f1df16","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2902697a-599b-4f09-a310-afa4665ded2b","name":"2902697a-599b-4f09-a310-afa4665ded2b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

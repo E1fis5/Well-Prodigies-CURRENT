@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"spr_tutorialgate",
   "bboxMode":2,
   "bbox_bottom":362,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"b799cf8c-b0f0-42da-aac6-7f19749b0d04","name":"b799cf8c-b0f0-42da-aac6-7f19749b0d04","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"b799cf8c-b0f0-42da-aac6-7f19749b0d04","name":"b799cf8c-b0f0-42da-aac6-7f19749b0d04","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

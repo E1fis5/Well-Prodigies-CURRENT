@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"spr_ladder_wood",
   "bboxMode":0,
   "bbox_bottom":159,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e739cf95-50c7-4f8c-8a08-75c7483e49ef","name":"e739cf95-50c7-4f8c-8a08-75c7483e49ef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e739cf95-50c7-4f8c-8a08-75c7483e49ef","name":"e739cf95-50c7-4f8c-8a08-75c7483e49ef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

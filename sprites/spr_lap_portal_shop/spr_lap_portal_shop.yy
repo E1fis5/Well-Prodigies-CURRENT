@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"spr_lap_portal_shop",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"189597d1-1a4f-4ee4-8859-32cc5e2af344","name":"189597d1-1a4f-4ee4-8859-32cc5e2af344","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"189597d1-1a4f-4ee4-8859-32cc5e2af344","name":"189597d1-1a4f-4ee4-8859-32cc5e2af344","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

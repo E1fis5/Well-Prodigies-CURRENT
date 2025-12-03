@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"spr_cave_door",
   "bboxMode":0,
   "bbox_bottom":195,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"f252fca6-421a-46d9-808c-a1f5ae0910f4","name":"f252fca6-421a-46d9-808c-a1f5ae0910f4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f252fca6-421a-46d9-808c-a1f5ae0910f4","name":"f252fca6-421a-46d9-808c-a1f5ae0910f4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMOperaGXOptions":"v1",
+  "$GMOperaGXOptions":"",
   "%Name":"operagx",
   "name":"operagx",
   "option_operagx_display_cursor":true,
@@ -23,7 +23,6 @@
   "option_operagx_team_id":"de6f3d57-519a-427c-80ed-329e91d4aea7",
   "option_operagx_team_name":"E1fis5 studio",
   "option_operagx_texture_page":"2048x2048",
-  "option_operagx_transparent_background":false,
   "option_operagx_version":"1.0.0.0",
   "resourceType":"GMOperaGXOptions",
   "resourceVersion":"2.0",

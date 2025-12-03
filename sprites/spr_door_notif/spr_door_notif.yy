@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"spr_door_notif",
   "bboxMode":0,
   "bbox_bottom":30,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"2616ca72-de6e-44c4-90ad-8ef1eb10680b","name":"2616ca72-de6e-44c4-90ad-8ef1eb10680b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2616ca72-de6e-44c4-90ad-8ef1eb10680b","name":"2616ca72-de6e-44c4-90ad-8ef1eb10680b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

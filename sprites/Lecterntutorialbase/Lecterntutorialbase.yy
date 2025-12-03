@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"Lecterntutorialbase",
   "bboxMode":0,
   "bbox_bottom":122,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"2ce4b2db-5476-4aaf-b4b6-a37a30e230ca","name":"2ce4b2db-5476-4aaf-b4b6-a37a30e230ca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2ce4b2db-5476-4aaf-b4b6-a37a30e230ca","name":"2ce4b2db-5476-4aaf-b4b6-a37a30e230ca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
