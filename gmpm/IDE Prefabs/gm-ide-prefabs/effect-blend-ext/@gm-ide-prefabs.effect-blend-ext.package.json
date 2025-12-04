@@ -1,0 +1,28 @@
+{
+  "name": "@gm-ide-prefabs/effect-blend-ext",
+  "version": "1.0.0",
+  "description": "Blend Ext Effect",
+  "files": [
+    "io.gamemaker.gm_effect_blend_ext-1.0.0.yymps"
+  ],
+  "keywords": [
+    "GameMaker",
+    "Prefab",
+    "io.gamemaker.gm_effect_blend_ext"
+  ],
+  "author": "GameMaker",
+  "license": "",
+  "gm": {
+    "destination": "gm-ide-prefabs/effect-blend-ext",
+    "displayName": "Effect - Blend Ext",
+    "shortDescription": "Blend Ext Effect",
+    "visible": true,
+    "ide_versions": {
+      "LTS": ">=2022.0.2"
+    },
+    "supportedArchitecture": "any",
+    "removeDependenciesOnUninstall": "always",
+    "notifyOfUpdates": false,
+    "requiresRestart": false
+  }
+}

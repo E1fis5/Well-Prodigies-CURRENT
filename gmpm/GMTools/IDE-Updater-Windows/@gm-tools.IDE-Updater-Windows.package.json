@@ -1,0 +1,14 @@
+{
+  "name": "@gm-tools/IDE-Updater-Windows",
+  "version": "2024.14.54",
+  "description": "IDE updater for Windows",
+  "author": "GameMaker",
+  "gm": {
+    "destination" : "IDE-Updater-Windows",
+    "displayName": "GameMaker IDE Auto-Updater",
+    "supportedArchitecture": "win-x64",
+    "tool": {
+      "path": "GameMakerIDEAutoUpdater.exe"
+    }
+  }
+}
