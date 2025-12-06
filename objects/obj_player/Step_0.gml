@@ -263,7 +263,7 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 	   if (dash_energy <= 0)
 	   {
 		   stateNormal = state_normal;
-		   canJump = 12;
+		   canJump = 18;
 		   if (global.Dash_jumpNotif = true)
 		   {
 				image_blend = c_ltgrey;

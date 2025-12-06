@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cabin_inside_ts",
   "bboxMode":0,
   "bbox_bottom":463,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9fff3cab-8332-4289-ab37-8ce5da1b230e","name":"9fff3cab-8332-4289-ab37-8ce5da1b230e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9fff3cab-8332-4289-ab37-8ce5da1b230e","name":"9fff3cab-8332-4289-ab37-8ce5da1b230e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

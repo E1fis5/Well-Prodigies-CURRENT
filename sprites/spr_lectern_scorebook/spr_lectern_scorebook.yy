@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_lectern_scorebook",
   "bboxMode":0,
   "bbox_bottom":491,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"7c4b754b-6625-4a23-8c21-d324bdd206d1","name":"7c4b754b-6625-4a23-8c21-d324bdd206d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7c4b754b-6625-4a23-8c21-d324bdd206d1","name":"7c4b754b-6625-4a23-8c21-d324bdd206d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

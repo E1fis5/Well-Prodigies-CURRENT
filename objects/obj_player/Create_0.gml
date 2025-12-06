@@ -5,6 +5,7 @@ dash_damage = 5;
 damage_deal = false;
 //Shop
 global.presents_soldout = false;
+global.presents_soldout = false;
 global.presents_pickup = false;
 global.magnet_collect_strong_pull = false;
 global.magnet_collect_pull = true;
@@ -317,7 +318,7 @@ timer_crawl_jump = time_source_create(time_source_game,0.5,time_source_units_sec
 timer_dBoost_cooldown = time_source_create(time_source_game,3.5,time_source_units_seconds,dBoost_cooldown,[],-1);
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
 timer_dBoost_deactivate = time_source_create(time_source_game,14,time_source_units_seconds, dBoost_deactivate,[],1);
-timer_dJump_color_revert = time_source_create(time_source_game,12,time_source_units_frames,dJump_color_revert,[],1);
+timer_dJump_color_revert = time_source_create(time_source_game,18,time_source_units_frames,dJump_color_revert,[],1);
 //Power crawl timer
 timer_power_crawl = time_source_create(time_source_game,2,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,1,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
