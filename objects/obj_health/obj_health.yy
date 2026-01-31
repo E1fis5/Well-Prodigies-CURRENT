@@ -10,8 +10,8 @@
   "name":"obj_health",
   "overriddenProperties":[],
   "parent":{
-    "name":"hud",
-    "path":"folders/Objects/hud.yy",
+    "name":"health",
+    "path":"folders/Objects/hud/health.yy",
   },
   "parentObjectId":null,
   "persistent":true,

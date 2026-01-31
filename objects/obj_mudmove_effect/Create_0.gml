@@ -1,0 +1,1 @@
+audio_play_sound(snd_mud_interact,5,false,1,0,random_range(1.5,0.75));

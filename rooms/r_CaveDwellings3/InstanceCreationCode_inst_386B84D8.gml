@@ -1,4 +1,4 @@
-target_x = 32
-target_y = 800
-target_rm = r_CaveDwellings2_cave
+target_x = -32
+target_y = 960
+target_rm = r_CaveDwellings_cave_intro
 enclosed_check = true;

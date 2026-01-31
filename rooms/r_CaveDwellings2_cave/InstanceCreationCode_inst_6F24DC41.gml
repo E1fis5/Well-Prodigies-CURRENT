@@ -1,4 +1,3 @@
-target_x = 2816
-target_y = 512
-target_rm = r_CaveDwellings3
-outside_check = true;
+target_x = 1280
+target_y = 608
+target_rm = r_CaveDwellings_cave_intro_2

@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_black",
-    "path":"sprites/spr_black/spr_black.yy",
+    "name":"spr_hudhide_sprite",
+    "path":"sprites/spr_hudhide_sprite/spr_hudhide_sprite.yy",
   },
   "spriteMaskId":null,
   "visible":false,

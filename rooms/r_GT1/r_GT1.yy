@@ -81,9 +81,9 @@
     {"name":"inst_43D81076","path":"rooms/r_GT1/r_GT1.yy",},
     {"name":"inst_572DDBB2","path":"rooms/r_GT1/r_GT1.yy",},
     {"name":"inst_449A1699","path":"rooms/r_GT1/r_GT1.yy",},
-    {"name":"inst_6DEA922D","path":"rooms/r_GT1/r_GT1.yy",},
     {"name":"inst_39DB7C75","path":"rooms/r_GT1/r_GT1.yy",},
     {"name":"inst_146476DC","path":"rooms/r_GT1/r_GT1.yy",},
+    {"name":"inst_6DEA922D","path":"rooms/r_GT1/r_GT1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -91,14 +91,14 @@
         {"name":"g_MaskStart","type":0,"value":"0",},
         {"name":"g_MaskEnd","type":0,"value":"1",},
         {"name":"g_MaskTexture","type":2,"value":"_filter_mask_sprite",},
-      ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+      ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
     {"$GMREffectLayer":"","%Name":"Effect_GT_Dark1","depth":100,"effectEnabled":true,"effectType":"_filter_fractal_noise","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_GT_Dark1","properties":[
-        {"name":"g_FractalNoiseScale","type":0,"value":"342",},
-        {"name":"g_FractalNoisePersistence","type":0,"value":"0.475",},
+        {"name":"g_FractalNoiseScale","type":0,"value":"259",},
+        {"name":"g_FractalNoisePersistence","type":0,"value":"0.675",},
         {"name":"g_FractalNoiseOffset","type":0,"value":"0",},
         {"name":"g_FractalNoiseOffset","type":0,"value":"0",},
-        {"name":"g_FractalNoiseSpeed","type":0,"value":"0.5",},
-        {"name":"g_FractalNoiseTintColour","type":1,"value":"#FF000000",},
+        {"name":"g_FractalNoiseSpeed","type":0,"value":"0.6",},
+        {"name":"g_FractalNoiseTintColour","type":1,"value":"#FF999999",},
         {"name":"g_FractalNoiseTexture","type":2,"value":"_filter_fractal_noise_texture",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMREffectLayer":"","%Name":"Effect_4","depth":200,"effectEnabled":true,"effectType":"_filter_whitenoise","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_4","properties":[
@@ -534,8 +534,8 @@
   ],
   "name":"r_GT1",
   "parent":{
-    "name":"glacial_tundra",
-    "path":"folders/Rooms/CHAPTER_1/glacial_tundra.yy",
+    "name":"gt_old",
+    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/gt_old.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

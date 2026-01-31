@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"r_GT_rift",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/r_parent/RoomCreationCode.gml",
   "inheritCode":true,
   "inheritCreationOrder":true,
   "inheritLayers":false,
@@ -487,8 +487,8 @@
   ],
   "name":"r_GT_rift",
   "parent":{
-    "name":"glacial_tundra",
-    "path":"folders/Rooms/CHAPTER_1/glacial_tundra.yy",
+    "name":"gt_old",
+    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/gt_old.yy",
   },
   "parentRoom":{
     "name":"r_parent",

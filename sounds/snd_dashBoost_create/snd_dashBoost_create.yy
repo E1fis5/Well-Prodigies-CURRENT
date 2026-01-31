@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.792,
+  "duration":0.76800454,
   "exportDir":"",
   "name":"snd_dashBoost_create",
   "parent":{

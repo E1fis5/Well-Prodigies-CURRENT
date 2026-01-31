@@ -14,11 +14,8 @@
     "name":"escape_slash_rift",
     "path":"folders/Objects/escape_slash_rift.yy",
   },
-  "parentObjectId":{
-    "name":"obj_escape_trig",
-    "path":"objects/obj_escape_trig/obj_escape_trig.yy",
-  },
-  "persistent":false,
+  "parentObjectId":null,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,

@@ -5,7 +5,7 @@ if (global.abilityscore <= 550) and (global.magnet_collect_strong_pull = false)
 }
 instance_destroy();
 
-instance_create_depth(x,y,-1000,obj_gem_collect)
+instance_create_depth(x,y,-100,obj_gem_collect)
 
 audio_play_sound(snd_big_collect,0,false);
 

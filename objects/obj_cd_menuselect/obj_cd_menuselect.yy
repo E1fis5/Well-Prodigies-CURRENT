@@ -14,7 +14,7 @@
   ],
   "parent":{
     "name":"cave_dwellings_stuff",
-    "path":"folders/Objects/cave_dwellings_stuff.yy",
+    "path":"folders/Objects/specific_level_objects/cave_dwellings_stuff.yy",
   },
   "parentObjectId":{
     "name":"obj_mb_play_button",

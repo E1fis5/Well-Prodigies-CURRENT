@@ -1,8 +1,18 @@
 
-
-
-draw_sprite_ext(sprite_index,image_index,-50,9,image_xscale,image_yscale,0,c_white,image_alpha);
-
+//Main Drawing
+if (!shake_trigger)
+{
+	draw_sprite_ext(sprite_index,image_index,-50,9,image_xscale,image_yscale,0,c_white,image_alpha);
+}
+else
+if (shake_trigger)
+{
+	draw_sprite_ext(sprite_index,image_index,-50 + random_range(-7,7),9 + random_range(-7,7),image_xscale,image_yscale,0,c_white,image_alpha);
+}
+if (global.isActive and (!shake_trigger))
+{
+	draw_sprite_ext(sprite_index,image_index,-50 + random_range(-2,2),9,image_xscale,image_yscale,0,c_white,image_alpha);
+}
 
 	if (global.sanity <= 300 )
 {
@@ -79,9 +89,13 @@ if (global.sanity <= 170)
 	image_index = 14;
 }
 
-if (global.sanity <= 160)
+if (global.sanity <= 160) and (!instance_exists(obj_sanity_notif))
 {
 	image_index = 15;
+	instance_create_depth(0,0,-9999,obj_sanity_notif);
+	audio_play_sound(snd_mindSplit_end,6,false);
+	instance_create_depth(-999,-999,-11000,obj_sanity_overlay);
+	global.player_insane = true;
 }
 
 if (global.sanity <= 150)
@@ -94,13 +108,9 @@ if (global.sanity <= 140)
 	image_index = 17;
 }
 
-if (global.sanity <= 130) and (!instance_exists(obj_sanity_notif))
+if (global.sanity <= 130)
 {
 	image_index = 18;
-	instance_create_depth(0,0,-9999,obj_sanity_notif);
-	audio_play_sound(snd_mindSplit_end,6,false);
-	instance_create_depth(-999,-999,-11000,obj_sanity_overlay);
-	global.player_insane = true;
 }
 
 if (global.sanity <= 120)

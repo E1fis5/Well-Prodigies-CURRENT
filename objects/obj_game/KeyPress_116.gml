@@ -13,7 +13,7 @@ if (global.gamemode_easy = true)
 }
 if (global.gamemode_hard = true)
 {
-    global.timer = 999999;
+    global.timer = 20;
 	global.grave_arise = true;
 }
 

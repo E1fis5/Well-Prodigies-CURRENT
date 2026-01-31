@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"chunks",
-    "path":"folders/Objects/glacial_tundra_stuff/chunks.yy",
+    "path":"folders/Objects/specific_level_objects/glacial_tundra_stuff/chunks.yy",
   },
   "parentObjectId":null,
   "persistent":false,

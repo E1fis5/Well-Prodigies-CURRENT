@@ -5,6 +5,10 @@ tick_rate = 60;
 dollbuff_activated = false;
 grave_nerf1 = false;
 group = noone;
+fake_timer = 0;
+timer_fake_display_chance = 0;
+timer_fake_display_active = false;
+image_blend = c_black;
 CD_Dark_Layers = function()
 {
 	layer_set_visible("Effect_Dark_Tint",1);
@@ -18,6 +22,7 @@ CD_Dark_Layers = function()
 var escape_timer = function()
 {
 	global.timer -= 1;
+	fake_timer -= 1;
 	audio_stop_sound(snd_clock_tick);
 	audio_play_sound(snd_clock_tick,8,false);
 }
@@ -34,9 +39,11 @@ var crumble_shake_disable = function()
 var lightning_disable = function()
 {
 	layer_set_visible("Effect_Lightning",0);
-	layer_set_visible("Effect_Screenshake_mega",0);
 	obj_player.image_blend = c_white;
 	obj_player.depth = 400;
+	obj_collision_wall.image_blend = c_white;
+	obj_collision_wall.depth = 999;
+	obj_collision_wall.image_alpha = 0.8;
 	instance_destroy(obj_hide_hud);
 }
 var cave_crumble = function()
@@ -52,12 +59,24 @@ var cave_crumble = function()
 		layer_set_visible("Effect_Screenshake_mega",1);
 		layer_set_visible("Effect_Lightning",1);
 		obj_player.image_blend = c_black;
-		obj_player.depth = -400;
+		obj_player.depth = -999;
+		obj_collision_wall.image_blend = c_black;
+		obj_collision_wall.depth = -999;
+		obj_collision_wall.image_alpha = 1;
 		instance_create_depth(-99,-99,-999,obj_hide_hud);
 		audio_play_sound(snd_escape_lightning,8,false);
 		time_source_start(timer_lightning_light_disable);
+		time_source_start(timer_crumble_shake_disable);
 	}
 }
+//Fake Timer Duration
+var fake_timer_disable = function()
+{
+	timer_fake_display_chance = 0;
+	timer_fake_display_active = false;
+	fake_timer = 0;
+}
+timer_fake_duration = time_source_create(time_source_game,30,time_source_units_seconds,fake_timer_disable,[],1);
 //Doll Drains
 timer_drain_doll = time_source_create(time_source_game,70,time_source_units_frames,escape_timer,[],-1);
 timer_doll_voodoo_buff = time_source_create(time_source_game,80,time_source_units_frames,escape_timer,[],-1);

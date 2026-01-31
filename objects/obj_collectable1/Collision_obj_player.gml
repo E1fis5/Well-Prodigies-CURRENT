@@ -21,7 +21,7 @@ if (global.magnet_collect_strong_pull = true)
 instance_destroy();
 audio_play_sound(snd_collectable_collect,4,false);
 
-instance_create_depth(x,y,-1000,obj_collect_effect)
+instance_create_depth(x,y,-100,obj_collect_effect)
 
 
 global.sanity += 0.2

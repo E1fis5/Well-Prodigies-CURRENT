@@ -5,13 +5,11 @@ target_x = 0;
 target_y = 0;
 target_rm = 0;
 image_alpha = 0
-
 animation_speed = 0.4
 frame_count = sprite_get_number(spr_rift_timer)
 sound_timer = 1500;
 waitTime = 25; // Set the time to wait in seconds
-
-global.fontEscape = font_add_sprite_ext(spr_font_escape,"0123456789:",true,1)
+fontRiftTimer = font_add_sprite_ext(spr_mainfont,"0123456789:",true,1)
 
 if !instance_exists(obj_transition)
 {

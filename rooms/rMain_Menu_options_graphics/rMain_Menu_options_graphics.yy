@@ -14,9 +14,9 @@
     {"name":"inst_4D3FFB87","path":"rooms/rMain_Menu_options_graphics/rMain_Menu_options_graphics.yy",},
     {"name":"inst_5F89ED65","path":"rooms/rMain_Menu_options_graphics/rMain_Menu_options_graphics.yy",},
     {"name":"inst_40655B55","path":"rooms/rMain_Menu_options_graphics/rMain_Menu_options_graphics.yy",},
-    {"name":"inst_3320B571","path":"rooms/rMain_Menu_options_graphics/rMain_Menu_options_graphics.yy",},
     {"name":"inst_60503E67","path":"rooms/rMain_Menu_options_graphics/rMain_Menu_options_graphics.yy",},
     {"name":"inst_6259F891","path":"rooms/rMain_Menu_options_graphics/rMain_Menu_options_graphics.yy",},
+    {"name":"inst_3320B571","path":"rooms/rMain_Menu_options_graphics/rMain_Menu_options_graphics.yy",},
   ],
   "isDnd":false,
   "layers":[

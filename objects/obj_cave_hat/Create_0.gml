@@ -1,4 +1,4 @@
-
+global.ach_Sec_cd = true;
 global.cave_hat_follow = false;
 
 if (global.debug_active = true)

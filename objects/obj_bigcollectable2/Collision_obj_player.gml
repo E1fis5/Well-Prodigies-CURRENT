@@ -18,7 +18,7 @@ if (global.magnet_collect_strong_pull = true)
 
 audio_play_sound(snd_collect_medium,0,false);
 
-instance_create_depth(x,y,-1000,obj_collect_effect_big);
+instance_create_depth(x,y,-100,obj_collect_effect_big);
 
 
 instance_create_depth(-999,-999,-9900,obj_bigcollect_notif);

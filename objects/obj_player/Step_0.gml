@@ -1,36 +1,10 @@
+if (live_call())
+{
+	return live_result;
+}
+
 //Normal State
 stateNormal();
-
-//Crawl
-state_crawl();
-
-
-
-
-
-	//Bomb state
-	if (place_meeting(x,y,obj_bomb_launcher))
-	{
-		sprite_index = spr_player_bomb
-		image_xscale = 1
-		image_yscale = 1
-		bomb_active = true
-		global.dJump_active = false
-		global.particle_start = false
-	}
-
-
-	if (place_meeting(x,y,obj_bomb_launcher))
-	{
-		grv = -1
-	}
-
-
-	if grv = -1
-	{
-		sprite_index = spr_player_bomb
-	}
-
 
 //WallJumps/climb
 state_walljump();
@@ -46,41 +20,11 @@ state_walljump();
 			sprite_index = spr_player_insane_escape_idle;
 		}
 	}
-
-
-
-	if (bomb_active = true)
-	{
-		if (bomb_speed = false)
-		{
-			walksp -= 8;
-			bomb_speed = true;
-			if (!Bomb_Dash_Active)
-			{
-				dash_distance += 200;
-				Bomb_Dash_Active = true;
-			}
-		}
-		can_dash = true;
-		dash_time = 19;
-		if (input_check("dash"))
-		{
-			 layer_set_visible("Effect_Screenshake_mega",1);
-			 instance_create_depth(x,y,399,obj_bomb_explosion);
-			 audio_play_sound(snd_dash_explosion,5,false);
-			 bomb_active = false;
-			 bomb_speed = false;
-			 walksp += 8;
-		}
-	}
-
-	if global.isActive = true and sprite_index = spr_player_bomb
-	{
-		sprite_index = spr_player_bomb_escape
-	}
-
 //Fast fall
 state_FastFall();
+
+//Bomb State
+state_Bomb();
 
 
 //Wall Boosts
@@ -101,18 +45,6 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 		sprite_index = spr_player1
 	}
 
-
-	
-
-	//MB fan
-	if (place_meeting(x,y,obj_fan))
-	{
-		grv = -2;
-		walksp += 0.45;
-		sprite_index = spr_player1;
-	}
-
-
 	//Dash
 	if (can_dash) and (input_check_pressed("dash"))
 	{
@@ -131,19 +63,21 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 				audio_play_sound(snd_dashBoost_create,6,false,1.3,0,2);
 			}
 		}
+		if (onground) and (!OH_dash_avalible)
+		{
+			dash_direction = point_direction(0,0,input_check("right")- input_check("left"),0)
+		}
 		dash_sp = dash_distance/dash_time;
 		dash_energy = dash_distance;
 		stateNormal = Dashstate
 		sprite_index = spr_player_dash
+		land_sprite_break = false;
 		fallcancel = true;
 		grv = 0
 		damage_deal = true;
 		walljump = false;
 		//Dash Effect
-		if (!instance_exists(obj_dash_effect))
-		{
-			instance_create_depth(x - 40,y - 20,399,obj_dash_effect);
-		}
+		instance_create_depth(x - 40,y - 20,399,obj_dash_effect);
 		//Wall Boost Cancels
 		if (global.dash_Mindsplit = false)
 		{
@@ -176,7 +110,6 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 			dBoost_dash_active = false;
 			time_source_start(timer_dBoost_create);
 		}
-		audio_play_sound(snd_dash_p,8,false)
 		global.dash_active = true
 		if (!instance_exists(obj_player_dash_hitbox))
 		{
@@ -214,7 +147,6 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 		sprite_index = other.sprite_index;
 		image_blend = c_gray;
 		image_alpha = 0.6;
-		audio_sound_pitch(snd_dash_p,1)
 		if (instance_exists(obj_dashB_active_effect))
 		{
 			image_blend = c_navy
@@ -264,17 +196,21 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 	   {
 		   stateNormal = state_normal;
 		   canJump = 18;
-		   if (global.Dash_jumpNotif = true)
+		   jump_activated = true;
+		   jump_allowed = true;
+		   if (global.Dash_jumpNotif = true) and (!image_blend = c_black)
 		   {
 				image_blend = c_ltgrey;
 				time_source_start(timer_dJump_color_revert);
 		   }
 		   damage_deal = false;
 		   fallcancel = false;
+		   //Bomb Dash
 		   if (Bomb_Dash_Active)
 		   {
 			   Bomb_Dash_Active = false;
-			   dash_distance -= 200;
+			   dash_distance -= 400;
+			   dash_time += 3;
 		   }
 		   instance_destroy(obj_player_dash_hitbox);
 		   global.dash_active = false;
@@ -285,6 +221,14 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 			   dash_distance = captured_distance;
 			   up_dash_cancel = false;
 		   }
+		   //Mud Dash
+		   if (mudsolid_dash)
+		   {
+				dash_distance -= 350;
+				dash_time += 5;
+				mudsolid_dash = false;
+		   }
+		   
 		   if (onground = false) 
 		   {
 			   global.dash_amount += 1;
@@ -521,8 +465,6 @@ if (score >= 20000) and (!score_boost3)
 	{
 		fallcancel = true;
 	}
-
-
 	if (fallcancel = false) and (upcancel_active = false) and (!wallclimb)
 	{
 		sprite_index = spr_player_fall;
@@ -607,6 +549,9 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!i
 	time_source_start(timer_dBoost_deactivate);
 	walksp += 0.65;
 	dashBoost_fail = false;
+	time_source_start(timer_aftereffect_creation);
+	instance_create_depth(-999,-999,-9998,obj_dBoost_activate_flash);
+	instance_create_depth(-999,-999,-11000,obj_healthbg_dashB);
 	audio_play_sound(snd_dBoost_start,6,false);
 	instance_create_depth(x,y,-999,obj_dBoost_additive);
 	global.sanity += 5;
@@ -617,7 +562,7 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!i
 		obj_dashJoost_counter.dashCounter_shake_warnin = false;
 	}
 	dashBoost_forgive = 0;
-	if (!global.health >= 6)
+	if (global.health < 6)
 	{
 		global.health += 0.25;	
 	}
@@ -760,6 +705,7 @@ if (walksp >= 15) and (!Dash_Scale2)  and (!Dash_Scale_Disable)
 	dash_distance += 10;
 	Dash_Scale2 = true;
 }
+
 
 if (walksp >= 17.5) and (!Dash_Scale3) and (!Dash_Scale_Disable)
 {

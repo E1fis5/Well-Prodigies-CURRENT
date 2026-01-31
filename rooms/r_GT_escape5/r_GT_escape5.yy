@@ -513,7 +513,7 @@
   "name":"r_GT_escape5",
   "parent":{
     "name":"cabin",
-    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/cabin.yy",
+    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/gt_old/cabin.yy",
   },
   "parentRoom":{
     "name":"r_parent",

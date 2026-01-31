@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"glacial_tundra_stuff",
-    "path":"folders/Objects/glacial_tundra_stuff.yy",
+    "path":"folders/Objects/specific_level_objects/glacial_tundra_stuff.yy",
   },
   "parentObjectId":{
     "name":"obj_sanitymeter",

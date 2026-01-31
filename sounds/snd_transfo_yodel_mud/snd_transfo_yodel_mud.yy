@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_transfo_yodel_mud",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":4.550975,
+  "exportDir":"",
+  "name":"snd_transfo_yodel_mud",
+  "parent":{
+    "name":"player_sounds",
+    "path":"folders/Sounds/player_sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_transfo_yodel_mud.mp3",
+  "volume":1.0,
+}

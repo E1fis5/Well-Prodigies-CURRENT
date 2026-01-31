@@ -5,4 +5,14 @@ if input_check("up") and !instance_exists(obj_transition)
 	  inst.target_y = target_y;
       inst.target_rm = target_rm;
 	  time_source_pause(obj_sanitymeter.sanityTimerHard)
+	  if (!shop_sound_started)
+	  {
+			audio_play_sound(shop_resume,6,true);  
+			shop_sound_started = true;
+	  }
+	  else
+	  {
+		  audio_resume_sound(shop_resume);
+	  }
+	  audio_pause_sound(sound_pause);
 }

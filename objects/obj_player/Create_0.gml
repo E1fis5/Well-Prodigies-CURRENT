@@ -1,3 +1,7 @@
+if (live_call())
+{
+	return live_result;
+}
 //Health
 global.maxhealth = 6;
 global.health = 0;
@@ -19,7 +23,7 @@ dashJoost_hit_disable = false;
 //Wall Boost Stats
 global.walljumps = 0;
 global.walljump_boost1 = false
-global.walljump_boost2 = false
+global.walljump_boost2 = false	
 //Challenges
 global.damage_blocker = false;
 global.health_lock = false;
@@ -87,6 +91,7 @@ jumpmax = 2
 jumps_active = 0
 onground = false
 upcancel_active = false;
+jump_activated = false;
 global.wallboost_amount = 0;
 global.dash_amount = 0;
 global.doll_ability_active = false;
@@ -108,6 +113,17 @@ voodoo_dBoost = false;
 doll_boost = false;
 restricted = false;
 speed_part_start = false;
+//Adrenaline and Damage	
+adrenaline_amount_drain = 0;
+adrenaline_speed_add = 0;
+adrenaline_boost = function()
+{
+	Dash_Scale_Disable = true;
+	walksp += adrenaline_speed_add;
+	time_source_start(timer_adrenaline_duration);
+	instance_create_depth(x,y,401,obj_speed_particle);
+}
+
 //Dash
 can_dash = false
 dash_distance = 200
@@ -127,6 +143,16 @@ Bomb_Dash_Active = false;
 dBoost_deactive = false;
 OH_dash_avalible = false;
 Bomb_dashes = 0;
+//State Control
+upcancel_state_prohibit = false;
+//Mudsolid
+mudsolid_dash = false;
+mud_dash_delay = false;
+mudmove_created_up = false;
+mudmove_created_down = false;
+mudmove_created_left = false;
+mudmove_created_right = false;
+mudsolid_state = false;
 //Lapping
 global.lap2_passed = false;
 global.fall_effect_destroy = false
@@ -171,12 +197,17 @@ up_dash_cancel = false;
 up_dash_distance = 45;
 captured_distance = 0;
 captured_time = 0;
-instance_create_depth(x,y,401,obj_nail_particle);
+global.storedwalksp = 0;
 //Mind Split
+global.mindSplit_unlocked = false;
 global.mindSplit_active = false;
 global.dash_switch_mindSplit = false;
 global.dash_Mindsplit = false;
 global.dash_Normal = true;
+land_sprite_break = false;
+//Snow State
+snow_jumps = 0;
+snow_jump_activate = false;
 //States
 haunt_cooldown = false;
 var haunt_cooldown_over = function()
@@ -189,6 +220,9 @@ var power_crawl_damage = function()
 {
 	instance_create_depth(x,y,399,obj_damage_effect1);
 	score -= 45
+	adrenaline_amount_drain = 0.025;
+	adrenaline_speed_add = 2.5;
+	adrenaline_boost();
 	global.damage = true;
 	audio_play_sound(snd_player_hurt,6,false);
 	if (global.gamemode_hard = true)
@@ -219,9 +253,14 @@ var dBoost_deactivate = function()
 		{
 			obj_dashB_active_effect.sprite_index = spr_dBoost_ending_explosion;
 		}
+		if (instance_exists(obj_healthbg_dashB))
+		{
+			obj_healthbg_dashB.sprite_index = spr_healthbg_effect_dashB_destroy;
+		}
 		dash_distance -= 45;
 		dBoost_additives_active = false;
 		dash_damage -= 5;
+		time_source_stop(timer_aftereffect_creation);
 		if (instance_exists(obj_dashJoost_counter))
 		{
 			obj_dashJoost_counter.dashCounter_shake_warnin = true;
@@ -253,7 +292,10 @@ var dBoost_cooldown = function()
 
 var dJump_color_revert = function()
 {
-	image_blend = c_white;
+	if (image_blend = c_ltgrey)
+	{
+		image_blend = c_white;
+	}
 	time_source_stop(timer_dJump_color_revert);
 }
 //Mind Split Functions
@@ -314,8 +356,41 @@ var crawl_jump_remove = function()
 	time_source_stop(timer_crawl_jump);
 }
 timer_crawl_jump = time_source_create(time_source_game,0.5,time_source_units_seconds,crawl_jump_remove,[],1);
-//Dash Timer
-timer_dBoost_cooldown = time_source_create(time_source_game,3.5,time_source_units_seconds,dBoost_cooldown,[],-1);
+
+//Mudsolid Dash
+var mudsolid_dash_exit = function()
+{
+	mud_dash_delay = false;
+	mudsolid_dash = true;
+	can_dash = true;
+	dash_distance += 350;
+	dash_time -= 5;
+	dash_sp = dash_distance/dash_time;
+	dash_energy = dash_distance;
+	walksp += global.storedwalksp;
+	stateNormal = Dashstate
+	upcancel_state_prohibit = false;
+}
+timer_mudsolid_dash_delay = time_source_create(time_source_game,0.8,time_source_units_seconds,mudsolid_dash_exit,[],1);
+//Adrenaline Duration
+var adrenaline_drain = function()
+{
+	walksp -= adrenaline_amount_drain;
+}
+timer_adrenaline_duration = time_source_create(time_source_game,1,time_source_units_frames,adrenaline_drain,[],100);
+//Double Jump Check Timer
+var doublejump_check = function()
+{
+	jump_activated = true;
+} 
+timer_jump_check = time_source_create(time_source_game,2,time_source_units_frames,doublejump_check,[],1)
+//Dboost
+var dashBoost_aftereffect_creation = function()
+{
+	instance_create_depth(x,y,401,obj_dashB_trail);
+}
+timer_aftereffect_creation = time_source_create(time_source_game,1.25,time_source_units_seconds,dashBoost_aftereffect_creation,[],-1);
+timer_dBoost_cooldown = time_source_create(time_source_game,6,time_source_units_seconds,dBoost_cooldown,[],-1);
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
 timer_dBoost_deactivate = time_source_create(time_source_game,14,time_source_units_seconds, dBoost_deactivate,[],1);
 timer_dJump_color_revert = time_source_create(time_source_game,18,time_source_units_frames,dJump_color_revert,[],1);
@@ -349,7 +424,6 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 	can_dash = true;
 	walljump = true;
 	fallcancel = true;
-	sprite_index = spr_player_walljump_fast;
 		instance_create_depth(x,y,401,obj_wallclimb_effect);
 		if (player_left = true)
 		{
@@ -385,6 +459,7 @@ state_walljump = function()
 //Wallclimb
 if (wallclimb)
 {
+	land_sprite_break = false;
 	sprite_index = spr_player_wallclimb;
 	if (player_left)
 	{
@@ -394,15 +469,11 @@ if (wallclimb)
 //Walljump
 if (walljump) and (!onground)
 {
-	{
-		sprite_index = spr_player_walljump_normal;
-	}
+	sprite_index = spr_player_walljump_normal;
 	fallcancel = true;
 	if (player_left)
 	{
-		{
-			sprite_index = spr_player_walljump_left_normal;
-		}
+		sprite_index = spr_player_walljump_left_normal;
 	}
 }
 }
@@ -420,24 +491,31 @@ vsp = vsp + grv
 vsp = clamp(vsp, -vsp_max_final, vsp_max_final);
 
 //Deciding to jump or not
-if (canJump-- > 0) and (input_check_pressed("jump"))
+if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 {
 	vsp = vspJump;
 	canJump = 7;
+	time_source_start(timer_jump_check);
 	audio_play_sound(snd_pJump,4,false);
 	jump_allowed = true;
-	canCrawl = 1
+	canCrawl = 1;
+	land_sprite_break = false;
 	global.fallspr_deactivate = true
 	global.grv_0 = false
 	global.particle_start = false
 	instance_create_depth(x + 8,y + 25,401,obj_fall_effect_cloud1);
 	if (upcancel_jump = true)
 	{
-		grv = 0.045;
+		grv = 0.035;
 		can_dash = true;
 	}
+	if (snow_jump_activate) and (vspJump < -3.50)
+	{
+		vspJump += 0.25;
+		vspDJump += 0.25;
+		snow_jump_activate = false;
+	}
 }
-
 
 //Drop Dash Set
 if (input_check("down"))
@@ -479,6 +557,33 @@ if (place_meeting(x, y + vsp, obj_collision_wall)) and (global.collisions_enable
 }
 y += vsp;
 
+//Mudsolid
+if (place_meeting(x + hsp, y, obj_mudsolid_collision)) and (global.collisions_enabled = true) and (!obj_mudsolid_collision.collision_disable)
+{
+	while (abs(hsp) > 0.1)
+	{
+		hsp *= 0.5;
+		if (!place_meeting(x + hsp, y, obj_mudsolid_collision)) x += hsp;
+	}
+	hsp = 0;
+}
+
+
+if (place_meeting(x, y + vsp, obj_mudsolid_collision)) and (global.collisions_enabled = true) and (!obj_mudsolid_collision.collision_disable)
+{
+	if (vsp > 0) 
+	canJump = 10;
+	can_dash = true;
+
+	while (abs(vsp) > 0.1)
+	{
+		vsp *= 0.5;
+		if (!place_meeting(x, y + vsp, obj_mudsolid_collision)) y += vsp;
+	}
+    vsp = 0;
+}
+
+
 //Current Status
 onground = place_meeting (x,y+10, obj_collision_wall);
 onwall = place_meeting (x+1,y, obj_climbablecollision) - place_meeting (x-1,y,obj_climbablecollision)
@@ -486,6 +591,7 @@ if (onground) jumpbuffer = 6;
 //Preventing crawling in air
 if (onground)
 {
+	jump_activated = 0;
 	canCrawl = 0;
 	dJump_sprite_start = false;
 	if (upcancel_jump = false)
@@ -497,18 +603,15 @@ if (onground)
 if (!onground)
 {
 	canCrawl = 1;
-	if (!crawl_jump)
+	if (!crawl_jump) and (!upcancel_state_prohibit)
 	{
 		upcancel_avalible = true;
 	}
-	else
-			{
-				can_dash = true;
-			}
+
 }
 
 //Change direction in animation
-if input_check("left") and (wallclimb = 0)
+if input_check("left") and (wallclimb = 0) and (!land_sprite_break)
 {
 	sprite_index = spr_playerwalkleft
 	image_xscale = 1
@@ -521,7 +624,7 @@ if input_check("left") and (wallclimb = 0)
 
 
 
-  if input_check("right") = true and (wallclimb = 0)
+  if input_check("right") = true and (wallclimb = 0) and (!land_sprite_break)
 {
 	speed_part_start = false;
 	sprite_index = spr_playerwalk
@@ -534,7 +637,7 @@ if input_check("left") and (wallclimb = 0)
 }
 
 
-  if input_check("right") = false && input_check("left") = false && player_left = true and (!wallclimb)
+  if input_check("right") = false && input_check("left") = false && player_left = true and (!wallclimb) and (!land_sprite_break)
 {
 	sprite_index = spr_player_left
 	image_xscale = 1
@@ -543,7 +646,7 @@ if input_check("left") and (wallclimb = 0)
 	idle_active = true;
 }
 
-  if input_check("right") = false && input_check("left") = false && player_left = false and (!wallclimb)
+  if input_check("right") = false && input_check("left") = false && player_left = false and (!wallclimb) and (!land_sprite_break)
 {
 	sprite_index = spr_playernew
 	image_xscale = 1
@@ -557,10 +660,11 @@ if (dJump_sprite_start) and (onground = false) and (!global.dJump_idle) and (!wa
 {
 	sprite_index = spr_player_gem_collect;
 	fallcancel = true;
+	land_sprite_break = false;
 	
 	if (player_left = true)
 	{
-		sprite_index = spr_gem_collect_left;
+		sprite_index = spr_gem_collect_left
 	
 	}
 	}
@@ -569,33 +673,26 @@ if (dJump_sprite_start) and (onground = false) and (!global.dJump_idle) and (!wa
 }
 stateNormal = state_normal
 
-//Crawl state
-state_crawl = function()
-{
-if input_check("down") and canCrawl = 0 and !place_meeting(x,y,obj_ladder_wood) and (input_check("right") or input_check("left"))
-{
-	sprite_index = spr_playercrawl
-    image_xscale = 1
-	image_yscale = 1
-	can_dash = false
-	stateCrawl = state_crawl
-	if (input_check_pressed("jump"))
-	{
-		crawl_jump = true;	
-		time_source_start(timer_crawl_jump);
-	}
-}
-}
 //Fastfall State
 state_FastFall = function()
 {
-	if (input_check("down") = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (upcancel_avalible) and (!slide_boost)
+	if (input_check("down") = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (upcancel_avalible) and (!slide_boost) and (!upcancel_state_prohibit)
 {
-	
 	grv = 1.5
+	if (!Bomb_Dash_Active)
+	{
+		dash_energy = 0;
+	}
 	upcancel_active = true;
 	time_source_stop(timer_upcancel_boost);
-	sprite_index = spr_player_downp;
+	if (!land_sprite_break)
+	{
+		sprite_index = spr_player_downp;
+		if (player_left)
+		{
+			sprite_index = spr_player_downp_left;
+		}
+	}
 	if (!instance_exists(obj_upcancel_effect)) and (up_cancel_eff = false)
 	{
 		instance_create_depth(x,y,399,obj_upcancel_effect);
@@ -616,22 +713,10 @@ state_FastFall = function()
 		{
 			instance_destroy(obj_player_dash_hitbox);
 		}
-		if (Bomb_Dash_Active)
-		{
-			Bomb_dashes++;
-			if (Bomb_dashes > 2)
-			{
-				Bomb_Dash_Active = false;
-				bomb_speed = false;
-				Bomb_dashes = 0;
-				bomb_active = false;
-				dash_distance -= 200;
-			}
-		}
-		
 	}
 	if (onground)
 	{
+		land_sprite_break = true;
 		upcancel_avalible = false;
 		upcancel_jump = true;
 		time_source_start(timer_upcancel_boost);
@@ -642,6 +727,11 @@ state_FastFall = function()
 		}
 		canJump = 6;
 		grv = 0.07;
+		sprite_index = spr_player_land;
+		if (player_left)
+		{
+			sprite_index = spr_player_land_left;	
+		}
 		if (!instance_exists(obj_upcancel_land_effect))
 		{
 			instance_create_depth(x - 33,y - 40,401,obj_upcancel_land_effect);
@@ -663,9 +753,9 @@ else
 
 
 //Slide State
-	state_PCrawl = function()
-	{
-	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (sprite_index = spr_playercrawl)
+state_PCrawl = function()
+{
+	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (onground)
 	{
 		if (!slide_boost)
 		{ 
@@ -673,8 +763,10 @@ else
 			slide_boost = true;
 			Dash_Scale_Disable = true;
 		}
+		land_sprite_break = false;
 		time_source_start(timer_power_crawl);
 		global.powercrawl = true;
+		sprite_index = spr_playercrawl;
 		if (!instance_exists(obj_blood_effect))
 		{
 			instance_create_depth(x,y,399,obj_blood_effect);
@@ -702,22 +794,25 @@ else
 			}
 		}
 	}
+
 	
 //Double Jump State
 stateDoubleJump = function()
 {
-if (jump_allowed = true) and (input_check_pressed("jump")) and (onground = false)
+if (jump_allowed = true) and (input_check_pressed("jump")) and (jump_activated)
 {
 	vsp = vspDJump
 	canJump = 0;
 	audio_play_sound(snd_pJump,4,false);
 	jump_allowed = false;
+	jump_activated = false;
 	can_dash = true
 	canCrawl = 1
 	fallcancel = true;
 	global.dJump_active = true
 	global.particle_start = false
 	dJump_sprite_start = true;
+	land_sprite_break = false;
 	if (!instance_exists(obj_fall_effect_cloud1))
 	{
 		instance_create_depth(x + 8,y + 25,401,obj_fall_effect_cloud1);
@@ -760,5 +855,118 @@ state_Base = function()
 	canCrawl = 1;
 	can_dash = false;
 }
-	baseState = state_Base
+	baseState = state_Base;
+	
+	
+//Mudsolid State
+state_Mudsolid = function()
+{
+	mudsolid_state = true;
+	upcancel_state_prohibit = true;
+	//Controls
+	if (!mud_dash_delay)
+	{
+		walksp = 15;
+		can_dash = false;
+	if (input_check("up"))
+	{
+		grv = -7;
+		mudmove_created_down = false;
+		if (!mudmove_created_up)
+		{
+			instance_create_depth(x - 50,y,399,obj_mudmove_effect);
+			mudmove_created_up = true;
+		}
+	}
+	if (input_check("down"))
+	{
+		grv = 7;
+		mudmove_created_up = false;
+		if (!mudmove_created_down)
+		{
+			instance_create_depth(x - 50,y,399,obj_mudmove_effect);
+			mudmove_created_down = true;
+		}
+	}
+}
+else
+{
+	walksp = 0;
+	grv = 0;
+	can_dash = true;
+}
+
+
+	if (input_check_pressed("dash"))
+	{
+		mud_dash_delay = true;
+		global.storedwalksp = walksp;
+		time_source_start(timer_mudsolid_dash_delay);
+		audio_play_sound(snd_boost_buy,5,false);
+	}
+
+	canJump = 0;
+	//Effects and spritework
+	image_blend = c_olive;
+}
+	stateMudslide = state_Mudsolid;
+	
+//Bomb State
+state_Bomb = function()
+{
+	if (place_meeting(x,y,obj_bomb_launcher)) and (!bomb_active)
+	{
+		//Walksp Slowness
+		can_dash = true;
+		dash_energy = 0;
+		jump_allowed = false;
+		walksp -= 6;
+		bomb_active = true;
+		fallcancel = true;
+		if (!OH_dash_avalible)
+		{
+			OH_dash_avalible = true;
+		}
+	}
+	//State Removal
+	if (bomb_active)
+	{
+		grv = -9;
+		if (input_check_pressed("dash")) and (Bomb_Dash_Active)
+		{
+			walksp += 6;
+			bomb_active = false;
+			fallcancel = false;
+			audio_play_sound(snd_dash_explosion,4,false);
+			instance_create_depth(x,y,399,obj_bomb_explosion);
+		}
+		//Dash Add
+		if (!Bomb_Dash_Active)
+		{
+			Bomb_Dash_Active = true
+			dash_distance += 400;
+			dash_time -= 3;
+		}
+	}
+}
+
+//Snow Danger State
+snow_state = function()
+{
+	if (!snow_jump_activate)
+	{
+		grv = 1;
+		if (input_check_pressed("jump")) and (canJump)
+		{
+			snow_jumps += 1;
+			audio_play_sound(snd_freeze_damage,5,false);
+			if (snow_jumps >= 3) and (vspJump < -3.50)
+			{
+				snow_jumps = 0;
+				snow_jump_activate = true;
+				grv = 0.07;
+			}
+		}
+	}
+}
 depth = 400

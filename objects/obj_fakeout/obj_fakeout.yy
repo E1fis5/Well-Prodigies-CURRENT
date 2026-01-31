@@ -10,8 +10,8 @@
   "name":"obj_fakeout",
   "overriddenProperties":[],
   "parent":{
-    "name":"cave_horrors_stuff",
-    "path":"folders/Objects/cave_horrors_stuff.yy",
+    "name":"escape_slash_rift",
+    "path":"folders/Objects/escape_slash_rift.yy",
   },
   "parentObjectId":{
     "name":"obj_transition",

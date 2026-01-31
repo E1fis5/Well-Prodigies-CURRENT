@@ -23,6 +23,12 @@ if (global.sanity <= 150)
 	global.sanity_Prank_switch = true;
 }
 
+//If gmlive isnt already set hahaha
+if (global.debug_active) and (instance_exists(obj_gmlive))
+{
+	room_set_live(room, true);
+}
+	
 //GT Effects
 if (gt_igloo_exit_triggers) and (layer_exists("Effect_GT_Dark1"))
 {

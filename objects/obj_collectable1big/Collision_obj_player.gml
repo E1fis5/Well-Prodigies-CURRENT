@@ -21,7 +21,7 @@ instance_destroy();
 
 audio_play_sound(snd_collect_medium,5,false);
 
-instance_create_depth(x,y,-1000,obj_collect_effect2)
+instance_create_depth(x,y,-100,obj_collect_effect2)
 
 global.sanity += 3.5
 

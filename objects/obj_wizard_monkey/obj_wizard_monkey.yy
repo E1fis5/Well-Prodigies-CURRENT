@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"monkey_business_stuff",
-    "path":"folders/Objects/monkey_business_stuff.yy",
+    "path":"folders/Objects/specific_level_objects/monkey_business_stuff.yy",
   },
   "parentObjectId":null,
   "persistent":false,

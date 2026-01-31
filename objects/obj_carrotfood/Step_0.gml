@@ -13,7 +13,12 @@ if (global.magnet_collect_strong_pull = true) and (distance_to_object(obj_shop_m
 	}
 	
 //Base collect aura
-if (instance_exists(obj_collectaura_hitbox)) and (distance_to_object(obj_collectaura_hitbox) < 30)
+if (distance_to_object(obj_collectaura_hitbox) < 30)
 {
-	move_towards_point(obj_collectaura_hitbox.x,obj_collectaura_hitbox.y, obj_player.walksp + 2);
+	aura_pull = true;	
+}
+//Base collect aura
+if (instance_exists(obj_collectaura_hitbox)) and aura_pull
+{
+	move_towards_point(obj_collectaura_hitbox.x,obj_collectaura_hitbox.y, obj_player.walksp + 3);
 }

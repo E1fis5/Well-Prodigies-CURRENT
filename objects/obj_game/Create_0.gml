@@ -44,6 +44,7 @@ global.current_room = r_CaveDwellings1;
 global.pause_coordsy = 0;
 global.escape_timer_pause = 0;
 global.timer_gain = 0;
+global.betamusic_toggle = false;
 //Sanity shitit
 global.sanity_Prank_switch = false;
 global.mindSplit_unlocked = true;

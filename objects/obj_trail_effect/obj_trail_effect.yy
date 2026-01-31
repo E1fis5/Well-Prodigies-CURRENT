@@ -8,8 +8,8 @@
   "name":"obj_trail_effect",
   "overriddenProperties":[],
   "parent":{
-    "name":"game_core",
-    "path":"folders/Objects/game_core.yy",
+    "name":"effects",
+    "path":"folders/Objects/effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -4,7 +4,7 @@ if (!dashCounter_shake_warnin)
 }
 else
 {
-	draw_sprite(sprite_index,image_index,480 + random_range(-5,5),50);
+	draw_sprite(sprite_index,image_index,480 + random_range(-5,5),50 + random_range(-5,5));
 }
 
 draw_set_font(ft_dashJoost);

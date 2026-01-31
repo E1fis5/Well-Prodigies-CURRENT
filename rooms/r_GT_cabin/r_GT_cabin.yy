@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"r_GT_cabin",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/r_parent/RoomCreationCode.gml",
   "inheritCode":true,
   "inheritCreationOrder":true,
   "inheritLayers":false,
@@ -374,7 +374,7 @@
   "name":"r_GT_cabin",
   "parent":{
     "name":"cabin",
-    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/cabin.yy",
+    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/gt_old/cabin.yy",
   },
   "parentRoom":{
     "name":"r_parent",

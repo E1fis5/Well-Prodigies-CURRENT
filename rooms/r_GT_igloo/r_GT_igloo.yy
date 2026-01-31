@@ -55,7 +55,7 @@
   "name":"r_GT_igloo",
   "parent":{
     "name":"igloo",
-    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/igloo.yy",
+    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/gt_old/igloo.yy",
   },
   "parentRoom":{
     "name":"r_parent",

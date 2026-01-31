@@ -1,5 +1,6 @@
 global.collectable_destroy = false;
 infected_collect = false;
+aura_pull = false;
 if (instance_exists(obj_sanity_notif))
 {
 	sprite_index = spr_carrot_infected;

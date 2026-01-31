@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"r_GT_escape2",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/r_parent/RoomCreationCode.gml",
   "inheritCode":true,
   "inheritCreationOrder":true,
   "inheritLayers":false,
@@ -2129,7 +2129,7 @@
   "name":"r_GT_escape2",
   "parent":{
     "name":"escapes",
-    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/escapes.yy",
+    "path":"folders/Rooms/CHAPTER_1/glacial_tundra/gt_old/escapes.yy",
   },
   "parentRoom":{
     "name":"r_parent",
