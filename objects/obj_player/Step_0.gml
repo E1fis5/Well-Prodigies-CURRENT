@@ -147,18 +147,6 @@ if (global.walljumps >= 4) and (global.walljump_boost1 = false)
 		sprite_index = other.sprite_index;
 		image_blend = c_gray;
 		image_alpha = 0.6;
-		if (instance_exists(obj_dashB_active_effect))
-		{
-			image_blend = c_navy
-			audio_sound_pitch(snd_dash_p,1.1)
-		{
-			if (global.dash_Mindsplit = true)
-			{
-				image_blend = c_black;
-				audio_sound_pitch(snd_dash_p,0.7)
-			}
-		}
-		}
 	}
 	{
 		if (place_meeting(x + hsp, y, obj_collision_wall))

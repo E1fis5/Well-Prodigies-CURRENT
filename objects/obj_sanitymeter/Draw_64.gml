@@ -95,7 +95,9 @@ if (global.sanity <= 160) and (!instance_exists(obj_sanity_notif))
 	instance_create_depth(0,0,-9999,obj_sanity_notif);
 	audio_play_sound(snd_mindSplit_end,6,false);
 	instance_create_depth(-999,-999,-11000,obj_sanity_overlay);
+	instance_create_depth(-999,-999,-11000,obj_healthbg_insane);
 	global.player_insane = true;
+
 }
 
 if (global.sanity <= 150)

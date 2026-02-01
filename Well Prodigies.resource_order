@@ -521,6 +521,7 @@
     {"name":"spr_health_bg_hurt","order":3,"path":"sprites/spr_health_bg_hurt/spr_health_bg_hurt.yy",},
     {"name":"spr_health_bg","order":2,"path":"sprites/spr_health_bg/spr_health_bg.yy",},
     {"name":"spr_health_effect","order":1,"path":"sprites/spr_health_effect/spr_health_effect.yy",},
+    {"name":"spr_health_hud_status_insane_start","order":4,"path":"sprites/spr_health_hud_status_insane_start/spr_health_hud_status_insane_start.yy",},
     {"name":"spr_health_hud_status_insane","order":3,"path":"sprites/spr_health_hud_status_insane/spr_health_hud_status_insane.yy",},
     {"name":"spr_health_player1_icon_damage","order":1,"path":"sprites/spr_health_player1_icon_damage/spr_health_player1_icon_damage.yy",},
     {"name":"spr_health_player1_icon_escape","order":2,"path":"sprites/spr_health_player1_icon_escape/spr_health_player1_icon_escape.yy",},

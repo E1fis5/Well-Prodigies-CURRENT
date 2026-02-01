@@ -38,11 +38,8 @@ if (i <= 0)
 	global.sanity = 0;
 	game_restart();
 }
+draw_sprite_ext(sprite_index,image_index,-70,220,image_xscale,image_yscale,0,c_white,image_alpha);
 
-if (visible)
-{
-	draw_sprite_ext(sprite_index,image_index,-70,220,image_xscale,image_yscale,0,c_white,image_alpha);
-}
 
 
 

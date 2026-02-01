@@ -3,5 +3,5 @@ if (instance_exists(obj_player))
 {
 	sprite_index = obj_player.sprite_index;
 }
-image_blend = c_aqua;
+image_blend = choose(c_aqua,c_navy);
 image_alpha = 1;

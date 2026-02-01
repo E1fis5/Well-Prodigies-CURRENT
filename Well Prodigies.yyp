@@ -1468,6 +1468,7 @@
     {"id":{"name":"spr_health_bg_hurt","path":"sprites/spr_health_bg_hurt/spr_health_bg_hurt.yy",},},
     {"id":{"name":"spr_health_bg","path":"sprites/spr_health_bg/spr_health_bg.yy",},},
     {"id":{"name":"spr_health_effect","path":"sprites/spr_health_effect/spr_health_effect.yy",},},
+    {"id":{"name":"spr_health_hud_status_insane_start","path":"sprites/spr_health_hud_status_insane_start/spr_health_hud_status_insane_start.yy",},},
     {"id":{"name":"spr_health_hud_status_insane","path":"sprites/spr_health_hud_status_insane/spr_health_hud_status_insane.yy",},},
     {"id":{"name":"spr_health_new","path":"sprites/spr_health_new/spr_health_new.yy",},},
     {"id":{"name":"spr_health_player1_icon_damage","path":"sprites/spr_health_player1_icon_damage/spr_health_player1_icon_damage.yy",},},

@@ -35,7 +35,7 @@ hsp_wjump = 5;
 vsp = 10;
 grv = 0.07;
 grv_wall = 0.50;
-walksp = 8.55;
+walksp = 9;
 vspJump = -4.5;
 vspDJump = -5.5;
 vsp_wjump = -5;
@@ -220,14 +220,14 @@ var power_crawl_damage = function()
 {
 	instance_create_depth(x,y,399,obj_damage_effect1);
 	score -= 45
-	adrenaline_amount_drain = 0.025;
-	adrenaline_speed_add = 2.5;
+	adrenaline_amount_drain = 0.05;
+	adrenaline_speed_add = 5;
 	adrenaline_boost();
 	global.damage = true;
 	audio_play_sound(snd_player_hurt,6,false);
 	if (global.gamemode_hard = true)
 	{
-		global.health -= 0.5;
+		global.health -= 1;
 	}
 }
 
@@ -692,6 +692,12 @@ state_FastFall = function()
 		{
 			sprite_index = spr_player_downp_left;
 		}
+		with (instance_create_depth(x,y,depth+1,obj_trail_effect))
+		{
+			sprite_index = other.sprite_index;
+			image_blend = c_red;
+			image_alpha = 0.6;
+		}
 	}
 	if (!instance_exists(obj_upcancel_effect)) and (up_cancel_eff = false)
 	{
@@ -928,10 +934,18 @@ state_Bomb = function()
 			OH_dash_avalible = true;
 		}
 	}
-	//State Removal
+	//Active
 	if (bomb_active)
 	{
 		grv = -9;
+		//Trail
+		with (instance_create_depth(x,y,depth+1,obj_trail_effect))
+		{
+			sprite_index = other.sprite_index;
+			image_blend = c_black;
+			image_alpha = 0.6;
+		}
+		//State Removal
 		if (input_check_pressed("dash")) and (Bomb_Dash_Active)
 		{
 			walksp += 6;
