@@ -1,7 +1,7 @@
 draw_sprite_ext(sprite_index,image_index,965,935,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 
 //Time Drawing
-if (global.isActive) and (global.timer >= 10)
+if (global.isActive)
 {
 	if (!timer_fake_display_active)
 	{

@@ -2,7 +2,7 @@ score += 55
 if (infected_collect = true)
 {
 	score -= 20;
-	global.health -= 0.05;
+	global.health -= 0.025;
 }
 if (global.abilityscore <= 550) and (global.magnet_collect_strong_pull = false)
 {
@@ -34,7 +34,7 @@ if (global.sanity >= 300)
 
 if (global.health_lock = false) and (global.health < global.maxhealth) and (instance_exists(obj_health))
 {
-	global.health += 0.25;
+	global.health += 0.05;
 }
 
 global.collectable_destroy = true

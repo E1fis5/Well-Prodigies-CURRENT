@@ -1,15 +1,17 @@
-
+if (global.hudshake)
+{
+	draw_sprite(sprite_index,image_index,-50 + random_range(-9,9),9 + random_range(-9,9));
+}
 //Main Drawing
 if (!shake_trigger)
 {
 	draw_sprite_ext(sprite_index,image_index,-50,9,image_xscale,image_yscale,0,c_white,image_alpha);
 }
-else
-if (shake_trigger)
+else if (!global.hudshake)
 {
 	draw_sprite_ext(sprite_index,image_index,-50 + random_range(-7,7),9 + random_range(-7,7),image_xscale,image_yscale,0,c_white,image_alpha);
 }
-if (global.isActive and (!shake_trigger))
+if (global.isActive and (!shake_trigger)) and (!global.hudshake)
 {
 	draw_sprite_ext(sprite_index,image_index,-50 + random_range(-2,2),9,image_xscale,image_yscale,0,c_white,image_alpha);
 }
@@ -95,7 +97,10 @@ if (global.sanity <= 160) and (!instance_exists(obj_sanity_notif))
 	instance_create_depth(0,0,-9999,obj_sanity_notif);
 	audio_play_sound(snd_mindSplit_end,6,false);
 	instance_create_depth(-999,-999,-11000,obj_sanity_overlay);
-	instance_create_depth(-999,-999,-11000,obj_healthbg_insane);
+	if (!instance_exists(obj_healthbg_insane))
+	{
+		instance_create_depth(-999,-999,-11000,obj_healthbg_insane);
+	}
 	global.player_insane = true;
 
 }

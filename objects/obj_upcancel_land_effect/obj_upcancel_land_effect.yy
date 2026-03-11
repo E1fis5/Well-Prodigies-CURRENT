@@ -8,8 +8,8 @@
   "name":"obj_upcancel_land_effect",
   "overriddenProperties":[],
   "parent":{
-    "name":"effects",
-    "path":"folders/Objects/effects.yy",
+    "name":"upcancel",
+    "path":"folders/Objects/effects/upcancel.yy",
   },
   "parentObjectId":null,
   "persistent":false,

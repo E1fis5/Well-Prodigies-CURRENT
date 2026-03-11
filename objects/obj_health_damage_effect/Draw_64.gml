@@ -1,0 +1,1 @@
+draw_sprite(sprite_index,image_index,obj_health.health_effect_creation_x,obj_health.health_effect_creation_y);

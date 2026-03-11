@@ -6,8 +6,16 @@ if (global.debug_active = true)
 	{
 		draw_text(100,700,obj_player.walksp);
 			draw_text(100,600,obj_player.dash_distance);
-				draw_text(100,500,obj_player.vspJump);
+			if (obj_player.mindsplit_activated)
+			{
+				draw_text(100,500,"1");
+			}
+			if (obj_player.mindsplit_avalible)
+			{
+				draw_text(100,400,"1");
+			}
 	}
+				
 }
 	if (instance_exists(obj_jestraught_play))
 	{

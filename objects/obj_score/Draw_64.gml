@@ -1,6 +1,13 @@
 if instance_exists(obj_player) and (global.scoreHider = false)
-{
-		    draw_sprite_ext(sprite_index,image_index,1350,0,image_xscale,image_yscale,0,c_white,image_alpha);
+{	
+	if (global.hudshake)
+	{
+		draw_sprite(sprite_index,image_index,1350 + random_range(-9,9),0 + random_range(-9,9));
+	}
+	else
+	{
+		draw_sprite_ext(sprite_index,image_index,1350,0,image_xscale,image_yscale,0,c_white,image_alpha);
+	}
 }
 
 

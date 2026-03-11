@@ -6,6 +6,12 @@ shake_amount = 0;
 depth = -10000;
 x = -999;
 y = -999;
+sanity_drain_effects = function()
+{
+	shake_trigger = true;
+	audio_play_sound(snd_mindSplit_end,6,false,0.5);
+	time_source_start(sanityTimerShake);
+}
 //Time sources
 var sanity_shake = function()
 {
@@ -15,9 +21,7 @@ var sanity_shake = function()
 var sanity_drain = function()
 {
 	global.sanity -= 10;
-	shake_trigger = true;
-	audio_play_sound(snd_mindSplit_end,6,false,0.5);
-	time_source_start(sanityTimerShake);
+	sanity_drain_effects();
 }
 
 var wither_drain = function()

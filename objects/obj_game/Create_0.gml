@@ -8,6 +8,7 @@ global.targetY = -1;
 global.targetDirection = 0;
 global.doll_move = false;
 global.dollbuff = false;
+global.hudshake = false;
 //Fonts
 font_main = font_add_sprite(spr_mainfont, 32, true, 1)
 global.fps_key = keyboard_check(vk_f5);

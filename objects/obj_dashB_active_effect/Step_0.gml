@@ -1,5 +1,12 @@
+//Placement Adjustments
 x = obj_player.x - 3;
 y = obj_player.y + 5;
+
+if (hit_adjustment)
+{
+	x = obj_player.x - 60;
+	y = obj_player.y - 60;
+}
 
 if (global.dboost_chance_active = true)
 {

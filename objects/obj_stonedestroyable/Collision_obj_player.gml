@@ -2,7 +2,7 @@ if (!instance_exists(obj_dashB_active_effect))
 {
 	global.damage = true;
 	instance_destroy();
-	global.health -= 0.3;
+	global.health -= 0.5;
 	score -= 75;
 	audio_play_sound(snd_player_hurt,5,false);
     audio_play_sound(snd_rock_break,5,false);

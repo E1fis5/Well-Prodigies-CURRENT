@@ -9,6 +9,25 @@ fake_timer = 0;
 timer_fake_display_chance = 0;
 timer_fake_display_active = false;
 image_blend = c_black;
+cd_lightning = function()
+{
+		layer_set_visible("Effect_Screenshake_mega",1);
+		layer_set_visible("Effect_Lightning",1);
+		obj_player.image_blend = c_black;
+		obj_player.depth = -999;
+		obj_collision_wall.image_blend = c_black;
+		obj_collision_wall.depth = -999;
+		obj_collision_wall.image_alpha = 1;
+		instance_create_depth(-99,-99,-999,obj_hide_hud);
+		audio_play_sound(snd_escape_lightning,8,false);
+		time_source_start(timer_lightning_light_disable);
+		time_source_start(timer_crumble_shake_disable);
+		if (instance_exists(obj_dashB_active_effect)) and (obj_dashB_active_effect.sprite_index = spr_dashB_perfect_hit)
+		{
+			obj_dashB_active_effect.depth = -1000;
+			obj_dashB_active_effect.image_blend = c_black;
+		}	
+}
 CD_Dark_Layers = function()
 {
 	layer_set_visible("Effect_Dark_Tint",1);
@@ -56,17 +75,7 @@ var cave_crumble = function()
 	}
 	else
 	{
-		layer_set_visible("Effect_Screenshake_mega",1);
-		layer_set_visible("Effect_Lightning",1);
-		obj_player.image_blend = c_black;
-		obj_player.depth = -999;
-		obj_collision_wall.image_blend = c_black;
-		obj_collision_wall.depth = -999;
-		obj_collision_wall.image_alpha = 1;
-		instance_create_depth(-99,-99,-999,obj_hide_hud);
-		audio_play_sound(snd_escape_lightning,8,false);
-		time_source_start(timer_lightning_light_disable);
-		time_source_start(timer_crumble_shake_disable);
+		cd_lightning();
 	}
 }
 //Fake Timer Duration

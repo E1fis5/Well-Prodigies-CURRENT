@@ -1,10 +1,21 @@
 if (sprite_index = spr_dashBoost_effect_hit)
 {
 	sprite_index = spr_dashB_active_effect;
-	if (global.dash_Mindsplit = true)
-	{
-		sprite_index = spr_dBoost_mindsplit;
-	}
+	player_follow = true;
+}
+
+if (sprite_index = spr_dashB_perfect_hit)
+{
+	sprite_index = spr_dashB_active_perfect;
+	hit_adjustment = false;
+	player_follow = true;
+}
+
+if (sprite_index = spr_dashB_mindsplit_hit)
+{
+	sprite_index = spr_dBoost_mindsplit;
+	hit_adjustment = false;
+	player_follow = true;
 }
 
 if (sprite_index = spr_dBoost_mindSplit_swap)
