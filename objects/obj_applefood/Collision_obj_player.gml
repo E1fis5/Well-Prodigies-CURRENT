@@ -27,10 +27,6 @@ if (global.magnet_collect_strong_pull = true)
 }
 global.sanity += 1.5
 
-if (global.sanity >= 300)
-{
-	global.sanity -= 1.5
-}
 
 if (global.health_lock = false) and (global.health < global.maxhealth) and (instance_exists(obj_health))
 {

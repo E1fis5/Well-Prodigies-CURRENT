@@ -53,8 +53,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"hud",
-    "path":"folders/Sprites/hud.yy",
+    "name":"sanity",
+    "path":"folders/Sprites/hud/sanity.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

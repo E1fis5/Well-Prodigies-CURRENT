@@ -5,7 +5,7 @@ if (global.debug_active = true)
 	if (instance_exists(obj_player))
 	{
 		draw_text(100,700,obj_player.walksp);
-			draw_text(100,600,obj_player.dash_distance);
+			draw_text(100,600,obj_player.vsp_max_wall);
 			if (obj_player.mindsplit_activated)
 			{
 				draw_text(100,500,"1");
@@ -14,6 +14,7 @@ if (global.debug_active = true)
 			{
 				draw_text(100,400,"1");
 			}
+			draw_text(100,300,global.sanity);
 	}
 				
 }

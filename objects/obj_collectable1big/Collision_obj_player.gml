@@ -25,9 +25,4 @@ instance_create_depth(x,y,-100,obj_collect_effect2)
 
 global.sanity += 3.5
 
-if (global.sanity >= 300)
-{
-	global.sanity -= 3.5
-}
-
 global.collectable_destroy = true

@@ -28,6 +28,8 @@ if (sprite_index = spr_player_land_left) and (land_sprite_break)
 
 if (sprite_index = spr_player_insane_escape_idle) or (sprite_index = spr_player_insane_escape_idle_left)
 {
+	crawl_allowed = true;
+	mindsplit_override = false;
 	if (player_left)
 	{
 		sprite_index = spr_player_left;
@@ -43,10 +45,10 @@ if (sprite_index = spr_player_insane_escape_idle) or (sprite_index = spr_player_
 		time_source_start(obj_camera.timer_camzoom_out);
 	}
 	walksp = global.storedwalksp;
-	mindsplit_override = false;
 	walksp += 0.85;
 	mindsplit_avalible = true;
 	dash_distance += 25;
+	can_dash = true;
 	if (instance_exists(obj_dashB_active_effect))
 	{
 		walksp += 0.35;

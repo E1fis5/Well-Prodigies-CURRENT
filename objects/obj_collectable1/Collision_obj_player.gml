@@ -26,11 +26,6 @@ instance_create_depth(x,y,-100,obj_collect_effect)
 
 global.sanity += 0.2
 
-if (global.sanity >= 300)
-{
-	global.sanity -= 0.2
-}
-
 instance_create_depth(-999,-999,-9990,obj_diamond_notif)
 
 global.collectable_destroy = true

@@ -25,10 +25,5 @@ instance_create_depth(-999,-999,-9900,obj_bigcollect_notif);
 
 global.sanity += 10
 
-if (global.sanity >= 300)
-{
-	global.sanity -= 10
-}
-
 
 

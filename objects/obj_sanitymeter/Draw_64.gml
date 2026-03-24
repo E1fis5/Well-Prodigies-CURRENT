@@ -16,9 +16,18 @@ if (global.isActive and (!shake_trigger)) and (!global.hudshake)
 	draw_sprite_ext(sprite_index,image_index,-50 + random_range(-2,2),9,image_xscale,image_yscale,0,c_white,image_alpha);
 }
 
-	if (global.sanity <= 300 )
+if (global.sanity >= 300) //Full Stage
 {
    	image_index = 0;
+	if (!global.isActive)
+	{	
+		time_source_pause(sanityTimerHard);
+	}
+	else
+	{
+		time_source_pause(sanityTimerEscape);
+	}
+	time_source_start(sanityTimerFullDrain);
 }
 
 if (global.sanity <= 290) 
@@ -71,7 +80,7 @@ if (global.sanity <= 210)
 	image_index = 10;
 }
 
-if (global.sanity <= 200)
+if (global.sanity <= 200) //Half Stage
 {
 	image_index = 11;
 }
@@ -91,7 +100,7 @@ if (global.sanity <= 170)
 	image_index = 14;
 }
 
-if (global.sanity <= 160) and (!instance_exists(obj_sanity_notif))
+if (global.sanity <= 160) and (!instance_exists(obj_sanity_notif)) //Insanity Start
 {
 	image_index = 15;
 	instance_create_depth(0,0,-9999,obj_sanity_notif);

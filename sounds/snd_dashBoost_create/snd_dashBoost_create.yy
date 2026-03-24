@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_dashBoost_create",
   "parent":{
-    "name":"player_sounds",
-    "path":"folders/Sounds/player_sounds.yy",
+    "name":"dash_boost",
+    "path":"folders/Sounds/player_sounds/dash_boost.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

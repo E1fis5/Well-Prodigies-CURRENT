@@ -14,11 +14,7 @@ global.gems_collected += 1;
 
 global.sanity += 30;
 
-if (global.sanity >= 300)
-{
-	global.sanity -= 30;
-}
-
-
+obj_player.activate_flash_green = true;
+instance_create_depth(-999,-999,-9999,obj_dBoost_activate_flash);
 instance_create_depth(-999,-999,-9998,obj_gem_notif);
 instance_destroy(obj_emerald_sparkle);

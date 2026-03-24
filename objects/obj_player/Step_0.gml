@@ -43,27 +43,40 @@ if (global.walljumps >= 3) and (global.walljump_boost1 = false)
 		if (!OH_dash_avalible)
 		{
 			dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")));
+			if (onground)
+			{
+				dash_direction = point_direction(0,0,input_check("right")- input_check("left"),0);
+			}
 		}
 		else
 		{
-			dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")) - (input_check("up")));
-			if (input_check("up"))
+			if (!onground)
 			{
-				instance_create_depth(x,y - 60,399,obj_overhead_dash_effect_1);
-				OH_dash_avalible = false;
-				audio_play_sound(snd_dashBoost_create,6,false,1.3,0,2);
+				dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")) - (input_check("up")));
+				if (input_check("up"))
+				{
+					instance_create_depth(x,y - 60,399,obj_overhead_dash_effect_1);
+					OH_dash_avalible = false;
+					audio_play_sound(snd_dashBoost_create,6,false,1.3,0,2);
+				}
 			}
-		}
-		if (onground) and (!OH_dash_avalible)
-		{
-			dash_direction = point_direction(0,0,input_check("right")- input_check("left"),0)
+			else
+			{
+				dash_direction = point_direction(0,0,input_check("right")- input_check("left"),0);
+			}
 		}
 		dash_sp = dash_distance/dash_time;
 		dash_energy = dash_distance;
 		stateNormal = Dashstate
+		//Mindsplit
 		if (!mindsplit_override)
 		{
 			sprite_index = spr_player_dash
+		}
+		//Wall destroy
+		if (instance_exists(obj_wallboost_effect))
+		{
+			instance_destroy(obj_wallboost_effect);
 		}
 		land_sprite_break = false;
 		fallcancel = true;
@@ -72,8 +85,6 @@ if (global.walljumps >= 3) and (global.walljump_boost1 = false)
 		walljump = false;
 		//Dash Effect
 		instance_create_depth(x - 40,y - 20,399,obj_dash_effect);
-
-
 		//Walkspeed and Creations
 		global.dash_cancel_speed = false;
 		dJump_sprite_start = false;
@@ -116,7 +127,7 @@ if (global.walljumps >= 3) and (global.walljump_boost1 = false)
 
 
 	Dashstate = function()
-	//Movement
+	//Movement	
 	{
 	hsp = lengthdir_x(dash_sp,dash_direction)
 	vsp = lengthdir_y(dash_sp,dash_direction)
@@ -166,11 +177,6 @@ if (global.walljumps >= 3) and (global.walljump_boost1 = false)
 		   canJump = 18;
 		   jump_activated = true;
 		   jump_allowed = true;
-		   if (global.Dash_jumpNotif = true) and (!image_blend = c_black)
-		   {
-				image_blend = c_ltgrey;
-				time_source_start(timer_dJump_color_revert);
-		   }
 		   damage_deal = false;
 		   fallcancel = false;
 		   //Bomb Dash
@@ -428,7 +434,7 @@ if (score >= 20000) and (!score_boost3)
 	{
 		fallcancel = true;
 	}
-	if (fallcancel = false) and (upcancel_active = false) and (!wallclimb)
+	if (fallcancel = false) and (upcancel_active = false) and (!wallclimb) and (!mindsplit_override)
 	{
 		sprite_index = spr_player_fall;
 		if (player_left)
@@ -514,10 +520,14 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!i
 	{
 		global.sanity -= 20;
 		global.health -= 1;
+		global.damage = true;
 		walksp += 0.35;
 		audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.9);
 		//Sanity Shake
-		obj_sanitymeter.sanity_drain_effects();
+		if (instance_exists(obj_sanitymeter))
+		{
+			obj_sanitymeter.sanity_drain_effects();
+		}
 	}
 	else
 	{
@@ -639,21 +649,21 @@ if (obj_game.gt_disable)
 }
 
 //Dash Scaling
-if (walksp >= 14) and (!Dash_Scale1) and (!Dash_Scale_Disable)
+if (walksp >= 16) and (!Dash_Scale1) and (!Dash_Scale_Disable)
 {	
-	dash_distance += 5;
+	dash_distance += 15;
 	Dash_Scale1 = true;
 }
 
 if (walksp >= 15) and (!Dash_Scale2)  and (!Dash_Scale_Disable)
 {
-	dash_distance += 10;
+	dash_distance += 25;
 	Dash_Scale2 = true;
 }
 
 
-if (walksp >= 17.5) and (!Dash_Scale3) and (!Dash_Scale_Disable)
+if (walksp >= 20) and (!Dash_Scale3) and (!Dash_Scale_Disable)
 {
-	dash_distance += 30;
+	dash_distance += 35;
 	Dash_Scale3 = true;
 }

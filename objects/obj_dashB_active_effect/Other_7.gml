@@ -30,5 +30,26 @@ if (sprite_index = spr_dBoost_super_spawn2)
 
 if (sprite_index = spr_dBoost_ending_explosion)
 {
+	var i = obj_player;
+	
 	instance_destroy();
+	instance_destroy(obj_dBoost_additive);
+	i.dBoost_additives_active = false;
+	i.dash_damage -= 5;
+	//Early Boost
+	if (i.dashB_first_hit)
+	{
+		i.walksp -= 0.60;
+		i.dash_distance -= 25;
+		time_source_stop(i.timer_aftereffect_creation_quick);
+	}
+	time_source_stop(i.timer_aftereffect_creation);
+	if (i.mindsplit_activated)
+	{
+		i.walksp -= 0.30;
+	}
+	//Normal Boost
+	i.walksp -= 0.60;
+	i.dash_distance -= 45;
+	i.dBoost_resets = 0;
 }

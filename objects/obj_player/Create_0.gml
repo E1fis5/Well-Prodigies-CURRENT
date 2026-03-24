@@ -20,6 +20,8 @@ global.dash_cancel_speed = false;
 global.sprite_idlebreak = false;
 //Effect Control
 dashJoost_hit_disable = false;
+activate_flash_black = false;
+activate_flash_green = false;
 //Wall Boost Stats
 global.walljumps = 0;
 global.walljump_boost1 = false
@@ -31,6 +33,7 @@ global.challenge_mode = false;
 global.damage = false;
 //Gravity
 hsp = 0;
+crawl_allowed = true;
 hsp_wjump = 5;
 vsp = 10;
 grv = 0.07;
@@ -82,6 +85,7 @@ global.jestraught_dash_walksp_add = 0
 global.particle_start = false
 global.durabilty = 0
 global.Dash_jumpNotif = true;
+basestate_override = false;
 // Sanity and hunger
 draw_sprite_on_contact = false;
 contact_sprite = spr_lap2_graph
@@ -251,7 +255,6 @@ var dBoost_create = function()
 
 var dBoost_deactivate = function()
 {
-		instance_destroy(obj_dBoost_additive);
 		if (instance_exists(obj_dashB_active_effect))
 		{
 			obj_dashB_active_effect.sprite_index = spr_dBoost_ending_explosion;
@@ -260,31 +263,13 @@ var dBoost_deactivate = function()
 		{
 			obj_healthbg_dashB.sprite_index = spr_healthbg_effect_dashB_destroy;
 		}
-		dBoost_additives_active = false;
-		dash_damage -= 5;
 		if (instance_exists(obj_dashJoost_counter))
 		{
 			obj_dashJoost_counter.dashCounter_shake_warnin = true;
 		}
-		//Early Boost
-		if (dashB_first_hit)
-		{
-			walksp -= 0.60;
-			time_source_stop(timer_aftereffect_creation_quick);
-			dash_distance -= 25;
-		}
-		if (mindsplit_activated)
-		{
-			walksp -= 0.30;
-		}
-		//Normal Boost
-		walksp -= 0.60;
-		time_source_stop(timer_aftereffect_creation);
-		dash_distance -= 45;
 		global.dboost_chance_active = false;
 		instance_create_depth(x,y,-9999,obj_dashjoost_pause);
 		audio_play_sound(snd_dashboost_diminish,6,false);
-		dBoost_resets = 0;
 }
 
 
@@ -488,7 +473,7 @@ else
 state_walljump = function()
 {
 //Wallclimb
-if (wallclimb)
+if (wallclimb) and (!mindsplit_override)
 {
 	land_sprite_break = false;
 	sprite_index = spr_player_wallclimb;
@@ -576,8 +561,14 @@ x += hsp;
 if (place_meeting(x, y + vsp, obj_collision_wall)) and (global.collisions_enabled = true)
 {
 	if (vsp > 0) 
-	canJump = 10;
-	can_dash = true;
+	if (!mindsplit_override)
+	{
+		canJump = 10;
+		if (!basestate_override)
+		{
+			can_dash = true;
+		}
+	}
 
 	while (abs(vsp) > 0.1)
 	{
@@ -726,7 +717,7 @@ state_FastFall = function()
 	upcancel_active = true;
 	time_source_stop(timer_upcancel_boost);
 	time_source_start(timer_upcancel_fallbuild);
-	if (!land_sprite_break)
+	if (!land_sprite_break) and (!mindsplit_override)
 	{
 		sprite_index = spr_player_downp;
 		if (player_left)
@@ -827,13 +818,13 @@ else
 //Slide State
 state_PCrawl = function()
 {
-	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (onground)
+	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (onground) and (crawl_allowed)
 	{
 		if (!slide_boost)
-		{ 
+		{
+			Dash_Scale_Disable = true;
 			walksp += 3;
 			slide_boost = true;
-			Dash_Scale_Disable = true;
 		}
 		land_sprite_break = false;
 		time_source_start(timer_power_crawl);
@@ -924,6 +915,7 @@ state_Haunted = function()
 //Base state
 state_Base = function()
 {
+	basestate_override = true;
 	canCrawl = 1;
 	can_dash = false;
 }
@@ -1080,13 +1072,22 @@ mindsplit_transition_state = function()
 			}
 		if (!mindsplit_activated) and (mindsplit_avalible) and (onground)
 		{
+			//Flash
+			activate_flash_black = true;
+			instance_create_depth(-999,-999,-9999,obj_dBoost_activate_flash);
+			instance_create_depth(x + 30,y - 15,401,obj_mindsplit_activate_effect);
+			//Camera
 			obj_camera.cam_height_subtract = 16;
 			obj_camera.cam_width_subtract = 26;
-			audio_play_sound(snd_escape_break,4,false);
+			audio_play_sound(snd_mindsplit_activate,4,false);
 			mindsplit_activated = true;
 			time_source_start(timer_mindSpl_deactivation);
 			mindsplit_override = true;
 			mindsplit_avalible = false;
+			crawl_allowed = false;
+			//Screenshake
+			time_source_start(timer_dBoostmiss_screenshake);
+		    layer_set_visible("Effect_Screenshake_mega",1);
 			if (!player_left)
 			{
 				sprite_index = spr_player_insane_escape_idle;
@@ -1097,8 +1098,9 @@ mindsplit_transition_state = function()
 			}
 			global.storedwalksp = walksp;
 			walksp = 0;
-			global.sanity = 150;
+			global.sanity = 140;
 			canJump = 0;
+			can_dash = false;
 			time_source_start(obj_camera.timer_camzoom_in);
 			obj_camera.camZoom = true;
 			if (instance_exists(obj_dashB_active_effect)) and (dBoost_resets < 1)
@@ -1118,6 +1120,10 @@ mindsplit_transition_state = function()
 					{
 						OH_dash_avalible = true;
 					}
+				if (instance_exists(obj_dashJoost_counter))
+				{
+					obj_dashJoost_counter.dashCounter_shake_warnin = false;
+				}
 			}
 		}
 }
