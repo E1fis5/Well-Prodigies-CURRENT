@@ -131,7 +131,7 @@ adrenaline_boost = function()
 
 //Dash
 can_dash = false
-dash_distance = 200
+dash_distance = 200;
 dash_time = 16
 idle_active = false;
 drop_dash_avalible = false;
@@ -991,10 +991,6 @@ state_Bomb = function()
 		{
 			OH_dash_avalible = true;
 		}
-		if (vsp_max_wall > 12)
-		{
-			vsp_max_wall = 12;
-		}
 	}
 	//Active
 	if (bomb_active)
@@ -1011,6 +1007,10 @@ state_Bomb = function()
 		if (input_check_pressed("dash")) and (Bomb_Dash_Active)
 		{
 			walksp += 6;
+		if (vsp_max_wall > 12)
+		{
+			vsp_max_wall = 12;
+		}
 			bomb_active = false;
 			fallcancel = false;
 			audio_play_sound(snd_dash_explosion,4,false);
@@ -1105,6 +1105,7 @@ mindsplit_transition_state = function()
 			obj_camera.camZoom = true;
 			if (instance_exists(obj_dashB_active_effect)) and (dBoost_resets < 1)
 			{
+					audio_play_sound(snd_dBoost_start,6,false,1.35,0,0.9);
 					dBoost_resets += 1;
 					time_source_reset(timer_dBoost_deactivate);
 					time_source_start(timer_dBoost_deactivate);

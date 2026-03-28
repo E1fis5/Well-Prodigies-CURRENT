@@ -14,8 +14,8 @@ sanity_drain_effects = function()
 	time_source_start(sanityTimerShake);
 	if (final_drain_trigger >= 2)
 	{
-		audio_play_sound(snd_mindSplit_start,5,false,1.3);
-		audio_play_sound(snd_mindSplit_end,6,false,1);
+		audio_play_sound(snd_mindSplit_start,5,false,1.3,0,1.1);
+		audio_play_sound(snd_mindSplit_end,6,false,1,0,1.1);
 	}
 	else
 	{

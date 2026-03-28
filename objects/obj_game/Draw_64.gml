@@ -15,6 +15,7 @@ if (global.debug_active = true)
 				draw_text(100,400,"1");
 			}
 			draw_text(100,300,global.sanity);
+			draw_text(100,200,obj_player.dash_distance);
 	}
 				
 }
