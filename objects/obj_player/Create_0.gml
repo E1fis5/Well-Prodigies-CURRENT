@@ -101,6 +101,9 @@ global.dash_amount = 0;
 global.doll_ability_active = false;
 fastFall_avalible = true;
 ground_break_permanent = false;
+upcancel_jump_break = false;
+upcancel_breaks = 0;
+upcancel_avalible = true;
 //Speed control
 score_boost1 = false;
 score_boost2 = false;
@@ -135,7 +138,6 @@ dash_distance = 200;
 dash_time = 16
 idle_active = false;
 drop_dash_avalible = false;
-upcancel_avalible = true;
 dashBoost_forgive = 0;
 dashBoost_fail = false;
 crawl_jump = false;
@@ -317,6 +319,14 @@ var upcancel_boost = function()
 	upcancel_avalible = true;
 }
 timer_upcancel_boost = time_source_create(time_source_game,0.85,time_source_units_seconds,upcancel_boost,[],1);
+
+
+//Upcancel Jump Break Timer
+var upcancel_jump_break_timer = function()
+{
+	upcancel_jump_break = false;
+}
+timer_upcancel_jump_break = time_source_create(time_source_game,0.3,time_source_units_seconds,upcancel_jump_break_timer,[],1);
 //Upcancel Screenshake
 var Upcancel_screenshake = function()
 {
@@ -532,18 +542,22 @@ if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 		snow_jump_activate = false;
 	}
 }
-
-//Drop Dash Set
-if (input_check("down"))
+//Upcancel Effects
+if (!land_sprite_break) and (!mindsplit_override) and (upcancel_active)
 {
-	drop_dash_avalible = true;
-}
-else
-{
-	drop_dash_avalible = false;
-}
-
-
+	sprite_index = spr_player_downp;
+	if (player_left)
+	{
+		sprite_index = spr_player_downp_left;
+	}
+		//Trail
+		with (instance_create_depth(x,y,depth+1,obj_trail_effect))
+		{
+			sprite_index = other.sprite_index;
+			image_blend = c_red;
+			image_alpha = 0.6;
+		}
+	}
 //Collision
 if (place_meeting(x + hsp, y, obj_collision_wall)) and (global.collisions_enabled = true)
 {
@@ -625,7 +639,7 @@ if (onground)
 if (!onground)
 {
 	canCrawl = 1;
-	if (!crawl_jump) and (!upcancel_state_prohibit)
+	if (!crawl_jump) and (!upcancel_state_prohibit) and (!upcancel_jump_break)
 	{
 		upcancel_avalible = true;
 	}
@@ -633,7 +647,7 @@ if (!onground)
 }
 
 //Change direction in animation
-if input_check("left") and (wallclimb = 0) and (!land_sprite_break) and (!mindsplit_override)
+if input_check("left") and (wallclimb = 0) and (!land_sprite_break) and (!mindsplit_override) and (!upcancel_active)
 {
 	sprite_index = spr_playerwalkleft
 	image_xscale = 1
@@ -646,7 +660,7 @@ if input_check("left") and (wallclimb = 0) and (!land_sprite_break) and (!mindsp
 
 
 
-  if input_check("right") = true and (wallclimb = 0) and (!land_sprite_break) and (!mindsplit_override)
+  if input_check("right") = true and (wallclimb = 0) and (!land_sprite_break) and (!mindsplit_override) and (!upcancel_active)
 {
 	sprite_index = spr_playerwalk
 	image_xscale = 1
@@ -658,7 +672,7 @@ if input_check("left") and (wallclimb = 0) and (!land_sprite_break) and (!mindsp
 }
 
 
-  if input_check("right") = false && input_check("left") = false && player_left = true and (!wallclimb) and (!land_sprite_break) and (!mindsplit_override)
+  if input_check("right") = false && input_check("left") = false && player_left = true and (!wallclimb) and (!land_sprite_break) and (!mindsplit_override) and (!upcancel_active)
 {
 	if (!global.isActive)
 	{
@@ -672,7 +686,7 @@ if input_check("left") and (wallclimb = 0) and (!land_sprite_break) and (!mindsp
 	idle_active = true;
 }
 
-  if input_check("right") = false && input_check("left") = false && player_left = false and (!wallclimb) and (!land_sprite_break) and (!mindsplit_override)
+  if input_check("right") = false && input_check("left") = false && player_left = false and (!wallclimb) and (!land_sprite_break) and (!mindsplit_override) and (!upcancel_active)
 {
 	if (!global.isActive)
 	{
@@ -707,9 +721,28 @@ stateNormal = state_normal
 //Fastfall State
 state_FastFall = function()
 {
-	if (input_check("down") = true) and (grv = -1 = false) and (!place_meeting(x,y,obj_ladder_wood)) and (upcancel_avalible) and (!slide_boost) and (!upcancel_state_prohibit)
+	if (input_check("down") = true) and (upcancel_avalible) and (!slide_boost) and (!upcancel_state_prohibit) and (!onground)
 {
-	grv = 1.5
+	if (!input_check_pressed("jump"))
+	{
+		grv = 1.5
+	}
+	else
+	{
+		if (upcancel_breaks <= 0)
+		{
+			jump_activated = true;
+			vsp = vspDJump;
+			grv = 0.07;
+			up_cancel_eff = false;
+			upcancel_active = false;
+			time_source_stop(timer_upcancel_fallbuild);
+			time_source_start(timer_upcancel_jump_break);
+			upcancel_avalible = false;
+			upcancel_jump_break = true;
+			upcancel_breaks++
+		}
+	}
 	if (!Bomb_Dash_Active)
 	{
 		dash_energy = 0;
@@ -717,20 +750,6 @@ state_FastFall = function()
 	upcancel_active = true;
 	time_source_stop(timer_upcancel_boost);
 	time_source_start(timer_upcancel_fallbuild);
-	if (!land_sprite_break) and (!mindsplit_override)
-	{
-		sprite_index = spr_player_downp;
-		if (player_left)
-		{
-			sprite_index = spr_player_downp_left;
-		}
-		with (instance_create_depth(x,y,depth+1,obj_trail_effect))
-		{
-			sprite_index = other.sprite_index;
-			image_blend = c_red;
-			image_alpha = 0.6;
-		}
-	}
 	if (!instance_exists(obj_upcancel_effect)) and (up_cancel_eff = false)
 	{
 		instance_create_depth(x,y,399,obj_upcancel_effect);
@@ -752,12 +771,23 @@ state_FastFall = function()
 			instance_destroy(obj_player_dash_hitbox);
 		}
 	}
-	if (onground)
+}
+}
+
+//Upcancel Land
+land_state = function()
+{
+	if (upcancel_active) and (onground)
 	{
 		land_sprite_break = true;
-		upcancel_avalible = false;
-		upcancel_jump = true;
-		time_source_start(timer_upcancel_boost);
+		if (upcancel_active = true)
+		{
+			upcancel_active = false;
+			upcancel_avalible = false;
+			upcancel_jump = true;
+			time_source_start(timer_upcancel_boost);
+			upcancel_breaks = 0;
+		}
 		if (!global.isActive)
 		{
 			layer_set_visible("Effect_Screenshake",1);	
@@ -805,14 +835,7 @@ state_FastFall = function()
 			global.walljumps = 7;
 		}
 	}
-}
-else
-{
-	up_cancel_eff = false;
-	upcancel_active = false;
-	time_source_stop(timer_upcancel_fallbuild);
-}
-}
+	}
 
 
 //Slide State

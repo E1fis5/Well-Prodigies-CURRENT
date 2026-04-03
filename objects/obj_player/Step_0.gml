@@ -18,6 +18,9 @@ state_Bomb();
 //Mindsplit
 mindsplit_transition_state();
 
+//LANd
+land_state();
+
 //Wall Boosts
 if (global.walljumps >= 3) and (global.walljump_boost1 = false)
 {
