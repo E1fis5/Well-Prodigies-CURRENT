@@ -388,6 +388,12 @@ var doublejump_check = function()
 	jump_activated = true;
 } 
 timer_jump_check = time_source_create(time_source_game,2,time_source_units_frames,doublejump_check,[],1)
+//Walljump revert failsafe
+var walljump_failsafe = function()
+{
+	walljump = false;	
+}
+timer_walljump_check = time_source_create(time_source_game,0.5,time_source_units_seconds,walljump_failsafe,[],1);
 //Dboost
 var dashBoost_aftereffect_creation = function()
 {
@@ -440,6 +446,11 @@ hsp =(input_check("right") - input_check("left")) * walksp
 
 if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bomb_active)
 {
+	if (time_source_exists(timer_walljump_check))
+	{
+		time_source_stop(timer_walljump_check);
+		time_source_start(timer_walljump_check);
+	}
 	walljumpdelay = walljumpdelay_max;
 	hsp = -onwall * hsp_wjump;
 	vsp = vsp_wjump;
@@ -448,13 +459,10 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 	global.walljumps++;
 	grv = 0.07;
 	can_dash = true;
+	wallclimb = false;
 	walljump = true;
 	fallcancel = true;
-		instance_create_depth(x,y,401,obj_wallclimb_effect);
-		if (player_left = true)
-		{
-			instance_create_depth(x,y,401,obj_wallclimb_effect_left);
-		}
+	instance_create_depth(x,y,401,obj_wallclimb_effect);
 with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 	{
 		sprite_index = other.sprite_index;
@@ -483,8 +491,10 @@ else
 state_walljump = function()
 {
 //Wallclimb
-if (wallclimb) and (!mindsplit_override)
+if (wallclimb) and (!mindsplit_override) 
 {
+	upcancel_active = false;
+	time_source_stop(timer_upcancel_fallbuild);
 	land_sprite_break = false;
 	sprite_index = spr_player_wallclimb;
 	if (player_left)
@@ -493,7 +503,7 @@ if (wallclimb) and (!mindsplit_override)
 	}
 }
 //Walljump
-if (walljump) and (!onground)
+if (walljump) and (!onground) and (!wallclimb)
 {
 	sprite_index = spr_player_walljump_normal;
 	fallcancel = true;
@@ -543,7 +553,7 @@ if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 	}
 }
 //Upcancel Effects
-if (!land_sprite_break) and (!mindsplit_override) and (upcancel_active)
+if (!land_sprite_break) and (!mindsplit_override) and (upcancel_active) and (!wallclimb)
 {
 	sprite_index = spr_player_downp;
 	if (player_left)
@@ -1019,6 +1029,10 @@ state_Bomb = function()
 	if (bomb_active)
 	{
 		grv = -9;
+		//Upcancel Disable
+		upcancel_avalible = false;
+		upcancel_active = false;
+		time_source_stop(timer_upcancel_fallbuild);
 		//Trail
 		with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 		{
@@ -1034,6 +1048,7 @@ state_Bomb = function()
 		{
 			vsp_max_wall = 12;
 		}
+			upcancel_avalible = true;
 			bomb_active = false;
 			fallcancel = false;
 			audio_play_sound(snd_dash_explosion,4,false);

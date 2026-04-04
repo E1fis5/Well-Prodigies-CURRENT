@@ -674,7 +674,6 @@
     {"id":{"name":"obj_voodoo_magic_shop_item","path":"objects/obj_voodoo_magic_shop_item/obj_voodoo_magic_shop_item.yy",},},
     {"id":{"name":"obj_wallboost_effect","path":"objects/obj_wallboost_effect/obj_wallboost_effect.yy",},},
     {"id":{"name":"obj_wallboost","path":"objects/obj_wallboost/obj_wallboost.yy",},},
-    {"id":{"name":"obj_wallclimb_effect_left","path":"objects/obj_wallclimb_effect_left/obj_wallclimb_effect_left.yy",},},
     {"id":{"name":"obj_wallclimb_effect","path":"objects/obj_wallclimb_effect/obj_wallclimb_effect.yy",},},
     {"id":{"name":"obj_wallclimb_slide_effect","path":"objects/obj_wallclimb_slide_effect/obj_wallclimb_slide_effect.yy",},},
     {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},},
