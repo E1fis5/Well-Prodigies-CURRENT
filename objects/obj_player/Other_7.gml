@@ -38,14 +38,9 @@ if (sprite_index = spr_player_insane_escape_idle) or (sprite_index = spr_player_
 	{
 		sprite_index = spr_playernew;
 	}
-	if (instance_exists(obj_camera))
-	{
-		obj_camera.cam_width_subtract = 26;
-		obj_camera.cam_height_subtract = 16;
-		time_source_start(obj_camera.timer_camzoom_out);
-	}
 	walksp = global.storedwalksp;
 	walksp += 0.85;
+	walljump_prohibit = false;
 	mindsplit_avalible = true;
 	dash_distance += 25;
 	can_dash = true;

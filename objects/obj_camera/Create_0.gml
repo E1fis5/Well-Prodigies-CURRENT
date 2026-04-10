@@ -3,6 +3,7 @@ cam_width_zoom = 960;
 cam_height_zoom = 540;
 cam_width_subtract = 26;
 cam_height_subtract = 16
+player_cam_timer_reset = 0;
 var cam_zooming = function()
 {
 	cam_width_zoom -= cam_width_subtract;

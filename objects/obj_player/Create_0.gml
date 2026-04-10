@@ -45,12 +45,13 @@ vsp_wjump = -5;
 vsp_max_wall = 12;
 canJump = 7
 upcancel_jump = false;
-upcancel_wallJump = false;
 global.dJump_idle = false
 runsp = 5.5;
 airTime = 0;
+//Wall
 onwall = 0;
-global.dash_jump_active = false;
+walljump_prohibit = false;
+upcancel_wallJump = false;
 jumpbuffer = 5;
 walljumpdelay = 0;
 walljumpdelay_max = 17;
@@ -58,6 +59,7 @@ global.sanity = 180;
 playedSound = false
 jump_allowed = false
 dJump_sprite_start = false;
+global.dash_jump_active = false;
 global.gem_counter = 0
 if (global.targetX != -1)
 {
@@ -207,13 +209,13 @@ up_dash_distance = 45;
 captured_distance = 0;
 captured_time = 0;
 global.storedwalksp = 0;
-
 //Sprite Break
 land_sprite_break = false;
 //Mindsplit
 mindsplit_avalible = true;
 mindsplit_activated = false;
 mindsplit_override = false;
+mindsplit_failsafe_zoom = false;
 //Snow State
 snow_jumps = 0;
 snow_jump_activate = false;
@@ -419,6 +421,19 @@ var mindSpl_cooldown = function()
 	mindsplit_avalible = true;
 	audio_play_sound(snd_dBoost_start,7,false,1.8,0,0.9);
 }
+
+var mindSpl_zoom_failsafe = function()
+{
+	if (instance_exists(obj_camera))
+	{
+		obj_camera.cam_width_subtract = 26;
+		obj_camera.cam_height_subtract = 16;
+		time_source_start(obj_camera.timer_camzoom_out);
+		mindsplit_failsafe_zoom = false;
+	}
+}
+
+timer_mindSpl_failsafe_zoom = time_source_create(time_source_game,0.5,time_source_units_seconds,mindSpl_zoom_failsafe,[],1);
 timer_mindSpl_cooldown = time_source_create(time_source_game,10,time_source_units_seconds,mindSpl_cooldown,[],1);
 timer_mindSpl_deactivation = time_source_create(time_source_game,45,time_source_units_seconds,mindSpl_deactivation,[],1);
 //Aftereffects/Dboost
@@ -444,7 +459,7 @@ if (walljumpdelay == 0)
 hsp =(input_check("right") - input_check("left")) * walksp
 
 
-if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bomb_active)
+if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bomb_active) and (!walljump_prohibit)
 {
 	if (time_source_exists(timer_walljump_check))
 	{
@@ -1091,7 +1106,7 @@ mindsplit_transition_state = function()
 	{
 		if (!mindsplit_avalible)
 		{
-			audio_play_sound(snd_dashBoost_fail,6,false,1.2,0,0.9);
+			audio_play_sound(snd_dashBoost_fail,6,false,0.5,0,0.9);
 		}
 		if (mindsplit_activated) and (mindsplit_avalible)
 			{
@@ -1115,8 +1130,15 @@ mindsplit_transition_state = function()
 			instance_create_depth(-999,-999,-9999,obj_dBoost_activate_flash);
 			instance_create_depth(x + 30,y - 15,401,obj_mindsplit_activate_effect);
 			//Camera
-			obj_camera.cam_height_subtract = 16;
 			obj_camera.cam_width_subtract = 26;
+			obj_camera.cam_height_subtract = 16;	
+			time_source_start(obj_camera.timer_camzoom_in);
+			obj_camera.camZoom = true;
+			mindsplit_failsafe_zoom = true;
+			if (mindsplit_failsafe_zoom)
+			{
+				time_source_start(timer_mindSpl_failsafe_zoom);
+			}
 			audio_play_sound(snd_mindsplit_activate,4,false);
 			mindsplit_activated = true;
 			time_source_start(timer_mindSpl_deactivation);
@@ -1125,7 +1147,10 @@ mindsplit_transition_state = function()
 			crawl_allowed = false;
 			//Screenshake
 			time_source_start(timer_dBoostmiss_screenshake);
-		    layer_set_visible("Effect_Screenshake_mega",1);
+			if (layer_exists("Effect_Screenshake_mega"))
+			{
+				layer_set_visible("Effect_Screenshake_mega",1);
+			}
 			if (!player_left)
 			{
 				sprite_index = spr_player_insane_escape_idle;
@@ -1138,9 +1163,8 @@ mindsplit_transition_state = function()
 			walksp = 0;
 			global.sanity = 140;
 			canJump = 0;
+			walljump_prohibit = true;
 			can_dash = false;
-			time_source_start(obj_camera.timer_camzoom_in);
-			obj_camera.camZoom = true;
 			if (instance_exists(obj_dashB_active_effect)) and (dBoost_resets < 1)
 			{
 					audio_play_sound(snd_dBoost_start,6,false,1.35,0,0.9);
