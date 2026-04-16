@@ -1384,6 +1384,7 @@
     {"id":{"name":"spr_dBoost_ending_explosion","path":"sprites/spr_dBoost_ending_explosion/spr_dBoost_ending_explosion.yy",},},
     {"id":{"name":"spr_dBoost_mindsplit_activate","path":"sprites/spr_dBoost_mindsplit_activate/spr_dBoost_mindsplit_activate.yy",},},
     {"id":{"name":"spr_dBoost_mindSplit_swap","path":"sprites/spr_dBoost_mindSplit_swap/spr_dBoost_mindSplit_swap.yy",},},
+    {"id":{"name":"spr_dBoost_mindsplit_switch","path":"sprites/spr_dBoost_mindsplit_switch/spr_dBoost_mindsplit_switch.yy",},},
     {"id":{"name":"spr_dBoost_mindsplit","path":"sprites/spr_dBoost_mindsplit/spr_dBoost_mindsplit.yy",},},
     {"id":{"name":"spr_dBoost_notif","path":"sprites/spr_dBoost_notif/spr_dBoost_notif.yy",},},
     {"id":{"name":"spr_dBoost_super_active","path":"sprites/spr_dBoost_super_active/spr_dBoost_super_active.yy",},},

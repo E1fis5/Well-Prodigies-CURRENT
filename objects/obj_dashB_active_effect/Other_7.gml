@@ -11,7 +11,7 @@ if (sprite_index = spr_dashB_perfect_hit)
 	player_follow = true;
 }
 
-if (sprite_index = spr_dashB_mindsplit_hit)
+if (sprite_index = spr_dashB_mindsplit_hit) or (sprite_index = spr_dBoost_mindsplit)
 {
 	sprite_index = spr_dBoost_mindsplit;
 	hit_adjustment = false;
@@ -21,6 +21,12 @@ if (sprite_index = spr_dashB_mindsplit_hit)
 if (sprite_index = spr_dBoost_mindSplit_swap)
 {
 	sprite_index = spr_dashB_active_effect;
+}
+
+if (sprite_index = spr_dBoost_mindsplit_switch)
+{
+	sprite_index = spr_dBoost_mindsplit;
+	hit_adjustment = false;
 }
 
 if (sprite_index = spr_dBoost_super_spawn2)

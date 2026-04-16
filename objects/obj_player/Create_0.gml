@@ -94,6 +94,11 @@ contact_sprite = spr_lap2_graph
 global.isActive = false;
 //Upcancels
 jumpmax = 2
+upcancel_disable = function()
+{
+	upcancel_active = false;
+	time_source_stop(timer_upcancel_fallbuild);
+}
 jumps_active = 0
 onground = false
 upcancel_active = false;
@@ -133,7 +138,6 @@ adrenaline_boost = function()
 	time_source_start(timer_adrenaline_duration);
 	instance_create_depth(x,y,401,obj_speed_particle);
 }
-
 //Dash
 can_dash = false
 dash_distance = 200;
@@ -508,8 +512,7 @@ state_walljump = function()
 //Wallclimb
 if (wallclimb) and (!mindsplit_override) 
 {
-	upcancel_active = false;
-	time_source_stop(timer_upcancel_fallbuild);
+	upcancel_disable();
 	land_sprite_break = false;
 	sprite_index = spr_player_wallclimb;
 	if (player_left)
@@ -1173,7 +1176,8 @@ mindsplit_transition_state = function()
 					time_source_start(timer_dBoost_deactivate);
 					time_source_reset(obj_dashB_active_effect.timer_dashBoost_warning);
 					time_source_start(obj_dashB_active_effect.timer_dashBoost_warning);
-					obj_dashB_active_effect.sprite_index = spr_dashBoost_effect_hit;
+					obj_dashB_active_effect.sprite_index = spr_dBoost_mindsplit_switch;
+					obj_dashB_active_effect.hit_adjustment = true;
 					if (dashB_first_hit)
 					{
 						obj_dashB_active_effect.sprite_index = spr_dashB_perfect_hit;

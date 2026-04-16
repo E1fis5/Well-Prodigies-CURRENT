@@ -121,6 +121,17 @@
         {"name":"g_ShakeSpeed","type":0,"value":"0.55",},
         {"name":"g_NoiseTexture","type":2,"value":"_filter_screenshake_noise",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
+    {"$GMREffectLayer":"","%Name":"Effect_5","depth":-68,"effectEnabled":true,"effectType":"_filter_colour_balance","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_5","properties":[
+        {"name":"g_ColourBalanceShadows","type":0,"value":"-0",},
+        {"name":"g_ColourBalanceShadows","type":0,"value":"0.05",},
+        {"name":"g_ColourBalanceShadows","type":0,"value":"0.1",},
+        {"name":"g_ColourBalanceMidtones","type":0,"value":"0",},
+        {"name":"g_ColourBalanceMidtones","type":0,"value":"0",},
+        {"name":"g_ColourBalanceMidtones","type":0,"value":"0",},
+        {"name":"g_ColourBalanceHighlights","type":0,"value":"0",},
+        {"name":"g_ColourBalanceHighlights","type":0,"value":"0",},
+        {"name":"g_ColourBalanceHighlights","type":0,"value":"0",},
+      ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMREffectLayer":"","%Name":"Effect_2","depth":0,"effectEnabled":true,"effectType":"_filter_whitenoise","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_2","properties":[
         {"name":"g_WhiteNoiseIntensity","type":0,"value":"0.085",},
         {"name":"g_WhiteNoiseAnimation","type":0,"value":"0.5",},

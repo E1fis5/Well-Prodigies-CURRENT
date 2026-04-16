@@ -42,6 +42,7 @@ if (global.walljumps >= 3) and (global.walljump_boost1 = false)
 	//Dash
 	if (can_dash) and (input_check_pressed("dash"))
 	{
+		upcancel_disable();
 		can_dash = false;
 		if (!OH_dash_avalible)
 		{
