@@ -1,5 +1,5 @@
 geyser_activated = false;
-
+geyser_limit = 0;
 geyser_stop = function()
 {
 	obj_player.grv = 0.07;

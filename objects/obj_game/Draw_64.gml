@@ -15,7 +15,18 @@ if (global.debug_active = true)
 				draw_text(100,400,"1");
 			}
 			draw_text(100,300,global.sanity);
-			draw_text(100,200,obj_player.dash_distance);
+			if (instance_exists(obj_gt_geyser_wave))
+			{
+				if (obj_gt_geyser_wave.geyser_touch)
+				{
+					draw_text(100,800,"1");
+				}
+				
+				if (!obj_gt_geyser_wave.geyser_touch)
+				{
+					draw_text(100,800,"2");
+				}
+			}
 	}
 				
 }
