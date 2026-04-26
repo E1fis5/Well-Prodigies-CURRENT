@@ -4,28 +4,31 @@ if (global.debug_active = true)
 	show_debug_overlay(true);
 	if (instance_exists(obj_player))
 	{
-		draw_text(100,700,obj_player.walksp);
-			draw_text(100,600,obj_player.vsp_max_wall);
-			if (obj_player.mindsplit_activated)
+			if (obj_player.walljump_prohibit)
 			{
 				draw_text(100,500,"1");
 			}
-			if (obj_player.mindsplit_avalible)
+			if (!obj_player.walljump_prohibit)
+			{
+				draw_text(100,500,"0");
+			}
+			
+			if (obj_player.jump_activated)
 			{
 				draw_text(100,400,"1");
 			}
-			draw_text(100,300,global.sanity);
-			if (instance_exists(obj_gt_geyser_wave))
+			if (!obj_player.jump_activated)
 			{
-				if (obj_gt_geyser_wave.geyser_touch)
-				{
-					draw_text(100,800,"1");
-				}
-				
-				if (!obj_gt_geyser_wave.geyser_touch)
-				{
-					draw_text(100,800,"2");
-				}
+				draw_text(100,400,"0");
+			}
+			
+			if (obj_player.onwall)
+			{
+				draw_text(100,300,"1");
+			}
+			if (!obj_player.onwall)
+			{
+				draw_text(100,300,"0");
 			}
 	}
 				

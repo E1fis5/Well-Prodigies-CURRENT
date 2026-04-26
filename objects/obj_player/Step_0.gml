@@ -671,3 +671,8 @@ if (walksp >= 20) and (!Dash_Scale3) and (!Dash_Scale_Disable)
 	dash_distance += 35;
 	Dash_Scale3 = true;
 }
+
+if (!jump_activated) and (onwall != 0) and (walljump_prohibit)
+{
+	walljump_prohibit = false;	
+}

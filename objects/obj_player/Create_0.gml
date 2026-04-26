@@ -462,7 +462,7 @@ walljumpdelay =max(walljumpdelay-1,0);
 if (walljumpdelay == 0) 
 hsp =(input_check("right") - input_check("left")) * walksp
 
-
+//walljump
 if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bomb_active) and (!walljump_prohibit)
 {
 	if (time_source_exists(timer_walljump_check))
@@ -473,7 +473,7 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 	walljumpdelay = walljumpdelay_max;
 	hsp = -onwall * hsp_wjump;
 	vsp = vsp_wjump;
-	audio_play_sound(snd_stone1,5,false);
+	audio_play_sound(snd_stone1,5,false)
 	dJump_sprite_start = false;
 	global.walljumps++;
 	grv = 0.07;
@@ -549,9 +549,9 @@ if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 {
 	vsp = vspJump;
 	canJump = 7;
+	jump_allowed = true;
 	time_source_start(timer_jump_check);
 	audio_play_sound(snd_pJump,4,false);
-	jump_allowed = true;
 	canCrawl = 1;
 	land_sprite_break = false;
 	global.fallspr_deactivate = true
@@ -655,8 +655,12 @@ if (onground) jumpbuffer = 6;
 //Preventing crawling in air
 if (onground)
 {
-	jump_activated = 0;
+	jump_activated = false;
 	canCrawl = 0;
+	if (!walljump_prohibit)
+	{
+		walljump_prohibit = true;
+	}
 	dJump_sprite_start = false;
 	if (upcancel_jump = false)
 	{
@@ -920,6 +924,10 @@ if (jump_allowed = true) and (input_check_pressed("jump")) and (jump_activated)
 	audio_play_sound(snd_pJump,4,false,1.85,0,1.25);
 	jump_allowed = false;
 	jump_activated = false;
+	if (walljump_prohibit)
+	{
+		walljump_prohibit = false;	
+	}
 	can_dash = true
 	canCrawl = 1
 	fallcancel = true;
