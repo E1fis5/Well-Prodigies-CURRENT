@@ -94,6 +94,7 @@ contact_sprite = spr_lap2_graph
 global.isActive = false;
 //Upcancels
 jumpmax = 2
+upcancel_jump_used = false;
 upcancel_disable = function()
 {
 	upcancel_active = false;
@@ -318,6 +319,7 @@ var idle_extend = function()
 
 //Upcancel Boost
 var upcancel_boost = function()
+
 {
 	upcancel_jump = false;
 	upcancel_pause = false;
@@ -332,7 +334,7 @@ var upcancel_jump_break_timer = function()
 {
 	upcancel_jump_break = false;
 }
-timer_upcancel_jump_break = time_source_create(time_source_game,0.3,time_source_units_seconds,upcancel_jump_break_timer,[],1);
+timer_upcancel_jump_break = time_source_create(time_source_game,0.6,time_source_units_seconds,upcancel_jump_break_timer,[],1);
 //Upcancel Screenshake
 var Upcancel_screenshake = function()
 {
@@ -477,6 +479,11 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 	dJump_sprite_start = false;
 	global.walljumps++;
 	grv = 0.07;
+	if (upcancel_jump_used)
+	{
+		walksp -= 2;
+		time_source_stop(timer_upcancel_boost);
+	}
 	can_dash = true;
 	wallclimb = false;
 	walljump = true;
@@ -553,16 +560,17 @@ if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 	time_source_start(timer_jump_check);
 	audio_play_sound(snd_pJump,4,false);
 	canCrawl = 1;
+	if (upcancel_jump = true)
+	{
+		grv = 0.035;
+		can_dash = true;
+		audio_play_sound(snd_player_slam_bounce,5,false);
+	}
 	land_sprite_break = false;
 	global.fallspr_deactivate = true
 	global.grv_0 = false
 	global.particle_start = false
 	instance_create_depth(x + 8,y + 25,401,obj_fall_effect_cloud1);
-	if (upcancel_jump = true)
-	{
-		grv = 0.035;
-		can_dash = true;
-	}
 	if (snow_jump_activate) and (vspJump < -3.50)
 	{
 		vspJump += 0.25;
@@ -782,6 +790,10 @@ state_FastFall = function()
 	upcancel_active = true;
 	time_source_stop(timer_upcancel_boost);
 	time_source_start(timer_upcancel_fallbuild);
+	if (upcancel_jump = true)
+	{
+		upcancel_jump = false;
+	}
 	if (!instance_exists(obj_upcancel_effect)) and (up_cancel_eff = false)
 	{
 		instance_create_depth(x,y,399,obj_upcancel_effect);
@@ -790,10 +802,6 @@ state_FastFall = function()
 	global.fallspr_deactivate = true;
 	dJump_sprite_start = false;
 	walljump = false;
-	if (upcancel_jump = true)
-	{
-		upcancel_jump = false;
-	}
 	stateUpcancel = state_FastFall;
 	if (!drop_dash_avalible)
 	{
@@ -811,6 +819,7 @@ land_state = function()
 {
 	if (upcancel_active) and (onground)
 	{
+		upcancel_jump_used = false;
 		land_sprite_break = true;
 		if (upcancel_active = true)
 		{
@@ -875,6 +884,7 @@ state_PCrawl = function()
 {
 	if (input_check("down")) and (input_check("attack")) and (input_check("right") or input_check("left")) and (onground) and (crawl_allowed)
 	{
+
 		if (!slide_boost)
 		{
 			Dash_Scale_Disable = true;

@@ -30,6 +30,7 @@ if (global.debug_active = true)
 			{
 				draw_text(100,300,"0");
 			}
+			draw_text(100,200,obj_player.walksp);
 	}
 				
 }

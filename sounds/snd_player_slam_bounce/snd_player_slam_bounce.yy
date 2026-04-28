@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_player_slam_bounce",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.6813379,
+  "exportDir":"",
+  "name":"snd_player_slam_bounce",
+  "parent":{
+    "name":"player_sounds",
+    "path":"folders/Sounds/player_sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_player_slam_bounce.mp3",
+  "volume":0.33,
+}

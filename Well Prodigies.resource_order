@@ -479,6 +479,7 @@
     {"name":"snd_mindsplit_activate","order":2,"path":"sounds/snd_mindsplit_activate/snd_mindsplit_activate.yy",},
     {"name":"snd_mindSplit_end","order":1,"path":"sounds/snd_mindSplit_end/snd_mindSplit_end.yy",},
     {"name":"snd_mud_interact","order":2,"path":"sounds/snd_mud_interact/snd_mud_interact.yy",},
+    {"name":"snd_player_slam_bounce","order":10,"path":"sounds/snd_player_slam_bounce/snd_player_slam_bounce.yy",},
     {"name":"snd_shop_theme","order":5,"path":"sounds/snd_shop_theme/snd_shop_theme.yy",},
     {"name":"snd_timesup","order":5,"path":"sounds/snd_timesup/snd_timesup.yy",},
     {"name":"snd_timesup2","order":6,"path":"sounds/snd_timesup2/snd_timesup2.yy",},

@@ -505,14 +505,20 @@ if (score >= 20000) and (!score_boost3)
 	//Noclip
 	if (global.debug_active = true) and (global.noclip = true)
 	{
+		upcancel_state_prohibit = true;
 	    if (input_check("jump"))
 		{
 			global.noclip = false;
 			global.collisions_enabled = true;
+			upcancel_state_prohibit = false;
 		}
 		if (input_check("up"))
 		{
 			grv = -9;
+		}
+		if (input_check("down"))
+		{
+			grv = 1;
 		}
 	}
 	

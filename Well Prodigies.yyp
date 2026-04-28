@@ -1227,6 +1227,7 @@
     {"id":{"name":"snd_papya_combust","path":"sounds/snd_papya_combust/snd_papya_combust.yy",},},
     {"id":{"name":"snd_pJump","path":"sounds/snd_pJump/snd_pJump.yy",},},
     {"id":{"name":"snd_player_hurt","path":"sounds/snd_player_hurt/snd_player_hurt.yy",},},
+    {"id":{"name":"snd_player_slam_bounce","path":"sounds/snd_player_slam_bounce/snd_player_slam_bounce.yy",},},
     {"id":{"name":"snd_put_it_in_the_monkey","path":"sounds/snd_put_it_in_the_monkey/snd_put_it_in_the_monkey.yy",},},
     {"id":{"name":"snd_rain","path":"sounds/snd_rain/snd_rain.yy",},},
     {"id":{"name":"snd_rank_up","path":"sounds/snd_rank_up/snd_rank_up.yy",},},
