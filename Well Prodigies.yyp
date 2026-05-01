@@ -1478,6 +1478,7 @@
     {"id":{"name":"spr_gt_foreground1_upsidedown","path":"sprites/spr_gt_foreground1_upsidedown/spr_gt_foreground1_upsidedown.yy",},},
     {"id":{"name":"spr_gt_foreground1","path":"sprites/spr_gt_foreground1/spr_gt_foreground1.yy",},},
     {"id":{"name":"spr_gt_gate","path":"sprites/spr_gt_gate/spr_gt_gate.yy",},},
+    {"id":{"name":"spr_gt_geyser_stationary","path":"sprites/spr_gt_geyser_stationary/spr_gt_geyser_stationary.yy",},},
     {"id":{"name":"spr_gt_gravestone_haunted","path":"sprites/spr_gt_gravestone_haunted/spr_gt_gravestone_haunted.yy",},},
     {"id":{"name":"spr_gt_gravestone_non_haunted","path":"sprites/spr_gt_gravestone_non_haunted/spr_gt_gravestone_non_haunted.yy",},},
     {"id":{"name":"spr_gt_intro","path":"sprites/spr_gt_intro/spr_gt_intro.yy",},},

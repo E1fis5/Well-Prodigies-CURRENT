@@ -8,6 +8,7 @@ if (global.canpause)
 		room_goto(r_pause);
 		obj_player.x = 512;
 		obj_player.y = 864;
+		time_source_pause(obj_player.timer_dBoost_deactivate);
 		obj_player.dBoost_deactive = true;
 		if (instance_exists(obj_sanitymeter))
 		{

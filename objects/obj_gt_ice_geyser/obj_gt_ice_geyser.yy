@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_switch_collision_red",
-    "path":"sprites/spr_switch_collision_red/spr_switch_collision_red.yy",
+    "name":"spr_gt_geyser_stationary",
+    "path":"sprites/spr_gt_geyser_stationary/spr_gt_geyser_stationary.yy",
   },
   "spriteMaskId":null,
   "visible":true,

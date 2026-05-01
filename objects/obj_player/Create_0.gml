@@ -93,6 +93,7 @@ draw_sprite_on_contact = false;
 contact_sprite = spr_lap2_graph
 global.isActive = false;
 //Upcancels
+upcancel_speed_boost = 2;
 jumpmax = 2
 upcancel_jump_used = false;
 upcancel_disable = function()
@@ -321,6 +322,11 @@ var idle_extend = function()
 var upcancel_boost = function()
 
 {
+	if (upcancel_jump_used)
+	{
+		walksp -= 2;
+		upcancel_jump_used = false;
+	}
 	upcancel_jump = false;
 	upcancel_pause = false;
 	grv = 0.07;
@@ -328,13 +334,23 @@ var upcancel_boost = function()
 }
 timer_upcancel_boost = time_source_create(time_source_game,0.85,time_source_units_seconds,upcancel_boost,[],1);
 
+var upcancel_boost_speed = function()
+{
+	if (upcancel_jump_used)
+	{
+		walksp -= 2;
+		upcancel_jump_used = false;
+	}
+}
+
+timer_upcancel_speed_boost = time_source_create(time_source_game,1,time_source_units_seconds,upcancel_boost_speed,[],1);
 
 //Upcancel Jump Break Timer
 var upcancel_jump_break_timer = function()
 {
 	upcancel_jump_break = false;
 }
-timer_upcancel_jump_break = time_source_create(time_source_game,0.6,time_source_units_seconds,upcancel_jump_break_timer,[],1);
+timer_upcancel_jump_break = time_source_create(time_source_game,0.45,time_source_units_seconds,upcancel_jump_break_timer,[],1);
 //Upcancel Screenshake
 var Upcancel_screenshake = function()
 {
@@ -479,11 +495,6 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 	dJump_sprite_start = false;
 	global.walljumps++;
 	grv = 0.07;
-	if (upcancel_jump_used)
-	{
-		walksp -= 2;
-		time_source_stop(timer_upcancel_boost);
-	}
 	can_dash = true;
 	wallclimb = false;
 	walljump = true;
@@ -560,11 +571,16 @@ if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 	time_source_start(timer_jump_check);
 	audio_play_sound(snd_pJump,4,false);
 	canCrawl = 1;
-	if (upcancel_jump = true)
+	if (upcancel_jump = true) and (!upcancel_jump_used)
 	{
 		grv = 0.035;
 		can_dash = true;
 		audio_play_sound(snd_player_slam_bounce,5,false);
+		if (!upcancel_jump_used)
+		{
+			walksp += 2;
+			upcancel_jump_used = true;
+		}
 	}
 	land_sprite_break = false;
 	global.fallspr_deactivate = true
@@ -788,9 +804,8 @@ state_FastFall = function()
 		dash_energy = 0;
 	}
 	upcancel_active = true;
-	time_source_stop(timer_upcancel_boost);
 	time_source_start(timer_upcancel_fallbuild);
-	if (upcancel_jump = true)
+	if (upcancel_jump)
 	{
 		upcancel_jump = false;
 	}
@@ -819,7 +834,6 @@ land_state = function()
 {
 	if (upcancel_active) and (onground)
 	{
-		upcancel_jump_used = false;
 		land_sprite_break = true;
 		if (upcancel_active = true)
 		{
