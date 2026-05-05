@@ -324,7 +324,7 @@ var upcancel_boost = function()
 {
 	if (upcancel_jump_used)
 	{
-		walksp -= 2;
+		walksp -= 1.5;
 		upcancel_jump_used = false;
 	}
 	upcancel_jump = false;
@@ -333,17 +333,6 @@ var upcancel_boost = function()
 	upcancel_avalible = true;
 }
 timer_upcancel_boost = time_source_create(time_source_game,0.85,time_source_units_seconds,upcancel_boost,[],1);
-
-var upcancel_boost_speed = function()
-{
-	if (upcancel_jump_used)
-	{
-		walksp -= 2;
-		upcancel_jump_used = false;
-	}
-}
-
-timer_upcancel_speed_boost = time_source_create(time_source_game,1,time_source_units_seconds,upcancel_boost_speed,[],1);
 
 //Upcancel Jump Break Timer
 var upcancel_jump_break_timer = function()
@@ -576,7 +565,7 @@ if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 		grv = 0.035;
 		can_dash = true;
 		audio_play_sound(snd_player_slam_bounce,5,false);
-		walksp += 2;
+		walksp += 1.5;
 		upcancel_jump_used = true;
 	}
 	land_sprite_break = false;
@@ -805,7 +794,11 @@ state_FastFall = function()
 	if (upcancel_jump)
 	{
 		upcancel_jump = false;
-		walksp -= 2;
+	}
+	if (upcancel_jump_used)
+	{
+		upcancel_jump_used = false;
+		walksp -= 1.5;
 		time_source_stop(timer_upcancel_boost);
 	}
 	if (!instance_exists(obj_upcancel_effect)) and (up_cancel_eff = false)

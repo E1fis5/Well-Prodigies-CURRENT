@@ -9,8 +9,8 @@
   "name":"obj_foreground_alpha_decrease",
   "overriddenProperties":[],
   "parent":{
-    "name":"hud",
-    "path":"folders/Objects/hud.yy",
+    "name":"game_core",
+    "path":"folders/Objects/game_core.yy",
   },
   "parentObjectId":null,
   "persistent":false,
