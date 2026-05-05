@@ -576,11 +576,8 @@ if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 		grv = 0.035;
 		can_dash = true;
 		audio_play_sound(snd_player_slam_bounce,5,false);
-		if (!upcancel_jump_used)
-		{
-			walksp += 2;
-			upcancel_jump_used = true;
-		}
+		walksp += 2;
+		upcancel_jump_used = true;
 	}
 	land_sprite_break = false;
 	global.fallspr_deactivate = true
@@ -808,6 +805,8 @@ state_FastFall = function()
 	if (upcancel_jump)
 	{
 		upcancel_jump = false;
+		walksp -= 2;
+		time_source_stop(timer_upcancel_boost);
 	}
 	if (!instance_exists(obj_upcancel_effect)) and (up_cancel_eff = false)
 	{
