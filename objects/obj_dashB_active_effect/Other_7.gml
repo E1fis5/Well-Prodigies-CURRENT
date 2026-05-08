@@ -50,10 +50,6 @@ if (sprite_index = spr_dBoost_ending_explosion)
 		time_source_stop(i.timer_aftereffect_creation_quick);
 	}
 	time_source_stop(i.timer_aftereffect_creation);
-	if (i.mindsplit_activated)
-	{
-		i.walksp -= 0.30;
-	}
 	//Normal Boost
 	i.walksp -= 0.60;
 	i.dash_distance -= 45;

@@ -160,6 +160,25 @@ OH_dash_avalible = false;
 Bomb_dashes = 0;
 dashB_first_hit = true;
 dBoost_resets = 0;
+dash_call = false;
+dBoost_effects_end = function()
+{
+	if (instance_exists(obj_dashB_active_effect))
+	{
+		obj_dashB_active_effect.sprite_index = spr_dBoost_ending_explosion;
+	}
+	if (instance_exists(obj_healthbg_dashB))
+	{
+		obj_healthbg_dashB.sprite_index = spr_healthbg_effect_dashB_destroy;
+	}
+	if (instance_exists(obj_dashJoost_counter))
+	{
+		obj_dashJoost_counter.dashCounter_shake_warnin = true;
+	}
+	global.dboost_chance_active = false;
+	instance_create_depth(x,y,-9999,obj_dashjoost_pause);
+	audio_play_sound(snd_dashboost_diminish,6,false);
+}
 //State Control
 upcancel_state_prohibit = false;
 //Mudsolid
@@ -265,21 +284,7 @@ var dBoost_create = function()
 
 var dBoost_deactivate = function()
 {
-		if (instance_exists(obj_dashB_active_effect))
-		{
-			obj_dashB_active_effect.sprite_index = spr_dBoost_ending_explosion;
-		}
-		if (instance_exists(obj_healthbg_dashB))
-		{
-			obj_healthbg_dashB.sprite_index = spr_healthbg_effect_dashB_destroy;
-		}
-		if (instance_exists(obj_dashJoost_counter))
-		{
-			obj_dashJoost_counter.dashCounter_shake_warnin = true;
-		}
-		global.dboost_chance_active = false;
-		instance_create_depth(x,y,-9999,obj_dashjoost_pause);
-		audio_play_sound(snd_dashboost_diminish,6,false);
+	dBoost_effects_end();
 }
 
 
@@ -1135,22 +1140,7 @@ mindsplit_transition_state = function()
 		{
 			audio_play_sound(snd_dashBoost_fail,6,false,0.5,0,0.9);
 		}
-		if (mindsplit_activated) and (mindsplit_avalible)
-			{
-				walksp -= 0.85;
-				dash_distance -= 25;
-				mindsplit_activated = false;
-				mindsplit_avalible = false;
-				audio_play_sound(snd_mindSplit_end,5,false);
-				instance_create_depth(x,y,399,obj_wither_effect);
-				time_source_stop(timer_mindSpl_deactivation);
-				time_source_start(timer_mindSpl_cooldown);
-				if (instance_exists(obj_dashB_active_effect))
-				{
-					walksp -= 0.35;
-				}
-			}
-		if (!mindsplit_activated) and (mindsplit_avalible) and (onground)
+		if (!mindsplit_activated) and (mindsplit_avalible)
 		{
 			//Flash
 			activate_flash_black = true;
@@ -1169,55 +1159,370 @@ mindsplit_transition_state = function()
 			audio_play_sound(snd_mindsplit_activate,4,false);
 			mindsplit_activated = true;
 			time_source_start(timer_mindSpl_deactivation);
-			mindsplit_override = true;
 			mindsplit_avalible = false;
-			crawl_allowed = false;
+			//Sanity
+			if (instance_exists(obj_sanitymeter))
+			{
+				global.sanity -= 30;
+				obj_sanitymeter.sanity_drain_effects();
+			}
 			//Screenshake
 			time_source_start(timer_dBoostmiss_screenshake);
 			if (layer_exists("Effect_Screenshake_mega"))
 			{
 				layer_set_visible("Effect_Screenshake_mega",1);
 			}
-			if (!player_left)
+			//Dash/Dboost
+			dash_call = true;
+			time_source_reset(timer_dBoost_cooldown);
+			time_source_stop(timer_dBoost_deactivate);
+			global.dashboost_dash = true;
+			dash_distance += 300;
+			state_dash();
+			dBoost_effects_end();
+		}
+	}
+}
+//Dash State
+	state_dash = function()
+	{
+	//Dash
+	if (can_dash and input_check_pressed("dash")) or (dash_call)
+	{
+		if (dash_call)
+		{
+			dash_call = false;
+		}
+		upcancel_disable();
+		can_dash = false;
+		if (!OH_dash_avalible)
+		{
+			dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")));
+			if (onground)
 			{
-				sprite_index = spr_player_insane_escape_idle;
+				dash_direction = point_direction(0,0,input_check("right")- input_check("left"),0);
+			}
+		}
+		else
+		{
+			if (!onground)
+			{
+				dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")) - (input_check("up")));
+				if (input_check("up"))
+				{
+					instance_create_depth(x,y - 60,399,obj_overhead_dash_effect_1);
+					OH_dash_avalible = false;
+					audio_play_sound(snd_dashBoost_create,6,false,1.3,0,2);
+				}
 			}
 			else
 			{
-				sprite_index = spr_player_insane_escape_idle_left;	
+				dash_direction = point_direction(0,0,input_check("right")- input_check("left"),0);
 			}
-			global.storedwalksp = walksp;
-			walksp = 0;
-			global.sanity = 140;
-			canJump = 0;
-			walljump_prohibit = true;
-			can_dash = false;
-			if (instance_exists(obj_dashB_active_effect)) and (dBoost_resets < 1)
+		}
+		dash_sp = dash_distance/dash_time;
+		dash_energy = dash_distance;
+		hsp = lengthdir_x(dash_sp,dash_direction)
+		vsp = lengthdir_y(dash_sp,dash_direction)
+		stateNormal = Dashstate
+		//Mindsplit
+		if (!mindsplit_override)
+		{
+			sprite_index = spr_player_dash
+		}
+		//Wall destroy
+		if (instance_exists(obj_wallboost_effect))
+		{
+			instance_destroy(obj_wallboost_effect);
+		}
+		land_sprite_break = false;
+		fallcancel = true;
+		grv = 0
+		damage_deal = true;
+		walljump = false;
+		//Dash Effect
+		instance_create_depth(x - 40,y - 20,399,obj_dash_effect);
+		//Walkspeed and Creations
+		global.dash_cancel_speed = false;
+		dJump_sprite_start = false;
+		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)) or (dashBoost_forgive = 1) or (mindsplit_activated)
+		{
+			if (!dashBoost_forgive = 1) and (!mindsplit_activated)
 			{
-					audio_play_sound(snd_dBoost_start,6,false,1.35,0,0.9);
-					dBoost_resets += 1;
-					time_source_reset(timer_dBoost_deactivate);
-					time_source_start(timer_dBoost_deactivate);
-					time_source_reset(obj_dashB_active_effect.timer_dashBoost_warning);
-					time_source_start(obj_dashB_active_effect.timer_dashBoost_warning);
-					obj_dashB_active_effect.sprite_index = spr_dBoost_mindsplit_switch;
-					obj_dashB_active_effect.hit_adjustment = true;
-					if (dashB_first_hit)
+				dash_distance -= 95
+			}
+			global.dashboost_dash = false;
+			dashBoost_fail = true;
+			time_source_start(timer_dBoost_cooldown);
+			dBoost_dash_active = false;
+			time_source_start(timer_dBoost_create);
+		}
+		global.dash_active = true
+		if (!instance_exists(obj_player_dash_hitbox))
+		{
+			instance_create_depth(x,y,401,obj_player_dash_hitbox);
+		}
+		if (!onground) and (!mindsplit_override)
+		{
+			sprite_index = spr_player_dash_air;
+			if (player_left = true)
+			{
+				sprite_index = spr_player_dash_air_left;
+			}
+		}
+		{
+			if (player_left = true) and (onground)
+			{
+				sprite_index = spr_player_dash_left
+				global.fallspr_deactivate = true
+				global.dash_active = true
+			}
+	}
+	} 
+
+
+
+	Dashstate = function()
+	//Movement	
+	{
+	//Trail
+	with (instance_create_depth(x,y,depth+1,obj_trail_effect))
+	{
+		sprite_index = other.sprite_index;
+		image_blend = c_gray;
+		image_alpha = 0.6;
+	}
+	{
+		if (place_meeting(x + hsp, y, obj_collision_wall))
+	{
+		Dashstate = stateNormal
+		while (abs(hsp) > 0.1)
+		{
+			hsp *= 0.5;
+			if (!place_meeting(x + hsp, y, obj_collision_wall)) x += hsp;
+		}
+		hsp = 0;
+		sprite_index = spr_player_fall
+	}
+
+	x += hsp;
+
+
+	if (place_meeting(x, y + vsp, obj_collision_wall))
+	{
+		while (abs(vsp) > 0.1)
+		{
+			vsp *= 0.5;
+			if (!place_meeting(x, y + vsp, obj_collision_wall)) y += vsp;
+		}
+	    vsp = 0;
+	}
+	y += vsp;         
+	
+	
+	
+	
+	   //Dash End
+	   dash_energy -= dash_sp
+	   if (dash_energy <= 0)
+	   {
+		   stateNormal = state_normal;
+		   canJump = 18;
+		   jump_activated = true;
+		   jump_allowed = true;
+		   damage_deal = false;
+		   fallcancel = false;
+		   //Bomb Dash
+		   if (Bomb_Dash_Active)
+		   {
+			   Bomb_Dash_Active = false;
+			   dash_distance -= 400;
+			   dash_time += 3;
+		   }
+		   if (mindsplit_activated)
+		   {
+			   dash_distance -= 300;
+			   mindsplit_activated = false;
+		   }
+		   instance_destroy(obj_player_dash_hitbox);
+		   global.dash_active = false;
+		   time_source_stop(timer_dBoost_create);
+		   grv = 0.07;
+		   if (up_dash_cancel)
+		   {
+			   dash_distance = captured_distance;
+			   up_dash_cancel = false;
+		   }
+		   //Mud Dash
+		   if (mudsolid_dash)
+		   {
+				dash_distance -= 350;
+				dash_time += 5;
+				mudsolid_dash = false;
+		   }
+		   
+		   if (onground = false) 
+		   {
+			   global.dash_amount += 1;
+		   }
+		   //Dash Joost
+		   	if (global.dash_amount >= 2)
+	{
+		if (!instance_exists(obj_dashJoost_counter)) and (!dashJoost_hit_disable)
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter);
+			if (!dashJoost_speed_cancel) and (!onground)
+			{
+				walksp += 0.25;
+			}
+		}
+	}
+
+	if (global.dash_amount = 3)
+	{
+		if (!dashJoost_hit_disable)
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+			if (!dashJoost_speed_cancel) and (!onground)
+			{
+				walksp += 0.35;
+			}
+		}
+	}
+
+
+	if (global.dash_amount = 4)
+	{
+		if (!dashJoost_hit_disable)
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+			if (!dashJoost_speed_cancel) and (!onground)
+			{
+				walksp += 0.45;
+			}
+		}
+	}
+	if (global.dash_amount = 5)
+	{
+		if (!dashJoost_hit_disable)
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+			if (!dashJoost_speed_cancel) and (!onground)
+			{
+				walksp += 0.50;
+			}
+				if (obj_dashJoost_counter.image_speed = 0)
 					{
-						obj_dashB_active_effect.sprite_index = spr_dashB_perfect_hit;
+						obj_dashJoost_counter.image_speed = 1;
 					}
-					mindsplit_activated = true;
-					if (!OH_dash_avalible)
-					{
-						OH_dash_avalible = true;
-					}
-				if (instance_exists(obj_dashJoost_counter))
+		}
+	}
+
+	if (global.dash_amount = 6)
+	{
+		if (!dashJoost_hit_disable)
+		{
+			if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
+			{
+				instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+				if (!dashJoost_speed_cancel) and (!onground)
 				{
-					obj_dashJoost_counter.dashCounter_shake_warnin = false;
+					walksp += 0.50;
 				}
 			}
 		}
-}
+	}
+
+	if (global.dash_amount = 7)
+	{
+		if (!dashJoost_hit_disable)
+		{
+			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+		if (!dashJoost_speed_cancel) and (!onground)
+		{
+			walksp += 0.55;
+		}
+		}
+	}
+
+	if (global.dash_amount >= 8)
+	{
+		global.dash_amount = 8;
+		dashJoost_hit_disable = true;
+		if (!dashJoost_speed_cancel) 
+		{
+			walksp += 0.55;
+		}
+		dashJoost_speed_cancel = true;
+		if (!instance_exists(obj_dashJoost_maxxed_effect))
+		{
+			instance_create_depth(-999,-999,-9998,obj_dashJoost_maxxed_effect);
+		}
+	}
+
+	   }
+	}
+	}
+	//Dash Joost
+	if (global.dash_cancel_speed = true)
+	{
+		global.dash_amount = 0;
+		dashJoost_speed_cancel = false;
+			if (instance_exists(obj_dashJoost_counter))
+		{
+			instance_destroy(obj_dashJoost_counter);
+			dashJoost_hit_disable = false;
+		}
+		if (instance_exists(obj_dashJoost_maxxed_effect))
+		{
+			instance_destroy(obj_dashJoost_maxxed_effect);
+		}
+		if (instance_exists(obj_lap_boost_sign))
+		{
+			obj_lap_boost_sign.sprite_index = spr_lapping_boost_destroy;
+			if (instance_exists(obj_Lwiz_mini))
+			{
+				instance_destroy(obj_Lwiz_mini);
+			}
+		}
+	}
+	if (onground = true) and (!instance_exists(obj_dashjoost_pause)) and (!instance_exists(obj_dashB_active_effect))
+	{
+		global.dash_cancel_speed = true;
+		if (global.dash_amount = 2)
+		{
+			walksp -= 0.25;
+		}
+		
+			if (global.dash_amount = 3)
+			{
+				walksp -= 0.6;
+			}
+			
+				if (global.dash_amount = 4)
+				{
+					walksp -= 1.05;
+				}
+					if (global.dash_amount = 5)
+					{
+						walksp -= 1.55;
+					}
+					
+						if (global.dash_amount = 6)
+						{
+							walksp -= 2.05;
+						}
+						
+							if (global.dash_amount = 7)
+							{
+								walksp -= 2.60;
+							}
+							
+								if (global.dash_amount = 8)
+								{
+									walksp -= 3.15;
+								}
+	}
 }
 depth = 400
  
