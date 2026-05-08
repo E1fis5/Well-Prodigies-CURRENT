@@ -194,7 +194,7 @@ if (score >= 20000) and (!score_boost3)
 	}
 	
 //Dash boost
-if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!instance_exists(obj_dBoost_additive))
+if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 {
 	//Mindsplit Boost
 	if (mindsplit_activated)
@@ -242,10 +242,7 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!i
 	dash_distance += 45;
 	time_source_start(timer_dBoost_deactivate);
 	dashBoost_fail = false;
-	if (!instance_exists(obj_dashB_active_effect))
-	{
-		instance_create_depth(x,y,399,obj_dashB_active_effect);
-	}
+	instance_create_depth(x,y,399,obj_dashB_active_effect);
 	instance_create_depth(-999,-999,-11000,obj_healthbg_dashB);
 	instance_create_depth(x,y,-999,obj_dBoost_additive);
 	OH_dash_avalible = true;
