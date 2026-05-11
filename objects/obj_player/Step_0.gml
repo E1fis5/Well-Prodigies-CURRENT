@@ -196,12 +196,12 @@ if (score >= 20000) and (!score_boost3)
 //Dash boost
 if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 {
-	//Mindsplit Boost
-	if (mindsplit_activated)
+	var mindSpl_dBoost_start = function()
 	{
-		global.sanity -= 20;
-		global.health -= 1;
-		global.damage = true;
+		if (!mindsplit_dash)
+		{
+			global.sanity -= 10;
+		}
 		walksp += 0.35;
 		audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.9);
 		//Sanity Shake
@@ -209,6 +209,19 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 		{
 			obj_sanitymeter.sanity_drain_effects();
 		}
+	}
+	//Mindsplit Boost
+	if (mindsplit_dash)
+	{
+		mindsplit_dash = false;
+		dash_distance -= 300;
+		time_source_start(timer_mindSpl_deactivation);
+		mindsplit_activated = true;	
+		mindSpl_dBoost_start();
+	}
+	if (mindsplit_activated)
+	{
+		mindSpl_dBoost_start();
 	}
 	else
 	{

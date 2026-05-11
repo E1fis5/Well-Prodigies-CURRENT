@@ -130,19 +130,19 @@
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRLayer":"","%Name":"Screenshake","depth":-1099,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
+    {"$GMRLayer":"","%Name":"Screenshake","depth":-1199,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
+        {"$GMREffectLayer":"","%Name":"Effect_Screenshake","depth":-1099,"effectEnabled":true,"effectType":"_filter_screenshake","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_Screenshake","properties":[
+            {"name":"g_Magnitude","type":0,"value":"1",},
+            {"name":"g_ShakeSpeed","type":0,"value":"0.55",},
+            {"name":"g_NoiseTexture","type":2,"value":"_filter_screenshake_noise",},
+          ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
         {"$GMREffectLayer":"","%Name":"Effect_Screenshake_mega","depth":-999,"effectEnabled":true,"effectType":"_filter_screenshake","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_Screenshake_mega","properties":[
             {"name":"g_Magnitude","type":0,"value":"2",},
             {"name":"g_ShakeSpeed","type":0,"value":"0.55",},
             {"name":"g_NoiseTexture","type":2,"value":"_filter_screenshake_noise",},
           ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":false,},
-        {"$GMREffectLayer":"","%Name":"Effect_Screenshake","depth":-966,"effectEnabled":true,"effectType":"_filter_screenshake","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_Screenshake","properties":[
-            {"name":"g_Magnitude","type":0,"value":"1",},
-            {"name":"g_ShakeSpeed","type":0,"value":"0.55",},
-            {"name":"g_NoiseTexture","type":2,"value":"_filter_screenshake_noise",},
-          ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
       ],"name":"Screenshake","properties":[],"resourceType":"GMRLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRLayer":"","%Name":"Escape_effects","depth":-933,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
+    {"$GMRLayer":"","%Name":"Escape_effects","depth":-950,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
         {"$GMREffectLayer":"","%Name":"Effect_Lightning","depth":-900,"effectEnabled":true,"effectType":"_filter_contrast","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_Lightning","properties":[
             {"name":"g_ContrastIntensity","type":0,"value":"2",},
             {"name":"g_ContrastBrightness","type":0,"value":"2",},

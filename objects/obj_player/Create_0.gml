@@ -161,6 +161,7 @@ Bomb_dashes = 0;
 dashB_first_hit = true;
 dBoost_resets = 0;
 dash_call = false;
+mindsplit_dash = false;
 dBoost_effects_end = function()
 {
 	if (instance_exists(obj_dashB_active_effect))
@@ -1136,6 +1137,22 @@ mindsplit_transition_state = function()
 {
 	if (input_check_pressed("special"))
 	{
+		//MindSplit Toggle
+		if (mindsplit_activated) and (mindsplit_avalible)
+		{
+			walksp -= 0.85;
+			dash_distance -= 25;
+			mindsplit_activated = false;
+			mindsplit_avalible = false;
+			audio_play_sound(snd_mindSplit_end,5,false);
+			instance_create_depth(x,y,399,obj_wither_effect);
+			time_source_stop(timer_mindSpl_deactivation);
+			time_source_start(timer_mindSpl_cooldown);
+			if (instance_exists(obj_dashB_active_effect))
+			{
+				walksp -= 0.35;
+			}
+		}
 		if (!mindsplit_avalible)
 		{
 			audio_play_sound(snd_dashBoost_fail,6,false,0.5,0,0.9);
@@ -1157,9 +1174,9 @@ mindsplit_transition_state = function()
 				time_source_start(timer_mindSpl_failsafe_zoom);
 			}
 			audio_play_sound(snd_mindsplit_activate,4,false);
-			mindsplit_activated = true;
-			time_source_start(timer_mindSpl_deactivation);
+			mindsplit_dash = true;
 			mindsplit_avalible = false;
+			time_source_start(timer_mindSpl_cooldown);
 			//Sanity
 			if (instance_exists(obj_sanitymeter))
 			{
@@ -1189,6 +1206,7 @@ mindsplit_transition_state = function()
 	//Dash
 	if (can_dash and input_check_pressed("dash")) or (dash_call)
 	{
+		//Checks
 		if (dash_call)
 		{
 			dash_call = false;
@@ -1225,12 +1243,12 @@ mindsplit_transition_state = function()
 		hsp = lengthdir_x(dash_sp,dash_direction)
 		vsp = lengthdir_y(dash_sp,dash_direction)
 		stateNormal = Dashstate
-		//Mindsplit
+		//Main Sprite
 		if (!mindsplit_override)
 		{
 			sprite_index = spr_player_dash
 		}
-		//Wall destroy
+		//WallBoost destroy
 		if (instance_exists(obj_wallboost_effect))
 		{
 			instance_destroy(obj_wallboost_effect);
@@ -1245,9 +1263,9 @@ mindsplit_transition_state = function()
 		//Walkspeed and Creations
 		global.dash_cancel_speed = false;
 		dJump_sprite_start = false;
-		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)) or (dashBoost_forgive = 1) or (mindsplit_activated)
+		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)) or (dashBoost_forgive = 1) or (mindsplit_dash)
 		{
-			if (!dashBoost_forgive = 1) and (!mindsplit_activated)
+			if (!dashBoost_forgive = 1) and (!mindsplit_dash)
 			{
 				dash_distance -= 95
 			}
@@ -1339,11 +1357,7 @@ mindsplit_transition_state = function()
 			   dash_distance -= 400;
 			   dash_time += 3;
 		   }
-		   if (mindsplit_activated)
-		   {
-			   dash_distance -= 300;
-			   mindsplit_activated = false;
-		   }
+
 		   instance_destroy(obj_player_dash_hitbox);
 		   global.dash_active = false;
 		   time_source_stop(timer_dBoost_create);

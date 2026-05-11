@@ -21,5 +21,5 @@ var dashB_early_hit = function()
 	image_blend = c_white;
 }
 
-timer_dashB_firsthit_timer = time_source_create(time_source_game,4,time_source_units_frames,dashB_early_hit,[],1);
+timer_dashB_firsthit_timer = time_source_create(time_source_game,3,time_source_units_frames,dashB_early_hit,[],1);
 time_source_start(timer_dashB_firsthit_timer);
