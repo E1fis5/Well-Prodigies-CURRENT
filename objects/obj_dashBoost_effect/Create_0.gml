@@ -22,4 +22,7 @@ var dashB_early_hit = function()
 }
 
 timer_dashB_firsthit_timer = time_source_create(time_source_game,3,time_source_units_frames,dashB_early_hit,[],1);
-time_source_start(timer_dashB_firsthit_timer);
+if (!obj_player.mindsplit_dash)
+{
+	time_source_start(timer_dashB_firsthit_timer);
+}

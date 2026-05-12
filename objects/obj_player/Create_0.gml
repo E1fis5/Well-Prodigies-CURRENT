@@ -425,12 +425,7 @@ var mindSpl_deactivation = function()
 	mindsplit_activated = false;
 	global.sanity += 20;
 	audio_play_sound(snd_dashBoost_cd_over,5,false,1.2,0,0.9);
-	walksp -= 0.85;
-	dash_distance -= 25;
-	if (instance_exists(obj_dashB_active_effect))
-	{
-		walksp -= 0.35;
-	}
+	walksp -= 0.55;
 }
 
 var mindSpl_cooldown = function()
@@ -1140,18 +1135,13 @@ mindsplit_transition_state = function()
 		//MindSplit Toggle
 		if (mindsplit_activated) and (mindsplit_avalible)
 		{
-			walksp -= 0.85;
-			dash_distance -= 25;
+			walksp -= 0.55;
 			mindsplit_activated = false;
 			mindsplit_avalible = false;
 			audio_play_sound(snd_mindSplit_end,5,false);
 			instance_create_depth(x,y,399,obj_wither_effect);
 			time_source_stop(timer_mindSpl_deactivation);
 			time_source_start(timer_mindSpl_cooldown);
-			if (instance_exists(obj_dashB_active_effect))
-			{
-				walksp -= 0.35;
-			}
 		}
 		if (!mindsplit_avalible)
 		{
@@ -1193,7 +1183,8 @@ mindsplit_transition_state = function()
 			dash_call = true;
 			time_source_reset(timer_dBoost_cooldown);
 			time_source_stop(timer_dBoost_deactivate);
-			global.dashboost_dash = true;
+			time_source_start(timer_dBoost_create);
+			time_source_start(timer_dBoost_cooldown);
 			dash_distance += 300;
 			state_dash();
 			dBoost_effects_end();
@@ -1263,9 +1254,9 @@ mindsplit_transition_state = function()
 		//Walkspeed and Creations
 		global.dash_cancel_speed = false;
 		dJump_sprite_start = false;
-		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)) or (dashBoost_forgive = 1) or (mindsplit_dash)
+		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)) or (dashBoost_forgive = 1)
 		{
-			if (!dashBoost_forgive = 1) and (!mindsplit_dash)
+			if (!dashBoost_forgive = 1)
 			{
 				dash_distance -= 95
 			}
@@ -1357,7 +1348,10 @@ mindsplit_transition_state = function()
 			   dash_distance -= 400;
 			   dash_time += 3;
 		   }
-
+		   if (mindsplit_dash)
+		   {
+			   dash_distance -= 300;
+		   }
 		   instance_destroy(obj_player_dash_hitbox);
 		   global.dash_active = false;
 		   time_source_stop(timer_dBoost_create);

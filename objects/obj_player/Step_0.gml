@@ -198,11 +198,9 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 {
 	var mindSpl_dBoost_start = function()
 	{
-		if (!mindsplit_dash)
-		{
-			global.sanity -= 10;
-		}
-		walksp += 0.35;
+		mindsplit_activated = true;
+		global.sanity -= 10;
+		walksp += 0.55;
 		audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.9);
 		//Sanity Shake
 		if (instance_exists(obj_sanitymeter))
@@ -210,16 +208,7 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 			obj_sanitymeter.sanity_drain_effects();
 		}
 	}
-	//Mindsplit Boost
-	if (mindsplit_dash)
-	{
-		mindsplit_dash = false;
-		dash_distance -= 300;
-		time_source_start(timer_mindSpl_deactivation);
-		mindsplit_activated = true;	
-		mindSpl_dBoost_start();
-	}
-	if (mindsplit_activated)
+	if (mindsplit_dash) or (mindsplit_activated)
 	{
 		mindSpl_dBoost_start();
 	}
@@ -346,14 +335,14 @@ if (walksp >= 16) and (!Dash_Scale1) and (!Dash_Scale_Disable)
 	Dash_Scale1 = true;
 }
 
-if (walksp >= 15) and (!Dash_Scale2)  and (!Dash_Scale_Disable)
+if (walksp >= 19) and (!Dash_Scale2)  and (!Dash_Scale_Disable)
 {
 	dash_distance += 25;
 	Dash_Scale2 = true;
 }
 
 
-if (walksp >= 20) and (!Dash_Scale3) and (!Dash_Scale_Disable)
+if (walksp >= 22) and (!Dash_Scale3) and (!Dash_Scale_Disable)
 {
 	dash_distance += 35;
 	Dash_Scale3 = true;

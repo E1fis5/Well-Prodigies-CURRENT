@@ -4,22 +4,22 @@ if (global.debug_active = true)
 	show_debug_overlay(true);
 	if (instance_exists(obj_player))
 	{
-			if (obj_player.walljump_prohibit)
+			if (obj_player.mindsplit_activated)
 			{
 				draw_text(100,500,"1");
 			}
-			if (!obj_player.walljump_prohibit)
+			else
 			{
 				draw_text(100,500,"0");
 			}
 			
-			if (obj_player.jump_activated)
+			if (obj_player.mindsplit_dash)
 			{
 				draw_text(100,400,"1");
 			}
-			if (!obj_player.jump_activated)
+			else
 			{
-				draw_text(100,400,"0");
+				draw_text(100,400,"0");	
 			}
 			
 			if (obj_player.onwall)
