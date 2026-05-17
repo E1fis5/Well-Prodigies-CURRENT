@@ -45,9 +45,21 @@ if (sprite_index = spr_dBoost_ending_explosion)
 	//Early Boost
 	if (i.dashB_first_hit)
 	{
-		i.walksp -= 0.60;
+		i.walksp -= 0.40;
 		i.dash_distance -= 25;
 		time_source_stop(i.timer_aftereffect_creation_quick);
+	}
+	//Mindsplit Boost
+	if (i.mindsplit_activated)
+	{
+		if (i.mindsplit_perfect_window)
+		{
+			i.walksp -= 0.70;
+		}
+		else
+		{
+			i.walksp -= 0.50;
+		}
 	}
 	time_source_stop(i.timer_aftereffect_creation);
 	//Normal Boost

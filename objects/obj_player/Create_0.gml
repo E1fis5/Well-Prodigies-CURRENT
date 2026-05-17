@@ -242,6 +242,7 @@ mindsplit_avalible = true;
 mindsplit_activated = false;
 mindsplit_override = false;
 mindsplit_failsafe_zoom = false;
+mindsplit_perfect_window = false;
 //Snow State
 snow_jumps = 0;
 snow_jump_activate = false;
@@ -424,8 +425,16 @@ var mindSpl_deactivation = function()
 	mindsplit_avalible = true;
 	mindsplit_activated = false;
 	global.sanity += 20;
-	audio_play_sound(snd_dashBoost_cd_over,5,false,1.2,0,0.9);
-	walksp -= 0.55;
+	if (mindsplit_perfect_window)
+	{
+		walksp -= 0.75;
+		audio_play_sound(snd_dashBoost_cd_over,5,false,1.2,0,0.5);
+	}
+	else
+	{
+		walksp -= 0.55;
+		audio_play_sound(snd_dashBoost_cd_over,5,false,1.2,0,0.9);
+	}
 }
 
 var mindSpl_cooldown = function()

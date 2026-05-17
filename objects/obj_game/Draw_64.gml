@@ -22,11 +22,11 @@ if (global.debug_active = true)
 				draw_text(100,400,"0");	
 			}
 			
-			if (obj_player.onwall)
+			if (obj_player.mindsplit_perfect_window)
 			{
 				draw_text(100,300,"1");
 			}
-			if (!obj_player.onwall)
+			else
 			{
 				draw_text(100,300,"0");
 			}

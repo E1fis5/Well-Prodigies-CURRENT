@@ -200,8 +200,17 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 	{
 		mindsplit_activated = true;
 		global.sanity -= 10;
-		walksp += 0.55;
-		audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.9);
+		if (mindsplit_perfect_window)
+		{
+			walksp += 0.75;
+			time_source_stop(obj_dashBoost_effect.timer_mindsplit_perfect_window);
+			audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.4);
+		}
+		else
+		{
+			walksp += 0.55;
+			audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.9);
+		}
 		//Sanity Shake
 		if (instance_exists(obj_sanitymeter))
 		{
@@ -222,7 +231,7 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 		time_source_stop(obj_dashBoost_effect.timer_dashB_firsthit_timer);
 		audio_play_sound(snd_dBoost_start,6,false,1,0,1.3);
 		time_source_start(timer_aftereffect_creation_quick);
-		walksp += 0.65;
+		walksp += 0.45;
 		dash_distance += 25;
 		if (instance_exists(obj_escape_timer)) and (global.outside)
 		{

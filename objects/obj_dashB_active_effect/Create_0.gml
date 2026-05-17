@@ -6,6 +6,10 @@ timer_dashBoost_warning = time_source_create(time_source_game,11.5,time_source_u
 time_source_start(timer_dashBoost_warning);
 hit_adjustment = false;
 player_follow = false;
+//Mindsplit
+obj_player.mindsplit_perfect_window = true;
+time_source_start(obj_dashBoost_effect.timer_mindsplit_perfect_window);
+//Chance
 if (global.dboost_chance_active = true)
 {
 	sprite_index = spr_dBoost_super_spawn2;
