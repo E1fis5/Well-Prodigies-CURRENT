@@ -142,7 +142,7 @@ adrenaline_boost = function()
 }
 //Dash
 can_dash = false
-dash_distance = 200;
+dash_distance = 225;
 dash_time = 16
 idle_active = false;
 drop_dash_avalible = false;
@@ -157,6 +157,7 @@ dBoost_dash_active = false;
 Bomb_Dash_Active = false;
 dBoost_deactive = false;
 OH_dash_avalible = false;
+OH_dash_used = false;
 Bomb_dashes = 0;
 dashB_first_hit = true;
 dBoost_resets = 0;
@@ -799,6 +800,10 @@ state_FastFall = function()
 	{
 		dash_energy = 0;
 	}
+	if (mindsplit_dash)
+	{
+		dash_distance -= 300;
+	}
 	upcancel_active = true;
 	time_source_start(timer_upcancel_fallbuild);
 	if (upcancel_jump)
@@ -1144,7 +1149,16 @@ mindsplit_transition_state = function()
 		//MindSplit Toggle
 		if (mindsplit_activated) and (mindsplit_avalible)
 		{
-			walksp -= 0.55;
+			if (mindsplit_perfect_window)
+			{
+				walksp -= 1.15;
+				dash_distance -= 25;
+			}
+			else
+			{
+				walksp -= 0.95;
+				dash_distance -= 15;
+			}
 			mindsplit_activated = false;
 			mindsplit_avalible = false;
 			audio_play_sound(snd_mindSplit_end,5,false);
@@ -1228,9 +1242,13 @@ mindsplit_transition_state = function()
 				dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")) - (input_check("up")));
 				if (input_check("up"))
 				{
-					instance_create_depth(x,y - 60,399,obj_overhead_dash_effect_1);
 					OH_dash_avalible = false;
-					audio_play_sound(snd_dashBoost_create,6,false,1.3,0,2);
+					OH_dash_used = true;
+					instance_create_depth(x,y - 60,399,obj_overhead_dash_effect_1);
+					audio_play_sound(snd_dashp_overhead,6,false,1.6);
+					layer_set_visible("Effect_Screenshake_mega",1);
+					global.hudshake = true;
+					dash_time -= 8;
 				}
 			}
 			else
@@ -1360,6 +1378,13 @@ mindsplit_transition_state = function()
 		   if (mindsplit_dash)
 		   {
 			   dash_distance -= 300;
+		   }
+		   if (OH_dash_used)
+		   {
+			   OH_dash_used = false;
+			   dash_time += 8;
+			   layer_set_visible("Effect_Screenshake_mega",0);
+			   global.hudshake = false;
 		   }
 		   instance_destroy(obj_player_dash_hitbox);
 		   global.dash_active = false;

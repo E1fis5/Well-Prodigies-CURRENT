@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_dashB_pulse1",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.5,
+  "exportDir":"",
+  "name":"snd_dashB_pulse1",
+  "parent":{
+    "name":"pulse",
+    "path":"folders/Sounds/player_sounds/pulse.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"snd_dashB_pulse1.mp3",
+  "volume":0.34,
+}

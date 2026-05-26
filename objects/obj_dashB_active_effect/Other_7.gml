@@ -54,11 +54,13 @@ if (sprite_index = spr_dBoost_ending_explosion)
 	{
 		if (i.mindsplit_perfect_window)
 		{
-			i.walksp -= 0.70;
+			i.walksp -= 1.10;
+			i.dash_distance -= 25;
 		}
 		else
 		{
-			i.walksp -= 0.50;
+			i.walksp -= 0.90;
+			i.dash_distance -= 15;
 		}
 	}
 	time_source_stop(i.timer_aftereffect_creation);

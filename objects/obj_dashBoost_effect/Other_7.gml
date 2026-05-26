@@ -6,5 +6,5 @@ if (obj_player.dashBoost_forgive >= 2)
 }
 if (obj_player.mindsplit_dash)
 {
-	obj_player.mindsplit_dash = false;	
+	obj_player.mindsplit_dash = false;
 }

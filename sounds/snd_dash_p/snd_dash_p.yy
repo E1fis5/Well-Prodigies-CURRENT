@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_dash_p",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"dash",
+    "path":"folders/Sounds/player_sounds/dash.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

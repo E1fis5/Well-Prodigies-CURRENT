@@ -13,7 +13,7 @@
   "option_windows_display_cursor":true,
   "option_windows_display_name":"Well Prodigies Indev",
   "option_windows_enable_steam":false,
-  "option_windows_executable_name":"Well Prodigies",
+  "option_windows_executable_name":"WELL",
   "option_windows_icon":"${options_dir}/windows/icons/icon.ico",
   "option_windows_installer_finished":"${base_options_dir}/windows/installer/finished.bmp",
   "option_windows_installer_header":"${base_options_dir}/windows/installer/header.bmp",

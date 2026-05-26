@@ -202,24 +202,26 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 		global.sanity -= 10;
 		if (mindsplit_perfect_window)
 		{
-			walksp += 0.75;
+			walksp += 1.15;
 			time_source_stop(obj_dashBoost_effect.timer_mindsplit_perfect_window);
 			audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.4);
+			dash_distance += 25;
 		}
 		else
 		{
-			walksp += 0.55;
+			walksp += 0.95;
 			audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.9);
-		}
-		//Sanity Shake
-		if (instance_exists(obj_sanitymeter))
-		{
-			obj_sanitymeter.sanity_drain_effects();
+			dash_distance += 15;
 		}
 	}
 	if (mindsplit_dash) or (mindsplit_activated)
 	{
 		mindSpl_dBoost_start();
+		//Sanity Shake
+		if (instance_exists(obj_sanitymeter))
+		{
+			obj_sanitymeter.sanity_drain_effects();
+		}
 	}
 	else
 	{
