@@ -11,7 +11,7 @@ if (obj_player.walksp >= 17.5)
 
 audio_play_sound(snd_dash_p,8,false,1,0,choose(0.85,1.25));
 
-if (obj_player.mindsplit_activated or obj_player.mindsplit_dash)
+if (obj_player.mindsplit_dash)
 {
 	sprite_index = spr_mindsplit_activate_dash_effect;
 	image_xscale += 1.8;

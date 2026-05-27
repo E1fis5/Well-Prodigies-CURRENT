@@ -18,7 +18,7 @@ state_Bomb();
 //Mindsplit
 mindsplit_transition_state();
 
-//LANd
+//Land
 land_state();
 
 //Wall Boosts
@@ -196,37 +196,7 @@ if (score >= 20000) and (!score_boost3)
 //Dash boost
 if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 {
-	var mindSpl_dBoost_start = function()
-	{
-		mindsplit_activated = true;
-		global.sanity -= 10;
-		if (mindsplit_perfect_window)
-		{
-			walksp += 1.15;
-			time_source_stop(obj_dashBoost_effect.timer_mindsplit_perfect_window);
-			audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.4);
-			dash_distance += 25;
-		}
-		else
-		{
-			walksp += 0.95;
-			audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.9);
-			dash_distance += 15;
-		}
-	}
-	if (mindsplit_dash) or (mindsplit_activated)
-	{
-		mindSpl_dBoost_start();
-		//Sanity Shake
-		if (instance_exists(obj_sanitymeter))
-		{
-			obj_sanitymeter.sanity_drain_effects();
-		}
-	}
-	else
-	{
-		global.sanity += 5;
-	}
+	global.sanity += 5;
 	//Early Boost
 	if (dashB_first_hit)//Stacks
 	{
@@ -234,7 +204,7 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 		audio_play_sound(snd_dBoost_start,6,false,1,0,1.3);
 		time_source_start(timer_aftereffect_creation_quick);
 		walksp += 0.45;
-		dash_distance += 25;
+		dash_distance += 15;
 		if (instance_exists(obj_escape_timer)) and (global.outside)
 		{
 			obj_escape_timer.cd_lightning();
@@ -265,12 +235,50 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 		obj_dashJoost_counter.dashCounter_shake_warnin = false;
 	}
 	dashBoost_forgive = 0;
-	if (global.health < 6) and (!mindsplit_activated)
+	if (global.health < 6)
 	{
 		global.health += 0.1;
 	}
 }
-
+//Mindsplit Activation
+if (instance_exists(obj_mindSpl_dBoost)) and (input_check_pressed("attack"))
+{
+	mindsplit_activated = true;
+	if (mindsplit_dash)
+	{
+		dash_distance -= 300; 
+		mindsplit_dash = false;
+	}
+	if (instance_exists(obj_dashJoost_counter))
+	{
+		obj_dashJoost_counter.dashCounter_shake_warnin = false;
+	}
+	instance_create_depth(-999,-999,-9998,obj_dBoost_activate_flash);
+	instance_create_depth(x,y,399,obj_dashB_active_effect);
+	global.sanity -= 10;
+	time_source_start(timer_aftereffect_creation);
+	time_source_start(timer_dBoost_deactivate);
+	OH_dash_avalible = true;
+	if (mindsplit_perfect_window)
+	{
+		walksp += 1.95;
+		time_source_stop(obj_dashB_active_effect.timer_mindsplit_perfect_window);
+		mindsplit_perfect_window = true;
+		audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.4);
+		dash_distance += 70;
+	}
+	else
+	{
+		walksp += 0.95;
+		audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.9);
+		dash_distance += 60;
+	}
+	//Sanity Shake
+	if (instance_exists(obj_sanitymeter))
+	{
+		obj_sanitymeter.sanity_drain_effects();
+	}
+}	
 if (global.dashboost_dash) and (!instance_exists(obj_dashB_active_effect)) and (!dBoost_dash_active)
 {
 	dBoost_dash_active = true;
@@ -292,6 +300,7 @@ if (!instance_exists(obj_dash_boost)) and (input_check_pressed("attack") or (ins
 		time_source_start(timer_dBoostmiss_screenshake);
 		layer_set_visible("Effect_Screenshake_mega",1);
 		global.hudshake = true;
+		
 	}
 }
 

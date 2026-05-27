@@ -17,16 +17,6 @@ if (obj_player.dashBoost_forgive = 1)
 var dashB_early_hit = function()
 {
 	obj_player.dashB_first_hit = false;
-	image_blend = c_white;
 }
-var mindsplit_perfect_hit = function()
-{
-	obj_player.mindsplit_perfect_window = false;
-}
-timer_mindsplit_perfect_window = time_source_create(time_source_game,1,time_source_units_seconds,mindsplit_perfect_hit,[],1);
 timer_dashB_firsthit_timer = time_source_create(time_source_game,3,time_source_units_frames,dashB_early_hit,[],1);
-if (!obj_player.mindsplit_dash or !obj_player.mindsplit_activated)
-{
-	time_source_start(timer_dashB_firsthit_timer);
-	obj_player.dashB_first_hit = true;
-}
+time_source_start(timer_dashB_firsthit_timer);

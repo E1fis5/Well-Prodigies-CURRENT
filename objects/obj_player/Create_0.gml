@@ -281,17 +281,27 @@ var power_crawl_damage_1_hp = function()
 //Dashes
 var dBoost_create = function()
 {
-	instance_create_depth(x,y,-999,obj_dash_boost);
-	dashBoost_forgive += 1;
+	if (!mindsplit_dash) and (!mindsplit_activated)
+	{
+		instance_create_depth(x,y,-999,obj_dash_boost);
+		dashBoost_forgive += 1;
+	}
+	if (mindsplit_dash or mindsplit_activated)
+	{
+		instance_create_depth(x,y,399,obj_mindSpl_dBoost);
+	}
 }
 
 var dBoost_deactivate = function()
 {
 	dBoost_effects_end();
 }
-
-
-
+//Oh Dash
+var OH_dash_reset = function()
+{
+	dash_time += 5;
+}
+timer_OH_dash_reset = time_source_create(time_source_game,0.2,time_source_units_seconds,OH_dash_reset,[],1);
 var dBoost_cooldown = function()
 {
 	dashBoost_forgive = 0;
@@ -428,13 +438,15 @@ var mindSpl_deactivation = function()
 	global.sanity += 20;
 	if (mindsplit_perfect_window)
 	{
-		walksp -= 0.75;
+		walksp -= 1.15;
 		audio_play_sound(snd_dashBoost_cd_over,5,false,1.2,0,0.5);
+		dash_distance -= 25;
 	}
 	else
 	{
-		walksp -= 0.55;
+		walksp -= 0.95;
 		audio_play_sound(snd_dashBoost_cd_over,5,false,1.2,0,0.9);
+		dash_distance -= 15;
 	}
 }
 
@@ -1161,6 +1173,7 @@ mindsplit_transition_state = function()
 			}
 			mindsplit_activated = false;
 			mindsplit_avalible = false;
+			dBoost_effects_end();
 			audio_play_sound(snd_mindSplit_end,5,false);
 			instance_create_depth(x,y,399,obj_wither_effect);
 			time_source_stop(timer_mindSpl_deactivation);
@@ -1242,13 +1255,15 @@ mindsplit_transition_state = function()
 				dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")) - (input_check("up")));
 				if (input_check("up"))
 				{
+					dash_distance -= 50;
 					OH_dash_avalible = false;
 					OH_dash_used = true;
 					instance_create_depth(x,y - 60,399,obj_overhead_dash_effect_1);
-					audio_play_sound(snd_dashp_overhead,6,false,1.6);
+					audio_play_sound(snd_dashp_overhead,6,false,2);
 					layer_set_visible("Effect_Screenshake_mega",1);
 					global.hudshake = true;
-					dash_time -= 8;
+					dash_time -= 6;
+					time_source_start(timer_OH_dash_reset);
 				}
 			}
 			else
@@ -1273,7 +1288,7 @@ mindsplit_transition_state = function()
 		}
 		land_sprite_break = false;
 		fallcancel = true;
-		grv = 0
+		grv = 0;
 		damage_deal = true;
 		walljump = false;
 		//Dash Effect
@@ -1285,7 +1300,7 @@ mindsplit_transition_state = function()
 		{
 			if (!dashBoost_forgive = 1)
 			{
-				dash_distance -= 95
+				dash_distance -= 95;
 			}
 			global.dashboost_dash = false;
 			dashBoost_fail = true;
@@ -1378,11 +1393,12 @@ mindsplit_transition_state = function()
 		   if (mindsplit_dash)
 		   {
 			   dash_distance -= 300;
+			   mindsplit_dash = false;
 		   }
 		   if (OH_dash_used)
 		   {
+			   dash_distance += 50;
 			   OH_dash_used = false;
-			   dash_time += 8;
 			   layer_set_visible("Effect_Screenshake_mega",0);
 			   global.hudshake = false;
 		   }

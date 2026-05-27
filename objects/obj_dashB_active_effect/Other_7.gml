@@ -46,7 +46,7 @@ if (sprite_index = spr_dBoost_ending_explosion)
 	if (i.dashB_first_hit)
 	{
 		i.walksp -= 0.40;
-		i.dash_distance -= 25;
+		i.dash_distance -= 15;
 		time_source_stop(i.timer_aftereffect_creation_quick);
 	}
 	//Mindsplit Boost
@@ -54,12 +54,12 @@ if (sprite_index = spr_dBoost_ending_explosion)
 	{
 		if (i.mindsplit_perfect_window)
 		{
-			i.walksp -= 1.10;
+			i.walksp -= 1.3;
 			i.dash_distance -= 25;
 		}
 		else
 		{
-			i.walksp -= 0.90;
+			i.walksp -= 0.30;
 			i.dash_distance -= 15;
 		}
 	}
