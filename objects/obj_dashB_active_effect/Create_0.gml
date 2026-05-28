@@ -8,14 +8,6 @@ hit_adjustment = false;
 player_follow = false;
 obj_player.dashBoost_forgive = 0;
 //Mindsplit
-obj_player.mindsplit_perfect_window = true;
-//Time Sources
-var mindsplit_perfect_hit = function()
-{
-	obj_player.mindsplit_perfect_window = false;
-}
-timer_mindsplit_perfect_window = time_source_create(time_source_game,1,time_source_units_seconds,mindsplit_perfect_hit,[],1);
-time_source_start(timer_mindsplit_perfect_window);
 //Chance
 if (global.dboost_chance_active = true)
 {

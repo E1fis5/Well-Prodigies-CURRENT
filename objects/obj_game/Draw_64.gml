@@ -21,15 +21,7 @@ if (global.debug_active = true)
 			{
 				draw_text(100,400,"0");	
 			}
-			
-			if (obj_player.mindsplit_perfect_window)
-			{
-				draw_text(100,300,"1");
-			}
-			else
-			{
-				draw_text(100,300,"0");
-			}
+			draw_text(100,300,obj_player.vsp_wjump);
 			draw_text(100,200,obj_player.walksp);
 			draw_text(100,600,obj_player.dash_distance);
 	}

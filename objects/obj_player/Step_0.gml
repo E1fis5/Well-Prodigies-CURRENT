@@ -21,15 +21,6 @@ mindsplit_transition_state();
 //Land
 land_state();
 
-//Wall Boosts
-if (global.walljumps >= 3) and (global.walljump_boost1 = false)
-{
-	if (!instance_exists(obj_wallboost_effect))
-	{
-		instance_create_depth(-999,-999,399,obj_wallboost_effect);
-	}
-	global.walljump_boost1 = true;
-}
 
 
 	//Ladder
@@ -47,6 +38,7 @@ if (score >= 7000) and (!score_boost1)
 {
 	walksp += 0.55;
 	score_boost1 = true;
+	dash_distance += 15;
 }
 
 
@@ -54,6 +46,7 @@ if (score >= 12000) and (!score_boost2)
 {
 	walksp += 1.10;
 	score_boost2 = true;
+	dash_distance += 25;
 }
 
 
@@ -61,6 +54,7 @@ if (score >= 20000) and (!score_boost3)
 {
 	walksp += 1.65;
 	score_boost3 = true;
+	dash_distance += 35;
 }
 
 
@@ -194,9 +188,11 @@ if (score >= 20000) and (!score_boost3)
 	}
 	
 //Dash boost
-if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
+if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!instance_exists(obj_dashB_active_effect))
 {
 	global.sanity += 5;
+	mindsplit_perfect_window = true;
+	time_source_start(timer_mindsplit_perfect_window);
 	//Early Boost
 	if (dashB_first_hit)//Stacks
 	{
@@ -241,7 +237,7 @@ if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack"))
 	}
 }
 //Mindsplit Activation
-if (instance_exists(obj_mindSpl_dBoost)) and (input_check_pressed("attack"))
+if (instance_exists(obj_mindSpl_dBoost)) and (input_check_pressed("attack")) and (!instance_exists(obj_dashB_active_effect))
 {
 	mindsplit_activated = true;
 	if (mindsplit_dash)
@@ -262,7 +258,7 @@ if (instance_exists(obj_mindSpl_dBoost)) and (input_check_pressed("attack"))
 	if (mindsplit_perfect_window)
 	{
 		walksp += 1.95;
-		time_source_stop(obj_dashB_active_effect.timer_mindsplit_perfect_window);
+		time_source_stop(timer_mindsplit_perfect_window);
 		mindsplit_perfect_window = true;
 		audio_play_sound(snd_dBoost_start,6,false,1.1,0,0.4);
 		dash_distance += 70;
@@ -346,26 +342,6 @@ if (!instance_exists(obj_dash_boost)) and (input_check_pressed("attack") or (ins
 if (obj_game.gt_disable)
 {
 	baseState();
-}
-
-//Dash Scaling
-if (walksp >= 16) and (!Dash_Scale1) and (!Dash_Scale_Disable)
-{	
-	dash_distance += 15;
-	Dash_Scale1 = true;
-}
-
-if (walksp >= 19) and (!Dash_Scale2)  and (!Dash_Scale_Disable)
-{
-	dash_distance += 25;
-	Dash_Scale2 = true;
-}
-
-
-if (walksp >= 22) and (!Dash_Scale3) and (!Dash_Scale_Disable)
-{
-	dash_distance += 35;
-	Dash_Scale3 = true;
 }
 
 if (!jump_activated) and (onwall != 0) and (walljump_prohibit)

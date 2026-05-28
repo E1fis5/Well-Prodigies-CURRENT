@@ -43,7 +43,7 @@ vspJump = -4.5;
 vspDJump = -5.5;
 vsp_wjump = -5;
 vsp_max_wall = 12;
-canJump = 7
+canJump = 7;
 upcancel_jump = false;
 global.dJump_idle = false
 runsp = 5.5;
@@ -467,6 +467,11 @@ var mindSpl_zoom_failsafe = function()
 	}
 }
 
+var mindsplit_perfect_hit = function()
+{
+	mindsplit_perfect_window = false;
+}
+timer_mindsplit_perfect_window = time_source_create(time_source_game,1,time_source_units_seconds,mindsplit_perfect_hit,[],1);
 timer_mindSpl_failsafe_zoom = time_source_create(time_source_game,0.5,time_source_units_seconds,mindSpl_zoom_failsafe,[],1);
 timer_mindSpl_cooldown = time_source_create(time_source_game,10,time_source_units_seconds,mindSpl_cooldown,[],1);
 timer_mindSpl_deactivation = time_source_create(time_source_game,45,time_source_units_seconds,mindSpl_deactivation,[],1);
@@ -495,6 +500,7 @@ hsp =(input_check("right") - input_check("left")) * walksp
 //walljump
 if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bomb_active) and (!walljump_prohibit)
 {
+	vsp_wjump = walksp / -4 - 2.75 + 0.5;
 	if (time_source_exists(timer_walljump_check))
 	{
 		time_source_stop(timer_walljump_check);
@@ -808,7 +814,7 @@ state_FastFall = function()
 			upcancel_breaks++
 		}
 	}
-	if (!Bomb_Dash_Active)
+	if (!Bomb_Dash_Active) or (!drop_dash_avalible)
 	{
 		dash_energy = 0;
 	}
@@ -1238,6 +1244,10 @@ mindsplit_transition_state = function()
 		{
 			dash_call = false;
 		}
+		if (input_check("down"))
+		{
+			drop_dash_avalible = true;	
+		}
 		upcancel_disable();
 		can_dash = false;
 		if (!OH_dash_avalible)
@@ -1259,7 +1269,7 @@ mindsplit_transition_state = function()
 					OH_dash_avalible = false;
 					OH_dash_used = true;
 					instance_create_depth(x,y - 60,399,obj_overhead_dash_effect_1);
-					audio_play_sound(snd_dashp_overhead,6,false,2);
+					audio_play_sound(snd_dashp_overhead,6,false,6);
 					layer_set_visible("Effect_Screenshake_mega",1);
 					global.hudshake = true;
 					dash_time -= 6;
@@ -1402,6 +1412,7 @@ mindsplit_transition_state = function()
 			   layer_set_visible("Effect_Screenshake_mega",0);
 			   global.hudshake = false;
 		   }
+		   drop_dash_avalible = false;
 		   instance_destroy(obj_player_dash_hitbox);
 		   global.dash_active = false;
 		   time_source_stop(timer_dBoost_create);
