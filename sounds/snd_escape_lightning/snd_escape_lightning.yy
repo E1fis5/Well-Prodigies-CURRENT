@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":5.929796,
+  "duration":5.879796,
   "exportDir":"",
   "name":"snd_escape_lightning",
   "parent":{

@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.544,
+  "duration":2.5077777,
   "exportDir":"",
   "name":"snd_lap",
   "parent":{

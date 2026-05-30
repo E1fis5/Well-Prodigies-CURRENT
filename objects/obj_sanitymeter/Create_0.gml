@@ -1,4 +1,4 @@
-global.sanity = 210;
+global.sanity = 140;
 global.sanity_Prank_switch = false;
 heat = 0;
 shake_trigger = false;

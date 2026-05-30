@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_mindSpl_pulse1.mp3",
-  "volume":0.65,
+  "volume":0.75,
 }

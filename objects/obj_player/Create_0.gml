@@ -144,6 +144,7 @@ adrenaline_boost = function()
 can_dash = false
 dash_distance = 225;
 dash_time = 16
+dash_cooldown_active = false;
 idle_active = false;
 drop_dash_avalible = false;
 dashBoost_forgive = 0;
@@ -351,7 +352,6 @@ var upcancel_boost = function()
 	upcancel_avalible = true;
 }
 timer_upcancel_boost = time_source_create(time_source_game,0.85,time_source_units_seconds,upcancel_boost,[],1);
-
 //Upcancel Jump Break Timer
 var upcancel_jump_break_timer = function()
 {
@@ -475,6 +475,14 @@ timer_mindsplit_perfect_window = time_source_create(time_source_game,1,time_sour
 timer_mindSpl_failsafe_zoom = time_source_create(time_source_game,0.5,time_source_units_seconds,mindSpl_zoom_failsafe,[],1);
 timer_mindSpl_cooldown = time_source_create(time_source_game,10,time_source_units_seconds,mindSpl_cooldown,[],1);
 timer_mindSpl_deactivation = time_source_create(time_source_game,45,time_source_units_seconds,mindSpl_deactivation,[],1);
+
+//Dash Cooldown
+var dash_reset = function()
+{
+	can_dash = true;	
+	dash_cooldown_active = false;
+}
+timer_dash_cooldown = time_source_create(time_source_game,0.35,time_source_units_seconds,dash_reset,[],1);
 //Aftereffects/Dboost
 timer_aftereffect_creation = time_source_create(time_source_game,1.25,time_source_units_seconds,dashBoost_aftereffect_creation,[],-1);
 timer_aftereffect_creation_quick = time_source_create(time_source_game,0.75,time_source_units_seconds,dashBoost_aftereffect_creation,[],-1);
@@ -592,7 +600,10 @@ if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 	if (upcancel_jump = true) and (!upcancel_jump_used)
 	{
 		grv = 0.035;
-		can_dash = true;
+		if (!can_dash)
+		{
+			time_source_start(timer_dash_cooldown);
+		}
 		audio_play_sound(snd_player_slam_bounce,5,false);
 		walksp += 1.5;
 		upcancel_jump_used = true;
@@ -645,7 +656,7 @@ if (place_meeting(x, y + vsp, obj_collision_wall)) and (global.collisions_enable
 	if (!mindsplit_override)
 	{
 		canJump = 10;
-		if (!basestate_override)
+		if (!dash_cooldown_active)
 		{
 			can_dash = true;
 		}
@@ -770,7 +781,6 @@ if input_check("left") and (wallclimb = 0) and (!land_sprite_break) and (!mindsp
 	fallcancel = false;
 	idle_active = true;
 }
-
 //Double Jump Sprite
 if (dJump_sprite_start) and (onground = false) and (!global.dJump_idle) and (!wallclimb) and (!mindsplit_override)
 {
@@ -783,7 +793,7 @@ if (dJump_sprite_start) and (onground = false) and (!global.dJump_idle) and (!wa
 		sprite_index = spr_gem_collect_left
 	
 	}
-	}
+}
 }
 }
 }
@@ -968,7 +978,10 @@ stateDoubleJump = function()
 {
 if (jump_allowed = true) and (input_check_pressed("jump")) and (jump_activated)
 {
-	vsp = vspDJump
+	if (!input_check_pressed("dash"))
+	{
+		vsp = vspDJump
+	}
 	canJump = 0;
 	audio_play_sound(snd_pJump,4,false,1.85,0,1.25);
 	jump_allowed = false;
@@ -977,7 +990,10 @@ if (jump_allowed = true) and (input_check_pressed("jump")) and (jump_activated)
 	{
 		walljump_prohibit = false;	
 	}
-	can_dash = true
+	if (!can_dash)
+	{
+		time_source_start(timer_dash_cooldown);
+	}
 	canCrawl = 1
 	fallcancel = true;
 	global.dJump_active = true
@@ -1212,7 +1228,7 @@ mindsplit_transition_state = function()
 			//Sanity
 			if (instance_exists(obj_sanitymeter))
 			{
-				global.sanity -= 30;
+				global.sanity -= 50;
 				obj_sanitymeter.sanity_drain_effects();
 			}
 			//Screenshake
@@ -1249,7 +1265,11 @@ mindsplit_transition_state = function()
 			drop_dash_avalible = true;	
 		}
 		upcancel_disable();
+		//Dash Cooldown
 		can_dash = false;
+		dash_cooldown_active = true;
+		time_source_start(timer_dash_cooldown);
+		//Overhead Dash
 		if (!OH_dash_avalible)
 		{
 			dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")));
@@ -1268,6 +1288,7 @@ mindsplit_transition_state = function()
 					dash_distance -= 50;
 					OH_dash_avalible = false;
 					OH_dash_used = true;
+					instance_create_depth(-999,-999,-9998,obj_dBoost_activate_flash);
 					instance_create_depth(x,y - 60,399,obj_overhead_dash_effect_1);
 					audio_play_sound(snd_dashp_overhead,6,false,6);
 					layer_set_visible("Effect_Screenshake_mega",1);

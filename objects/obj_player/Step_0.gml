@@ -251,7 +251,7 @@ if (instance_exists(obj_mindSpl_dBoost)) and (input_check_pressed("attack")) and
 	}
 	instance_create_depth(-999,-999,-9998,obj_dBoost_activate_flash);
 	instance_create_depth(x,y,399,obj_dashB_active_effect);
-	global.sanity -= 10;
+	global.sanity -= 20;
 	time_source_start(timer_aftereffect_creation);
 	time_source_start(timer_dBoost_deactivate);
 	OH_dash_avalible = true;

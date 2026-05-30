@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":266.256,
+  "duration":266.21872,
   "exportDir":"",
   "name":"snd_escape",
   "parent":{
