@@ -73,15 +73,6 @@ if (score >= 20000) and (!score_boost3)
 		walksp += 2.30;
 		R2_boost = true;
 	} 
-
-	//Sanity values
-	
-	if (global.sanity >= 250) and (!sanity_boost1)
-	{
-		walksp += 0.35;
-		sanity_boost1 = true;
-	}
-
 	// lap 2 anims
 	if (global.timer <= 30) and (sprite_index = spr_player_escapeidle)
 	{
@@ -336,15 +327,9 @@ if (!instance_exists(obj_dash_boost)) and (input_check_pressed("attack") or (ins
 		global.fakeout_pause = true;
 	}
 
-//Mind Split Special
 
 //GT Specials
 if (obj_game.gt_disable)
 {
 	baseState();
-}
-
-if (!jump_activated) and (onwall != 0) and (walljump_prohibit)
-{
-	walljump_prohibit = false;	
 }

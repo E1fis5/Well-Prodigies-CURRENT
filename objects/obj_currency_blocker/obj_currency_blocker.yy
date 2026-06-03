@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"hub",
-    "path":"folders/Objects/hub.yy",
+    "path":"folders/Objects/level_stuff/hub.yy",
   },
   "parentObjectId":null,
   "persistent":false,

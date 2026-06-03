@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.2799773,
+  "duration":1.0893651,
   "exportDir":"",
   "name":"snd_dashp_overhead",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_dashp_overhead.mp3",
-  "volume":0.32,
+  "volume":0.7,
 }

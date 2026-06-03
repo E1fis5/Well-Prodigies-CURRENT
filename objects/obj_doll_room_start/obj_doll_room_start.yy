@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_doll_room_start",
-    "path":"sprites/spr_doll_room_start/spr_doll_room_start.yy",
+    "name":"tikitki",
+    "path":"sprites/tikitki/tikitki.yy",
   },
   "spriteMaskId":null,
   "visible":true,

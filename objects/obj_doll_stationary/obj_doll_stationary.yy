@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mb_green_filter",
-    "path":"sprites/spr_mb_green_filter/spr_mb_green_filter.yy",
+    "name":"tikitki",
+    "path":"sprites/tikitki/tikitki.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -113,6 +113,7 @@ ground_break_permanent = false;
 upcancel_jump_break = false;
 upcancel_breaks = 0;
 upcancel_avalible = true;
+upcancel_pause_duration = 0;
 //Speed control
 score_boost1 = false;
 score_boost2 = false;
@@ -525,7 +526,7 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 	wallclimb = false;
 	walljump = true;
 	fallcancel = true;
-	instance_create_depth(x,y,401,obj_wallclimb_effect);
+	instance_create_depth(x,y - 90,401,obj_wallclimb_effect);
 with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 	{
 		sprite_index = other.sprite_index;
@@ -556,6 +557,10 @@ state_walljump = function()
 //Wallclimb
 if (wallclimb) and (!mindsplit_override) 
 {
+	if (input_check_pressed("down"))
+	{
+		time_source_start(timer_upcancel_fallbuild);
+	}
 	upcancel_disable();
 	land_sprite_break = false;
 	sprite_index = spr_player_wallclimb;
@@ -591,6 +596,7 @@ vsp = clamp(vsp, -vsp_max_final, vsp_max_final);
 //Deciding to jump or not
 if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 {
+	walljump_prohibit = true;
 	vsp = vspJump;
 	canJump = 7;
 	jump_allowed = true;
@@ -721,11 +727,14 @@ if (onground)
 if (!onground)
 {
 	canCrawl = 1;
+	if (!jump_activated)
+	{
+		walljump_prohibit = false;
+	}
 	if (!crawl_jump) and (!upcancel_state_prohibit) and (!upcancel_jump_break)
 	{
 		upcancel_avalible = true;
 	}
-
 }
 
 //Change direction in animation
@@ -794,6 +803,23 @@ if (dJump_sprite_start) and (onground = false) and (!global.dJump_idle) and (!wa
 	
 	}
 }
+//Upcancel Jump Break
+if (upcancel_breaks <= 0) and (upcancel_active) and (input_check_pressed("jump"))
+	{
+		jump_activated = true;
+		vsp = vspDJump;
+		grv = 0.07;
+		up_cancel_eff = false;
+		upcancel_active = false;
+		time_source_stop(timer_upcancel_fallbuild);
+		time_source_start(timer_upcancel_jump_break);
+		upcancel_avalible = false;
+		upcancel_jump_break = true;
+		upcancel_breaks++
+		up_cancel_eff = false;
+		instance_create_depth(x,y,399,obj_upcancel_effect);
+		audio_play_sound(snd_upcancel_whoosh,5,false,1,0,1.3);
+	}
 }
 }
 }
@@ -807,22 +833,6 @@ state_FastFall = function()
 	if (!input_check_pressed("jump"))
 	{
 		grv = 1.5
-	}
-	else
-	{
-		if (upcancel_breaks <= 0)
-		{
-			jump_activated = true;
-			vsp = vspDJump;
-			grv = 0.07;
-			up_cancel_eff = false;
-			upcancel_active = false;
-			time_source_stop(timer_upcancel_fallbuild);
-			time_source_start(timer_upcancel_jump_break);
-			upcancel_avalible = false;
-			upcancel_jump_break = true;
-			upcancel_breaks++
-		}
 	}
 	if (!Bomb_Dash_Active) or (!drop_dash_avalible)
 	{
@@ -848,6 +858,7 @@ state_FastFall = function()
 	{
 		instance_create_depth(x,y,399,obj_upcancel_effect);
 		up_cancel_eff = true;
+		audio_play_sound(snd_upcancel_whoosh,5,false);
 	}
 	global.fallspr_deactivate = true;
 	dJump_sprite_start = false;
@@ -885,6 +896,7 @@ land_state = function()
 		}
 		canJump = 6;
 		grv = 0.07;
+		up_cancel_eff = false;
 		if (!mindsplit_override)
 		{
 			sprite_index = spr_player_land;
@@ -918,11 +930,6 @@ land_state = function()
 		{
 			vsp_max_wall = 12;
 			time_source_stop(timer_upcancel_fallbuild);
-		}
-		if (!instance_exists(obj_wallboost_effect))
-		{
-			instance_create_depth(x,y,399,obj_wallboost_effect);
-			global.walljumps = 7;
 		}
 	}
 	}
@@ -1262,7 +1269,8 @@ mindsplit_transition_state = function()
 		}
 		if (input_check("down"))
 		{
-			drop_dash_avalible = true;	
+			drop_dash_avalible = true;
+			vsp_max_wall = 18;
 		}
 		upcancel_disable();
 		//Dash Cooldown
@@ -1285,12 +1293,12 @@ mindsplit_transition_state = function()
 				dash_direction = point_direction(0,0,input_check("right")- input_check("left"), (input_check("down")) - (input_check("up")));
 				if (input_check("up"))
 				{
+					audio_play_sound(snd_dashp_overhead,6,false);
 					dash_distance -= 50;
 					OH_dash_avalible = false;
 					OH_dash_used = true;
 					instance_create_depth(-999,-999,-9998,obj_dBoost_activate_flash);
 					instance_create_depth(x,y - 60,399,obj_overhead_dash_effect_1);
-					audio_play_sound(snd_dashp_overhead,6,false,6);
 					layer_set_visible("Effect_Screenshake_mega",1);
 					global.hudshake = true;
 					dash_time -= 6;

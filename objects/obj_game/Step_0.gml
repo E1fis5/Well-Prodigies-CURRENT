@@ -7,7 +7,6 @@ if (global.sanity >= 300)
 		obj_sanitymeter.image_index = 0;
 	}
 }
-
 if (global.sanity <= 30)
 {
 	global.sanity = 30;

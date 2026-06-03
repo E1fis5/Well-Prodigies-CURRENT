@@ -22,7 +22,7 @@ if (global.doll_pickup = true) and (input_check("up")) and (global.soldout_doll 
 	global.maxhealth -= 1;
 	global.health -= 1;
 	global.soldout_doll = true;
-	instance_create_depth(0,0,399,obj_doll);
+	instance_create_depth(0,0,399,obj_doll_stationary);
 	audio_play_sound(snd_buy,5,false);
 }
 

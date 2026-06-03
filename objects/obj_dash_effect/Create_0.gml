@@ -8,6 +8,10 @@ if (obj_player.walksp >= 17.5)
 	image_xscale += 0.35;
 	image_yscale += 0.35;
 }
+if (obj_player.player_left)
+{
+	sprite_index = spr_dash_effect_left;
+}
 
 audio_play_sound(snd_dash_p,8,false,1,0,choose(0.85,1.25));
 
@@ -22,5 +26,9 @@ if (obj_player.mindsplit_dash)
 
 if (instance_exists(obj_player)) and (obj_player.dash_distance >= 235) and !(obj_player.mindsplit_activated or obj_player.mindsplit_dash)
 {
-	sprite_index = spr_dash_big_effect;	
+	sprite_index = spr_dash_big_effect;
+	if (obj_player.player_left)
+	{
+		sprite_index = spr_dash_big_effect_left;
+	}
 }

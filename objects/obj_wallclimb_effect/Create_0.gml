@@ -1,5 +1,4 @@
 if (obj_player.player_left)
 {
-	image_xscale = -1;
-	image_yscale = -1;
+	sprite_index = spr_wallclimb_effect_left;
 }
