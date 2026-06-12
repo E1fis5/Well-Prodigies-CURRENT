@@ -13,6 +13,7 @@ if (obj_player.dashBoost_forgive = 1)
 {
 	image_speed = 1.9;
 }
+obj_player.dashBoost_forgive += 1;
 obj_player.dashB_first_hit = true;
 //Time Sources
 var dashB_early_hit = function()

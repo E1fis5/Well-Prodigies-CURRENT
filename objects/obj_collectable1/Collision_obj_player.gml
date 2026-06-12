@@ -19,7 +19,7 @@ if (global.magnet_collect_strong_pull = true)
 	}
 }
 instance_destroy();
-audio_play_sound(snd_collectable_collect,4,false,1,0,random_range(0.9,1.1));
+audio_play_sound(snd_collectable_collect,4,false,1,0,random_range(0.95,1.05));
 
 instance_create_depth(x,y,-100,obj_collect_effect)
 

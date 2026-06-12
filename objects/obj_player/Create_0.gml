@@ -287,7 +287,6 @@ var dBoost_create = function()
 	if (!mindsplit_dash) and (!mindsplit_activated)
 	{
 		instance_create_depth(x,y,-999,obj_dash_boost);
-		dashBoost_forgive += 1;
 	}
 	if (mindsplit_dash or mindsplit_activated)
 	{
@@ -665,7 +664,7 @@ if (place_meeting(x, y + vsp, obj_collision_wall)) and (global.collisions_enable
 	if (!mindsplit_override)
 	{
 		canJump = 10;
-		if (!dash_cooldown_active)
+		if (!dash_cooldown_active) and (!slide_boost)
 		{
 			can_dash = true;
 		}
@@ -966,6 +965,7 @@ state_PCrawl = function()
 			walksp += 3;
 			slide_boost = true;
 		}
+		can_dash = false;
 		land_sprite_break = false;
 		time_source_start(timer_power_crawl);
 		global.powercrawl = true;
