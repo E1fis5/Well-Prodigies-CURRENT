@@ -1,1 +1,0 @@
-geyser_limit = 40;

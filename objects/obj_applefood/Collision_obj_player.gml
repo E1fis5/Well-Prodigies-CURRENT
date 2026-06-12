@@ -10,7 +10,6 @@ if (global.abilityscore <= 550) and (global.magnet_collect_strong_pull = false)
 	global.abilityscore += 4;
 }
 instance_destroy();
-
 audio_play_sound(snd_collectable_food,0,false);
 
 instance_create_depth(x,y,-100,obj_collect_apple);

@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_player_slam_bounce",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_player_slam_bounce.mp3",
-  "volume":0.33,
+  "volume":0.2,
 }

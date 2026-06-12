@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_transfo_yodel_mud",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_transfo_yodel_mud",
   "parent":{
-    "name":"player_sounds",
-    "path":"folders/Sounds/player_sounds.yy",
+    "name":"unused",
+    "path":"folders/Sounds/unused.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

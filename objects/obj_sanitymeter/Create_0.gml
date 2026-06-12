@@ -1,5 +1,6 @@
-global.sanity = 140;
+global.sanity = 210;
 global.sanity_Prank_switch = false;
+global.maxsanity = 300;
 heat = 0;
 shake_trigger = false;
 shake_amount = 0;
@@ -65,7 +66,7 @@ var sanity_drain_final = function()
 {
 	global.sanity -= 50;
 	sanity_drain_effects();
-	obj_player.walksp += 1;
+	obj_player.walksp += 0.75;
 	audio_play_sound(snd_boost_buy,5,false);
 	activate_flash_orange = true;
 	instance_create_depth(-999,-999,-9999,obj_dBoost_activate_flash);

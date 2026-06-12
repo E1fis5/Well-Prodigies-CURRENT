@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_mb_1",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupMUS",
+    "path":"audiogroups/groupMUS",
   },
   "bitDepth":1,
   "channelFormat":0,

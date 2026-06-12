@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_music_ch2",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupMUS",
+    "path":"audiogroups/groupMUS",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -14,13 +14,13 @@
   "exportDir":"",
   "name":"snd_music_ch2",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"cavehorrors",
+    "path":"folders/Sounds/unused/cavehorrors.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_music_ch2.mp3",
-  "volume":0.69,
+  "volume":0.5,
 }

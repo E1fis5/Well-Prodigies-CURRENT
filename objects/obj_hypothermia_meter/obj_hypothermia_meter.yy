@@ -13,10 +13,7 @@
     "name":"glacial_tundra_stuff",
     "path":"folders/Objects/specific_level_objects/glacial_tundra_stuff.yy",
   },
-  "parentObjectId":{
-    "name":"obj_sanitymeter",
-    "path":"objects/obj_sanitymeter/obj_sanitymeter.yy",
-  },
+  "parentObjectId":null,
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"scream",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,

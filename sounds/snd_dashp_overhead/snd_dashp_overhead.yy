@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_dashp_overhead",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_dashp_overhead.mp3",
-  "volume":0.7,
+  "volume":0.6,
 }

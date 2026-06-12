@@ -2,15 +2,15 @@
   "$GMSound":"v2",
   "%Name":"snd_collectable_food",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.288,
+  "duration":0.26401362,
   "exportDir":"",
   "name":"snd_collectable_food",
   "parent":{

@@ -8,7 +8,7 @@ if (global.walksp_boost_active = false)
 	instance_destroy();
 }
 
-if (instance_exists(obj_voodoo_magic_shop_item)) and (voodoo_boost_max < 8)
+if (instance_exists(obj_voodoo_magic_shop_item)) and (voodoo_boost_max < 4)
 {
 	time_source_start(global.voodoo_boost_walksp);
 }

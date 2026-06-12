@@ -38,7 +38,7 @@ if (gt_igloo_exit_triggers) and (layer_exists("Effect_GT_Dark1"))
 //Rich Presence
 if (level = 1)
 {
-	np_setpresence("Level:Cave Dwellings", "Score:" + string(score), "cave_discord_preview", string(rank_image));
+	np_setpresence("Level:CaveDwellings", "Score:" + string(score), "cave_discord_preview", string(rank_image));
 	if (global.isActive)
 	{
 		np_setpresence("CaveDwellings Escape", "Speed:" + string(obj_player.walksp), "cave_discord_preview", string(rank_image));
@@ -48,7 +48,6 @@ if (level = 1)
 		}
 	}
 }
-
 if (level = 2)
 {
 	np_setpresence("Level:???", "Score:??", "cave_discord_preview", "spr_ranks_discord1");

@@ -87,7 +87,6 @@ var fake_timer_disable = function()
 }
 timer_fake_duration = time_source_create(time_source_game,30,time_source_units_seconds,fake_timer_disable,[],1);
 //Doll Drains
-timer_drain_doll = time_source_create(time_source_game,70,time_source_units_frames,escape_timer,[],-1);
 timer_doll_voodoo_buff = time_source_create(time_source_game,80,time_source_units_frames,escape_timer,[],-1);
 //Grave Drains
 timer_drain_grave1 = time_source_create(time_source_game,55,time_source_units_frames,escape_timer,[],-1);
@@ -121,3 +120,13 @@ if (layer_exists("Effect_Screenshake"))
 time_source_start(timer_cave_crumble);
 global.timer_drain = time_source_create(time_source_game,0.05,time_source_units_seconds,score_drain,[],-1);
 global.timeout_sprite_active = false;
+
+if (global.dollbuff)
+{
+	time_source_stop(timer_escape_drain);
+	time_source_start(timer_doll_voodoo_buff);
+	if (instance_exists(obj_doll_stationary))
+	{
+		obj_doll_stationary.image_blend = c_purple;
+	}
+}

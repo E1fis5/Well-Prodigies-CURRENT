@@ -26,10 +26,3 @@ else
 	time_source_stop(global.timer_drain);
 	audio_sound_pitch(snd_escape,1);
 }
-
-
-//Doll Buff
-if (global.dollbuff) and (!dollbuff_activated)
-{
-	dollbuff_activated = true;
-}

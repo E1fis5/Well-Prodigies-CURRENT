@@ -2,15 +2,15 @@
   "$GMSound":"v2",
   "%Name":"snd_lap2",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupMUS",
+    "path":"audiogroups/groupMUS",
   },
   "bitDepth":1,
   "channelFormat":0,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":180.24,
+  "duration":180.2101,
   "exportDir":"",
   "name":"snd_lap2",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_lap2.mp3",
-  "volume":0.7,
+  "volume":0.45,
 }

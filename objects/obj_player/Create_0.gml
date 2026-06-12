@@ -144,6 +144,7 @@ adrenaline_boost = function()
 //Dash
 can_dash = false
 dash_distance = 225;
+walk_state_active = false;
 dash_time = 16
 dash_cooldown_active = false;
 idle_active = false;
@@ -298,12 +299,6 @@ var dBoost_deactivate = function()
 {
 	dBoost_effects_end();
 }
-//Oh Dash
-var OH_dash_reset = function()
-{
-	dash_time += 5;
-}
-timer_OH_dash_reset = time_source_create(time_source_game,0.2,time_source_units_seconds,OH_dash_reset,[],1);
 var dBoost_cooldown = function()
 {
 	dashBoost_forgive = 0;
@@ -312,16 +307,33 @@ var dBoost_cooldown = function()
 	time_source_stop(timer_dBoost_cooldown);
 	instance_create_depth(-999,-999,-9999,obj_dBoost_notif);
 }
-
-var dJump_color_revert = function()
+//Oh Dash
+var OH_dash_reset = function()
 {
-	if (image_blend = c_ltgrey)
-	{
-		image_blend = c_white;
-	}
-	time_source_stop(timer_dJump_color_revert);
+	dash_time += 5;
 }
-
+timer_OH_dash_reset = time_source_create(time_source_game,0.2,time_source_units_seconds,OH_dash_reset,[],1);
+var OH_dash_hitbox = function()
+{
+	instance_destroy(obj_player_dash_hitbox);	
+}
+timer_OH_hitbox_destroy = time_source_create(time_source_game,0.6,time_source_units_seconds,OH_dash_hitbox,[],1);
+//OH Dash Trail
+var OH_trail_Dissipate = function()
+{
+	time_source_stop(timer_OH_creation);
+}
+timer_OH_dissipate = time_source_create(time_source_game,0.5,time_source_units_seconds,OH_trail_Dissipate,[],1);
+var OH_trail_Creation = function()
+{
+	with (instance_create_depth(x,y,depth+1,obj_trail_effect))
+	{
+		sprite_index = other.sprite_index;
+		image_blend = choose(c_white,c_aqua);
+		image_alpha = 1;
+	}
+}
+timer_OH_creation = time_source_create(time_source_game,6,time_source_units_frames,OH_trail_Creation,[],-1);
 //Lava
 var lava_penalty = function()
 {
@@ -331,13 +343,6 @@ var lava_penalty = function()
 	time_source_stop(timer_lava_penalty);
 	audio_play_sound(snd_player_hurt,6,false);
 }
-
-//Extended Idle
-var idle_extend = function()
-{
-	sprite_index = spr_player_idle_extended_1;
-}
-
 //Upcancel Boost
 var upcancel_boost = function()
 
@@ -372,7 +377,6 @@ var upcancel_fallbuild = function()
 }
 timer_upcancel_fallbuild = time_source_create(time_source_game,2,time_source_units_frames,upcancel_fallbuild,[],-1);
 //Lava
-timer_idle_extend = time_source_create(time_source_game,9,time_source_units_seconds,idle_extend,[],-1);
 timer_lava_penalty = time_source_create(time_source_game,5,time_source_units_seconds,lava_penalty,[],1);
 //Collect aura
 instance_create_depth(-999,-999,399,obj_collectaura_hitbox);
@@ -490,7 +494,6 @@ timer_aftereffect_creation_quick = time_source_create(time_source_game,0.75,time
 timer_dBoost_cooldown = time_source_create(time_source_game,6,time_source_units_seconds,dBoost_cooldown,[],-1);
 timer_dBoost_create = time_source_create(time_source_game,0.2,time_source_units_seconds,dBoost_create,[],-1);
 timer_dBoost_deactivate = time_source_create(time_source_game,14,time_source_units_seconds, dBoost_deactivate,[],1);
-timer_dJump_color_revert = time_source_create(time_source_game,18,time_source_units_frames,dJump_color_revert,[],1);
 //Power crawl timer
 timer_power_crawl = time_source_create(time_source_game,2,time_source_units_seconds,power_crawl_damage,[],-1);
 timer_power_crawl_1_health = time_source_create(time_source_game,1,time_source_units_seconds,power_crawl_damage_1_hp,[],-1);
@@ -561,7 +564,7 @@ if (wallclimb) and (!mindsplit_override)
 	{
 		time_source_start(timer_upcancel_fallbuild);
 	}
-	upcancel_disable();
+	upcancel_active = false;
 	land_sprite_break = false;
 	sprite_index = spr_player_wallclimb;
 	if (player_left)
@@ -722,6 +725,8 @@ if (onground)
 	{
 		grv = 0.07;
 	}
+	time_source_stop(timer_upcancel_fallbuild);
+	vsp_max_wall = 12;
 }
 //Upcancels and Air functions
 if (!onground)
@@ -735,6 +740,20 @@ if (!onground)
 	{
 		upcancel_avalible = true;
 	}
+}
+
+//Walk state
+if (input_check("run")) and (!walk_state_active)
+{
+	walksp -= 3.5;
+	walk_state_active = true;
+	image_speed = 0.7;
+}
+if (!input_check("run")) and (walk_state_active)
+{
+	walksp += 3.5;
+	walk_state_active = false;
+	image_speed = 1;
 }
 
 //Change direction in animation
@@ -878,7 +897,7 @@ state_FastFall = function()
 //Upcancel Land
 land_state = function()
 {
-	if (upcancel_active) and (onground)
+	if (upcancel_active or wallclimb) and (onground)
 	{
 		land_sprite_break = true;
 		if (upcancel_active = true)
@@ -1131,6 +1150,9 @@ state_Bomb = function()
 		upcancel_avalible = false;
 		upcancel_active = false;
 		time_source_stop(timer_upcancel_fallbuild);
+		//OH trail destroy
+		time_source_stop(timer_OH_creation);
+		time_source_stop(timer_OH_dissipate);
 		//Trail
 		with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 		{
@@ -1185,7 +1207,7 @@ snow_state = function()
 //MindSplit Start
 mindsplit_transition_state = function()
 {
-	if (input_check_pressed("special"))
+	if (input_check_pressed("special")) and (global.mindSplit_unlocked)
 	{
 		//MindSplit Toggle
 		if (mindsplit_activated) and (mindsplit_avalible)
@@ -1207,6 +1229,7 @@ mindsplit_transition_state = function()
 			instance_create_depth(x,y,399,obj_wither_effect);
 			time_source_stop(timer_mindSpl_deactivation);
 			time_source_start(timer_mindSpl_cooldown);
+			time_source_stop(timer_dBoost_deactivate);
 		}
 		if (!mindsplit_avalible)
 		{
@@ -1250,6 +1273,7 @@ mindsplit_transition_state = function()
 			time_source_stop(timer_dBoost_deactivate);
 			time_source_start(timer_dBoost_create);
 			time_source_start(timer_dBoost_cooldown);
+			time_source_stop(timer_aftereffect_creation_quick);
 			dash_distance += 300;
 			state_dash();
 			dBoost_effects_end();
@@ -1302,7 +1326,10 @@ mindsplit_transition_state = function()
 					layer_set_visible("Effect_Screenshake_mega",1);
 					global.hudshake = true;
 					dash_time -= 6;
+					time_source_start(timer_OH_hitbox_destroy);
 					time_source_start(timer_OH_dash_reset);
+					time_source_start(timer_OH_creation);
+					time_source_start(timer_OH_dissipate);
 				}
 			}
 			else
@@ -1434,6 +1461,11 @@ mindsplit_transition_state = function()
 			   dash_distance -= 300;
 			   mindsplit_dash = false;
 		   }
+		   //OH dash
+		   if (!OH_dash_used)
+		   {
+				instance_destroy(obj_player_dash_hitbox);
+		   }
 		   if (OH_dash_used)
 		   {
 			   dash_distance += 50;
@@ -1442,7 +1474,6 @@ mindsplit_transition_state = function()
 			   global.hudshake = false;
 		   }
 		   drop_dash_avalible = false;
-		   instance_destroy(obj_player_dash_hitbox);
 		   global.dash_active = false;
 		   time_source_stop(timer_dBoost_create);
 		   grv = 0.07;
@@ -1469,6 +1500,7 @@ mindsplit_transition_state = function()
 		if (!instance_exists(obj_dashJoost_counter)) and (!dashJoost_hit_disable)
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter);
+			audio_play_sound(snd_dashscore_increase,4,false);
 			if (!dashJoost_speed_cancel) and (!onground)
 			{
 				walksp += 0.25;
@@ -1481,6 +1513,7 @@ mindsplit_transition_state = function()
 		if (!dashJoost_hit_disable)
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+			audio_play_sound(snd_dashscore_increase,4,false,1,0,1.1);
 			if (!dashJoost_speed_cancel) and (!onground)
 			{
 				walksp += 0.35;
@@ -1494,6 +1527,7 @@ mindsplit_transition_state = function()
 		if (!dashJoost_hit_disable)
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+			audio_play_sound(snd_dashscore_increase,4,false,1,0,1.15);
 			if (!dashJoost_speed_cancel) and (!onground)
 			{
 				walksp += 0.45;
@@ -1505,6 +1539,7 @@ mindsplit_transition_state = function()
 		if (!dashJoost_hit_disable)
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+			audio_play_sound(snd_dashscore_increase,4,false,1,0,1.2);
 			if (!dashJoost_speed_cancel) and (!onground)
 			{
 				walksp += 0.50;
@@ -1523,6 +1558,7 @@ mindsplit_transition_state = function()
 			if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
 			{
 				instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+				audio_play_sound(snd_dashscore_increase,4,false,1,0,1.25);
 				if (!dashJoost_speed_cancel) and (!onground)
 				{
 					walksp += 0.50;
@@ -1536,6 +1572,7 @@ mindsplit_transition_state = function()
 		if (!dashJoost_hit_disable)
 		{
 			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
+			audio_play_sound(snd_dashscore_increase,4,false,1,0,1.3);
 		if (!dashJoost_speed_cancel) and (!onground)
 		{
 			walksp += 0.55;
@@ -1555,6 +1592,8 @@ mindsplit_transition_state = function()
 		if (!instance_exists(obj_dashJoost_maxxed_effect))
 		{
 			instance_create_depth(-999,-999,-9998,obj_dashJoost_maxxed_effect);
+			audio_play_sound(snd_dashscore_increase,4,false,2.5,0,1.35);
+			audio_play_sound(snd_dashscore_increase_final,5,false);
 		}
 	}
 
@@ -1566,9 +1605,19 @@ mindsplit_transition_state = function()
 	{
 		global.dash_amount = 0;
 		dashJoost_speed_cancel = false;
-			if (instance_exists(obj_dashJoost_counter))
+		if (instance_exists(obj_dashJoost_counter))
 		{
-			instance_destroy(obj_dashJoost_counter);
+			if (!obj_dashJoost_counter.dashscore_end)
+			{
+				obj_dashJoost_counter.sprite_index = spr_dashscore_end;
+				audio_play_sound(snd_dashscore_end,5,false);
+				obj_dashJoost_counter.dashscore_end = true;
+				if (obj_dashJoost_counter.image_speed = 0)
+				{
+					obj_dashJoost_counter.image_speed = 1;
+				}
+				obj_dashJoost_counter.dashCounter_shake_warnin = false;
+			}
 			dashJoost_hit_disable = false;
 		}
 		if (instance_exists(obj_dashJoost_maxxed_effect))

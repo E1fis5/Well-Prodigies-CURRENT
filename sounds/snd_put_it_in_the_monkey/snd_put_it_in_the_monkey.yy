@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_put_it_in_the_monkey",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,

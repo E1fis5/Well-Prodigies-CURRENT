@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_dashscore_increase",
+  "audioGroupId":{
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.1080046,
+  "exportDir":"",
+  "name":"snd_dashscore_increase",
+  "parent":{
+    "name":"dash_boost",
+    "path":"folders/Sounds/player_sounds/dash_boost.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_dashscore_increase.mp3",
+  "volume":0.75,
+}

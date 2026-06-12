@@ -39,8 +39,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"hud",
-    "path":"folders/Sprites/hud.yy",
+    "name":"dashscore",
+    "path":"folders/Sprites/hud/dashscore.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

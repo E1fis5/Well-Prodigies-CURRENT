@@ -9,6 +9,9 @@ global.targetDirection = 0;
 global.doll_move = false;
 global.dollbuff = false;
 global.hudshake = false;
+//Audio
+audio_group_load(groupMUS);
+audio_group_load(groupSFX);
 //Fonts
 font_main = font_add_sprite(spr_mainfont, 32, true, 1)
 global.fps_key = keyboard_check(vk_f5);
@@ -22,7 +25,7 @@ global.vcr_active = true;
 global.vcr_blue = false;
 global.vcr_black = false
 global.hud_destroy = false
-global.snowlvl_freeze = false
+global.snowlvl_freeze = false 
 global.escape_transition_end = false
 global.switch_purple = false
 global.switch_teal = false
@@ -48,7 +51,7 @@ global.timer_gain = 0;
 global.betamusic_toggle = false;
 //Sanity shitit
 global.sanity_Prank_switch = false;
-global.mindSplit_unlocked = true;
+global.mindSplit_unlocked = false;
 global.player_insane = false;
 //Level Control
 level = 0;

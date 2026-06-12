@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_cavedwellings",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupMUS",
+    "path":"audiogroups/groupMUS",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_cavedwellings.mp3",
-  "volume":0.25,
+  "volume":0.2,
 }

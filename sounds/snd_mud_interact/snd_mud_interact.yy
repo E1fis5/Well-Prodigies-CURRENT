@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_mud_interact",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_mud_interact",
   "parent":{
-    "name":"footsteps",
-    "path":"folders/Sounds/footsteps.yy",
+    "name":"mud",
+    "path":"folders/Sounds/mud.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

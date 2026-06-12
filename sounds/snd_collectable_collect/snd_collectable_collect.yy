@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_collectable_collect",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,

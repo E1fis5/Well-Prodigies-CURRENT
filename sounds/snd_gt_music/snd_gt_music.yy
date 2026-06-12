@@ -2,15 +2,15 @@
   "$GMSound":"v2",
   "%Name":"snd_gt_music",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupMUS",
+    "path":"audiogroups/groupMUS",
   },
   "bitDepth":1,
   "channelFormat":0,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":111.768,
+  "duration":111.73444,
   "exportDir":"",
   "name":"snd_gt_music",
   "parent":{

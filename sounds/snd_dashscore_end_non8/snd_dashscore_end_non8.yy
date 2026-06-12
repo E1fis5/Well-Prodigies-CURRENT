@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_dashscore_end_non8",
+  "audioGroupId":{
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.3569615,
+  "exportDir":"",
+  "name":"snd_dashscore_end_non8",
+  "parent":{
+    "name":"dash_boost",
+    "path":"folders/Sounds/player_sounds/dash_boost.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_dashscore_end_non8.mp3",
+  "volume":0.36,
+}

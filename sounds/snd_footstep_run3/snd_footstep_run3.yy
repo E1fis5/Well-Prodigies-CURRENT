@@ -2,15 +2,15 @@
   "$GMSound":"v2",
   "%Name":"snd_footstep_run3",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.470204,
+  "duration":0.438322,
   "exportDir":"",
   "name":"snd_footstep_run3",
   "parent":{

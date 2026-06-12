@@ -2,15 +2,15 @@
   "$GMSound":"v2",
   "%Name":"snd_mindSpl_pulse1",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.076576,
+  "duration":0.89315194,
   "exportDir":"",
   "name":"snd_mindSpl_pulse1",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_mindSpl_pulse1.mp3",
-  "volume":0.75,
+  "volume":0.85,
 }

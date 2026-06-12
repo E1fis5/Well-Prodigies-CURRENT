@@ -44,7 +44,7 @@ if (score >= 7000) and (!score_boost1)
 
 if (score >= 12000) and (!score_boost2)
 {
-	walksp += 1.10;
+	walksp += 0.85;
 	score_boost2 = true;
 	dash_distance += 25;
 }
@@ -52,7 +52,7 @@ if (score >= 12000) and (!score_boost2)
 
 if (score >= 20000) and (!score_boost3)
 {
-	walksp += 1.65;
+	walksp += 1.10;
 	score_boost3 = true;
 	dash_distance += 35;
 }

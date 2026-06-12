@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_wallboost_create",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_wallboost_create",
   "parent":{
-    "name":"footsteps",
-    "path":"folders/Sounds/footsteps.yy",
+    "name":"unused",
+    "path":"folders/Sounds/unused.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
