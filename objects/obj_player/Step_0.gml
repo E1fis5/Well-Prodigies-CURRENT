@@ -179,7 +179,7 @@ if (score >= 20000) and (!score_boost3)
 	}
 	
 //Dash boost
-if (instance_exists(obj_dash_boost)) and (input_check_pressed("attack")) and (!instance_exists(obj_dashB_active_effect))
+if (instance_exists(obj_dashBoost_effect)) and (input_check_pressed("attack")) and (!instance_exists(obj_dashB_active_effect))
 {
 	global.sanity += 5;
 	mindsplit_perfect_window = true;

@@ -114,6 +114,7 @@ upcancel_jump_break = false;
 upcancel_breaks = 0;
 upcancel_avalible = true;
 upcancel_pause_duration = 0;
+upcancel_fall_speed_keep = false;
 //Speed control
 score_boost1 = false;
 score_boost2 = false;
@@ -338,7 +339,7 @@ var lava_penalty = function()
 {
 	global.damage = true;
 	global.health -= 1;
-	walksp += 2.5;
+	walksp += 3.5;
 	time_source_stop(timer_lava_penalty);
 	audio_play_sound(snd_player_hurt,6,false);
 }
@@ -354,7 +355,10 @@ var upcancel_boost = function()
 	upcancel_jump = false;
 	upcancel_pause = false;
 	grv = 0.07;
-	upcancel_avalible = true;
+	if (!place_meeting(x,y,obj_gt_geyser_wave))
+	{
+		upcancel_avalible = true;
+	}
 }
 timer_upcancel_boost = time_source_create(time_source_game,0.85,time_source_units_seconds,upcancel_boost,[],1);
 //Upcancel Jump Break Timer
@@ -524,6 +528,7 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 	dJump_sprite_start = false;
 	global.walljumps++;
 	grv = 0.07;
+	time_source_stop(timer_upcancel_fallbuild);
 	can_dash = true;
 	wallclimb = false;
 	walljump = true;
@@ -724,8 +729,11 @@ if (onground)
 	{
 		grv = 0.07;
 	}
+	if (!place_meeting(x,y,obj_gt_ice_geyser))
+	{
+		vsp_max_wall = 12;
+	}
 	time_source_stop(timer_upcancel_fallbuild);
-	vsp_max_wall = 12;
 }
 //Upcancels and Air functions
 if (!onground)
@@ -735,7 +743,7 @@ if (!onground)
 	{
 		walljump_prohibit = false;
 	}
-	if (!crawl_jump) and (!upcancel_state_prohibit) and (!upcancel_jump_break)
+	if (!crawl_jump) and (!upcancel_state_prohibit) and (!upcancel_jump_break) and (!place_meeting(x,y,obj_gt_geyser_wave))
 	{
 		upcancel_avalible = true;
 	}
@@ -943,10 +951,18 @@ land_state = function()
 			}
 				
 		}
+		//Geyser
+		if (place_meeting(x,y,obj_gt_ice_geyser))
+		{
+			upcancel_fall_speed_keep = true;	
+		}
 		//FallBuild Cancel
 		if (vsp_max_wall >= 12)
 		{
-			vsp_max_wall = 12;
+			if (!place_meeting(x,y,obj_gt_ice_geyser))
+			{
+				vsp_max_wall = 12;
+			}
 			time_source_stop(timer_upcancel_fallbuild);
 		}
 	}
@@ -1603,22 +1619,34 @@ mindsplit_transition_state = function()
 	//Dash Joost
 	if (global.dash_cancel_speed = true)
 	{
-		global.dash_amount = 0;
 		dashJoost_speed_cancel = false;
 		if (instance_exists(obj_dashJoost_counter))
 		{
 			if (!obj_dashJoost_counter.dashscore_end)
 			{
 				obj_dashJoost_counter.sprite_index = spr_dashscore_end;
-				audio_play_sound(snd_dashscore_end,5,false);
 				obj_dashJoost_counter.dashscore_end = true;
-				if (obj_dashJoost_counter.image_speed = 0)
-				{
-					obj_dashJoost_counter.image_speed = 1;
-				}
 				obj_dashJoost_counter.dashCounter_shake_warnin = false;
+				dashJoost_hit_disable = false;
+				if (global.dash_amount >= 8)
+				{
+					audio_play_sound(snd_dashscore_end,5,false);
+					if (obj_dashJoost_counter.image_speed = 0)
+					{
+						obj_dashJoost_counter.image_speed = 0.40;
+					}
+				}
+				if (global.dash_amount < 8)
+				{
+					audio_play_sound(snd_dashscore_end_non8,5,false);
+					if (obj_dashJoost_counter.image_speed = 0)
+					{
+						obj_dashJoost_counter.image_speed = 1.25;
+					}
+					obj_dashJoost_counter.image_index = 6;
+				}
+				global.dash_amount = 0;		
 			}
-			dashJoost_hit_disable = false;
 		}
 		if (instance_exists(obj_dashJoost_maxxed_effect))
 		{

@@ -12,6 +12,8 @@ else if (!geyser_deactivate)
 
 if (!place_meeting(x,y,obj_player)) and (geyser_touch)
 {
+	obj_player.vsp_max_wall = 12;
 	obj_player.grv = 0.07;
 	geyser_touch = false;
+	time_source_stop(obj_player.timer_upcancel_fallbuild);
 }

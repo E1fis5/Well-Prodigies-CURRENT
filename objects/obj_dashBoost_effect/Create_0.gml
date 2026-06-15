@@ -8,7 +8,6 @@ if(random(1) < 0.006)
 	sprite_index = spr_dBoost_super_spawn1;
 	global.dboost_chance_active = true;
 }
-
 if (obj_player.dashBoost_forgive = 1)
 {
 	image_speed = 1.9;

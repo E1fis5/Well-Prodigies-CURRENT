@@ -19,3 +19,4 @@ if (instance_exists(obj_jestraught_play))
 }
 instance_destroy(obj_cd_well_intro)
 image_speed = -1;
+animation_reverse = true;

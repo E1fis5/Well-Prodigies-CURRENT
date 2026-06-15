@@ -9,6 +9,3 @@ var geyser_speed_buildup = function()
 }
 timer_geyser_speed_build_rate = time_source_create(time_source_game,2,time_source_units_frames,geyser_speed_buildup,[],-1);
 time_source_start(timer_geyser_speed_build_rate);
-
-
-obj_player.vsp_max_wall = 24;

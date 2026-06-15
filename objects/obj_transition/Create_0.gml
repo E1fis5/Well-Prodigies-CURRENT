@@ -5,3 +5,4 @@ x = -999;
 y = -999;
 depth = -7777;
 audio_play_sound(snd_room_transition,0,false);
+animation_reverse = false;
