@@ -13,7 +13,7 @@ if (global.magnet_collect_strong_pull = true) and (distance_to_object(obj_shop_m
 	}
 
 
-if (distance_to_object(obj_collectaura_hitbox) < 30)
+if (distance_to_object(obj_collectaura_hitbox) < 50)
 {
 	aura_pull = true;	
 }

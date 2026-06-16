@@ -729,7 +729,7 @@ if (onground)
 	{
 		grv = 0.07;
 	}
-	if (!place_meeting(x,y,obj_gt_ice_geyser))
+	if (!place_meeting(x,y,obj_gt_ice_geyser)) and (!upcancel_active)
 	{
 		vsp_max_wall = 12;
 	}
@@ -943,7 +943,7 @@ land_state = function()
 				audio_play_sound(snd_dash_rock_snd1,7,false,1.8,0,0.85);
 				instance_create_depth(x + 40,y + 100,150,obj_upcancel_break_effect);
 			}
-			if (vsp_max_wall >= 20)
+			if (vsp_max_wall >= 30)
 			{
 				audio_play_sound(snd_dash_rock_snd1,7,false,2.5,0,0.60);
 				instance_create_depth(x + 40,y + 100,150,obj_upcancel_break_effect);

@@ -1,5 +1,5 @@
 global.walksp_boost_additive = 1;
-walksp_voodoo_boost = 0.4;
+walksp_voodoo_boost = 0.25;
 voodoo_boost_max = 0;
 var voodoo_boost = function()
 {

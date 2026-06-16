@@ -1,7 +1,4 @@
 
-// Inherit the parent event
-event_inherited();
-
 if (heat >= 300)
 {
 	image_index = 0;	
