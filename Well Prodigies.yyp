@@ -492,6 +492,7 @@
     {"id":{"name":"obj_hub_switch_door","path":"objects/obj_hub_switch_door/obj_hub_switch_door.yy",},},
     {"id":{"name":"obj_hud_opac_lower","path":"objects/obj_hud_opac_lower/obj_hud_opac_lower.yy",},},
     {"id":{"name":"obj_hypothermia_meter","path":"objects/obj_hypothermia_meter/obj_hypothermia_meter.yy",},},
+    {"id":{"name":"obj_ice_platform","path":"objects/obj_ice_platform/obj_ice_platform.yy",},},
     {"id":{"name":"obj_ice_return","path":"objects/obj_ice_return/obj_ice_return.yy",},},
     {"id":{"name":"obj_icecube_hat","path":"objects/obj_icecube_hat/obj_icecube_hat.yy",},},
     {"id":{"name":"obj_insane_trigger","path":"objects/obj_insane_trigger/obj_insane_trigger.yy",},},
