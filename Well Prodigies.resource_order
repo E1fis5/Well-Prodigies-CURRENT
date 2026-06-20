@@ -369,6 +369,7 @@
     {"name":"obj_temp_freeze2","order":1,"path":"objects/obj_temp_freeze2/obj_temp_freeze2.yy",},
     {"name":"obj_tile_alpha_trigger","order":20,"path":"objects/obj_tile_alpha_trigger/obj_tile_alpha_trigger.yy",},
     {"name":"obj_timespace_portal","order":18,"path":"objects/obj_timespace_portal/obj_timespace_portal.yy",},
+    {"name":"obj_timeup_box","order":22,"path":"objects/obj_timeup_box/obj_timeup_box.yy",},
     {"name":"obj_torch_effect","order":1,"path":"objects/obj_torch_effect/obj_torch_effect.yy",},
     {"name":"obj_torch_hud","order":10,"path":"objects/obj_torch_hud/obj_torch_hud.yy",},
     {"name":"obj_torch","order":16,"path":"objects/obj_torch/obj_torch.yy",},

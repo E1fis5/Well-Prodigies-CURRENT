@@ -682,6 +682,7 @@ if (place_meeting(x, y + vsp, obj_collision_wall)) and (global.collisions_enable
 	}
     vsp = 0;
 }
+
 y += vsp;
 
 //Mudsolid
@@ -710,16 +711,16 @@ if (place_meeting(x, y + vsp, obj_mudsolid_collision)) and (global.collisions_en
     vsp = 0;
 }
 
-
 //Current Status
-onground = place_meeting (x,y+10, obj_collision_wall);
-onwall = place_meeting (x+1,y, obj_climbablecollision) - place_meeting (x-1,y,obj_climbablecollision)
-if (onground) jumpbuffer = 6;
+onIce = place_meeting(x,y + 10, obj_ice_platform);
+onground = place_meeting(x,y + 10, obj_collision_wall);
+onwall = place_meeting(x + 1,y, obj_climbablecollision) - place_meeting(x -1,y,obj_climbablecollision)
 //Preventing crawling in air
 if (onground)
 {
 	jump_activated = false;
 	canCrawl = 0;
+	jumpbuffer = 6;
 	if (!walljump_prohibit)
 	{
 		walljump_prohibit = true;
@@ -749,12 +750,16 @@ if (!onground)
 	}
 }
 
+if (onIce) and (!obj_ice_platform.timer_created)
+{
+	timer_created = true;
+}
 //Walk state
 if (input_check("run")) and (!walk_state_active)
 {
 	walksp -= 3.5;
 	walk_state_active = true;
-	image_speed = 0.7;
+	image_speed = 0.75;
 }
 if (!input_check("run")) and (walk_state_active)
 {

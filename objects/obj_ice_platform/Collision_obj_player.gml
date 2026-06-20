@@ -1,1 +1,0 @@
-time_source_start(timer_ice_destroy);

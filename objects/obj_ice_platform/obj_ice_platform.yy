@@ -3,7 +3,7 @@
   "%Name":"obj_ice_platform",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_ice_platform",
@@ -13,8 +13,8 @@
     "path":"folders/Objects/specific_level_objects/glacial_tundra_stuff.yy",
   },
   "parentObjectId":{
-    "name":"obj_collision_wall",
-    "path":"objects/obj_collision_wall/obj_collision_wall.yy",
+    "name":"obj_climbablecollision",
+    "path":"objects/obj_climbablecollision/obj_climbablecollision.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_breakable",
-    "path":"sprites/spr_breakable/spr_breakable.yy",
+    "name":"spr_switch_collisions_purple",
+    "path":"sprites/spr_switch_collisions_purple/spr_switch_collisions_purple.yy",
   },
   "spriteMaskId":null,
   "visible":true,
