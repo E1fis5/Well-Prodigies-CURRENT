@@ -94,6 +94,7 @@
     {"$GMFolder":"","%Name":"cave_horrors_stuff","folderPath":"folders/Objects/specific_level_objects/cave_horrors_stuff.yy","name":"cave_horrors_stuff","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"glacial_tundra_stuff","folderPath":"folders/Objects/specific_level_objects/glacial_tundra_stuff.yy","name":"glacial_tundra_stuff","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"chunks","folderPath":"folders/Objects/specific_level_objects/glacial_tundra_stuff/chunks.yy","name":"chunks","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"ice","folderPath":"folders/Objects/specific_level_objects/glacial_tundra_stuff/ice.yy","name":"ice","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"torch","folderPath":"folders/Objects/specific_level_objects/glacial_tundra_stuff/torch.yy","name":"torch","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"monkey_business_stuff","folderPath":"folders/Objects/specific_level_objects/monkey_business_stuff.yy","name":"monkey_business_stuff","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sluggish_marsh_stuff","folderPath":"folders/Objects/specific_level_objects/sluggish_marsh_stuff.yy","name":"sluggish_marsh_stuff","resourceType":"GMFolder","resourceVersion":"2.0",},

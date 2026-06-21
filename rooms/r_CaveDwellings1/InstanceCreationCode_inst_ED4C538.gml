@@ -1,1 +1,1 @@
-set_time = 5;
+set_time = 1;

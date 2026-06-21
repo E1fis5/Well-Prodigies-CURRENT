@@ -7,6 +7,7 @@ global.maxhealth = 6;
 global.health = 0;
 dash_damage = 5;
 damage_deal = false;
+fall_damage_toggle = false;
 //Shop
 global.presents_soldout = false;
 global.presents_soldout = false;
@@ -735,6 +736,13 @@ if (onground)
 		vsp_max_wall = 12;
 	}
 	time_source_stop(timer_upcancel_fallbuild);
+	if (fall_damage_toggle)
+	{
+		global.damage = true;
+		global.health -= 1;
+		fall_damage_toggle = false;
+		audio_play_sound(snd_player_hurt,5,false);
+	}
 }
 //Upcancels and Air functions
 if (!onground)
@@ -752,7 +760,7 @@ if (!onground)
 
 if (onIce) and (!obj_ice_platform.timer_created)
 {
-	timer_created = true;
+	obj_ice_platform.timer_created = true;
 }
 //Walk state
 if (input_check("run")) and (!walk_state_active)

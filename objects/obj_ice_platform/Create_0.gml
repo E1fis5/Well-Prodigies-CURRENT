@@ -5,7 +5,12 @@ ice_destroy = function()
 {
 	audio_play_sound(snd_freeze_damage,5,false);
 	instance_destroy();
-	time_source_destroy(obj_player.timer_ice_destroy);
 	ice_break_activated = false;
 	timer_created = false;
+	obj_player.vsp_max_wall = 15;
+	if (obj_player.onIce)
+	{
+		obj_player.fall_damage_toggle = true;
+		obj_player.grv = 5;
+	}
 }
