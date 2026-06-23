@@ -1,7 +1,7 @@
 geyser_limit = 0;
 geyser_deactivate = false;
 geyser_touch = false;
-geyser_current_speed_build = 0.25;
+geyser_current_speed_build = 0.3;
 audio_play_sound(snd_gt_geyser_explode,3,false);
 var geyser_speed_buildup = function()
 {
