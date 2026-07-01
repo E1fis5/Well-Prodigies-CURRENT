@@ -9,6 +9,7 @@ if (!instance_exists(obj_dashB_active_effect))
 }
 if (instance_exists(obj_dashB_active_effect))
 {
+	obj_player.OH_dash_avalible = true;
 	instance_destroy();
     audio_play_sound(snd_boost_rock_1_break,5,false);
 	audio_play_sound(snd_dash_rock_snd1,4,false);

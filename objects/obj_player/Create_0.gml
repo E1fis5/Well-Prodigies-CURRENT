@@ -254,6 +254,11 @@ snow_jumps = 0;
 snow_jump_activate = false;
 //States
 haunt_cooldown = false;
+no_player_movement = function()
+{
+	global.storedwalksp = walksp;
+	walksp -= global.storedwalksp;	
+}
 var haunt_cooldown_over = function()
 {
 	haunt_cooldown = false;
@@ -514,7 +519,7 @@ if (walljumpdelay == 0)
 hsp =(input_check("right") - input_check("left")) * walksp
 
 //walljump
-if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bomb_active) and (!walljump_prohibit)
+if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bomb_active) and (!walljump_prohibit) and (!fall_damage_toggle)
 {
 	vsp_wjump = walksp / -4 - 2.75 + 0.5;
 	if (time_source_exists(timer_walljump_check))
@@ -589,6 +594,16 @@ if (walljump) and (!onground) and (!wallclimb)
 }
 }
 
+//Trails
+if (fall_damage_toggle) //Crumble Trail
+{
+	with (instance_create_depth(x,y,depth+1,obj_trail_effect))
+	{
+		sprite_index = other.sprite_index;
+		image_blend = c_teal;
+		image_alpha = 0.6;
+	}
+}
 //Vertical Movement
 var grv_final = grv;
 var vsp_max_final = vsp_max_wall;
@@ -757,10 +772,21 @@ if (!onground)
 		upcancel_avalible = true;
 	}
 }
-
+//Ice
 if (onIce) and (!obj_ice_platform.timer_created)
 {
 	obj_ice_platform.timer_created = true;
+}
+if (instance_exists(obj_ice_crumble_trigger))
+{
+	if (place_meeting(x,y,obj_ice_crumble_trigger)) and (!obj_ice_platform.trigger_zone)
+	{
+		obj_ice_platform.trigger_zone = true;
+	}
+	if (!place_meeting(x,y,obj_ice_crumble_trigger)) and (obj_ice_platform.trigger_zone)
+	{
+		obj_ice_platform.trigger_zone = false;
+	}
 }
 //Walk state
 if (input_check("run")) and (!walk_state_active)
@@ -828,6 +854,10 @@ if input_check("left") and (wallclimb = 0) and (!land_sprite_break) and (!mindsp
 	}
 	fallcancel = false;
 	idle_active = true;
+	if (obj_game.level = 2)
+	{
+		sprite_index = spr_player_freeze;
+	}
 }
 //Double Jump Sprite
 if (dJump_sprite_start) and (onground = false) and (!global.dJump_idle) and (!wallclimb) and (!mindsplit_override)
@@ -867,7 +897,7 @@ stateNormal = state_normal
 //Fastfall State
 state_FastFall = function()
 {
-	if (input_check("down") = true) and (upcancel_avalible) and (!slide_boost) and (!upcancel_state_prohibit) and (!onground)
+	if (input_check("down") = true) and (upcancel_avalible) and (!slide_boost) and (!upcancel_state_prohibit) and (!onground) and (!fall_damage_toggle)
 {
 	if (!input_check_pressed("jump"))
 	{
@@ -1326,6 +1356,7 @@ mindsplit_transition_state = function()
 			vsp_max_wall = 18;
 		}
 		upcancel_disable();
+		fall_damage_toggle = false;
 		//Dash Cooldown
 		can_dash = false;
 		dash_cooldown_active = true;

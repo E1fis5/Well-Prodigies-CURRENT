@@ -11,4 +11,6 @@ if (obj_player.land_sprite_break) and (!geyser_activated)
 	{
 		obj_player.vsp_max_wall = 16;
 	}
+	obj_player.no_player_movement();
+	time_source_start(timer_walksp_restore);
 }
