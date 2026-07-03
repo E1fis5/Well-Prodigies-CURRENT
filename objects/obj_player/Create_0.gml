@@ -773,10 +773,6 @@ if (!onground)
 	}
 }
 //Ice
-if (onIce) and (!obj_ice_platform.timer_created)
-{
-	obj_ice_platform.timer_created = true;
-}
 if (instance_exists(obj_ice_crumble_trigger))
 {
 	if (place_meeting(x,y,obj_ice_crumble_trigger)) and (!obj_ice_platform.trigger_zone)

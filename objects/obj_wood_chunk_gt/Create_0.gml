@@ -1,0 +1,1 @@
+wood_sparked = false;
