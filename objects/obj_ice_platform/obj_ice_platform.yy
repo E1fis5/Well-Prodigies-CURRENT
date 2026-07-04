@@ -13,8 +13,8 @@
     "path":"folders/Objects/specific_level_objects/glacial_tundra_stuff/ice.yy",
   },
   "parentObjectId":{
-    "name":"obj_collision_wall",
-    "path":"objects/obj_collision_wall/obj_collision_wall.yy",
+    "name":"obj_climbablecollision",
+    "path":"objects/obj_climbablecollision/obj_climbablecollision.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

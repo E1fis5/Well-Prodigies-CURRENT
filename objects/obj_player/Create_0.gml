@@ -496,7 +496,7 @@ var dash_reset = function()
 	can_dash = true;	
 	dash_cooldown_active = false;
 }
-timer_dash_cooldown = time_source_create(time_source_game,0.35,time_source_units_seconds,dash_reset,[],1);
+timer_dash_cooldown = time_source_create(time_source_game,0.40,time_source_units_seconds,dash_reset,[],1);
 //Aftereffects/Dboost
 timer_aftereffect_creation = time_source_create(time_source_game,1.25,time_source_units_seconds,dashBoost_aftereffect_creation,[],-1);
 timer_aftereffect_creation_quick = time_source_create(time_source_game,0.75,time_source_units_seconds,dashBoost_aftereffect_creation,[],-1);

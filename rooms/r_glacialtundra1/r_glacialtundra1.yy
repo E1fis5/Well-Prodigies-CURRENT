@@ -78,8 +78,6 @@
     {"name":"inst_42CFBC72","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
     {"name":"inst_7E13D9E5","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
     {"name":"inst_73426B56","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
-    {"name":"inst_17F35C50","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
-    {"name":"inst_5917FA09","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
     {"name":"inst_13C2764","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
     {"name":"inst_4C276A40","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
     {"name":"inst_3742DEB8","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
@@ -104,6 +102,9 @@
     {"name":"inst_120C9981","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
     {"name":"inst_6D736D36","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
     {"name":"inst_7188746E","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
+    {"name":"inst_17F35C50","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
+    {"name":"inst_5917FA09","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
+    {"name":"inst_2A35DBF5","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -508,6 +509,7 @@
         {"$GMRInstance":"v4","%Name":"inst_73426B56","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_73426B56","objectId":{"name":"obj_collectable1","path":"objects/obj_collectable1/obj_collectable1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4800.0,"y":1408.0,},
         {"$GMRInstance":"v4","%Name":"inst_17F35C50","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_17F35C50","objectId":{"name":"obj_collectable1","path":"objects/obj_collectable1/obj_collectable1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4832.0,"y":1440.0,},
         {"$GMRInstance":"v4","%Name":"inst_5917FA09","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5917FA09","objectId":{"name":"obj_collectable1","path":"objects/obj_collectable1/obj_collectable1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4864.0,"y":1408.0,},
+        {"$GMRInstance":"v4","%Name":"inst_2A35DBF5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2A35DBF5","objectId":{"name":"obj_wood_chunk_gt","path":"objects/obj_wood_chunk_gt/obj_wood_chunk_gt.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3392.0,"y":1266.0,},
       ],"layers":[],"name":"Collectables","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Player_and_misc","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_5FB768CA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":true,"inheritedItemId":{"name":"inst_5FB768CA","path":"rooms/r_parent/r_parent.yy",},"inheritItemSettings":false,"isDnd":false,"name":"inst_5FB768CA","objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":352.0,},
