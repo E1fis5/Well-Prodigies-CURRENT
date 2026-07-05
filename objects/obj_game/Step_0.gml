@@ -50,11 +50,7 @@ if (level = 1)
 }
 if (level = 2)
 {
-	np_setpresence("Level:???", "Score:??", "cave_discord_preview", "spr_ranks_discord1");
-	if (gt_igloo_exit_triggers)
-	{
-		np_setpresence("Level:GlacialTundra", "Score:" + string(score), "glacial_tundra_discord_preview", string(rank_image));
-	}
+	np_setpresence("Level:GlacialTundra", "Score:" + string(score), "glacial_tundra_discord_preview", string(rank_image));
 		if (global.isActive)
 	{
 		np_setpresence("GlacialTundra Escape", "Speed:" + string(obj_player.walksp), "glacial_tundra_discord_preview", string(rank_image));

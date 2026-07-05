@@ -9,6 +9,13 @@ var freeze_drain = function()
 {
 	heat -= 10;	
 	audio_play_sound(snd_mindSplit_end,5,false);
+	if (heat <= -10)
+	{
+		obj_player.walksp -= 1;
+		global.health -= 1;
+		global.damage = true;
+		audio_play_sound(snd_player_hurt,7,false);
+	}
 }
 
 

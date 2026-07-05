@@ -38,7 +38,7 @@ if (score >= 7000) and (!score_boost1)
 {
 	walksp += 0.55;
 	score_boost1 = true;
-	dash_distance += 15;
+	dash_distance += 10;
 }
 
 
@@ -46,7 +46,7 @@ if (score >= 12000) and (!score_boost2)
 {
 	walksp += 0.85;
 	score_boost2 = true;
-	dash_distance += 25;
+	dash_distance += 15;
 }
 
 
@@ -54,7 +54,7 @@ if (score >= 20000) and (!score_boost3)
 {
 	walksp += 1.10;
 	score_boost3 = true;
-	dash_distance += 35;
+	dash_distance += 20;
 }
 
 
@@ -71,6 +71,7 @@ if (score >= 20000) and (!score_boost3)
 	if (instance_exists(obj_Lwiz_mini)) and (!R2_boost)
 	{
 		walksp += 2.30;
+		dash_distance += 15;
 		R2_boost = true;
 	} 
 	// lap 2 anims

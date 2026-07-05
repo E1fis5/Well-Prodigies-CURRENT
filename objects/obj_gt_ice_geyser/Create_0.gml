@@ -6,7 +6,6 @@ geyser_stop = function()
 	obj_player.grv = 0.07;
 	time_source_stop(obj_player.timer_upcancel_fallbuild);
 }
-
 var walksp_restore = function()
 {
 	obj_player.walksp += global.storedwalksp;

@@ -1,6 +1,7 @@
-draw_sprite_ext(sprite_index,image_index,-75,9,image_xscale,image_yscale,0,c_white,image_alpha);
+draw_sprite_ext(sprite_index,image_index,-75,9,image_xscale,image_yscale,0,image_blend,image_alpha);
 
 //Heat Values
+
 if (heat >= 100)
 {
 	image_index = 0;	
@@ -53,8 +54,7 @@ if (heat <= 10)
 
 if (heat <= 0)
 {
-	image_index = 10;
-	image_blend = c_aqua;
+	image_index = 9;
 }
 
 

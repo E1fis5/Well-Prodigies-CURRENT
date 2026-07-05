@@ -6,7 +6,15 @@ if (geyser_limit > 0)
 else if (!geyser_deactivate)
 {
 	geyser_deactivate = true;
-	obj_gt_ice_geyser.geyser_stop();
+	if (instance_exists(obj_gt_ice_geyser))
+	{
+		obj_gt_ice_geyser.geyser_stop();
+	}
+	else
+	{
+		obj_player.grv = 0.07;
+		time_source_stop(obj_player.timer_upcancel_fallbuild);
+	}
 	time_source_stop(timer_geyser_speed_build_rate);
 }
 

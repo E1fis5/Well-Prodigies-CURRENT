@@ -133,6 +133,7 @@
     {"name":"inst_2E0296A4","path":"rooms/r_CaveDwellings5_cave/r_CaveDwellings5_cave.yy",},
     {"name":"inst_72246DFB","path":"rooms/r_CaveDwellings5_cave/r_CaveDwellings5_cave.yy",},
     {"name":"inst_634F6C20","path":"rooms/r_CaveDwellings5_cave/r_CaveDwellings5_cave.yy",},
+    {"name":"inst_619FBB9","path":"rooms/r_CaveDwellings5_cave/r_CaveDwellings5_cave.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -413,6 +414,7 @@
         {"$GMRInstance":"v4","%Name":"inst_2E0296A4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2E0296A4","objectId":{"name":"obj_applefood","path":"objects/obj_applefood/obj_applefood.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2192.0,"y":144.0,},
         {"$GMRInstance":"v4","%Name":"inst_72246DFB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_72246DFB","objectId":{"name":"obj_applefood","path":"objects/obj_applefood/obj_applefood.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2224.0,"y":176.0,},
         {"$GMRInstance":"v4","%Name":"inst_634F6C20","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_634F6C20","objectId":{"name":"obj_collectable1big","path":"objects/obj_collectable1big/obj_collectable1big.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2192.0,"y":224.0,},
+        {"$GMRInstance":"v4","%Name":"inst_619FBB9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_619FBB9","objectId":{"name":"obj_escapesign_2","path":"objects/obj_escapesign_2/obj_escapesign_2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":-163.0026,"scaleX":1.0,"scaleY":1.0,"x":2272.0,"y":528.0,},
       ],"layers":[],"name":"Collsions","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_3","depth":800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":119,"SerialiseWidth":219,"TileCompressedData":[
           -2842,-2147483648,2,174,175,-217,-2147483648,2,192,193,-217,-2147483648,2,210,211,-649,-2147483648,-9,
