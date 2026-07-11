@@ -59,6 +59,7 @@ level = 0;
 gt_disable = false;
 gt_igloo_exit_triggers = false;
 jump_free = 0;
+global.door_disable = false;
 //Rank Control Rich Presence
 rank_image = "spr_ranks_discord1"
 global.rank = 0;

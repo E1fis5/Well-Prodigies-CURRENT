@@ -1,0 +1,13 @@
+geyser_activated = false;
+geyser_limit = 0;
+depth = 401;
+geyser_stop = function()
+{
+	obj_player.grv = 0.07;
+	time_source_stop(obj_player.timer_upcancel_fallbuild);
+}
+var walksp_restore = function()
+{
+	obj_player.walksp += global.storedwalksp;
+}
+timer_walksp_restore = time_source_create(time_source_game,3.5,time_source_units_seconds,walksp_restore,[],1);

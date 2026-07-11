@@ -168,6 +168,7 @@ dashB_first_hit = true;
 dBoost_resets = 0;
 dash_call = false;
 mindsplit_dash = false;
+dash_prohibit = false;
 dBoost_effects_end = function()
 {
 	if (instance_exists(obj_dashB_active_effect))
@@ -219,6 +220,7 @@ global.torch_active = false;
 global.hypothermia_amount = 0;
 global.grave_arise = false;
 graves_encountered = 0;
+breeze_state_active = false;
 //Debug
 global.debug_active = false;
 global.collisions_enabled = true;
@@ -685,7 +687,7 @@ if (place_meeting(x, y + vsp, obj_collision_wall)) and (global.collisions_enable
 	if (!mindsplit_override)
 	{
 		canJump = 10;
-		if (!dash_cooldown_active) and (!slide_boost)
+		if (!dash_cooldown_active) and (!slide_boost) and (!dash_prohibit)
 		{
 			can_dash = true;
 		}
@@ -1162,7 +1164,6 @@ else
 {
 	walksp = 0;
 	grv = 0;
-	can_dash = true;
 }
 
 
@@ -1339,7 +1340,7 @@ mindsplit_transition_state = function()
 	state_dash = function()
 	{
 	//Dash
-	if (can_dash and input_check_pressed("dash")) or (dash_call)
+	if (can_dash and input_check_pressed("dash") and (!dash_prohibit)) or (dash_call)
 	{
 		//Checks
 		if (dash_call)
@@ -1739,5 +1740,51 @@ mindsplit_transition_state = function()
 								}
 	}
 }
+
+//GT Breeze State
+breeze_state = function()
+{
+	if (breeze_state_active)
+	{
+		with (instance_create_depth(x,y,depth+1,obj_trail_effect))
+		{
+			sprite_index = other.sprite_index;
+			image_blend = choose(c_aqua,c_blue,c_navy);
+			image_alpha = 0.45;
+		}
+	}
+	if (!breeze_state_active) and (place_meeting(x,y,obj_breeze_activate))
+	{
+		global.storedwalksp = walksp;
+		breeze_state_active = true;
+		vspJump -= 3;
+		vspDJump -= 3;
+		can_dash = false;
+		walksp = 9.75;
+		dash_prohibit = true;
+		//Camera Zoomout
+		obj_camera.cam_width_subtract = 26;
+		obj_camera.cam_height_subtract = 16;
+		time_source_start(obj_camera.timer_camzoom_out);
+		obj_camera.camZoom = true;
+	}
+	if (breeze_state_active) and (place_meeting(x,y,obj_breeze_deactivate))
+	{
+		walksp = global.storedwalksp;
+		breeze_state_active = false;
+		dash_prohibit = false;
+		vspJump += 3;
+		vspDJump += 3;
+		if (!OH_dash_avalible)
+		{
+			OH_dash_avalible = true;
+		}
+		//Camera Return
+		obj_camera.cam_width_subtract = 26;
+		obj_camera.cam_height_subtract = 16;
+		time_source_start(obj_camera.timer_camzoom_in);
+		obj_camera.camZoom = true;
+	}
+}	
 depth = 400
  
