@@ -8,6 +8,12 @@ if (!ice_break_activated)
 		trigger_zone = false;
 		time_source_start(timer_ice_destroy);
 	}
+	if (place_meeting(x,y,obj_player_slam_hitbox)) and (obj_player.vsp_max_wall >= 18)
+	{
+		instance_deactivate_object(inst)
+		ice_break_activated = true;
+		ice_destroy();
+	}
 }
 if (place_meeting(x,y,obj_freeze_filter) and (!obj_player.breeze_state_active))
 {
