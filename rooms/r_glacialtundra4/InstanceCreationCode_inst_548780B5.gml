@@ -1,3 +1,3 @@
-target_x = 2752
-target_y = 2848
+target_x = 2720
+target_y = 4832
 target_rm = r_glacialtundra5

@@ -5,6 +5,13 @@ x = -999;
 y = -999;
 temp_active = false;
 activate_flash_orange = false;
+temp_activate = function()
+{
+	temp_active = true;	
+	audio_play_sound(snd_freeze_damage,5,false);
+	image_alpha = 1;
+	time_source_start(FreezeTimerHard);
+}
 //Time sources
 var freeze_drain = function()
 {

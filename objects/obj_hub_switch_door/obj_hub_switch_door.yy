@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"hub",
-    "path":"folders/Objects/level_stuff/hub.yy",
+    "path":"folders/Objects/hub.yy",
   },
   "parentObjectId":{
     "name":"obj_door",

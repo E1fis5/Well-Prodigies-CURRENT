@@ -1,6 +1,6 @@
-if (!ice_break_activated) and (distance_to_object(obj_player) < 2)
+if (!ice_break_activated)
 {
-	if (trigger_zone)
+	if (trigger_zone) and (distance_to_object(obj_player) < 2)
 	{
 		instance_deactivate_object(inst);
 		ice_break_activated = true;
@@ -8,4 +8,10 @@ if (!ice_break_activated) and (distance_to_object(obj_player) < 2)
 		trigger_zone = false;
 		time_source_start(timer_ice_destroy);
 	}
+}
+if (place_meeting(x,y,obj_freeze_filter) and (!obj_player.breeze_state_active))
+{
+	image_blend = c_black;
+	depth = obj_freeze_filter.depth - 1;
+	image_alpha = 0.5;
 }

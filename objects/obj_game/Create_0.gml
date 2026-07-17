@@ -60,9 +60,10 @@ gt_disable = false;
 gt_igloo_exit_triggers = false;
 jump_free = 0;
 global.door_disable = false;
+global.dBoost_upgrade1 = false;
 //Rank Control Rich Presence
 rank_image = "spr_ranks_discord1"
 global.rank = 0;
 //Pausing
-game_paused = false;
 game_pause_lock = false;
+pause_dash_return = false;

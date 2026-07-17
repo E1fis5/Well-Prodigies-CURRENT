@@ -16,6 +16,10 @@ else if (!geyser_deactivate)
 		time_source_stop(obj_player.timer_upcancel_fallbuild);
 	}
 	time_source_stop(timer_geyser_speed_build_rate);
+	if (geyser_destroy_finish)
+	{
+		instance_destroy();
+	}
 }
 
 if (!place_meeting(x,y,obj_player)) and (geyser_touch)

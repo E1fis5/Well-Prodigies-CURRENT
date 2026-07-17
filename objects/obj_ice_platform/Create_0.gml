@@ -2,6 +2,7 @@ set_time = 0;
 ice_break_activated = false;
 timer_created = false;
 trigger_zone = false;
+ice_reveal = false;
 depth = 500;
 ice_destroy = function()
 {

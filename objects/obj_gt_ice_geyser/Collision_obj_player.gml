@@ -14,4 +14,10 @@ if (obj_player.land_sprite_break) and (!geyser_activated)
 	global.door_disable = true;
 	obj_player.no_player_movement();
 	time_source_start(timer_walksp_restore);
+	instance_create_depth(x - 200,y - 50,depth - 1,obj_geyser_hit_flash);
+	if (layer_exists("Effect_Screenshake_mega"))
+	{
+		layer_set_visible("Effect_Screenshake_mega",true);
+		time_source_start(timer_screenshake_remove);
+	}
 }

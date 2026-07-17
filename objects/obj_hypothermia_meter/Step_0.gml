@@ -12,7 +12,7 @@ if (heat <= 0)
 	image_index = 9;
 	image_blend = c_aqua;
 }
-else
+else if (temp_active)
 {
 	image_blend = c_white;
 }

@@ -1,4 +1,4 @@
-if (place_meeting(x,y,obj_player_dash_hitbox)) and (!wood_sparked) and (instance_exists(obj_hypothermia_meter)) and (obj_hypothermia_meter.heat < 100)
+if (place_meeting(x,y,obj_player_dash_hitbox)) and (!wood_sparked) and (instance_exists(obj_hypothermia_meter)) and (obj_hypothermia_meter.heat < 100) and (global.dBoost_upgrade1)
 {
 	sprite_index = spr_gt_wood_chunk_burnt;
 	wood_sparked = true;

@@ -10,4 +10,4 @@ var walksp_restore = function()
 {
 	obj_player.walksp += global.storedwalksp;
 }
-timer_walksp_restore = time_source_create(time_source_game,3.5,time_source_units_seconds,walksp_restore,[],1);
+timer_walksp_restore = time_source_create(time_source_game,4.5,time_source_units_seconds,walksp_restore,[],1);

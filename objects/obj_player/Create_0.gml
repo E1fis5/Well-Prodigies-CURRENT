@@ -495,8 +495,11 @@ timer_mindSpl_deactivation = time_source_create(time_source_game,45,time_source_
 //Dash Cooldown
 var dash_reset = function()
 {
-	can_dash = true;	
-	dash_cooldown_active = false;
+	if (!global.paused)
+	{
+		can_dash = true;	
+		dash_cooldown_active = false;
+	}
 }
 timer_dash_cooldown = time_source_create(time_source_game,0.40,time_source_units_seconds,dash_reset,[],1);
 //Aftereffects/Dboost
@@ -884,6 +887,10 @@ if (upcancel_breaks <= 0) and (upcancel_active) and (input_check_pressed("jump")
 		upcancel_jump_break = true;
 		upcancel_breaks++
 		up_cancel_eff = false;
+		if (instance_exists(obj_player_slam_hitbox))
+		{
+			instance_destroy(obj_player_slam_hitbox);
+		}
 		instance_create_depth(x,y,399,obj_upcancel_effect);
 		audio_play_sound(snd_upcancel_whoosh,5,false,1,0,1.3);
 	}
@@ -910,7 +917,14 @@ state_FastFall = function()
 		dash_distance -= 300;
 	}
 	upcancel_active = true;
-	time_source_start(timer_upcancel_fallbuild);
+	if (!global.paused)
+	{
+		time_source_start(timer_upcancel_fallbuild);
+	}
+	else
+	{
+		time_source_pause(timer_upcancel_fallbuild);
+	}
 	if (upcancel_jump)
 	{
 		upcancel_jump = false;
@@ -931,6 +945,10 @@ state_FastFall = function()
 	dJump_sprite_start = false;
 	walljump = false;
 	stateUpcancel = state_FastFall;
+	if (!instance_exists(obj_player_slam_hitbox))
+	{
+		instance_create_depth(x,y,depth + 1,obj_player_slam_hitbox);	
+	}
 	if (!drop_dash_avalible)
 	{
 		stateNormal = state_normal;
@@ -964,6 +982,10 @@ land_state = function()
 		canJump = 6;
 		grv = 0.07;
 		up_cancel_eff = false;
+		if (instance_exists(obj_player_slam_hitbox))
+		{
+			instance_destroy(obj_player_slam_hitbox);
+		}
 		if (!mindsplit_override)
 		{
 			sprite_index = spr_player_land;
@@ -1019,7 +1041,7 @@ state_PCrawl = function()
 		if (!slide_boost)
 		{
 			Dash_Scale_Disable = true;
-			walksp += 3;
+			walksp += 4;
 			slide_boost = true;
 		}
 		can_dash = false;
@@ -1048,7 +1070,7 @@ state_PCrawl = function()
 			time_source_pause(timer_power_crawl_1_health);
 			if (slide_boost)
 			{
-				walksp -= 3;
+				walksp -= 4;
 				slide_boost = false;
 				Dash_Scale_Disable = false;
 			}
@@ -1354,6 +1376,10 @@ mindsplit_transition_state = function()
 		}
 		upcancel_disable();
 		fall_damage_toggle = false;
+		if (instance_exists(obj_player_slam_hitbox))
+		{
+			instance_destroy(obj_player_slam_hitbox);
+		}
 		//Dash Cooldown
 		can_dash = false;
 		dash_cooldown_active = true;
@@ -1767,6 +1793,15 @@ breeze_state = function()
 		obj_camera.cam_height_subtract = 16;
 		time_source_start(obj_camera.timer_camzoom_out);
 		obj_camera.camZoom = true;
+		if (instance_exists(obj_freeze_filter))
+		{
+			obj_freeze_filter.image_alpha = 0;	
+		}
+		if (instance_exists(obj_ice_platform))
+		{
+			obj_ice_platform.image_blend = c_white;
+			obj_ice_platform.image_alpha = 1;
+		}
 	}
 	if (breeze_state_active) and (place_meeting(x,y,obj_breeze_deactivate))
 	{
@@ -1784,6 +1819,10 @@ breeze_state = function()
 		obj_camera.cam_height_subtract = 16;
 		time_source_start(obj_camera.timer_camzoom_in);
 		obj_camera.camZoom = true;
+		if (instance_exists(obj_freeze_filter))
+		{
+			obj_freeze_filter.image_alpha = 1;	
+		}
 	}
 }	
 depth = 400
