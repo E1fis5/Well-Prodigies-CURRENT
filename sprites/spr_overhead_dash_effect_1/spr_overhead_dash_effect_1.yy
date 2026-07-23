@@ -75,7 +75,7 @@
     },
     "name":"spr_overhead_dash_effect_1",
     "playback":1,
-    "playbackSpeed":50.0,
+    "playbackSpeed":35.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

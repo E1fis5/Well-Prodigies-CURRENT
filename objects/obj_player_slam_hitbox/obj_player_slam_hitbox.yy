@@ -34,5 +34,5 @@
     "path":"sprites/spr_upcancel_slam_hitbox/spr_upcancel_slam_hitbox.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

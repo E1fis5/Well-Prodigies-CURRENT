@@ -12,6 +12,10 @@ if (!ice_break_activated)
 	{
 		instance_deactivate_object(inst)
 		ice_break_activated = true;
+		ice_smashed = true;
+		global.hudshake = true;
+		time_source_start(timer_hud_shake_disable);
+		layer_set_visible("Effect_screenshake_mega",1);	
 		ice_destroy();
 	}
 }

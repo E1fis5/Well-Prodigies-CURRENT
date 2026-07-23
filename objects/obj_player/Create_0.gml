@@ -629,7 +629,14 @@ if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 	canJump = 7;
 	jump_allowed = true;
 	time_source_start(timer_jump_check);
-	audio_play_sound(snd_pJump,4,false);
+	if (!breeze_state_active)
+	{
+		audio_play_sound(snd_pJump,4,false);
+	}
+	else
+	{
+		audio_play_sound(snd_pJump_frost,6,false);
+	}
 	canCrawl = 1;
 	if (upcancel_jump = true) and (!upcancel_jump_used)
 	{
@@ -1088,7 +1095,14 @@ if (jump_allowed = true) and (input_check_pressed("jump")) and (jump_activated)
 		vsp = vspDJump
 	}
 	canJump = 0;
-	audio_play_sound(snd_pJump,4,false,1.85,0,1.25);
+	if (!breeze_state_active)
+	{
+		audio_play_sound(snd_pJump,4,false,1.85,0,1.25);
+	}
+	else
+	{
+		audio_play_sound(snd_pJump_frost,6,false,1,0,1.25);
+	}
 	jump_allowed = false;
 	jump_activated = false;
 	if (walljump_prohibit)
