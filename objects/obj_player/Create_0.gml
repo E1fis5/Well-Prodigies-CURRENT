@@ -121,7 +121,6 @@ score_boost1 = false;
 score_boost2 = false;
 score_boost3 = false;
 dBoost_additives_active = false;
-dashJoost_speed_cancel = false;
 sanity_boost1 = false;
 sanity_slow = false;
 R2_boost = false;
@@ -150,6 +149,7 @@ walk_state_active = false;
 dash_time = 16
 dash_cooldown_active = false;
 idle_active = false;
+justdashed = false;
 drop_dash_avalible = false;
 dashBoost_forgive = 0;
 dashBoost_fail = false;
@@ -169,6 +169,9 @@ dBoost_resets = 0;
 dash_call = false;
 mindsplit_dash = false;
 dash_prohibit = false;
+//Dash Score
+dshscore_sound_pitch = 1;
+dashJoost_speed_cancel = false;
 dBoost_effects_end = function()
 {
 	if (instance_exists(obj_dashB_active_effect))
@@ -220,7 +223,42 @@ global.torch_active = false;
 global.hypothermia_amount = 0;
 global.grave_arise = false;
 graves_encountered = 0;
+//Breeze
 breeze_state_active = false;
+breeze_dash_charge = false;
+breeze_dash_charges = 0;
+var breeze_dash_delay = function()
+{
+	breeze_dash_charge = true;
+}
+timer_breeze_delay = time_source_create(time_source_game,2,time_source_units_frames,breeze_dash_delay,[],1);
+//Dashscore
+dashscore_end = function()
+{
+		obj_dashJoost_counter.sprite_index = spr_dashscore_end;
+		walksp -= global.dashscore_additive;
+		if (global.dash_amount >= 8)
+		{
+			audio_play_sound(snd_dashscore_end,7,false);
+			instance_destroy(obj_dashJoost_maxxed_effect);
+			obj_dashJoost_counter.image_speed = 1;
+		}
+		else
+		{
+			audio_play_sound(snd_dashscore_end_non8,5,false,0.75);
+			obj_dashJoost_counter.image_speed = 1.15;
+			obj_dashJoost_counter.image_index = 5;
+		}
+		global.dash_amount = 0;
+		global.dashscore_walksp = 0;
+		global.dashscore_additive = 0;
+		dashJoost_speed_cancel = false;
+		dshscore_sound_pitch = 1;
+		obj_dashJoost_counter.dashCounter_shake_warnin = false;	
+}
+//Snow State
+snow_jumps = 0;
+snow_jump_activate = false;
 //Debug
 global.debug_active = false;
 global.collisions_enabled = true;
@@ -245,15 +283,13 @@ captured_time = 0;
 global.storedwalksp = 0;
 //Sprite Break
 land_sprite_break = false;
+dashcollide_break = false;
 //Mindsplit
 mindsplit_avalible = true;
 mindsplit_activated = false;
 mindsplit_override = false;
 mindsplit_failsafe_zoom = false;
 mindsplit_perfect_window = false;
-//Snow State
-snow_jumps = 0;
-snow_jump_activate = false;
 //States
 haunt_cooldown = false;
 no_player_movement = function()
@@ -261,6 +297,8 @@ no_player_movement = function()
 	global.storedwalksp = walksp;
 	walksp -= global.storedwalksp;	
 }
+//Time Sources
+//Haunt
 var haunt_cooldown_over = function()
 {
 	haunt_cooldown = false;
@@ -293,13 +331,9 @@ var power_crawl_damage_1_hp = function()
 //Dashes
 var dBoost_create = function()
 {
-	if (!mindsplit_dash) and (!mindsplit_activated)
+	if (!instance_exists(obj_dash_boost))
 	{
 		instance_create_depth(x,y,-999,obj_dash_boost);
-	}
-	if (mindsplit_dash or mindsplit_activated)
-	{
-		instance_create_depth(x,y,399,obj_mindSpl_dBoost);
 	}
 }
 
@@ -535,6 +569,11 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 	walljumpdelay = walljumpdelay_max;
 	hsp = -onwall * hsp_wjump;
 	vsp = vsp_wjump;
+	dashcollide_break = false;
+	if (instance_exists(obj_player_slam_hitbox))
+	{
+		instance_destroy(obj_player_slam_hitbox);
+	}
 	audio_play_sound(snd_stone1,5,false)
 	dJump_sprite_start = false;
 	global.walljumps++;
@@ -573,7 +612,7 @@ else
 state_walljump = function()
 {
 //Wallclimb
-if (wallclimb) and (!mindsplit_override) 
+if (wallclimb) and (!mindsplit_override) and (!dashcollide_break)
 {
 	if (input_check_pressed("down"))
 	{
@@ -700,9 +739,10 @@ if (place_meeting(x, y + vsp, obj_collision_wall)) and (global.collisions_enable
 		if (!dash_cooldown_active) and (!slide_boost) and (!dash_prohibit)
 		{
 			can_dash = true;
+			justdashed = false;
 		}
 	}
-
+	
 	while (abs(vsp) > 0.1)
 	{
 		vsp *= 0.5;
@@ -769,6 +809,11 @@ if (onground)
 		global.health -= 1;
 		fall_damage_toggle = false;
 		audio_play_sound(snd_player_hurt,5,false);
+	}
+	//Dashscore end
+	if (instance_exists(obj_dashJoost_counter)) and (dashJoost_speed_cancel) and (!instance_exists(obj_dashjoost_pause))
+	{
+		dashscore_end();
 	}
 }
 //Upcancels and Air functions
@@ -1109,9 +1154,17 @@ if (jump_allowed = true) and (input_check_pressed("jump")) and (jump_activated)
 	{
 		walljump_prohibit = false;	
 	}
+	//Dash Changes
 	if (!can_dash)
 	{
 		time_source_start(timer_dash_cooldown);
+	}
+	if (justdashed) and (global.dash_amount < 8) // - Dash Jumps
+	{
+		dshscore_sound_pitch += 0.05;
+		global.dash_amount += 1;
+		instance_create_depth(x,y,100,obj_dashscore_increase);
+		justdashed = false;
 	}
 	canCrawl = 1
 	fallcancel = true;
@@ -1304,16 +1357,6 @@ mindsplit_transition_state = function()
 		//MindSplit Toggle
 		if (mindsplit_activated) and (mindsplit_avalible)
 		{
-			if (mindsplit_perfect_window)
-			{
-				walksp -= 1.15;
-				dash_distance -= 25;
-			}
-			else
-			{
-				walksp -= 0.95;
-				dash_distance -= 15;
-			}
 			mindsplit_activated = false;
 			mindsplit_avalible = false;
 			dBoost_effects_end();
@@ -1329,6 +1372,7 @@ mindsplit_transition_state = function()
 		}
 		if (!mindsplit_activated) and (mindsplit_avalible)
 		{
+			mindsplit_activated = true;
 			//Flash
 			activate_flash_black = true;
 			instance_create_depth(-999,-999,-9999,obj_dBoost_activate_flash);
@@ -1339,6 +1383,10 @@ mindsplit_transition_state = function()
 			time_source_start(obj_camera.timer_camzoom_in);
 			obj_camera.camZoom = true;
 			mindsplit_failsafe_zoom = true;
+			global.health -= 1;
+			adrenaline_amount_drain = 0.025;
+			adrenaline_speed_add = 7.5;
+			adrenaline_boost();
 			if (mindsplit_failsafe_zoom)
 			{
 				time_source_start(timer_mindSpl_failsafe_zoom);
@@ -1366,7 +1414,6 @@ mindsplit_transition_state = function()
 			time_source_start(timer_dBoost_create);
 			time_source_start(timer_dBoost_cooldown);
 			time_source_stop(timer_aftereffect_creation_quick);
-			dash_distance += 300;
 			state_dash();
 			dBoost_effects_end();
 		}
@@ -1398,6 +1445,7 @@ mindsplit_transition_state = function()
 		can_dash = false;
 		dash_cooldown_active = true;
 		time_source_start(timer_dash_cooldown);
+		justdashed = true;
 		//Overhead Dash
 		if (!OH_dash_avalible)
 		{
@@ -1461,15 +1509,16 @@ mindsplit_transition_state = function()
 		dJump_sprite_start = false;
 		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)) or (dashBoost_forgive = 1)
 		{
-			if (!dashBoost_forgive = 1)
-			{
-				dash_distance -= 95;
-			}
 			global.dashboost_dash = false;
 			dashBoost_fail = true;
 			time_source_start(timer_dBoost_cooldown);
 			dBoost_dash_active = false;
 			time_source_start(timer_dBoost_create);
+		}
+		//Breeze Reset
+		if (breeze_dash_charge)
+		{
+			charge_disable();
 		}
 		global.dash_active = true
 		if (!instance_exists(obj_player_dash_hitbox))
@@ -1516,7 +1565,23 @@ mindsplit_transition_state = function()
 			if (!place_meeting(x + hsp, y, obj_collision_wall)) x += hsp;
 		}
 		hsp = 0;
-		sprite_index = spr_player_fall
+		dashcollide_break = true;
+		fallcancel = true;
+		audio_play_sound(snd_dashcollide,5,false,1,0,random_range(0.90,1.15));
+		instance_create_depth(x,y,399,obj_dashcollide_effect);
+		sprite_index = spr_player_walldash_collide;
+		if (instance_exists(obj_dash_effect))
+		{
+			instance_destroy(obj_dash_effect);
+			if (instance_exists(obj_trail_effect))
+			{
+				instance_destroy(obj_trail_effect);
+			}
+		}
+		if (player_left)
+		{
+			sprite_index = spr_player_walldash_collide_left;
+		}
 	}
 
 	x += hsp;
@@ -1545,18 +1610,16 @@ mindsplit_transition_state = function()
 		   jump_activated = true;
 		   jump_allowed = true;
 		   damage_deal = false;
-		   fallcancel = false;
+		   if (!dashcollide_break)
+		   {
+				fallcancel = false;
+		   }
 		   //Bomb Dash
 		   if (Bomb_Dash_Active)
 		   {
 			   Bomb_Dash_Active = false;
 			   dash_distance -= 400;
 			   dash_time += 3;
-		   }
-		   if (mindsplit_dash)
-		   {
-			   dash_distance -= 300;
-			   mindsplit_dash = false;
 		   }
 		   //OH dash
 		   if (!OH_dash_used)
@@ -1586,201 +1649,49 @@ mindsplit_transition_state = function()
 				dash_time += 5;
 				mudsolid_dash = false;
 		   }
-		   
-		   if (onground = false) 
-		   {
-			   global.dash_amount += 1;
-		   }
-		   //Dash Joost
-		   	if (global.dash_amount >= 2)
-	{
-		if (!instance_exists(obj_dashJoost_counter)) and (!dashJoost_hit_disable)
-		{
-			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter);
-			audio_play_sound(snd_dashscore_increase,4,false);
-			if (!dashJoost_speed_cancel) and (!onground)
-			{
-				walksp += 0.25;
-			}
-		}
-	}
-
-	if (global.dash_amount = 3)
-	{
-		if (!dashJoost_hit_disable)
-		{
-			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
-			audio_play_sound(snd_dashscore_increase,4,false,1,0,1.1);
-			if (!dashJoost_speed_cancel) and (!onground)
-			{
-				walksp += 0.35;
-			}
-		}
-	}
-
-
-	if (global.dash_amount = 4)
-	{
-		if (!dashJoost_hit_disable)
-		{
-			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
-			audio_play_sound(snd_dashscore_increase,4,false,1,0,1.15);
-			if (!dashJoost_speed_cancel) and (!onground)
-			{
-				walksp += 0.45;
-			}
-		}
-	}
-	if (global.dash_amount = 5)
-	{
-		if (!dashJoost_hit_disable)
-		{
-			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
-			audio_play_sound(snd_dashscore_increase,4,false,1,0,1.2);
-			if (!dashJoost_speed_cancel) and (!onground)
-			{
-				walksp += 0.50;
-			}
-				if (obj_dashJoost_counter.image_speed = 0)
-					{
-						obj_dashJoost_counter.image_speed = 1;
-					}
-		}
-	}
-
-	if (global.dash_amount = 6)
-	{
-		if (!dashJoost_hit_disable)
-		{
-			if (!instance_exists(obj_dashJoost_counter_hit)) and dashJoost_hit_disable = false
-			{
-				instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
-				audio_play_sound(snd_dashscore_increase,4,false,1,0,1.25);
-				if (!dashJoost_speed_cancel) and (!onground)
-				{
-					walksp += 0.50;
-				}
-			}
-		}
-	}
-
-	if (global.dash_amount = 7)
-	{
-		if (!dashJoost_hit_disable)
-		{
-			instance_create_depth(-999,-999,-11000,obj_dashJoost_counter_hit);
-			audio_play_sound(snd_dashscore_increase,4,false,1,0,1.3);
-		if (!dashJoost_speed_cancel) and (!onground)
-		{
-			walksp += 0.55;
-		}
-		}
-	}
-
-	if (global.dash_amount >= 8)
-	{
-		global.dash_amount = 8;
-		dashJoost_hit_disable = true;
-		if (!dashJoost_speed_cancel) 
-		{
-			walksp += 0.55;
-		}
-		dashJoost_speed_cancel = true;
-		if (!instance_exists(obj_dashJoost_maxxed_effect))
-		{
-			instance_create_depth(-999,-999,-9998,obj_dashJoost_maxxed_effect);
-			audio_play_sound(snd_dashscore_increase,4,false,2.5,0,1.35);
-			audio_play_sound(snd_dashscore_increase_final,5,false);
-		}
-	}
-
 	   }
 	}
 	}
-	//Dash Joost
-	if (global.dash_cancel_speed = true)
+}
+//Breeze Functions
+indicator_shake_activate = function()
+{
+	obj_breeze_charge_indicator.shake = true;
+	time_source_start(obj_breeze_charge_indicator.timer_shake_disable);
+}
+charge_disable = function()// Breeze Charge Disable
+{
+	walksp = 9.75;
+	grv = 0.07;
+	dash_prohibit = true;
+	vsp_max_wall = 12;
+	upcancel_avalible = true;
+	breeze_dash_charge = false;
+	dash_time += 10;
+}
+breeze_dash_charge_activate = false;
+var breeze_dash_reset = function()// Breeze Dash Times
+{	
+	dash_distance = global.storedash_distance;
+}
+breeze_dash_restore = time_source_create(time_source_game,2,time_source_units_frames,breeze_dash_reset,[],1);
+var breeze_dash_charging = function()
+{
+	audio_play_sound(snd_gt_geyser_land,3,false,0.95,0,1.15);
+	dash_distance = 900;
+	dash_call = true;
+	charge_disable();
+	time_source_start(breeze_dash_restore) //Return Dash
+	breeze_dash_charge_activate = false;
+	breeze_dash_charges = 0;
+	if (instance_exists(obj_breeze_charge_indicator))
 	{
-		dashJoost_speed_cancel = false;
-		if (instance_exists(obj_dashJoost_counter))
-		{
-			if (!obj_dashJoost_counter.dashscore_end)
-			{
-				obj_dashJoost_counter.sprite_index = spr_dashscore_end;
-				obj_dashJoost_counter.dashscore_end = true;
-				obj_dashJoost_counter.dashCounter_shake_warnin = false;
-				dashJoost_hit_disable = false;
-				if (global.dash_amount >= 8)
-				{
-					audio_play_sound(snd_dashscore_end,5,false);
-					if (obj_dashJoost_counter.image_speed = 0)
-					{
-						obj_dashJoost_counter.image_speed = 0.40;
-					}
-				}
-				if (global.dash_amount < 8)
-				{
-					audio_play_sound(snd_dashscore_end_non8,5,false);
-					if (obj_dashJoost_counter.image_speed = 0)
-					{
-						obj_dashJoost_counter.image_speed = 1.25;
-					}
-					obj_dashJoost_counter.image_index = 6;
-				}
-				global.dash_amount = 0;		
-			}
-		}
-		if (instance_exists(obj_dashJoost_maxxed_effect))
-		{
-			instance_destroy(obj_dashJoost_maxxed_effect);
-		}
-		if (instance_exists(obj_lap_boost_sign))
-		{
-			obj_lap_boost_sign.sprite_index = spr_lapping_boost_destroy;
-			if (instance_exists(obj_Lwiz_mini))
-			{
-				instance_destroy(obj_Lwiz_mini);
-			}
-		}
-	}
-	if (onground = true) and (!instance_exists(obj_dashjoost_pause)) and (!instance_exists(obj_dashB_active_effect))
-	{
-		global.dash_cancel_speed = true;
-		if (global.dash_amount = 2)
-		{
-			walksp -= 0.25;
-		}
-		
-			if (global.dash_amount = 3)
-			{
-				walksp -= 0.6;
-			}
-			
-				if (global.dash_amount = 4)
-				{
-					walksp -= 1.05;
-				}
-					if (global.dash_amount = 5)
-					{
-						walksp -= 1.55;
-					}
-					
-						if (global.dash_amount = 6)
-						{
-							walksp -= 2.05;
-						}
-						
-							if (global.dash_amount = 7)
-							{
-								walksp -= 2.60;
-							}
-							
-								if (global.dash_amount = 8)
-								{
-									walksp -= 3.15;
-								}
+		obj_breeze_charge_indicator.image_index = 1;
+		indicator_shake_activate();
+		time_source_start(obj_breeze_charge_indicator.timer_indicator_dissolve);
 	}
 }
-
+breeze_dash_charge_up = time_source_create(time_source_game,0.5,time_source_units_seconds,breeze_dash_charging,[],1);
 //GT Breeze State
 breeze_state = function()
 {
@@ -1792,16 +1703,72 @@ breeze_state = function()
 			image_blend = choose(c_aqua,c_blue,c_navy);
 			image_alpha = 0.45;
 		}
+		//Dash Charge
+		if (wallclimb) and (input_check_pressed("attack"))
+		{
+			if (!breeze_dash_charge)
+			{
+				walksp = 0;
+				grv = 0;
+				vsp_max_wall = 0;
+				time_source_pause(timer_upcancel_fallbuild);
+				upcancel_avalible = false;
+				time_source_start(timer_breeze_delay); // - Set charge to true
+			}
+			else //Canceling
+			{
+				charge_disable();
+			}
+		}
+		if (breeze_dash_charge) and (input_check("dash")) and (!breeze_dash_charge_activate)
+		{
+			time_source_start(breeze_dash_charge_up);
+			dash_distance = 500;
+			dash_time -= 10;
+			breeze_dash_charge_activate = true;
+			if (!instance_exists(obj_breeze_charge_indicator))
+			{
+				instance_create_depth(x,y,depth - 1,obj_breeze_charge_indicator);
+			}
+			else
+			{
+				instance_destroy(obj_breeze_charge_indicator);
+				instance_create_depth(x,y,depth - 1,obj_breeze_charge_indicator);
+				indicator_shake_activate();
+			}
+				
+		}
+		if (breeze_dash_charge_activate) and (!input_check("dash"))
+		{
+			breeze_dash_charges = 0;
+			dash_distance = 500;
+			dash_call = true;
+			charge_disable();	
+			breeze_dash_charge_activate = false;
+			time_source_stop(breeze_dash_charge_up);
+			time_source_start(breeze_dash_restore) //Return Dash
+			time_source_start(obj_breeze_charge_indicator.timer_indicator_dissolve);
+			indicator_shake_activate();
+		}
 	}
+	
+	//Activation/Deactivation Points
 	if (!breeze_state_active) and (place_meeting(x,y,obj_breeze_activate))
 	{
+		if (instance_exists(obj_dashB_active_effect))
+		{
+			time_source_pause(obj_dashB_active_effect.timer_dashBoost_warning);
+			time_source_pause(timer_dBoost_deactivate);
+			obj_dashB_active_effect.image_speed = 0;
+		}
 		global.storedwalksp = walksp;
+		global.storedash_distance = dash_distance;
 		breeze_state_active = true;
 		vspJump -= 3;
 		vspDJump -= 3;
 		can_dash = false;
-		walksp = 9.75;
 		dash_prohibit = true;
+		walksp = 9.75;
 		//Camera Zoomout
 		obj_camera.cam_width_subtract = 26;
 		obj_camera.cam_height_subtract = 16;
@@ -1819,6 +1786,12 @@ breeze_state = function()
 	}
 	if (breeze_state_active) and (place_meeting(x,y,obj_breeze_deactivate))
 	{
+		if (instance_exists(obj_dashB_active_effect))
+		{
+			obj_dashB_active_effect.image_speed = 1;
+			time_source_resume(timer_dBoost_deactivate);
+			time_source_resume(obj_dashB_active_effect.timer_dashBoost_warning);
+		}
 		walksp = global.storedwalksp;
 		breeze_state_active = false;
 		dash_prohibit = false;

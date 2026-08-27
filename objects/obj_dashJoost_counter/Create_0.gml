@@ -8,4 +8,5 @@ dashscore_end = false;
 if (!instance_exists(obj_dashB_active_effect))
 {
 	dashCounter_shake_warnin = true;
+	obj_player.dashJoost_speed_cancel = true;
 }

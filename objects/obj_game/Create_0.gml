@@ -67,3 +67,7 @@ global.rank = 0;
 //Pausing
 game_pause_lock = false;
 pause_dash_return = false;
+//Dash Variables
+global.dashscore_walksp = 0;
+global.dashscore_additive = 0;
+global.storedash_distance = 0;

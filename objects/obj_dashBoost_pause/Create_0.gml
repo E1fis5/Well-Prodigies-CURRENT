@@ -6,10 +6,9 @@ var pause_dboost_destroy = function()
 	}
 	instance_destroy();
 }
-
+time_source_pause(obj_player.timer_dBoost_deactivate);
 
 timer_dBoost_pause = time_source_create(time_source_game,1.25,time_source_units_seconds,pause_dboost_destroy,[],-1);
-
 time_source_start(timer_dBoost_pause);
 
 

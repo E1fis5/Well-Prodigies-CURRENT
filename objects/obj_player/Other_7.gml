@@ -25,3 +25,9 @@ if (sprite_index = spr_player_land_left) and (land_sprite_break)
 	sprite_index = spr_player_left;
 	land_sprite_break = false;
 }
+
+if (sprite_index = spr_player_walldash_collide) or (sprite_index = spr_player_walldash_collide_left) and (dashcollide_break)
+{
+	dashcollide_break = false;
+	fallcancel = false;
+}

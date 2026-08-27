@@ -50,19 +50,7 @@ if (sprite_index = spr_dBoost_ending_explosion)
 		time_source_stop(i.timer_aftereffect_creation_quick);
 	}
 	//Mindsplit Boost
-	if (i.mindsplit_activated)
-	{
-		if (i.mindsplit_perfect_window)
-		{
-			i.walksp -= 1.3;
-			i.dash_distance -= 25;
-		}
-		else
-		{
-			i.walksp -= 0.30;
-			i.dash_distance -= 15;
-		}
-	}
+	obj_player.dashJoost_speed_cancel = true;
 	time_source_stop(i.timer_aftereffect_creation);
 	//Normal Boost
 	i.walksp -= 0.60;

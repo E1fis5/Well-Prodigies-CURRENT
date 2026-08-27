@@ -14,9 +14,11 @@ if (global.debug_active = true)
 				draw_text(100,500,"0");
 			}
 		}
+			draw_text(100,100,obj_player.grv);
+			draw_text(100,200,obj_player.breeze_dash_charges);
 			draw_text(100,400,obj_player.vsp_max_wall);
 			draw_text(100,300,global.sanity);
-			draw_text(100,200,obj_player.walksp);
+			draw_text(100,700,obj_player.walksp);
 			draw_text(100,600,obj_player.dash_distance);
 	}
 				

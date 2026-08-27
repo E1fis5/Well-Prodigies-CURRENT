@@ -5,8 +5,13 @@ var dashB_end_warning = function()
 timer_dashBoost_warning = time_source_create(time_source_game,11.5,time_source_units_seconds,dashB_end_warning,[],-1);
 time_source_start(timer_dashBoost_warning);
 hit_adjustment = false;
+obj_player.dashJoost_speed_cancel = false;
 player_follow = false;
-obj_player.dashBoost_forgive = 0;
+if (obj_player.dashBoost_forgive >= 1)
+{
+	obj_player.dash_distance -= 95;
+	obj_player.dashBoost_forgive = 0;
+}
 //Mindsplit
 //Chance
 if (global.dboost_chance_active = true)
