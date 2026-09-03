@@ -1,10 +1,10 @@
 if (!dashCounter_shake_warnin)
 {
-	draw_sprite(sprite_index,image_index,480,50);
+	draw_sprite_ext(sprite_index,image_index,480,50,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 }
 else if (!global.hudshake)
 {
-	draw_sprite(sprite_index,image_index,480 + random_range(-5,5),50 + random_range(-5,5));
+	draw_sprite_ext(sprite_index,image_index,480 + random_range(-5,5),50 + random_range(-5,5),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 }
 draw_set_font(ft_dashJoost);
 if (global.hudshake)

@@ -344,7 +344,15 @@ var dBoost_deactivate = function()
 var dBoost_cooldown = function()
 {
 	dashBoost_forgive = 0;
-	global.dashboost_dash = true;
+	if (!global.dashboost_dash)
+	{
+		global.dashboost_dash = true;
+	}
+	else
+	{
+		dash_distance -= 95;
+	}
+	dBoost_dash_active = false;
 	audio_play_sound(snd_dashBoost_cd_over,5,false);
 	time_source_stop(timer_dBoost_cooldown);
 	instance_create_depth(-999,-999,-9999,obj_dBoost_notif);
@@ -352,7 +360,7 @@ var dBoost_cooldown = function()
 //Oh Dash
 var OH_dash_reset = function()
 {
-	dash_time += 5;
+	dash_time += 6;
 }
 timer_OH_dash_reset = time_source_create(time_source_game,0.2,time_source_units_seconds,OH_dash_reset,[],1);
 var OH_dash_hitbox = function()
@@ -560,7 +568,11 @@ hsp =(input_check("right") - input_check("left")) * walksp
 //walljump
 if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bomb_active) and (!walljump_prohibit) and (!fall_damage_toggle)
 {
-	vsp_wjump = walksp / -4 - 2.75 + 0.5;
+	//Scaling and Exceptions
+	if (!breeze_state_active)
+	{
+		vsp_wjump = walksp / -4 - 2.75 + 0.5;
+	}
 	if (time_source_exists(timer_walljump_check))
 	{
 		time_source_stop(timer_walljump_check);
@@ -677,7 +689,7 @@ if (canJump-- > 0) and (input_check_pressed("jump")) and (!jump_activated)
 		audio_play_sound(snd_pJump_frost,6,false);
 	}
 	canCrawl = 1;
-	if (upcancel_jump = true) and (!upcancel_jump_used)
+	if (upcancel_jump = true) and (!upcancel_jump_used) and (!breeze_state_active)
 	{
 		grv = 0.035;
 		if (!can_dash)
@@ -824,7 +836,7 @@ if (!onground)
 	{
 		walljump_prohibit = false;
 	}
-	if (!crawl_jump) and (!upcancel_state_prohibit) and (!upcancel_jump_break) and (!place_meeting(x,y,obj_gt_geyser_wave))
+	if (!crawl_jump) and (!upcancel_state_prohibit) and (!upcancel_jump_break) and (!place_meeting(x,y,obj_gt_geyser_wave) and (!breeze_state_active))
 	{
 		upcancel_avalible = true;
 	}
@@ -1159,7 +1171,7 @@ if (jump_allowed = true) and (input_check_pressed("jump")) and (jump_activated)
 	{
 		time_source_start(timer_dash_cooldown);
 	}
-	if (justdashed) and (global.dash_amount < 8) // - Dash Jumps
+	if (justdashed) and (global.dash_amount < 8) and (!breeze_state_active) // - Dash Jumps
 	{
 		dshscore_sound_pitch += 0.05;
 		global.dash_amount += 1;
@@ -1507,12 +1519,10 @@ mindsplit_transition_state = function()
 		//Walkspeed and Creations
 		global.dash_cancel_speed = false;
 		dJump_sprite_start = false;
-		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)) or (dashBoost_forgive = 1)
+		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)) and (!breeze_state_active) or (dashBoost_forgive = 1)
 		{
-			global.dashboost_dash = false;
 			dashBoost_fail = true;
 			time_source_start(timer_dBoost_cooldown);
-			dBoost_dash_active = false;
 			time_source_start(timer_dBoost_create);
 		}
 		//Breeze Reset
@@ -1665,9 +1675,9 @@ charge_disable = function()// Breeze Charge Disable
 	grv = 0.07;
 	dash_prohibit = true;
 	vsp_max_wall = 12;
-	upcancel_avalible = true;
 	breeze_dash_charge = false;
 	dash_time += 10;
+	walljump_prohibit = false;
 }
 breeze_dash_charge_activate = false;
 var breeze_dash_reset = function()// Breeze Dash Times
@@ -1684,6 +1694,10 @@ var breeze_dash_charging = function()
 	time_source_start(breeze_dash_restore) //Return Dash
 	breeze_dash_charge_activate = false;
 	breeze_dash_charges = 0;
+	if (!instance_exists(obj_breezedash_release))
+	{
+		instance_create_depth(x,y,depth + 1,obj_breezedash_release);	
+	}
 	if (instance_exists(obj_breeze_charge_indicator))
 	{
 		obj_breeze_charge_indicator.image_index = 1;
@@ -1709,7 +1723,9 @@ breeze_state = function()
 			if (!breeze_dash_charge)
 			{
 				walksp = 0;
+				walljump_prohibit = true;
 				grv = 0;
+				dash_time -= 10;
 				vsp_max_wall = 0;
 				time_source_pause(timer_upcancel_fallbuild);
 				upcancel_avalible = false;
@@ -1724,7 +1740,6 @@ breeze_state = function()
 		{
 			time_source_start(breeze_dash_charge_up);
 			dash_distance = 500;
-			dash_time -= 10;
 			breeze_dash_charge_activate = true;
 			if (!instance_exists(obj_breeze_charge_indicator))
 			{
@@ -1747,8 +1762,32 @@ breeze_state = function()
 			breeze_dash_charge_activate = false;
 			time_source_stop(breeze_dash_charge_up);
 			time_source_start(breeze_dash_restore) //Return Dash
+			obj_breeze_charge_indicator.dissolve_create = false;
 			time_source_start(obj_breeze_charge_indicator.timer_indicator_dissolve);
 			indicator_shake_activate();
+		}
+		//Wall Cling Asecond/Descend
+		if (breeze_dash_charge)
+		{
+			vsp_max_wall = 0;
+			grv = 0;
+			if (input_check("up"))
+			{
+				grv = -1;
+				vsp_max_wall = 6;
+			}
+			if (input_check("down"))
+			{	
+				grv = 1;
+				vsp_max_wall = 6;
+			}
+		}
+		//Upcancel Variant
+		if (input_check_pressed("down")) and (!onground) and (!breeze_dash_charge)
+		{
+			grv = 1;
+			audio_play_sound(snd_upcancel_whoosh,5,false,1.2,0,1.45);
+			instance_create_depth(x,y,-1,obj_breeze_feint1);
 		}
 	}
 	
@@ -1761,11 +1800,22 @@ breeze_state = function()
 			time_source_pause(timer_dBoost_deactivate);
 			obj_dashB_active_effect.image_speed = 0;
 		}
+		if (instance_exists(obj_dashJoost_counter))
+		{
+			obj_dashJoost_counter.image_blend = c_aqua;
+			obj_dashJoost_counter.image_speed = 0;
+			if (instance_exists(obj_dashJoost_maxxed_effect))
+			{
+				obj_dashJoost_maxxed_effect.image_speed = 0;
+			}
+		}
+		upcancel_avalible = false;
 		global.storedwalksp = walksp;
 		global.storedash_distance = dash_distance;
 		breeze_state_active = true;
 		vspJump -= 3;
 		vspDJump -= 3;
+		vsp_wjump = -8.5;
 		can_dash = false;
 		dash_prohibit = true;
 		walksp = 9.75;
@@ -1797,6 +1847,15 @@ breeze_state = function()
 		dash_prohibit = false;
 		vspJump += 3;
 		vspDJump += 3;
+		if (instance_exists(obj_dashJoost_counter))
+		{
+			obj_dashJoost_counter.image_blend = c_white;
+			obj_dashJoost_counter.image_speed = 1;
+			if (instance_exists(obj_dashJoost_maxxed_effect))
+			{
+				obj_dashJoost_maxxed_effect.image_speed = 1;
+			}
+		}
 		if (!OH_dash_avalible)
 		{
 			OH_dash_avalible = true;

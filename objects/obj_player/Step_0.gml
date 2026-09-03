@@ -183,6 +183,7 @@ if (score >= 20000) and (!score_boost3)
 if (instance_exists(obj_dashBoost_effect)) and (input_check_pressed("attack")) and (!instance_exists(obj_dashB_active_effect))
 {
 	global.sanity += 5;
+	global.dashboost_dash = false;
 	mindsplit_perfect_window = true;
 	time_source_start(timer_mindsplit_perfect_window);
 	//Early Boost
@@ -241,7 +242,6 @@ if (global.dashboost_dash) and (!instance_exists(obj_dashB_active_effect)) and (
 {
 	dBoost_dash_active = true;
 	dash_distance += 95;
-	dash_time = 18;
 }
 
 
@@ -255,6 +255,11 @@ if (!instance_exists(obj_dash_boost)) and (input_check_pressed("attack") or (ins
 		audio_play_sound(snd_dashBoost_fail,6,false);
 		dashBoost_fail = false;
 		dashBoost_forgive = 0;
+		if (global.dashboost_dash)
+		{
+			global.dashboost_dash = false;
+			dash_distance -= 95;
+		}
 		time_source_start(timer_dBoostmiss_screenshake);
 		layer_set_visible("Effect_Screenshake_mega",1);
 		global.hudshake = true;

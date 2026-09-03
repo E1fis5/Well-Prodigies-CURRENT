@@ -33,8 +33,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"glacial_tundra",
-    "path":"folders/Sprites/levels/glacial_tundra.yy",
+    "name":"effects",
+    "path":"folders/Sprites/levels/glacial_tundra/effects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
