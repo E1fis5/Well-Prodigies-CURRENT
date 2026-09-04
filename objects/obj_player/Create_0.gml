@@ -1714,7 +1714,7 @@ breeze_state = function()
 		with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 		{
 			sprite_index = other.sprite_index;
-			image_blend = choose(c_aqua,c_blue,c_navy);
+			image_blend = choose(c_aqua,c_blue,c_navy);	
 			image_alpha = 0.45;
 		}
 		//Dash Charge
