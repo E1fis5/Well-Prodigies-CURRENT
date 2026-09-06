@@ -397,7 +397,7 @@ var lava_penalty = function()
 var upcancel_boost = function()
 
 {
-	if (upcancel_jump_used)
+	if (upcancel_jump_used) and (!breeze_state_active)
 	{
 		walksp -= 1.5;
 		upcancel_jump_used = false;
@@ -405,7 +405,7 @@ var upcancel_boost = function()
 	upcancel_jump = false;
 	upcancel_pause = false;
 	grv = 0.07;
-	if (!place_meeting(x,y,obj_gt_geyser_wave))
+	if (!place_meeting(x,y,obj_gt_geyser_wave) and (!breeze_state_active))
 	{
 		upcancel_avalible = true;
 	}

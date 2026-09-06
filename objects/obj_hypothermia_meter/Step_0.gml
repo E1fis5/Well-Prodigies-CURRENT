@@ -2,7 +2,7 @@
 if (heat >= 101)
 {
 	heat = 100;
-	global.health -= 2;
+	global.health -= 1;
 	global.damage = true;
 	audio_play_sound(snd_player_hurt,5,false);
 }
