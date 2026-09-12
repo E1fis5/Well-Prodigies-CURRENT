@@ -227,11 +227,15 @@ graves_encountered = 0;
 breeze_state_active = false;
 breeze_dash_charge = false;
 breeze_dash_charges = 0;
+breeze_walljumps = 0;
 var breeze_dash_delay = function()
 {
 	breeze_dash_charge = true;
 }
 timer_breeze_delay = time_source_create(time_source_game,2,time_source_units_frames,breeze_dash_delay,[],1);
+//Snow State
+snow_jumps = 0;
+snow_jump_activate = false;
 //Dashscore
 dashscore_end = function()
 {
@@ -256,9 +260,6 @@ dashscore_end = function()
 		dshscore_sound_pitch = 1;
 		obj_dashJoost_counter.dashCounter_shake_warnin = false;	
 }
-//Snow State
-snow_jumps = 0;
-snow_jump_activate = false;
 //Debug
 global.debug_active = false;
 global.collisions_enabled = true;
@@ -572,6 +573,13 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 	if (!breeze_state_active)
 	{
 		vsp_wjump = walksp / -4 - 2.75 + 0.5;
+		hsp_wjump = 5;
+	}
+	if (place_meeting(x,y,obj_snow_danger))
+	{
+		vsp_wjump = -1.5;
+		hsp_wjump = 1;
+		grv += 0.25;
 	}
 	if (time_source_exists(timer_walljump_check))
 	{
@@ -589,7 +597,6 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 	audio_play_sound(snd_stone1,5,false)
 	dJump_sprite_start = false;
 	global.walljumps++;
-	grv = 0.07;
 	time_source_stop(timer_upcancel_fallbuild);
 	can_dash = true;
 	wallclimb = false;
@@ -1346,8 +1353,11 @@ snow_state = function()
 {
 	if (!snow_jump_activate)
 	{
-		grv = 1;
-		if (input_check_pressed("jump")) and (canJump)
+		if (!wallclimb)
+		{
+			grv = 1;
+		}
+		if (input_check_pressed("jump")) and (canJump) and (!wallclimb)
 		{
 			snow_jumps += 1;
 			audio_play_sound(snd_freeze_damage,5,false);
@@ -1694,6 +1704,11 @@ var breeze_dash_charging = function()
 	time_source_start(breeze_dash_restore) //Return Dash
 	breeze_dash_charge_activate = false;
 	breeze_dash_charges = 0;
+	//Screenshake
+	layer_set_visible("Effect_Screenshake_mega",1);	
+	global.hudshake = true;
+	time_source_start(timer_dBoostmiss_screenshake);
+	//Effects
 	if (!instance_exists(obj_breezedash_release))
 	{
 		instance_create_depth(x,y,depth + 1,obj_breezedash_release);	
@@ -1758,13 +1773,13 @@ breeze_state = function()
 			breeze_dash_charges = 0;
 			dash_distance = 500;
 			dash_call = true;
-			charge_disable();	
 			breeze_dash_charge_activate = false;
 			time_source_stop(breeze_dash_charge_up);
 			time_source_start(breeze_dash_restore) //Return Dash
 			obj_breeze_charge_indicator.dissolve_create = false;
 			time_source_start(obj_breeze_charge_indicator.timer_indicator_dissolve);
 			indicator_shake_activate();
+			charge_disable();	
 		}
 		//Wall Cling Asecond/Descend
 		if (breeze_dash_charge)

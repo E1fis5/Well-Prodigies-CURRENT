@@ -772,6 +772,7 @@
     {"id":{"name":"r_gameStart","path":"rooms/r_gameStart/r_gameStart.yy",},},
     {"id":{"name":"r_gc1","path":"rooms/r_gc1/r_gc1.yy",},},
     {"id":{"name":"r_glacialtundra_cabin1","path":"rooms/r_glacialtundra_cabin1/r_glacialtundra_cabin1.yy",},},
+    {"id":{"name":"r_glacialtundra_extra1","path":"rooms/r_glacialtundra_extra1/r_glacialtundra_extra1.yy",},},
     {"id":{"name":"r_glacialtundra_parent","path":"rooms/r_glacialtundra_parent/r_glacialtundra_parent.yy",},},
     {"id":{"name":"r_glacialtundra1","path":"rooms/r_glacialtundra1/r_glacialtundra1.yy",},},
     {"id":{"name":"r_glacialtundra2","path":"rooms/r_glacialtundra2/r_glacialtundra2.yy",},},
@@ -2098,6 +2099,7 @@
     {"roomId":{"name":"r_glacialtundra5","path":"rooms/r_glacialtundra5/r_glacialtundra5.yy",},},
     {"roomId":{"name":"r_glacialtundra_cabin1","path":"rooms/r_glacialtundra_cabin1/r_glacialtundra_cabin1.yy",},},
     {"roomId":{"name":"r_glacialtundra6","path":"rooms/r_glacialtundra6/r_glacialtundra6.yy",},},
+    {"roomId":{"name":"r_glacialtundra_extra1","path":"rooms/r_glacialtundra_extra1/r_glacialtundra_extra1.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
