@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"r_Shop_extension",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/r_parent/RoomCreationCode.gml",
   "inheritCode":true,
   "inheritCreationOrder":true,
   "inheritLayers":false,

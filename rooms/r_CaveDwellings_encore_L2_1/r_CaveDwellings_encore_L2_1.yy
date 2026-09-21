@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"r_CaveDwellings_encore_L2_1",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/r_parent/RoomCreationCode.gml",
   "inheritCode":true,
   "inheritCreationOrder":true,
   "inheritLayers":true,

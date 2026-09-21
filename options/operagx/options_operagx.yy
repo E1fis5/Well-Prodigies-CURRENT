@@ -9,7 +9,7 @@
   "option_operagx_internalShareUrl":"https://gx.games/games/ithz75/well-prodigies-new-p-build/tracks/620c9b6f-68ce-4970-929a-df0931586e70/",
   "option_operagx_interpolate_pixels":true,
   "option_operagx_mod_editUrl":"",
-  "option_operagx_mod_game_name":"${project_name}",
+  "option_operagx_mod_game_name":"Well Prodigies",
   "option_operagx_mod_guid":"",
   "option_operagx_mod_internalShareUrl":"",
   "option_operagx_mod_next_version":"1.0.0.0",
