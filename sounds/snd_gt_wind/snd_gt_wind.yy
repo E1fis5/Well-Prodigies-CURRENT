@@ -6,11 +6,11 @@
     "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
-  "channelFormat":0,
+  "channelFormat":1,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":10.621384,
+  "duration":12.069751,
   "exportDir":"",
   "name":"snd_gt_wind",
   "parent":{
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_gt_wind.mp3",
-  "volume":0.54,
+  "soundFile":"snd_gt_wind.ogg",
+  "volume":0.65,
 }

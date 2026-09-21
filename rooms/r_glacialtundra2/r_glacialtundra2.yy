@@ -108,7 +108,6 @@
     {"name":"inst_2313B01E","path":"rooms/r_glacialtundra2/r_glacialtundra2.yy",},
     {"name":"inst_699763E9","path":"rooms/r_glacialtundra2/r_glacialtundra2.yy",},
     {"name":"inst_7440143C","path":"rooms/r_glacialtundra2/r_glacialtundra2.yy",},
-    {"name":"inst_7C580DD6","path":"rooms/r_glacialtundra2/r_glacialtundra2.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -127,10 +126,10 @@
         {"name":"g_WhiteNoiseAnimation","type":0,"value":"0.5",},
         {"name":"g_WhiteNoiseTexture","type":2,"value":"_filter_whitenoise_noise",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
-    {"$GMREffectLayer":"","%Name":"Effect_4","depth":80,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"layers":[],"name":"Effect_4","properties":[
+    {"$GMREffectLayer":"","%Name":"Effect_4","depth":42,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"layers":[],"name":"Effect_4","properties":[
         {"name":"g_TintCol","type":1,"value":"#FFFFFFB2",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMREffectLayer":"","%Name":"Effect_3","depth":160,"effectEnabled":true,"effectType":"_filter_contrast","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"layers":[],"name":"Effect_3","properties":[
+    {"$GMREffectLayer":"","%Name":"Effect_3","depth":84,"effectEnabled":true,"effectType":"_filter_contrast","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"layers":[],"name":"Effect_3","properties":[
         {"name":"g_ContrastIntensity","type":0,"value":"0.45",},
         {"name":"g_ContrastBrightness","type":0,"value":"1",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
@@ -926,7 +925,6 @@
         {"$GMRInstance":"v4","%Name":"inst_26BC7743","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_26BC7743","objectId":{"name":"obj_climbablecollision","path":"objects/obj_climbablecollision/obj_climbablecollision.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":32.0,"x":5280.0,"y":0.0,},
         {"$GMRInstance":"v4","%Name":"inst_7E83480A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7E83480A","objectId":{"name":"obj_climbablecollision","path":"objects/obj_climbablecollision/obj_climbablecollision.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":23.5,"x":5056.0,"y":544.0,},
         {"$GMRInstance":"v4","%Name":"inst_4988338D","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4988338D","objectId":{"name":"obj_targetExit","path":"objects/obj_targetExit/obj_targetExit.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.5,"scaleY":2.5,"x":5120.0,"y":2048.0,},
-        {"$GMRInstance":"v4","%Name":"inst_7C580DD6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7C580DD6","objectId":{"name":"obj_snow_danger","path":"objects/obj_snow_danger/obj_snow_danger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3072.0,"y":1408.0,},
       ],"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_3","depth":800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":125,"SerialiseWidth":346,"TileCompressedData":[
           -17937,-2147483648,1,500,-345,-2147483648,1,532,-343,-2147483648,6,497,498,564,500,502,503,-340,-2147483648,
@@ -941,7 +939,7 @@
           631,-344,-2147483648,2,534,535,-344,-2147483648,2,566,567,-344,-2147483648,2,598,599,-344,-2147483648,
           2,630,631,-16659,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"ts_gt_deco_big","path":"tilesets/ts_gt_deco_big/ts_gt_deco_big.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
-    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":7.0,"animationSpeedType":0,"colour":4291611852,"depth":700,"effectEnabled":true,"effectType":"_filter_fractal_noise","gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[
+    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":7.0,"animationSpeedType":0,"colour":4291611852,"depth":9999,"effectEnabled":true,"effectType":"_filter_fractal_noise","gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[
         {"name":"g_FractalNoiseScale","type":0,"value":"260",},
         {"name":"g_FractalNoisePersistence","type":0,"value":"0.5",},
         {"name":"g_FractalNoiseOffset","type":0,"value":"0",},

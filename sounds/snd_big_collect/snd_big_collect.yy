@@ -6,11 +6,11 @@
     "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
-  "channelFormat":0,
+  "channelFormat":1,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.008,
+  "duration":0.9636508,
   "exportDir":"",
   "name":"snd_big_collect",
   "parent":{

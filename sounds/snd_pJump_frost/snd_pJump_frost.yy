@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_pJump_frost",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_pJump_frost",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"geyser",
+    "path":"folders/Sounds/gt/geyser.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

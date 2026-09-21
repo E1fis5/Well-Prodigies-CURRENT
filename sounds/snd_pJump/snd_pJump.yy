@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_pJump",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"player_sounds",
+    "path":"folders/Sounds/player_sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

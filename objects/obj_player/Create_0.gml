@@ -7,6 +7,7 @@ global.maxhealth = 6;
 global.health = 0;
 dash_damage = 5;
 damage_deal = false;
+
 fall_damage_toggle = false;
 //Shop
 global.presents_soldout = false;
@@ -212,6 +213,7 @@ global.gamemode_hard = true;
 wallanim1 = 0;
 wallclimb = false;
 walljump = false;
+dashcollide_break = false;
 global.gamemode_easy = false;
 global.gamemode_normal = false;
 global.dashboost_dash = true;
@@ -396,7 +398,6 @@ var lava_penalty = function()
 }
 //Upcancel Boost
 var upcancel_boost = function()
-
 {
 	if (upcancel_jump_used) and (!breeze_state_active)
 	{
@@ -469,7 +470,7 @@ timer_mudsolid_dash_delay = time_source_create(time_source_game,0.8,time_source_
 var adrenaline_drain = function()
 {
 	walksp -= adrenaline_amount_drain;
-	audio_play_sound(snd_select,2,false,0.3);
+	audio_play_sound(snd_select,2,false,0.3,0,random_range(0.85,1.15));
 }
 timer_adrenaline_duration = time_source_create(time_source_game,1,time_source_units_frames,adrenaline_drain,[],100);
 //Double Jump Check Timer
@@ -580,6 +581,10 @@ if (onwall != 0)  && (input_check("jump")) and (!input_check("attack")) and (!bo
 		vsp_wjump = -1.5;
 		hsp_wjump = 1;
 		grv += 0.25;
+	}
+	else
+	{
+		grv = 0.07;
 	}
 	if (time_source_exists(timer_walljump_check))
 	{
@@ -1067,19 +1072,20 @@ land_state = function()
 		}
 		if (!instance_exists(obj_upcancel_land_effect))
 		{
-			instance_create_depth(x - 33,y - 40,401,obj_upcancel_land_effect);
-			if (vsp_max_wall < 16)
+			instance_create_depth(x,y,401,obj_upcancel_land_effect);
+			if (vsp_max_wall < 20)
 			{
-				audio_play_sound(snd_dash_rock_snd1,7,false,1.3);
+				audio_play_sound(snd_upcancel_landing,6,false,0.9,0,1.1);
 			}
-			if (vsp_max_wall > 16)
+			if (vsp_max_wall >= 20)
 			{
-				audio_play_sound(snd_dash_rock_snd1,7,false,1.8,0,0.85);
+				audio_play_sound(snd_upcancel_landing,6,false,1.5,0,0.95);
 				instance_create_depth(x + 40,y + 100,150,obj_upcancel_break_effect);
 			}
-			if (vsp_max_wall >= 30)
+			if (vsp_max_wall >= 32)
 			{
-				audio_play_sound(snd_dash_rock_snd1,7,false,2.5,0,0.60);
+				audio_play_sound(snd_upcancel_landing,6,false,1.5,0,0.85);
+				audio_play_sound(snd_upcancel_landing_huge,7,false);
 				instance_create_depth(x + 40,y + 100,150,obj_upcancel_break_effect);
 				ground_break_permanent = true;
 			}
@@ -1348,29 +1354,6 @@ state_Bomb = function()
 	}
 }
 
-//Snow Danger State
-snow_state = function()
-{
-	if (!snow_jump_activate)
-	{
-		if (!wallclimb)
-		{
-			grv = 1;
-		}
-		if (input_check_pressed("jump")) and (canJump) and (!wallclimb)
-		{
-			snow_jumps += 1;
-			audio_play_sound(snd_freeze_damage,5,false);
-			if (snow_jumps >= 3) and (vspJump < -3.50)
-			{
-				snow_jumps = 0;
-				snow_jump_activate = true;
-				grv = 0.07;
-			}
-		}
-	}
-}
-
 //MindSplit Start
 mindsplit_transition_state = function()
 {
@@ -1571,9 +1554,26 @@ mindsplit_transition_state = function()
 	//Trail
 	with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 	{
-		sprite_index = other.sprite_index;
-		image_blend = c_gray;
-		image_alpha = 0.6;
+		if (!obj_player.dashcollide_break)
+		{
+			if (!instance_exists(obj_dashB_active_effect))
+			{
+				sprite_index = other.sprite_index;
+			}
+			else
+			{
+				if (!obj_player.player_left)
+				{
+					sprite_index = spr_dash_afterimage1;
+				}
+				else
+				{
+					sprite_index = spr_dash_afterimage_left;
+				}
+			}
+			image_blend = c_gray;
+			image_alpha = 0.6;
+		}
 	}
 	{
 		if (place_meeting(x + hsp, y, obj_collision_wall))
@@ -1593,10 +1593,6 @@ mindsplit_transition_state = function()
 		if (instance_exists(obj_dash_effect))
 		{
 			instance_destroy(obj_dash_effect);
-			if (instance_exists(obj_trail_effect))
-			{
-				instance_destroy(obj_trail_effect);
-			}
 		}
 		if (player_left)
 		{
@@ -1633,6 +1629,10 @@ mindsplit_transition_state = function()
 		   if (!dashcollide_break)
 		   {
 				fallcancel = false;
+		   }
+		   else
+		   {
+			   dashcollide_break = false;
 		   }
 		   //Bomb Dash
 		   if (Bomb_Dash_Active)
@@ -1692,7 +1692,7 @@ charge_disable = function()// Breeze Charge Disable
 breeze_dash_charge_activate = false;
 var breeze_dash_reset = function()// Breeze Dash Times
 {	
-	dash_distance = global.storedash_distance;
+	dash_distance = global.storedash_distance; //Resets Dash back to normal distance after releasing or charging
 }
 breeze_dash_restore = time_source_create(time_source_game,2,time_source_units_frames,breeze_dash_reset,[],1);
 var breeze_dash_charging = function()
@@ -1720,7 +1720,7 @@ var breeze_dash_charging = function()
 		time_source_start(obj_breeze_charge_indicator.timer_indicator_dissolve);
 	}
 }
-breeze_dash_charge_up = time_source_create(time_source_game,0.5,time_source_units_seconds,breeze_dash_charging,[],1);
+breeze_dash_charge_up = time_source_create(time_source_game,0.7,time_source_units_seconds,breeze_dash_charging,[],1);
 //GT Breeze State
 breeze_state = function()
 {
@@ -1886,5 +1886,28 @@ breeze_state = function()
 		}
 	}
 }	
+
+//Snow Danger State
+snow_state = function()
+{
+	if (!snow_jump_activate)
+	{
+		if (onground)
+		{
+			grv = 1;
+		}
+		if (input_check_pressed("jump")) and (canJump) and (!wallclimb)
+		{
+			snow_jumps += 1;
+			audio_play_sound(snd_freeze_damage,5,false);
+			if (snow_jumps >= 3) and (vspJump < -3.50)
+			{
+				snow_jumps = 0;
+				snow_jump_activate = true;
+				grv = 0.07;
+			}
+		}
+	}
+}
 depth = 400
  

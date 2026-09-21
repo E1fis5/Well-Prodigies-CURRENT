@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":48.792,
+  "duration":48.750317,
   "exportDir":"",
   "name":"snd_rain",
   "parent":{

@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.5120181,
+  "duration":2.132313,
   "exportDir":"",
   "name":"snd_dashcollide",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_dashcollide.mp3",
-  "volume":0.2,
+  "volume":0.45,
 }

@@ -13,5 +13,5 @@ else
 	image_blend = choose(c_aqua,c_navy);	
 	audio_play_sound(snd_dashB_pulse1,5,false,0.3);
 }
-image_alpha = 1;
+image_alpha = 0;
 image_speed = 0;

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_upcancel_landing_huge",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":4.0489798,
+  "exportDir":"",
+  "name":"snd_upcancel_landing_huge",
+  "parent":{
+    "name":"player_sounds",
+    "path":"folders/Sounds/player_sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_upcancel_landing_huge.wav",
+  "volume":0.5,
+}

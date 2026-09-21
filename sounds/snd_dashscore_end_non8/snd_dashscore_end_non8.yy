@@ -6,7 +6,7 @@
     "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
-  "channelFormat":0,
+  "channelFormat":1,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_dashscore_end_non8.mp3",
-  "volume":0.36,
+  "volume":0.3,
 }

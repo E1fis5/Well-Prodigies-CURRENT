@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.802449,
+  "duration":1.7647165,
   "exportDir":"",
   "name":"snd_boost_rock_1_break",
   "parent":{

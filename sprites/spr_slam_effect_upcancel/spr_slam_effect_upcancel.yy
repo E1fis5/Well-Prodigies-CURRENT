@@ -63,7 +63,7 @@
     },
     "name":"spr_slam_effect_upcancel",
     "playback":1,
-    "playbackSpeed":13.0,
+    "playbackSpeed":17.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
     "path":"audiogroups/groupSFX",
   },
   "bitDepth":1,
-  "channelFormat":0,
+  "channelFormat":1,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_dashp_overhead.mp3",
-  "volume":0.6,
+  "volume":0.45,
 }
