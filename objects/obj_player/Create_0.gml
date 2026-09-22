@@ -97,6 +97,7 @@ global.isActive = false;
 //Upcancels
 upcancel_speed_boost = 2;
 jumpmax = 2
+stun_up = false;
 upcancel_jump_used = false;
 upcancel_disable = function()
 {
@@ -300,6 +301,17 @@ no_player_movement = function()
 	global.storedwalksp = walksp;
 	walksp -= global.storedwalksp;	
 }
+var player_land_unstun = function()
+{
+	walksp += 8.5;
+	stun_up = false;
+	if (walksp < 8.5)
+	{
+		walksp = global.storedwalksp;	
+	}
+	image_speed = 1;
+}
+timer_player_land_unstun = time_source_create(time_source_game,0.45,time_source_units_seconds,player_land_unstun,[],1);
 //Time Sources
 //Haunt
 var haunt_cooldown_over = function()
@@ -422,7 +434,12 @@ timer_upcancel_jump_break = time_source_create(time_source_game,0.45,time_source
 //Upcancel Screenshake
 var Upcancel_screenshake = function()
 {
-	layer_set_visible("Effect_Screenshake",0);	
+	layer_set_visible("Effect_Screenshake",0);
+		layer_set_visible("Effect_Screenshake_mega",0);	
+	if (stun_up)
+	{
+		global.hudshake = false;	
+	}
 }
 timer_upcancel_screenshake = time_source_create(time_source_game,0.25,time_source_units_seconds,Upcancel_screenshake,[],1);
 //Upcancel Fall Build Up
@@ -1050,11 +1067,6 @@ land_state = function()
 			time_source_start(timer_upcancel_boost);
 			upcancel_breaks = 0;
 		}
-		if (!global.isActive)
-		{
-			layer_set_visible("Effect_Screenshake",1);	
-			time_source_start(timer_upcancel_screenshake);
-		}
 		canJump = 6;
 		grv = 0.07;
 		up_cancel_eff = false;
@@ -1088,6 +1100,18 @@ land_state = function()
 				audio_play_sound(snd_upcancel_landing_huge,7,false);
 				instance_create_depth(x + 40,y + 100,150,obj_upcancel_break_effect);
 				ground_break_permanent = true;
+				global.storedwalksp = walksp;
+				image_speed = 0.75;
+				if (walksp > 8.5)
+				{
+					walksp -= 8.5;
+				}
+				else
+				{
+					walksp = 0;
+				}
+				stun_up = true;
+				time_source_start(timer_player_land_unstun);
 			}
 				
 		}
@@ -1104,6 +1128,23 @@ land_state = function()
 				vsp_max_wall = 12;
 			}
 			time_source_stop(timer_upcancel_fallbuild);
+		}
+		//Screenshake
+		if (!global.isActive)
+		{
+			if (layer_exists("Effect_Screenshake"))
+			{
+				if (stun_up)
+				{
+					layer_set_visible("Effect_Screenshake_mega",1);
+					global.hudshake = true;
+				}
+				else
+				{
+					layer_set_visible("Effect_Screenshake",1);	
+				}
+				time_source_start(timer_upcancel_screenshake);
+			}
 		}
 	}
 	}
@@ -1442,6 +1483,20 @@ mindsplit_transition_state = function()
 		}
 		upcancel_disable();
 		fall_damage_toggle = false;
+		//Stun Cancel
+		if (stun_up)
+		{
+			time_source_stop(timer_player_land_unstun);
+			stun_up = false;
+			walksp += 8.5;
+			layer_set_visible("Effect_Screenshake_mega",0);
+			image_speed = 1;
+			global.hudshake = false;
+			if (walksp < 8.5)
+			{
+				walksp = global.storedwalksp;	
+			}
+		}
 		if (instance_exists(obj_player_slam_hitbox))
 		{
 			instance_destroy(obj_player_slam_hitbox);

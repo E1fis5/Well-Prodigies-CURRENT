@@ -14,13 +14,13 @@
   "exportDir":"",
   "name":"snd_upcancel_landing_huge",
   "parent":{
-    "name":"player_sounds",
-    "path":"folders/Sounds/player_sounds.yy",
+    "name":"upcancel",
+    "path":"folders/Sounds/player_sounds/upcancel.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_upcancel_landing_huge.wav",
-  "volume":0.5,
+  "volume":0.35,
 }
