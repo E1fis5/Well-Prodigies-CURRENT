@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_upcancel_whoosh",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"upcancel",
+    "path":"folders/Sounds/player_sounds/upcancel.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
