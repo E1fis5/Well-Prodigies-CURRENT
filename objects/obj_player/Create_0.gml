@@ -1775,7 +1775,7 @@ var breeze_dash_charging = function()
 		time_source_start(obj_breeze_charge_indicator.timer_indicator_dissolve);
 	}
 }
-breeze_dash_charge_up = time_source_create(time_source_game,0.7,time_source_units_seconds,breeze_dash_charging,[],1);
+breeze_dash_charge_up = time_source_create(time_source_game,0.55,time_source_units_seconds,breeze_dash_charging,[],1);
 //GT Breeze State
 breeze_state = function()
 {
