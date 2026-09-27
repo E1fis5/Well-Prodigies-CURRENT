@@ -7,7 +7,6 @@ global.maxhealth = 6;
 global.health = 0;
 dash_damage = 5;
 damage_deal = false;
-
 fall_damage_toggle = false;
 //Shop
 global.presents_soldout = false;

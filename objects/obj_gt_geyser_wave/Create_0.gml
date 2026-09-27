@@ -1,6 +1,7 @@
 geyser_limit = 0;
 geyser_deactivate = false;
 geyser_touch = false;
+image_speed = -1;
 geyser_destroy_finish = false;
 geyser_current_speed_build = 0.3;
 audio_play_sound(snd_gt_geyser_explode,3,false);
