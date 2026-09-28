@@ -1,10 +1,12 @@
 if (geyser_limit > 0)
 {
 	image_yscale -= geyser_current_speed_build;
+	obj_geyser_afterimage.image_yscale -= geyser_current_speed_build;
 	geyser_limit -= 1;
 }
 else if (!geyser_deactivate)
 {
+	obj_geyser_afterimage.image_yscale = image_yscale;
 	geyser_deactivate = true;
 	if (instance_exists(obj_gt_ice_geyser))
 	{
