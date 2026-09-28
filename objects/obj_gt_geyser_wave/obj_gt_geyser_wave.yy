@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mb_banana_throwable",
-    "path":"sprites/spr_mb_banana_throwable/spr_mb_banana_throwable.yy",
+    "name":"spr_geyser_water1",
+    "path":"sprites/spr_geyser_water1/spr_geyser_water1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,10 +1,12 @@
 if (geyser_limit > 0)
 {
 	image_yscale -= geyser_current_speed_build;
+	obj_geyser_afterimage.image_yscale -= geyser_current_speed_build;
 	geyser_limit -= 1;
 }
 else if (!geyser_deactivate)
 {
+	obj_geyser_afterimage.image_yscale = image_yscale;
 	geyser_deactivate = true;
 	if (instance_exists(obj_gt_ice_geyser))
 	{
@@ -16,10 +18,6 @@ else if (!geyser_deactivate)
 		time_source_stop(obj_player.timer_upcancel_fallbuild);
 	}
 	time_source_stop(timer_geyser_speed_build_rate);
-	if (geyser_destroy_finish)
-	{
-		instance_destroy();
-	}
 }
 
 if (!place_meeting(x,y,obj_player)) and (geyser_touch)
