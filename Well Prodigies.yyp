@@ -93,7 +93,7 @@
     {"$GMFolder":"","%Name":"specific_level_objects","folderPath":"folders/Objects/specific_level_objects.yy","name":"specific_level_objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"cave_dwellings_stuff","folderPath":"folders/Objects/specific_level_objects/cave_dwellings_stuff.yy","name":"cave_dwellings_stuff","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"glacial_tundra_stuff","folderPath":"folders/Objects/specific_level_objects/glacial_tundra_stuff.yy","name":"glacial_tundra_stuff","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"cave_horrors_stuff","folderPath":"folders/Objects/specific_level_objects/glacial_tundra_stuff/cave_horrors_stuff.yy","name":"cave_horrors_stuff","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"cave_horrors_stuff","folderPath":"folders/Objects/specific_level_objects/cave_horrors_stuff.yy","name":"cave_horrors_stuff","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"chunks","folderPath":"folders/Objects/specific_level_objects/glacial_tundra_stuff/chunks.yy","name":"chunks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"ice","folderPath":"folders/Objects/specific_level_objects/glacial_tundra_stuff/ice.yy","name":"ice","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"torch","folderPath":"folders/Objects/specific_level_objects/glacial_tundra_stuff/torch.yy","name":"torch","resourceType":"GMFolder","resourceVersion":"2.0",},

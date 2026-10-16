@@ -43,7 +43,7 @@
     {"name":"specific_level_objects","order":33,"path":"folders/Objects/specific_level_objects.yy",},
     {"name":"cave_dwellings_stuff","order":3,"path":"folders/Objects/specific_level_objects/cave_dwellings_stuff.yy",},
     {"name":"glacial_tundra_stuff","order":2,"path":"folders/Objects/specific_level_objects/glacial_tundra_stuff.yy",},
-    {"name":"cave_horrors_stuff","order":30,"path":"folders/Objects/specific_level_objects/glacial_tundra_stuff/cave_horrors_stuff.yy",},
+    {"name":"cave_horrors_stuff","order":4,"path":"folders/Objects/specific_level_objects/cave_horrors_stuff.yy",},
     {"name":"chunks","order":17,"path":"folders/Objects/specific_level_objects/glacial_tundra_stuff/chunks.yy",},
     {"name":"ice","order":26,"path":"folders/Objects/specific_level_objects/glacial_tundra_stuff/ice.yy",},
     {"name":"torch","order":20,"path":"folders/Objects/specific_level_objects/glacial_tundra_stuff/torch.yy",},

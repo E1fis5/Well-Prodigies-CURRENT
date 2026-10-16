@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"cave_horrors_stuff",
-    "path":"folders/Objects/specific_level_objects/glacial_tundra_stuff/cave_horrors_stuff.yy",
+    "path":"folders/Objects/specific_level_objects/cave_horrors_stuff.yy",
   },
   "parentObjectId":{
     "name":"obj_cd_gate",
