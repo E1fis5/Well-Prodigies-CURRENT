@@ -6,6 +6,7 @@ if (obj_player.land_sprite_break) and (!geyser_activated)
 	time_source_stop(obj_player.timer_upcancel_boost);
 	var inst = 	instance_create_depth(x + 65,y + 115,450,obj_gt_geyser_wave);
 	inst.geyser_limit = geyser_limit;
+<<<<<<< HEAD
 	with (instance_create_depth(x + 65,y + 115,obj_gt_geyser_wave.depth + 1,obj_geyser_afterimage))
 	{
 		image_yscale = inst.image_yscale;
@@ -13,6 +14,8 @@ if (obj_player.land_sprite_break) and (!geyser_activated)
 		image_speed = -1;
 		image_xscale = 2;
 	}
+=======
+>>>>>>> origin/DWWDDWAS
 	obj_player.x = x;
 	if (obj_player.vsp_max_wall < 16)
 	{

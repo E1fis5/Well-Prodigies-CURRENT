@@ -1,1 +1,1 @@
-geyser_limit = 55;
+geyser_limit = 35;

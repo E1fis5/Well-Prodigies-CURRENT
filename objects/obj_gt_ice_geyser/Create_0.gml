@@ -1,5 +1,7 @@
 geyser_activated = false;
 geyser_limit = 0;
+image_yscale = 1;
+afterimage_donescaling = false;
 depth = 401;
 geyser_stop = function()
 {
