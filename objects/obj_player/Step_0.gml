@@ -31,6 +31,7 @@ breeze_state();
 	}
 //Dash
 state_dash();
+attack_stance();
 
 //Score Buffs
 
@@ -246,7 +247,7 @@ if (global.dashboost_dash) and (!instance_exists(obj_dashB_active_effect)) and (
 
 
 //dBoost fail
-if (!instance_exists(obj_dash_boost)) and (input_check_pressed("attack") or (instance_exists(obj_blood_effect))) and (time_source_exists(timer_dBoost_create)) and (dashBoost_fail)
+if (!instance_exists(obj_dashBoost_effect)) and (input_check_pressed("attack") or (instance_exists(obj_blood_effect))) and (time_source_exists(timer_dBoost_create)) and (dashBoost_fail)
 {
 	if (!instance_exists(obj_dBoost_fail_effect))
 	{

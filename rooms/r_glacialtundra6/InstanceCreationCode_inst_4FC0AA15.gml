@@ -1,1 +1,1 @@
-set_time = 1.25;
+set_time = 0.75;

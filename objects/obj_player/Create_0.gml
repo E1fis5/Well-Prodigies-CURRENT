@@ -49,6 +49,10 @@ upcancel_jump = false;
 global.dJump_idle = false
 runsp = 5.5;
 airTime = 0;
+//Attack
+attack_lunge = false;
+duck_attack = false;
+attack_available = true;
 //Wall
 onwall = 0;
 walljump_prohibit = false;
@@ -679,13 +683,33 @@ if (walljump) and (!onground) and (!wallclimb)
 }
 
 //Trails
-if (fall_damage_toggle) //Crumble Trail
+if (fall_damage_toggle) //Crumble Trailright
 {
 	with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 	{
 		sprite_index = other.sprite_index;
 		image_blend = c_teal;
 		image_alpha = 0.6;
+	}
+}
+//Attacking States
+attack_stance = function()
+{
+	if (input_check_pressed("attack"))
+	{
+		if (!input_check("left")) and (!input_check("right")) and (!input_check("down"))
+		{
+			attack_lunge = true;
+			dash_distance -= 150;
+			dash_time -= 8;
+			dash_call = true;
+		}
+		//Duck Variant
+		if (input_check("down"))
+		{
+			dash_call = true;
+		}
+		instance_create_depth(x + 75,y,depth - 1,obj_player_attack_hitbox);
 	}
 }
 //Vertical Movement
@@ -1566,7 +1590,7 @@ mindsplit_transition_state = function()
 		//Walkspeed and Creations
 		global.dash_cancel_speed = false;
 		dJump_sprite_start = false;
-		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)) and (!breeze_state_active) or (dashBoost_forgive = 1)
+		if (global.dashboost_dash = true) and (!instance_exists(obj_dashB_active_effect)) and (!breeze_state_active) or (dashBoost_forgive = 1) and (!attack_lunge)
 		{
 			dashBoost_fail = true;
 			time_source_start(timer_dBoost_cooldown);
@@ -1706,6 +1730,12 @@ mindsplit_transition_state = function()
 			   OH_dash_used = false;
 			   layer_set_visible("Effect_Screenshake_mega",0);
 			   global.hudshake = false;
+		   }
+		   if (attack_lunge)
+		   {
+			   attack_lunge = false;
+			   dash_distance += 150;
+			   dash_time += 8;
 		   }
 		   drop_dash_avalible = false;
 		   global.dash_active = false;
