@@ -566,6 +566,12 @@ var dash_reset = function()
 	}
 }
 timer_dash_cooldown = time_source_create(time_source_game,0.40,time_source_units_seconds,dash_reset,[],1);
+//Attack Cooldown
+var attack_reset = function()
+{
+	attack_available = true;
+}
+timer_attack_cooldown = time_source_create(time_source_game,1,time_source_units_seconds,attack_reset,[],1);
 //Aftereffects/Dboost
 timer_aftereffect_creation = time_source_create(time_source_game,1.25,time_source_units_seconds,dashBoost_aftereffect_creation,[],-1);
 timer_aftereffect_creation_quick = time_source_create(time_source_game,0.75,time_source_units_seconds,dashBoost_aftereffect_creation,[],-1);
@@ -690,26 +696,29 @@ if (fall_damage_toggle) //Crumble Trailright
 		sprite_index = other.sprite_index;
 		image_blend = c_teal;
 		image_alpha = 0.6;
+		
 	}
 }
 //Attacking States
 attack_stance = function()
 {
+	//Main Attack
 	if (input_check_pressed("attack"))
 	{
-		if (!input_check("left")) and (!input_check("right")) and (!input_check("down"))
+		if (attack_available)
 		{
-			attack_lunge = true;
-			dash_distance -= 150;
-			dash_time -= 8;
-			dash_call = true;
+			instance_create_depth(x + 75,y,depth - 1,obj_player_attack_hitbox);
+			time_source_start(timer_attack_cooldown);
+			attack_available = false;
+			//Lunge
+			if (!input_check("left")) and (!input_check("right"))
+			{
+				attack_lunge = true;
+				dash_distance -= 150;
+				dash_time -= 8;
+				dash_call = true;
+			}
 		}
-		//Duck Variant
-		if (input_check("down"))
-		{
-			dash_call = true;
-		}
-		instance_create_depth(x + 75,y,depth - 1,obj_player_attack_hitbox);
 	}
 }
 //Vertical Movement
@@ -1632,7 +1641,7 @@ mindsplit_transition_state = function()
 	//Trail
 	with (instance_create_depth(x,y,depth+1,obj_trail_effect))
 	{
-		if (!obj_player.dashcollide_break)
+		if (!obj_player.dashcollide_break) and (!obj_player.attack_lunge)
 		{
 			if (!instance_exists(obj_dashB_active_effect))
 			{
