@@ -494,6 +494,7 @@
     {"name":"r_glacialtundra4","order":5,"path":"rooms/r_glacialtundra4/r_glacialtundra4.yy",},
     {"name":"r_glacialtundra5","order":6,"path":"rooms/r_glacialtundra5/r_glacialtundra5.yy",},
     {"name":"r_glacialtundra6","order":8,"path":"rooms/r_glacialtundra6/r_glacialtundra6.yy",},
+    {"name":"r_glacialtundra7","order":10,"path":"rooms/r_glacialtundra7/r_glacialtundra7.yy",},
     {"name":"r_GT_Bridge","order":16,"path":"rooms/r_GT_Bridge/r_GT_Bridge.yy",},
     {"name":"r_GT_cabin","order":1,"path":"rooms/r_GT_cabin/r_GT_cabin.yy",},
     {"name":"r_GT_horrifying_grief_hatred_disgust_fear","order":3,"path":"rooms/r_GT_horrifying_grief_hatred_disgust_fear/r_GT_horrifying_grief_hatred_disgust_fear.yy",},

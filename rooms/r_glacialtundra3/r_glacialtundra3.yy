@@ -111,9 +111,16 @@
         {"name":"g_WhiteNoiseAnimation","type":0,"value":"0.5",},
         {"name":"g_WhiteNoiseTexture","type":2,"value":"_filter_whitenoise_noise",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
-    {"$GMREffectLayer":"","%Name":"Effect_5","depth":72,"effectEnabled":true,"effectType":"_filter_colourise","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_5","properties":[
-        {"name":"g_Intensity","type":0,"value":"0.2",},
-        {"name":"g_TintCol","type":1,"value":"#FF476FB2",},
+    {"$GMREffectLayer":"","%Name":"Effect_5","depth":72,"effectEnabled":true,"effectType":"_filter_colour_balance","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_5","properties":[
+        {"name":"g_ColourBalanceShadows","type":0,"value":"0",},
+        {"name":"g_ColourBalanceShadows","type":0,"value":"0.05",},
+        {"name":"g_ColourBalanceShadows","type":0,"value":"0.1",},
+        {"name":"g_ColourBalanceMidtones","type":0,"value":"0",},
+        {"name":"g_ColourBalanceMidtones","type":0,"value":"0",},
+        {"name":"g_ColourBalanceMidtones","type":0,"value":"0",},
+        {"name":"g_ColourBalanceHighlights","type":0,"value":"0",},
+        {"name":"g_ColourBalanceHighlights","type":0,"value":"0",},
+        {"name":"g_ColourBalanceHighlights","type":0,"value":"0",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMREffectLayer":"","%Name":"Effect_4","depth":144,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"layers":[],"name":"Effect_4","properties":[
         {"name":"g_TintCol","type":1,"value":"#FFFFFFB2",},

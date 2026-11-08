@@ -780,6 +780,7 @@
     {"id":{"name":"r_glacialtundra4","path":"rooms/r_glacialtundra4/r_glacialtundra4.yy",},},
     {"id":{"name":"r_glacialtundra5","path":"rooms/r_glacialtundra5/r_glacialtundra5.yy",},},
     {"id":{"name":"r_glacialtundra6","path":"rooms/r_glacialtundra6/r_glacialtundra6.yy",},},
+    {"id":{"name":"r_glacialtundra7","path":"rooms/r_glacialtundra7/r_glacialtundra7.yy",},},
     {"id":{"name":"r_GT_Bridge","path":"rooms/r_GT_Bridge/r_GT_Bridge.yy",},},
     {"id":{"name":"r_GT_cabin","path":"rooms/r_GT_cabin/r_GT_cabin.yy",},},
     {"id":{"name":"r_GT_escape1","path":"rooms/r_GT_escape1/r_GT_escape1.yy",},},
@@ -2107,6 +2108,7 @@
     {"roomId":{"name":"r_glacialtundra_cabin1","path":"rooms/r_glacialtundra_cabin1/r_glacialtundra_cabin1.yy",},},
     {"roomId":{"name":"r_glacialtundra6","path":"rooms/r_glacialtundra6/r_glacialtundra6.yy",},},
     {"roomId":{"name":"r_glacialtundra_extra1","path":"rooms/r_glacialtundra_extra1/r_glacialtundra_extra1.yy",},},
+    {"roomId":{"name":"r_glacialtundra7","path":"rooms/r_glacialtundra7/r_glacialtundra7.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

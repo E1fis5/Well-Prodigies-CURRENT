@@ -1774,7 +1774,7 @@ indicator_shake_activate = function()
 }
 charge_disable = function()// Breeze Charge Disable
 {
-	walksp = 9.75;
+	walksp = 10.35;
 	grv = 0.07;
 	dash_prohibit = true;
 	vsp_max_wall = 12;
@@ -1926,7 +1926,7 @@ breeze_state = function()
 		vsp_wjump = -8.5;
 		can_dash = false;
 		dash_prohibit = true;
-		walksp = 9.75;
+		walksp = 10.35;
 		//Camera Zoomout
 		obj_camera.cam_width_subtract = 26;
 		obj_camera.cam_height_subtract = 16;
