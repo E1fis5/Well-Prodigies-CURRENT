@@ -52,6 +52,7 @@ global.betamusic_toggle = false;
 //Sanity shitit
 global.sanity_Prank_switch = false;
 global.mindSplit_unlocked = true;
+global.attack_unlocked = false;
 global.player_insane = false;
 //Level Control
 level = 0;

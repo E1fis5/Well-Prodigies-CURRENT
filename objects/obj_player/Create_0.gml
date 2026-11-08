@@ -571,7 +571,7 @@ var attack_reset = function()
 {
 	attack_available = true;
 }
-timer_attack_cooldown = time_source_create(time_source_game,1,time_source_units_seconds,attack_reset,[],1);
+timer_attack_cooldown = time_source_create(time_source_game,0.5,time_source_units_seconds,attack_reset,[],1);
 //Aftereffects/Dboost
 timer_aftereffect_creation = time_source_create(time_source_game,1.25,time_source_units_seconds,dashBoost_aftereffect_creation,[],-1);
 timer_aftereffect_creation_quick = time_source_create(time_source_game,0.75,time_source_units_seconds,dashBoost_aftereffect_creation,[],-1);
@@ -703,7 +703,7 @@ if (fall_damage_toggle) //Crumble Trailright
 attack_stance = function()
 {
 	//Main Attack
-	if (input_check_pressed("attack"))
+	if (input_check_pressed("attack") and (global.attack_unlocked))
 	{
 		if (attack_available)
 		{
