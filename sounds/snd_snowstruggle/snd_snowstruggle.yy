@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_snowstruggle",
+  "audioGroupId":{
+    "name":"groupSFX",
+    "path":"audiogroups/groupSFX",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.71879816,
+  "exportDir":"",
+  "name":"snd_snowstruggle",
+  "parent":{
+    "name":"states",
+    "path":"folders/Sounds/player_sounds/states.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_snowstruggle.ogg",
+  "volume":1.0,
+}

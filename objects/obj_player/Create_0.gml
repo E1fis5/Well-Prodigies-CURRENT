@@ -1894,6 +1894,7 @@ breeze_state = function()
 		if (input_check_pressed("down")) and (!onground) and (!breeze_dash_charge)
 		{
 			grv = 1;
+			vsp_max_wall += 2;
 			audio_play_sound(snd_upcancel_whoosh,5,false,1.2,0,1.45);
 			instance_create_depth(x,y,-1,obj_breeze_feint1);
 		}
@@ -1992,7 +1993,7 @@ snow_state = function()
 		if (input_check_pressed("jump")) and (canJump) and (!wallclimb)
 		{
 			snow_jumps += 1;
-			audio_play_sound(snd_freeze_damage,5,false);
+			audio_play_sound(snd_snowstruggle,3,false);
 			if (snow_jumps >= 3) and (vspJump < -3.50)
 			{
 				snow_jumps = 0;
